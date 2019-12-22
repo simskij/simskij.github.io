@@ -1,1 +1,144 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://simme.dev/posts/</loc><lastmod>2019-12-22T04:55:56+01:00</lastmod></url><url><loc>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</loc><lastmod>2019-12-22T04:55:56+01:00</lastmod></url><url><loc>https://simme.dev/</loc><lastmod>2019-12-22T04:55:56+01:00</lastmod></url><url><loc>https://simme.dev/about/</loc><lastmod>2019-12-21T23:23:38+01:00</lastmod></url><url><loc>https://simme.dev/tags/agile/</loc><lastmod>2019-12-21T21:57:01+01:00</lastmod></url><url><loc>https://simme.dev/categories/</loc><lastmod>2019-12-21T21:57:01+01:00</lastmod></url><url><loc>https://simme.dev/categories/devops/</loc><lastmod>2019-12-21T21:57:01+01:00</lastmod></url><url><loc>https://simme.dev/tags/devops/</loc><lastmod>2019-12-21T21:57:01+01:00</lastmod></url><url><loc>https://simme.dev/posts/practical-devops-the-big-sell/</loc><lastmod>2019-12-21T21:57:01+01:00</lastmod></url><url><loc>https://simme.dev/tags/</loc><lastmod>2019-12-21T21:57:01+01:00</lastmod></url><url><loc>https://simme.dev/tags/bdd/</loc><lastmod>2019-12-21T21:54:26+01:00</lastmod></url><url><loc>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</loc><lastmod>2019-12-21T21:54:26+01:00</lastmod></url><url><loc>https://simme.dev/tags/go/</loc><lastmod>2019-12-21T21:54:26+01:00</lastmod></url><url><loc>https://simme.dev/categories/programming/</loc><lastmod>2019-12-21T21:54:26+01:00</lastmod></url><url><loc>https://simme.dev/tags/tdd/</loc><lastmod>2019-12-21T21:54:26+01:00</lastmod></url><url><loc>https://simme.dev/tags/testing/</loc><lastmod>2019-12-21T21:54:26+01:00</lastmod></url><url><loc>https://simme.dev/posts/as-the-sprints-stop-2/</loc><lastmod>2019-06-27T05:07:28+01:00</lastmod></url><url><loc>https://simme.dev/tags/books/</loc><lastmod>2019-06-27T05:07:28+01:00</lastmod></url><url><loc>https://simme.dev/tags/career/</loc><lastmod>2019-06-27T05:07:28+01:00</lastmod></url><url><loc>https://simme.dev/posts/redux-and-sagas-2/</loc><lastmod>2018-07-14T05:15:20+01:00</lastmod></url><url><loc>https://simme.dev/tags/javascript/</loc><lastmod>2018-07-14T05:15:20+01:00</lastmod></url><url><loc>https://simme.dev/tags/redux/</loc><lastmod>2018-07-14T05:15:20+01:00</lastmod></url><url><loc>https://simme.dev/tags/saga/</loc><lastmod>2018-07-14T05:15:20+01:00</lastmod></url><url><loc>https://simme.dev/tags/typescript/</loc><lastmod>2018-07-14T05:15:20+01:00</lastmod></url><url><loc>https://simme.dev/posts/redux-and-sagas-1/</loc><lastmod>2018-06-15T05:15:20+01:00</lastmod></url><url><loc>https://simme.dev/tags/react/</loc><lastmod>2018-06-15T05:15:20+01:00</lastmod></url><url><loc>https://simme.dev/posts/as-the-sprints-stop/</loc><lastmod>2018-06-12T00:00:00+00:00</lastmod></url><url><loc>https://simme.dev/videos/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://simme.dev/posts/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/about/</loc>
+    <lastmod>2019-12-21T23:23:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/agile/</loc>
+    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/categories/</loc>
+    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/categories/devops/</loc>
+    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/devops/</loc>
+    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/posts/practical-devops-the-big-sell/</loc>
+    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/</loc>
+    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/bdd/</loc>
+    <lastmod>2019-12-21T21:54:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</loc>
+    <lastmod>2019-12-21T21:54:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/go/</loc>
+    <lastmod>2019-12-21T21:54:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/categories/programming/</loc>
+    <lastmod>2019-12-21T21:54:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/tdd/</loc>
+    <lastmod>2019-12-21T21:54:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/testing/</loc>
+    <lastmod>2019-12-21T21:54:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/posts/as-the-sprints-stop-2/</loc>
+    <lastmod>2019-06-27T05:07:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/books/</loc>
+    <lastmod>2019-06-27T05:07:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/career/</loc>
+    <lastmod>2019-06-27T05:07:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/posts/redux-and-sagas-2/</loc>
+    <lastmod>2018-07-14T05:15:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/javascript/</loc>
+    <lastmod>2018-07-14T05:15:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/redux/</loc>
+    <lastmod>2018-07-14T05:15:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/saga/</loc>
+    <lastmod>2018-07-14T05:15:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/typescript/</loc>
+    <lastmod>2018-07-14T05:15:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/posts/redux-and-sagas-1/</loc>
+    <lastmod>2018-06-15T05:15:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/react/</loc>
+    <lastmod>2018-06-15T05:15:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/posts/as-the-sprints-stop/</loc>
+    <lastmod>2018-06-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/videos/</loc>
+  </url>
+  
+</urlset>

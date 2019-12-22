@@ -1,9 +1,184 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>typescript - Simon Aronsson</title><meta name=description content><meta name=author content><link href=https://simme.dev/an-old-hope.min.css rel=stylesheet><link href=https://simme.dev/style.css rel=stylesheet><link rel=apple-touch-icon href=https://simme.dev/apple-touch-icon.png><link rel=icon href=https://simme.dev/favicon.ico><meta name=generator content="Hugo 0.59.1"><link rel=alternate type=application/atom+xml href=https://simme.dev/index.xml title="Simon Aronsson"><script>function setTheme(){const time=new Date();const prev=localStorage.getItem('date');const date=String(time.getMonth()+1)+'.'+String(time.getDate());const now=time.getTime();let sunrise;let sunset;if(date!==prev){fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215').then(res=>res.json()).then(data=>{sunrise=data.sunrise.split(':').map(Number);sunset=data.sunset.split(':').map(Number);}).catch(()=>{sunrise=[7,0];sunset=[19,0];}).finally(()=>{sunrise=time.setHours(sunrise[0],sunrise[1],0);sunset=time.setHours(sunset[0],sunset[1],0);setBodyClass();localStorage.setItem('sunrise',sunrise);localStorage.setItem('sunset',sunset);});localStorage.setItem('date',date);}else{sunrise=Number(localStorage.getItem('sunrise'));sunset=Number(localStorage.getItem('sunset'));setBodyClass();}}</script></head><body class=list><script>setTheme();</script><header class=header><nav class=nav><p class=logo><a href=https://simme.dev/>Simon Aronsson</a></p><ul class=menu><li><a href=/about>about</a></li><li><a href=/videos>videos</a></li></ul></nav></header><main class=main><header class=page-header><h1>#typescript</h1></header><article class=post-entry><header class=entry-header><h2>An introduction to Redux and Sagas #2</h2><ul class=post-tags style=margin-top:10px><li><a href=https://simme.dev/tags/javascript>#javascript</a></li><li><a href=https://simme.dev/tags/typescript>#typescript</a></li><li><a href=https://simme.dev/tags/saga>#saga</a></li><li><a href=https://simme.dev/tags/redux>#redux</a></li></ul></header><section class=entry-content><p>In this part, we’ll set up a react app with redux and make it work with some simple actions. As I’m a big advocate of typescript and its superior readability; we’ll go ahead and use that as well.
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>typescript - Simon Aronsson</title>
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href="https://simme.dev/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://simme.dev/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://simme.dev/apple-touch-icon.png">
+    <link rel="icon" href="https://simme.dev/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://simme.dev/index.xml" title="Simon Aronsson">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="list">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        <p class="logo"><a href="https://simme.dev/">Simon Aronsson</a></p>
+        
+        
+        <ul class="menu">
+          
+          <li>
+            <a href="/about">about</a>
+          </li>
+          
+          <li>
+            <a href="/videos">videos</a>
+          </li>
+          
+        </ul>
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+
+
+
+<header class="page-header">
+  <h1>#typescript</h1>
+</header>
+
+
+
+
+
+
+<article
+  class="post-entry">
+  <header class="entry-header">
+    <h2>An introduction to Redux and Sagas #2</h2>
+    <ul class="post-tags" style="margin-top: 10px">
+      
+      
+      <li><a href="https://simme.dev/tags/javascript">#javascript</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/typescript">#typescript</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/saga">#saga</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/redux">#redux</a></li>
+      
+    </ul>
+  </header>
+  <section class="entry-content">
+    <p>In this part, we’ll set up a react app with redux and make it work with some simple actions. As I’m a big advocate of typescript and its superior readability; we’ll go ahead and use that as well.
 Creating the app So let’s get started by creating a react app using the typescript template. If you dont have the create-react-app cli already, start with installing it:
-$ npm install -g create-react-app Then create a react app with the typescript template.</p></section><footer class=entry-footer><time>July 14, 2018</time></footer><a class=entry-link href=https://simme.dev/posts/redux-and-sagas-2/></a></article><article class=post-entry><header class=entry-header><h2>An introduction to Redux and Sagas #1</h2><ul class=post-tags style=margin-top:10px><li><a href=https://simme.dev/tags/javascript>#javascript</a></li><li><a href=https://simme.dev/tags/typescript>#typescript</a></li><li><a href=https://simme.dev/tags/react>#react</a></li><li><a href=https://simme.dev/tags/redux>#redux</a></li></ul></header><section class=entry-content><p>Before we dive into redux and sagas, it might be nice to get some background.
+$ npm install -g create-react-app  Then create a react app with the typescript template.</p>
+  </section>
+  <footer class="entry-footer">
+    <time>July 14, 2018</time>
+  </footer>
+  <a class="entry-link" href="https://simme.dev/posts/redux-and-sagas-2/"></a>
+</article>
+
+<article
+  class="post-entry">
+  <header class="entry-header">
+    <h2>An introduction to Redux and Sagas #1</h2>
+    <ul class="post-tags" style="margin-top: 10px">
+      
+      
+      <li><a href="https://simme.dev/tags/javascript">#javascript</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/typescript">#typescript</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/react">#react</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/redux">#redux</a></li>
+      
+    </ul>
+  </header>
+  <section class="entry-content">
+    <p>Before we dive into redux and sagas, it might be nice to get some background.
 What is Redux? To quote the readme available over at https://redux.js.org/:
-Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.</p></section><footer class=entry-footer><time>June 15, 2018</time></footer><a class=entry-link href=https://simme.dev/posts/redux-and-sagas-1/></a></article></main><footer class=footer><span>&copy; 2019 <a href=https://simme.dev/>Simon Aronsson</a></span>
-<span>&middot;</span>
-<span>Powered by <a href=https://gohugo.io/ rel=noopener target=_blank>Hugo️️</a>️</span>
-<span>&middot;</span>
-<span>Theme️ <a href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>Paper</a></span></footer><script src=https://simme.dev/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+ Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+</p>
+  </section>
+  <footer class="entry-footer">
+    <time>June 15, 2018</time>
+  </footer>
+  <a class="entry-link" href="https://simme.dev/posts/redux-and-sagas-1/"></a>
+</article>
+
+
+
+
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://simme.dev/">Simon Aronsson</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://simme.dev/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

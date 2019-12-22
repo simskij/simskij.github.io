@@ -1,1 +1,132 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Simon Aronsson</title><link>https://simme.dev/tags/</link><description>Recent content in Tags on Simon Aronsson</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 21 Dec 2019 21:57:01 +0100</lastBuildDate><atom:link href="https://simme.dev/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>agile</title><link>https://simme.dev/tags/agile/</link><pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate><guid>https://simme.dev/tags/agile/</guid><description/></item><item><title>devops</title><link>https://simme.dev/tags/devops/</link><pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate><guid>https://simme.dev/tags/devops/</guid><description/></item><item><title>bdd</title><link>https://simme.dev/tags/bdd/</link><pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate><guid>https://simme.dev/tags/bdd/</guid><description/></item><item><title>go</title><link>https://simme.dev/tags/go/</link><pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate><guid>https://simme.dev/tags/go/</guid><description/></item><item><title>tdd</title><link>https://simme.dev/tags/tdd/</link><pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate><guid>https://simme.dev/tags/tdd/</guid><description/></item><item><title>testing</title><link>https://simme.dev/tags/testing/</link><pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate><guid>https://simme.dev/tags/testing/</guid><description/></item><item><title>books</title><link>https://simme.dev/tags/books/</link><pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate><guid>https://simme.dev/tags/books/</guid><description/></item><item><title>career</title><link>https://simme.dev/tags/career/</link><pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate><guid>https://simme.dev/tags/career/</guid><description/></item><item><title>javascript</title><link>https://simme.dev/tags/javascript/</link><pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate><guid>https://simme.dev/tags/javascript/</guid><description/></item><item><title>redux</title><link>https://simme.dev/tags/redux/</link><pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate><guid>https://simme.dev/tags/redux/</guid><description/></item><item><title>saga</title><link>https://simme.dev/tags/saga/</link><pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate><guid>https://simme.dev/tags/saga/</guid><description/></item><item><title>typescript</title><link>https://simme.dev/tags/typescript/</link><pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate><guid>https://simme.dev/tags/typescript/</guid><description/></item><item><title>react</title><link>https://simme.dev/tags/react/</link><pubDate>Fri, 15 Jun 2018 05:15:20 +0100</pubDate><guid>https://simme.dev/tags/react/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Simon Aronsson</title>
+    <link>https://simme.dev/tags/</link>
+    <description>Recent content in Tags on Simon Aronsson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Dec 2019 21:57:01 +0100</lastBuildDate>
+    
+	<atom:link href="https://simme.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>agile</title>
+      <link>https://simme.dev/tags/agile/</link>
+      <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://simme.dev/tags/devops/</link>
+      <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bdd</title>
+      <link>https://simme.dev/tags/bdd/</link>
+      <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/bdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://simme.dev/tags/go/</link>
+      <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tdd</title>
+      <link>https://simme.dev/tags/tdd/</link>
+      <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://simme.dev/tags/testing/</link>
+      <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>books</title>
+      <link>https://simme.dev/tags/books/</link>
+      <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>career</title>
+      <link>https://simme.dev/tags/career/</link>
+      <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://simme.dev/tags/javascript/</link>
+      <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redux</title>
+      <link>https://simme.dev/tags/redux/</link>
+      <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/redux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>saga</title>
+      <link>https://simme.dev/tags/saga/</link>
+      <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/saga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://simme.dev/tags/typescript/</link>
+      <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://simme.dev/tags/react/</link>
+      <pubDate>Fri, 15 Jun 2018 05:15:20 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/react/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

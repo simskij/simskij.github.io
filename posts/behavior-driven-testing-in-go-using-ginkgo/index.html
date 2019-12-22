@@ -1,5 +1,138 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Behavior Driven Testing in Go Using Ginkgo - Simon Aronsson</title><meta name=description content="Test automation Test automation is the practice of taking tests that traditionally have been executed manually and instead implement them programmatically. By making your tests part of the code you also allow yourself to run the tests continuously every time you make a change in the code while adding little to no additional cost.
-A high amount of relevant, high-quality and automated tests is one of the most important factors in maintaining high software quality while keeping the cost of change as low as possible."><meta name=author content><link href=https://simme.dev/an-old-hope.min.css rel=stylesheet><link href=https://simme.dev/style.css rel=stylesheet><link rel=apple-touch-icon href=https://simme.dev/apple-touch-icon.png><link rel=icon href=https://simme.dev/favicon.ico><meta name=generator content="Hugo 0.59.1"><link rel=alternate type=application/atom+xml href=https://simme.dev/index.xml title="Simon Aronsson"><script>function setTheme(){const time=new Date();const prev=localStorage.getItem('date');const date=String(time.getMonth()+1)+'.'+String(time.getDate());const now=time.getTime();let sunrise;let sunset;if(date!==prev){fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215').then(res=>res.json()).then(data=>{sunrise=data.sunrise.split(':').map(Number);sunset=data.sunset.split(':').map(Number);}).catch(()=>{sunrise=[7,0];sunset=[19,0];}).finally(()=>{sunrise=time.setHours(sunrise[0],sunrise[1],0);sunset=time.setHours(sunset[0],sunset[1],0);setBodyClass();localStorage.setItem('sunrise',sunrise);localStorage.setItem('sunset',sunset);});localStorage.setItem('date',date);}else{sunrise=Number(localStorage.getItem('sunrise'));sunset=Number(localStorage.getItem('sunset'));setBodyClass();}}</script></head><body class=single><script>setTheme();</script><header class=header><nav class=nav><p class=logo><a href=https://simme.dev/>Simon Aronsson</a></p><ul class=menu><li><a href=/about>about</a></li><li><a href=/videos>videos</a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>Behavior Driven Testing in Go Using Ginkgo</h1><div class=post-meta>December 21, 2019</div><ul class=post-tags style=margin-top:20px><li><a href=https://simme.dev/tags/go>#go</a></li><li><a href=https://simme.dev/tags/testing>#testing</a></li><li><a href=https://simme.dev/tags/tdd>#tdd</a></li><li><a href=https://simme.dev/tags/bdd>#bdd</a></li></ul></header><div class=post-content><h3 id=test-automation>Test automation</h3><p>Test automation is the practice of taking tests that traditionally have been executed manually and instead implement them programmatically. By making your tests part of the code you also allow yourself to run the tests continuously every time you make a change in the code while adding little to no additional cost.</p><p>A high amount of relevant, high-quality and automated tests is one of the most important factors in maintaining high software quality while keeping the cost of change as low as possible.</p><h3 id=the-problem>The problem</h3><p>A common problem while practicing test-driven development, or writing unit tests at all for that matter, is that the tests tend to be very centered around the technical implementation.</p><p>Example:</p><pre><code class=language-go>func TestApprovePurchaseOrder_ShouldCallTheApprovalService(t *t.Testing)
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Behavior Driven Testing in Go Using Ginkgo - Simon Aronsson</title>
+    
+    <meta name="description" content="Test automation Test automation is the practice of taking tests that traditionally have been executed manually and instead implement them programmatically. By making your tests part of the code you also allow yourself to run the tests continuously every time you make a change in the code while adding little to no additional cost.
+A high amount of relevant, high-quality and automated tests is one of the most important factors in maintaining high software quality while keeping the cost of change as low as possible.">
+    <meta name="author" content="">
+    
+    <link href="https://simme.dev/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://simme.dev/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://simme.dev/apple-touch-icon.png">
+    <link rel="icon" href="https://simme.dev/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://simme.dev/index.xml" title="Simon Aronsson">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        <p class="logo"><a href="https://simme.dev/">Simon Aronsson</a></p>
+        
+        
+        <ul class="menu">
+          
+          <li>
+            <a href="/about">about</a>
+          </li>
+          
+          <li>
+            <a href="/videos">videos</a>
+          </li>
+          
+        </ul>
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Behavior Driven Testing in Go Using Ginkgo</h1>
+    <div class="post-meta">
+      
+      December 21, 2019
+      
+    </div>
+    
+  
+    <ul class="post-tags" style="margin-top: 20px">
+      
+      
+      <li><a href="https://simme.dev/tags/go">#go</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/testing">#testing</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/tdd">#tdd</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/bdd">#bdd</a></li>
+      
+    </ul>
+  
+  
+  </header>
+  <div class="post-content">
+
+<h3 id="test-automation">Test automation</h3>
+
+<p>Test automation is the practice of taking tests that traditionally have been executed manually and instead implement them programmatically. By making your tests part of the code you also allow yourself to run the tests continuously every time you make a change in the code while adding little to no additional cost.</p>
+
+<p>A high amount of relevant, high-quality and automated tests is one of the most important factors in maintaining high software quality while keeping the cost of change as low as possible.</p>
+
+<h3 id="the-problem">The problem</h3>
+
+<p>A common problem while practicing test-driven development, or writing unit tests at all for that matter, is that the tests tend to be very centered around the technical implementation.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-go">func TestApprovePurchaseOrder_ShouldCallTheApprovalService(t *t.Testing)
 {
   service := &amp;MockApprovalService{}
   order := &amp;PurchaseOrder{
@@ -9,15 +142,47 @@ A high amount of relevant, high-quality and automated tests is one of the most i
   order.Approve()
   Expect(service.HasBeenCalled).To(Equal(true))
 }
-</code></pre><p>While ensuring that the code does what we expect it to, this approach has a couple of downsides.</p><ul><li><p>For someone not fluent in reading code, it might be hard to tell what this test helps ensure.</p></li><li><p>If someone were to refactor, or change, the code under test; they would be likely to have to spend time rewriting the test - even though the business behavior might not even have changed.</p></li></ul><h4 id=describing-tests-through-behavior>Describing tests through behavior</h4><p>This is where using ginkgo and practicing behavior-driven testing really makes a difference. Consider the following test:</p><pre><code>the function for approving a purchase order
+</code></pre>
+
+<p>While ensuring that the code does what we expect it to, this approach has a couple of downsides.</p>
+
+<ul>
+<li><p>For someone not fluent in reading code, it might be hard to tell what this test helps ensure.</p></li>
+
+<li><p>If someone were to refactor, or change, the code under test; they would be likely to have to spend time rewriting the test - even though the business behavior might not even have changed.</p></li>
+</ul>
+
+<h4 id="describing-tests-through-behavior">Describing tests through behavior</h4>
+
+<p>This is where using ginkgo and practicing behavior-driven testing really makes a difference. Consider the following test:</p>
+
+<pre><code>the function for approving a purchase order
 should call the approval service
-</code></pre><p>Now let’s rewrite it into a BDD-style test:</p><pre><code>given a purchase order
+</code></pre>
+
+<p>Now let’s rewrite it into a BDD-style test:</p>
+
+<pre><code>given a purchase order
  when it's pending approval
   and we approve it
  then it should become approved once 
-</code></pre><p>At least to me, this test title is a lot clearer. Bu using this format, a product stakeholder, even with no coding experience what so ever, will be able to understand what this test case proves and under what circumstances.</p><p>Let&rsquo;s go through each of the building blocks that make up this test description:</p><p><strong>Given</strong>, a certain context or initial condition
+</code></pre>
+
+<p>At least to me, this test title is a lot clearer. Bu using this format, a product stakeholder, even with no coding experience what so ever, will be able to understand what this test case proves and under what circumstances.</p>
+
+<p>Let&rsquo;s go through each of the building blocks that make up this test description:</p>
+
+<p><strong>Given</strong>, a certain context or initial condition
 <strong>When</strong>, a certain state trigger the scenario
-<strong>Then</strong>, we expect one or more outcome</p><p>This semi-formal form of writing requirements is fairly easy to understand, for developers and business stakeholders alike. By making sure all participants understand what they aim to describe, we have created a behavior specification, or behavior test, that leaves very little room for interpretation.</p><h4 id=a-possible-solution>A possible solution</h4><p>Let’s write the whole thing:</p><pre><code class=language-go>  var _ = Describe(&quot;a purchase order&quot;, func() {
+<strong>Then</strong>, we expect one or more outcome</p>
+
+<p>This semi-formal form of writing requirements is fairly easy to understand, for developers and business stakeholders alike. By making sure all participants understand what they aim to describe, we have created a behavior specification, or behavior test, that leaves very little room for interpretation.</p>
+
+<h4 id="a-possible-solution">A possible solution</h4>
+
+<p>Let’s write the whole thing:</p>
+
+<pre><code class="language-go">  var _ = Describe(&quot;a purchase order&quot;, func() {
     When(&quot;pending approval&quot;, func() {
       When(&quot;we approve it&quot;, func() {
         It(&quot;should become approved once we approve it&quot;, func() {
@@ -33,8 +198,39 @@ should call the approval service
       })
     })
   })
-</code></pre><p>And that was it! We&rsquo;ve now written our first behavior-driven unit test using ginkgo! 👏🏼</p><hr><h3 id=so-to-summarize>So, to summarize:</h3><ul><li>Using <a href=https://github.com/onsi/ginkgo>ginkgo</a>, or <a href=https://github.com/smartystreets/goconvey/>goconvey</a> if you prefer, allows you to easily formulate tests that are decoupled from the actual implementation.</li><li>Using common written English to describe our tests allows us to generate test reports readable and understandable by anyone on the product team.</li></ul><p>Thanks for reading! 🙏🏼</p></div></article></main><footer class=footer><span>&copy; 2019 <a href=https://simme.dev/>Simon Aronsson</a></span>
-<span>&middot;</span>
-<span>Powered by <a href=https://gohugo.io/ rel=noopener target=_blank>Hugo️️</a>️</span>
-<span>&middot;</span>
-<span>Theme️ <a href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>Paper</a></span></footer><script src=https://simme.dev/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre>
+
+<p>And that was it! We&rsquo;ve now written our first behavior-driven unit test using ginkgo! 👏🏼</p>
+
+<hr />
+
+<h3 id="so-to-summarize">So, to summarize:</h3>
+
+<ul>
+<li>Using <a href="https://github.com/onsi/ginkgo">ginkgo</a>, or <a href="https://github.com/smartystreets/goconvey/">goconvey</a> if you prefer, allows you to easily formulate tests that are decoupled from the actual implementation.</li>
+<li>Using common written English to describe our tests allows us to generate test reports readable and understandable by anyone on the product team.</li>
+</ul>
+
+<p>Thanks for reading! 🙏🏼</p>
+</div>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://simme.dev/">Simon Aronsson</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://simme.dev/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+

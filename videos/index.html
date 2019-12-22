@@ -1,9 +1,179 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>- Simon Aronsson</title><meta name=description content="A change in mindset 🎥 ServerlessDays Stockholm, 2019 📍 Stockholm, Sweden
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title> - Simon Aronsson</title>
+    
+    <meta name="description" content="A change in mindset 🎥 ServerlessDays Stockholm, 2019 📍 Stockholm, Sweden
  When you start going serverless, it’s easy to get excited and just go for it. To create meaningful services however you need to think carefully about your design and what you want to achieve.
-It’s way to easy to end up with a multi-instance monolith with all the downsides of both approaches. During this talk we’ll explore some common pitfalls, how to avoid them and what to do instead."><meta name=author content><link href=https://simme.dev/an-old-hope.min.css rel=stylesheet><link href=https://simme.dev/style.css rel=stylesheet><link rel=apple-touch-icon href=https://simme.dev/apple-touch-icon.png><link rel=icon href=https://simme.dev/favicon.ico><meta name=generator content="Hugo 0.59.1"><link rel=alternate type=application/atom+xml href=https://simme.dev/index.xml title="Simon Aronsson"><script>function setTheme(){const time=new Date();const prev=localStorage.getItem('date');const date=String(time.getMonth()+1)+'.'+String(time.getDate());const now=time.getTime();let sunrise;let sunset;if(date!==prev){fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215').then(res=>res.json()).then(data=>{sunrise=data.sunrise.split(':').map(Number);sunset=data.sunset.split(':').map(Number);}).catch(()=>{sunrise=[7,0];sunset=[19,0];}).finally(()=>{sunrise=time.setHours(sunrise[0],sunrise[1],0);sunset=time.setHours(sunset[0],sunset[1],0);setBodyClass();localStorage.setItem('sunrise',sunrise);localStorage.setItem('sunset',sunset);});localStorage.setItem('date',date);}else{sunrise=Number(localStorage.getItem('sunrise'));sunset=Number(localStorage.getItem('sunset'));setBodyClass();}}</script></head><body class=single><script>setTheme();</script><header class=header><nav class=nav><p class=logo><a href=https://simme.dev/>Simon Aronsson</a></p><ul class=menu><li><a href=/about>about</a></li><li><a href=/videos>videos</a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title></h1><div class=post-meta></div></header><div class=post-content><h2 id=a-change-in-mindset>A change in mindset</h2><p>🎥 ServerlessDays Stockholm, 2019<br>📍 Stockholm, Sweden</p><blockquote><p>When you start going serverless, it’s easy to get excited and just go for it. To create meaningful services however you need to think carefully about your design and what you want to achieve.</p><p>It’s way to easy to end up with a multi-instance monolith with all the downsides of both approaches. During this talk we’ll explore some common pitfalls, how to avoid them and what to do instead.</p></blockquote><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe src=https://www.youtube.com/embed/7MhXoHRUJtM style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe></div><hr><h2 id=everyone-is-talking-about-devops>Everyone is talking about DevOps</h2><p>🎥 Day of the Programmer, 2019<br>📍 Jönköping, Sweden</p><blockquote><p>Alla pratar om Devops! Men vad är det egentligen? Jenkins, är det DevOps? Terraform då?
-Vi kommer under det här passet att prata om kultur, vikten av automation, devops tre grundpelare och varför vi borde bry oss.</p></blockquote><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe src=https://www.youtube.com/embed/Jsdx5Nzq-8o style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe></div><hr><h2 id=devops-and-go-a-love-story>Devops and Go, a love story</h2><p>🎥 GoWayFest 3.0, 2019<br>📍 Minsk, Belarus</p><blockquote><p>Much of the tooling used for infrastructure automation still consists of page after page of shell scripts. Our operations tools deserve the same level of care, quality and portability as the software we deliver!
-What if, instead of building our ops tooling as scripts, we were to build them as services? With great golang features like cross-platform (and architecture) compilation, static linking, docker client api&rsquo;s and more - nothing is holding us back.</p><p>During 30 minutes, Simon was mixing code examples and theory in an attempt to discover why golang is so awesome for doing devops work.</p></blockquote><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe src=https://www.youtube.com/embed/SEd9baxsfEA style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe></div></div></article></main><footer class=footer><span>&copy; 2019 <a href=https://simme.dev/>Simon Aronsson</a></span>
-<span>&middot;</span>
-<span>Powered by <a href=https://gohugo.io/ rel=noopener target=_blank>Hugo️️</a>️</span>
-<span>&middot;</span>
-<span>Theme️ <a href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>Paper</a></span></footer><script src=https://simme.dev/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+It’s way to easy to end up with a multi-instance monolith with all the downsides of both approaches. During this talk we’ll explore some common pitfalls, how to avoid them and what to do instead.">
+    <meta name="author" content="">
+    
+    <link href="https://simme.dev/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://simme.dev/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://simme.dev/apple-touch-icon.png">
+    <link rel="icon" href="https://simme.dev/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://simme.dev/index.xml" title="Simon Aronsson">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        <p class="logo"><a href="https://simme.dev/">Simon Aronsson</a></p>
+        
+        
+        <ul class="menu">
+          
+          <li>
+            <a href="/about">about</a>
+          </li>
+          
+          <li>
+            <a href="/videos">videos</a>
+          </li>
+          
+        </ul>
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+    <div class="post-meta">
+      
+    </div>
+    
+  </header>
+  <div class="post-content">
+
+<h2 id="a-change-in-mindset">A change in mindset</h2>
+
+<p>🎥 ServerlessDays Stockholm, 2019<br/>
+📍 Stockholm, Sweden</p>
+
+<blockquote>
+<p>When you start going serverless, it’s easy to get excited and just go for it. To create meaningful services however you need to think carefully about your design and what you want to achieve.</p>
+
+<p>It’s way to easy to end up with a multi-instance monolith with all the downsides of both approaches. During this talk we’ll explore some common pitfalls, how to avoid them and what to do instead.</p>
+</blockquote>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/7MhXoHRUJtM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<hr />
+
+<h2 id="everyone-is-talking-about-devops">Everyone is talking about DevOps</h2>
+
+<p>🎥 Day of the Programmer, 2019<br/>
+📍 Jönköping, Sweden</p>
+
+<blockquote>
+<p>Alla pratar om Devops! Men vad är det egentligen? Jenkins, är det DevOps? Terraform då?
+Vi kommer under det här passet att prata om kultur, vikten av automation, devops tre grundpelare och varför vi borde bry oss.</p>
+</blockquote>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Jsdx5Nzq-8o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<hr />
+
+<h2 id="devops-and-go-a-love-story">Devops and Go, a love story</h2>
+
+<p>🎥 GoWayFest 3.0, 2019<br/>
+📍 Minsk, Belarus</p>
+
+<blockquote>
+<p>Much of the tooling used for infrastructure automation still consists of page after page of shell scripts. Our operations tools deserve the same level of care, quality and portability as the software we deliver!
+What if, instead of building our ops tooling as scripts, we were to build them as services? With great golang features like cross-platform (and architecture) compilation, static linking, docker client api&rsquo;s and more - nothing is holding us back.</p>
+
+<p>During 30 minutes, Simon was mixing code examples and theory in an attempt to discover why golang is so awesome for doing devops work.</p>
+</blockquote>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/SEd9baxsfEA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://simme.dev/">Simon Aronsson</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://simme.dev/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+
