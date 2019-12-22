@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://simme.dev/"
 languageCode = "en-us"
 title = "Simon Aronsson"
 theme = "paper"
