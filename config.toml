@@ -1,0 +1,14 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Simon Aronsson"
+theme = "paper"
+
+[menu]
+    [[menu.main]]
+    identifier = "about"
+    name = "about"
+    url = "/about"
+    [[menu.main]]
+    identifier = "videos"
+    name = "videos"
+    url = "/videos"
