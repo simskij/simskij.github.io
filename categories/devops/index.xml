@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>devops on Simon Aronsson</title>
@@ -8,7 +7,7 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Dec 2019 21:57:01 +0100</lastBuildDate>
     
-	<atom:link href="https://simme.dev/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://simme.dev/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,8 +16,36 @@
       <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
       
       <guid>https://simme.dev/posts/practical-devops-the-big-sell/</guid>
-      <description>As those who know me or have seen me speak at a conference know, I&amp;rsquo;m a big fan of DevOps practices. I&amp;rsquo;m also a big fan of automation. After spending a couple of years digging into the topic, practicing it and talking about it with people from all around the world, I thought I&amp;rsquo;d share some of my own thoughts and experiences on the topic.
-The big sell If you&amp;rsquo;re at a shop that&amp;rsquo;s been around for a while, have successful software in production and by every meaningful measure is doing great, then you&amp;rsquo;ll probably have quite a hard time convincing anyone of the need to pivot towards DevOps practices.</description>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/practical-devops-1-cover.jpeg&#34; alt=&#34;team collaborating&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As those who know me or have seen me speak at a conference know, I&amp;rsquo;m a big fan of DevOps practices. I&amp;rsquo;m also a big fan of automation. After spending a couple of years digging into the topic, practicing it and talking about it with people from all around the world, I thought I&amp;rsquo;d share some of my own thoughts and experiences on the topic.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-big-sell&#34;&gt;The big sell&lt;/h1&gt;
+
+&lt;p&gt;If you&amp;rsquo;re at a shop that&amp;rsquo;s been around for a while, have successful software in production and by every meaningful measure is doing great, then you&amp;rsquo;ll probably have quite a hard time convincing anyone of the need to pivot towards DevOps practices.&lt;/p&gt;
+
+&lt;p&gt;That, however, does not mean that you should stop or that your workplace has nothing to win from embracing DevOps practices. It just means that you&amp;rsquo;ll have to take another approach than the blank-sheet-of-paper-startup-unicorns you read about on the internet.&lt;/p&gt;
+
+&lt;p&gt;You don&amp;rsquo;t have to make a big sell and convince everyone of the benefits of a DevOps approach. In fact; You shouldn&amp;rsquo;t. You will thank yourself later for not trying. Start small, in your own team.&lt;/p&gt;
+
+&lt;p&gt;Choose a couple of practices you think would bring value to your team, experiment and evaluate whether they had the impact you where looking for.&lt;/p&gt;
+
+&lt;p&gt;Sooner or later, word will get around about how your team is improving, and with that; other parts of the organization will want to know how you did it.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion:&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Start simple, start small.&lt;/li&gt;
+&lt;li&gt;DevOps takes time.&lt;/li&gt;
+&lt;li&gt;Short-term improvements, while being great morale boosters, should be considered inferior to your long-term goals.&lt;/li&gt;
+&lt;li&gt;Prioritize your experiments by their potential velocity increase.&lt;/li&gt;
+&lt;li&gt;Define measurable goals before starting your experiment.&lt;/li&gt;
+&lt;li&gt;Evaluate and keep doing what works. Stop doing, or change, what does not.&lt;/li&gt;
+&lt;li&gt;Stay humble.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

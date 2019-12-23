@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Aronsson</title>
@@ -8,17 +7,16 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Dec 2019 04:55:56 +0100</lastBuildDate>
     
-	<atom:link href="https://simme.dev/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://simme.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Practical Devops #2: On Shaming and Blaming</title>
-      <link>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</link>
+      <title>Posts</title>
+      <link>https://simme.dev/posts/</link>
       <pubDate>Sun, 22 Dec 2019 04:55:56 +0100</pubDate>
       
-      <guid>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</guid>
-      <description>Finding the root cause As I often state when I do talks or courses on the topic of DevOps, I&amp;rsquo;m a firm believer that DevOps has very little to do with technology, and a whole lot to do with culture.
-We, as developers, are often very good at performing root cause analysis and present a conclusion whenever things go south. Usually, we&amp;rsquo;re also as good at pinning that mistake onto someone, whether it&amp;rsquo;s a colleague or ourselves.</description>
+      <guid>https://simme.dev/posts/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -27,77 +25,34 @@ We, as developers, are often very good at performing root cause analysis and pre
       <pubDate>Sat, 21 Dec 2019 23:23:38 +0100</pubDate>
       
       <guid>https://simme.dev/about/</guid>
-      <description>.about { max-width: 700px; margin: auto; } .about p { text-align: justify; font-size: 16px; } .about img { width: 200px; margin: auto; border-radius: 4px; }   Hi, my name is Simme! 👋🏼   I&amp;rsquo;m a thirty-something gopher, developer 🥑, public speaker and meetup organizer from Sweden. I&amp;rsquo;ve been working in tech for the last 10 years or so, in many different roles ranging from full-stack dev and systems architect to scrum master and ops engineer.</description>
-    </item>
-    
-    <item>
-      <title>Practical Devops #1: The Big Sell</title>
-      <link>https://simme.dev/posts/practical-devops-the-big-sell/</link>
-      <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
-      
-      <guid>https://simme.dev/posts/practical-devops-the-big-sell/</guid>
-      <description>As those who know me or have seen me speak at a conference know, I&amp;rsquo;m a big fan of DevOps practices. I&amp;rsquo;m also a big fan of automation. After spending a couple of years digging into the topic, practicing it and talking about it with people from all around the world, I thought I&amp;rsquo;d share some of my own thoughts and experiences on the topic.
-The big sell If you&amp;rsquo;re at a shop that&amp;rsquo;s been around for a while, have successful software in production and by every meaningful measure is doing great, then you&amp;rsquo;ll probably have quite a hard time convincing anyone of the need to pivot towards DevOps practices.</description>
-    </item>
-    
-    <item>
-      <title>Behavior Driven Testing in Go Using Ginkgo</title>
-      <link>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</link>
-      <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
-      
-      <guid>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</guid>
-      <description>Test automation Test automation is the practice of taking tests that traditionally have been executed manually and instead implement them programmatically. By making your tests part of the code you also allow yourself to run the tests continuously every time you make a change in the code while adding little to no additional cost.
-A high amount of relevant, high-quality and automated tests is one of the most important factors in maintaining high software quality while keeping the cost of change as low as possible.</description>
-    </item>
-    
-    <item>
-      <title>As the sprints stop #2</title>
-      <link>https://simme.dev/posts/as-the-sprints-stop-2/</link>
-      <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
-      
-      <guid>https://simme.dev/posts/as-the-sprints-stop-2/</guid>
-      <description>It’s that time a year again. The time when all the nerds, myself included, get forced out of the office for some well-deserved RNR — just like when we were kids and our parents told us we had to go outside and play to “catch some fresh air”.
-Jokes aside, I really love my summer vacay. It gives me plenty of time to travel, read books and reflect on the past year.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to Redux and Sagas #2</title>
-      <link>https://simme.dev/posts/redux-and-sagas-2/</link>
-      <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
-      <guid>https://simme.dev/posts/redux-and-sagas-2/</guid>
-      <description>In this part, we’ll set up a react app with redux and make it work with some simple actions. As I’m a big advocate of typescript and its superior readability; we’ll go ahead and use that as well.
-Creating the app So let’s get started by creating a react app using the typescript template. If you dont have the create-react-app cli already, start with installing it:
-$ npm install -g create-react-app  Then create a react app with the typescript template.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to Redux and Sagas #1</title>
-      <link>https://simme.dev/posts/redux-and-sagas-1/</link>
-      <pubDate>Fri, 15 Jun 2018 05:15:20 +0100</pubDate>
-      
-      <guid>https://simme.dev/posts/redux-and-sagas-1/</guid>
-      <description>&lt;p&gt;Before we dive into redux and sagas, it might be nice to get some background.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-is-redux&#34;&gt;What is Redux?&lt;/h2&gt;
-
-&lt;p&gt;To quote the readme available over at &lt;a href=&#34;https://redux.js.org/&#34;&gt;https://redux.js.org/&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>As the sprints stops #1</title>
-      <link>https://simme.dev/posts/as-the-sprints-stop/</link>
-      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://simme.dev/posts/as-the-sprints-stop/</guid>
-      <description>&lt;p&gt;I confess, besides being a comic buff I’m also an avid reader of business and tech literature. Usually, my summer routine consists of piling up on books, novels and comics that I never get around reading during the more hectic part of the year.&lt;/p&gt;
-
-&lt;p&gt;I strongly believe that this habit is a huge factor to why I steadily feel like I keep growing as a professional, leader and knowledge worker while avoiding the feeling of plateauing.
-With that said, here are four books that I strongly suggest you to read this summer.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;style&gt;
+    .about {
+        max-width: 700px;
+        margin: auto;
+    }
+    .about p {
+        text-align: justify;
+        font-size: 16px;
+    }
+    .about img {
+        width: 200px;
+        margin: auto;
+        border-radius: 4px;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;about&#34; style=&#34;text-align: center&#34;&gt;
+    &lt;img src=&#34;https://simme.dev/images/me.jpg&#34;&gt;
+    &lt;h1&gt;
+        Hi, my name is Simme! 👋🏼
+    &lt;/h1&gt;
+    &lt;p&gt;
+        I&amp;rsquo;m a thirty-something gopher, developer 🥑, public speaker and meetup organizer from Sweden. I&amp;rsquo;ve been working in tech for the last 10 years or so, in many different roles ranging from full-stack dev and systems architect to scrum master and ops engineer. During the last couple of years I&amp;rsquo;ve put a &lt;em&gt;lot&lt;/em&gt; of my time into DevOps practices, cloud development, automation and creating highly efficient, self-organising teams.
+    &lt;/p&gt;
+    &lt;p&gt;
+        In my spare time, you&amp;rsquo;ll usually find me either out and about on my longboard or alpine skis, caring for the chilies in my hydroponic window garden, building software or hardware or playing with my Commodore 64.
+    &lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -106,9 +61,63 @@ With that said, here are four books that I strongly suggest you to read this sum
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://simme.dev/videos/</guid>
-      <description>A change in mindset 🎥 ServerlessDays Stockholm, 2019 📍 Stockholm, Sweden
- When you start going serverless, it’s easy to get excited and just go for it. To create meaningful services however you need to think carefully about your design and what you want to achieve.
-It’s way to easy to end up with a multi-instance monolith with all the downsides of both approaches. During this talk we’ll explore some common pitfalls, how to avoid them and what to do instead.</description>
+      <description>
+
+&lt;h2 id=&#34;a-change-in-mindset&#34;&gt;A change in mindset&lt;/h2&gt;
+
+&lt;p&gt;🎥 ServerlessDays Stockholm, 2019&lt;br/&gt;
+📍 Stockholm, Sweden&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;When you start going serverless, it’s easy to get excited and just go for it. To create meaningful services however you need to think carefully about your design and what you want to achieve.&lt;/p&gt;
+
+&lt;p&gt;It’s way to easy to end up with a multi-instance monolith with all the downsides of both approaches. During this talk we’ll explore some common pitfalls, how to avoid them and what to do instead.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/7MhXoHRUJtM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;everyone-is-talking-about-devops&#34;&gt;Everyone is talking about DevOps&lt;/h2&gt;
+
+&lt;p&gt;🎥 Day of the Programmer, 2019&lt;br/&gt;
+📍 Jönköping, Sweden&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Alla pratar om Devops! Men vad är det egentligen? Jenkins, är det DevOps? Terraform då?
+Vi kommer under det här passet att prata om kultur, vikten av automation, devops tre grundpelare och varför vi borde bry oss.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Jsdx5Nzq-8o&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;devops-and-go-a-love-story&#34;&gt;Devops and Go, a love story&lt;/h2&gt;
+
+&lt;p&gt;🎥 GoWayFest 3.0, 2019&lt;br/&gt;
+📍 Minsk, Belarus&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Much of the tooling used for infrastructure automation still consists of page after page of shell scripts. Our operations tools deserve the same level of care, quality and portability as the software we deliver!
+What if, instead of building our ops tooling as scripts, we were to build them as services? With great golang features like cross-platform (and architecture) compilation, static linking, docker client api&amp;rsquo;s and more - nothing is holding us back.&lt;/p&gt;
+
+&lt;p&gt;During 30 minutes, Simon was mixing code examples and theory in an attempt to discover why golang is so awesome for doing devops work.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/SEd9baxsfEA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
     </item>
     
   </channel>

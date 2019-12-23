@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://simme.dev/tags/agile/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/blaming/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/devops/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://simme.dev/posts/</loc>
     <lastmod>2019-12-22T04:55:56+01:00</lastmod>
   </url>
@@ -13,18 +28,23 @@
   </url>
   
   <url>
+    <loc>https://simme.dev/tags/shaming/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://simme.dev/</loc>
+    <lastmod>2019-12-22T04:55:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simme.dev/tags/</loc>
     <lastmod>2019-12-22T04:55:56+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://simme.dev/about/</loc>
     <lastmod>2019-12-21T23:23:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://simme.dev/tags/agile/</loc>
-    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
   </url>
   
   <url>
@@ -38,17 +58,7 @@
   </url>
   
   <url>
-    <loc>https://simme.dev/tags/devops/</loc>
-    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://simme.dev/posts/practical-devops-the-big-sell/</loc>
-    <lastmod>2019-12-21T21:57:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://simme.dev/tags/</loc>
     <lastmod>2019-12-21T21:57:01+01:00</lastmod>
   </url>
   

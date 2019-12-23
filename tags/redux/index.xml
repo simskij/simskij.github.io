@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>redux on Simon Aronsson</title>
@@ -8,7 +7,7 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Jul 2018 05:15:20 +0100</lastBuildDate>
     
-	<atom:link href="https://simme.dev/tags/redux/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://simme.dev/tags/redux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,9 +16,470 @@
       <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
       
       <guid>https://simme.dev/posts/redux-and-sagas-2/</guid>
-      <description>In this part, we’ll set up a react app with redux and make it work with some simple actions. As I’m a big advocate of typescript and its superior readability; we’ll go ahead and use that as well.
-Creating the app So let’s get started by creating a react app using the typescript template. If you dont have the create-react-app cli already, start with installing it:
-$ npm install -g create-react-app  Then create a react app with the typescript template.</description>
+      <description>
+
+&lt;p&gt;In this part, we’ll set up a react app with redux and make it work with some simple actions. As I’m a big advocate of typescript and its superior readability; we’ll go ahead and use that as well.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-the-app&#34;&gt;Creating the app&lt;/h2&gt;
+
+&lt;p&gt;So let’s get started by creating a react app using the typescript template. If you dont have the create-react-app cli already, start with installing it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -g create-react-app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then create a react app with the typescript template.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ create-react-app demo-app --scripts-version=react-scripts-ts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What you’ll end up is a small react template:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2028/1*2U-GoQvitCs2CamM1I7LoA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can run the app on a local dev server by typing npm start. Then open a browser and go to &lt;a href=&#34;http://localhost:3000&#34;&gt;http://localhost:3000&lt;/a&gt; to check it out.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-redux&#34;&gt;Adding Redux&lt;/h2&gt;
+
+&lt;p&gt;To get started with Redux, we first need to add some additional packages. Go ahead and type the following into your terminal to add both the packages and some types.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -D redux react-redux @types/react-redux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With that out of the way, let’s create two component that will be our redux consumers (as well as dispatchers). We’ll do this using the &lt;a href=&#34;https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0&#34;&gt;Presentation/Container component pattern&lt;/a&gt; as this will make for cleaner, more maintainable code. If you don’t like this pattern, feel free to go ahead and just put everything together, but I strongly suggest that you at least try it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/1*1lylSUFjKv8SdGpuOVcWVQ.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our app will consist of two components, beside the root app component, one for adding new todo items, which we’ll call** the todo adder&lt;strong&gt;, and one for listing the existing todo items, which we’ll call&lt;/strong&gt; the todo list**. There’s nothing special with this layout:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;*&lt;em&gt;.component.tsx&lt;/em&gt; holds the presentation component, which is a fancy way of saying &lt;em&gt;all logic related to what we display to the user&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;*&lt;em&gt;.container.tsx&lt;/em&gt; is a container component, which connects the state and dispatch actions to our presentation component, &lt;em&gt;isolating any non-presentational content from the rendered component&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;index.tsx&lt;/em&gt; re-exports the container component. This is purely for convenience as it lets us use shorter import paths.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I won’t go into detail on these components as it’s mostly common react code. If you feel insecure about anything in this code, feel free to revisit &lt;a href=&#34;https://reactjs.org/docs/getting-started.html&#34;&gt;the reactjs documentation&lt;/a&gt; at any time.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-todo-adder&#34;&gt;The Todo Adder&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import * as React from &amp;quot;react&amp;quot;;
+import { Component } from &amp;quot;react&amp;quot;;
+
+export
+  class TodoAdderComponent
+  extends Component&amp;lt;ITodoAdderProps&amp;gt; {
+
+  public state: any = {
+    title: &#39;&#39;,
+  }
+
+  public render() {
+    return (
+      &amp;lt;form onSubmit={this.handleSubmit}&amp;gt;
+        &amp;lt;input type=&amp;quot;text&amp;quot; value={this.state.title} onChange={this.handleChange} /&amp;gt;
+        &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;
+          Add
+        &amp;lt;/button&amp;gt;
+      &amp;lt;/form&amp;gt;
+    );
+  }
+
+  private handleSubmit = (event: any) =&amp;gt; {
+    const title = this.state.title;
+    if (title) {
+      this.props.onSubmit(this.state.title)
+      this.setState({ title: &#39;&#39; })
+    }
+    event.preventDefault();
+  }
+
+  private handleChange = (event: any) =&amp;gt; {
+    this.setState({ title: event.target.value })
+  }
+}
+
+interface ITodoAdderProps {
+  onSubmit: (title: string) =&amp;gt; any
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { connect } from &amp;quot;react-redux&amp;quot;;
+import { Dispatch } from &amp;quot;redux&amp;quot;;
+
+import { addTodo } from &amp;quot;../../actions&amp;quot;;
+import { TodoAdderComponent } from &amp;quot;./todo-adder.component&amp;quot;;
+
+
+const mapDispatchToProps = (dispatch: Dispatch) =&amp;gt; ({
+  onSubmit: (title: string) =&amp;gt; dispatch(addTodo(title))
+});
+
+export const TodoAdder = connect
+  (null, mapDispatchToProps)
+  (TodoAdderComponent);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-todo-list&#34;&gt;The Todo List&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import * as React from &amp;quot;react&amp;quot;;
+
+import { Component } from &amp;quot;react&amp;quot;;
+import { ITodo } from &amp;quot;../../models/todo&amp;quot;;
+
+export class TodoListPresentationComponent extends Component&amp;lt;ITodoListProps&amp;gt; {
+  constructor(props: any) {
+    super(props);
+  }
+
+  public render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;h1&amp;gt;Things to do:&amp;lt;/h1&amp;gt;
+        {this.props.todos.length &amp;gt; 0 ? this.renderList() : this.renderPlaceholder()}
+      &amp;lt;/div&amp;gt;
+    );
+  }
+
+  private renderList = () =&amp;gt; (
+    &amp;lt;ul id=&amp;quot;todoList&amp;quot; style={styles.list}&amp;gt;
+      {this.props.todos.map(this.renderTodo)}
+    &amp;lt;/ul&amp;gt;
+  );
+
+  private renderTodo = (todo: ITodo) =&amp;gt; (
+    &amp;lt;li
+      key={todo.id}
+      style={{ textAlign: &amp;quot;left&amp;quot;, cursor: &#39;pointer&#39;, ...(todo.done ? styles.todoDone : null) }}
+      onClick={this.props.onTodoClick.bind(this, todo.id)}
+    &amp;gt;
+      {todo.title}
+    &amp;lt;/li&amp;gt;
+  );
+
+  private renderPlaceholder = () =&amp;gt; (&amp;lt;div style={styles.placeholder}&amp;gt;The list is empty&amp;lt;/div&amp;gt;);
+}
+
+export interface ITodoListProps {
+  onTodoClick: (id: number) =&amp;gt; void;
+  todos: ITodo[];
+}
+
+const styles = {
+  list: {
+    margin: &amp;quot;10px auto 10px auto&amp;quot;,
+    width: &amp;quot;200px&amp;quot;
+  },
+  placeholder: {
+    margin: &#39;10px 0 10px 0&#39;
+  },
+  todoDone: {
+    textDecoration: &amp;quot;line-through&amp;quot;
+  },
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { connect } from &amp;quot;react-redux&amp;quot;;
+
+import { toggleTodo } from &amp;quot;../../actions&amp;quot;;
+import { TodoListPresentationComponent } from &amp;quot;./todo-list.component&amp;quot;;
+
+const mapStateToProps = (state: any) =&amp;gt; ({
+  todos: state
+});
+
+const mapDispatchToProps = (dispatch: any) =&amp;gt; ({
+  onTodoClick: (id: number) =&amp;gt; dispatch(toggleTodo(id))
+})
+
+export const TodoList = connect
+  (mapStateToProps, mapDispatchToProps)
+  (TodoListPresentationComponent);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-reducer&#34;&gt;The reducer&lt;/h2&gt;
+
+&lt;p&gt;The purpose of the reducer is to, based on the dispatched action and the current state, create a new state that our components in turn may consume. Although it’s not required, I strongly suggest that you keep the state immutable.&lt;/p&gt;
+
+&lt;p&gt;Instead of manipulating the existing state, create a new state with the changes you’d like to perform.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { ActionType } from &amp;quot;../enums/action-types&amp;quot;;
+import { ITodo } from &amp;quot;../models/todo&amp;quot;;
+
+let nextId: number = 0;
+
+const addTodo = (state: any, action: any) =&amp;gt; [
+  ...state,
+  {
+    done: false,
+    id: nextId++,
+    title: action.title
+  }
+];
+
+const toggleTodo = (state: any, action: any): any =&amp;gt; [
+  ...state.map((todo: ITodo) =&amp;gt;
+      todo.id === action.id ? { ...todo, done: !todo.done } : todo
+  )];
+
+export const todoReducer = (state: any = [], action: any) =&amp;gt; {
+  switch (action.type) {
+    case ActionType.AddTodo:
+      return addTodo(state, action);
+    case ActionType.ToggleTodo:
+      return toggleTodo(state, action);
+    default:
+      return state;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s go ahead and implement our enum as well as action creators for our two actions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;export enum ActionType {
+  AddTodo,
+  ToggleTodo,
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { ActionType } from &amp;quot;../enums/action-types&amp;quot;;
+
+export const addTodo = (title: string) =&amp;gt; ({
+  title,
+  type: ActionType.AddTodo
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { ActionType } from &amp;quot;../enums/action-types&amp;quot;;
+
+export const toggleTodo = (id: number) =&amp;gt; ({
+  id,
+  type: ActionType.ToggleTodo,
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In most introductions to Redux I’ve seen the scope has been limited to javascript. This is one of the places, albeit just a small one, where typescript really makes a difference to improve both readability and maintainability by introducing enums, which we may use to distinguish actions from each other.&lt;/p&gt;
+
+&lt;p&gt;As the last part of the introduction to redux,we’ll need to create a &lt;strong&gt;store&lt;/strong&gt; and wire it up with our app:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import * as React from &#39;react&#39;;
+import &#39;./App.css&#39;;
+
+import { Provider } from &#39;react-redux&#39;;
+import { createStore } from &#39;redux&#39;;
+
+import { TodoAdder } from &#39;./components/todo-adder&#39;;
+import { TodoList } from &#39;./components/todo-list&#39;;
+import { todoReducer } from &#39;./reducers/todos&#39;;
+
+
+const rootStore = createStore(todoReducer);
+
+class App extends React.Component {
+  public render() {
+    return (
+      &amp;lt;Provider store={rootStore}&amp;gt;
+        &amp;lt;div className=&amp;quot;App&amp;quot;&amp;gt;
+          &amp;lt;TodoList /&amp;gt;
+          &amp;lt;TodoAdder /&amp;gt;
+        &amp;lt;/div&amp;gt;
+      &amp;lt;/Provider&amp;gt;
+    );
+  }
+}
+
+export default App;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With that out of the way, let’s take a look at what we’ve created.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;saga demo&#34; src=&#34;https://cdn-images-1.medium.com/max/2000/1*ZZtTu2otobgiQ37lQ9-2og.gif&#34; style=&#34;margin: auto&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;To summarize this part of the article, let’s go through what we’ve done so far:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;We’ve added a simple redux store to keep track of our global application state.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We’ve added a reducer that handles add and toggle actions.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We’ve bound state data to components&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We’ve dispatched actions from our components to create new global state.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;and-now-sagas&#34;&gt;And now; Sagas&lt;/h2&gt;
+
+&lt;p&gt;Now, what if we wanted to do something asynchronously as a part of this application? Let’s say our tasks had to go through some server-side crunching before they would be completely ready. &lt;strong&gt;Sagas to the rescue!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;so-what-will-be-doing&#34;&gt;So, what will be doing?&lt;/h3&gt;
+
+&lt;p&gt;Going into sagas in detail would be quite an endevour, probably better done &lt;a href=&#34;https://redux-saga.js.org/&#34;&gt;by someone else somewhere else&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just to give you a feel of how sagas can be used, we’ll make the addition of new tasks asynchronous and make it use sagas to create our new todo tasks.&lt;/p&gt;
+
+&lt;p&gt;To make the example feel a little bit more “alive”, we’ll also use &lt;a href=&#34;https://picsum.photos/&#34;&gt;lorem picsum&lt;/a&gt; to add a randomly selected image to each task.&lt;/p&gt;
+
+&lt;p&gt;Let’s start by installing the needed packages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -D redux-saga @types/redux-saga
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;creating-the-saga&#34;&gt;Creating the Saga&lt;/h3&gt;
+
+&lt;p&gt;Then we’ll go ahead and create our actual saga:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { call, put, takeEvery } from &#39;redux-saga/effects&#39;;
+import { IAddTodo } from &amp;quot;../actions/add-todo&amp;quot;;
+import { addTodoDone} from &#39;../actions/add-todo-done&#39;;
+import { ActionType } from &amp;quot;../enums/action-types&amp;quot;;
+
+const randomPictureUrl = &#39;https://picsum.photos/25/20/?random&#39;;
+let nextNumber = 0;
+
+function* addTodoAsync(action: IAddTodo): IterableIterator&amp;lt;any&amp;gt; {
+  const { url } = yield call(fetch, randomPictureUrl);
+  yield put(addTodoDone(nextNumber++, action.title, url));
+}
+
+export function* watchAddTodoSaga() {
+  yield takeEvery(
+    ActionType.AddTodo as any,
+    addTodoAsync as any
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, what we’re doing here is that we’re instructing our generator function (saga) to take every action of the type AddTodo and pass it to the function addTodoAsync. This function in turn calls the picsum service and gets a random image of which we store the url in the todo item.&lt;/p&gt;
+
+&lt;p&gt;We’ll then assign an ID for the todo item from the nextNumber variable and then finally increment it so that we’re prepared for the next action. We also need to modify our reducer so that it only adds todos on actions with the action type AddTodoDone:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;export enum ActionType {
+  AddTodo = &#39;ADD_TODO&#39;,
+  AddTodoDone = &#39;ADD_TODO_DONE&#39;,
+  ToggleTodo = &#39;TOGGLE_TODO&#39;,
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { ActionType } from &amp;quot;../enums/action-types&amp;quot;;
+
+export const addTodoDone = (id: number, title: string, imageUrl: string): IAddTodoDone =&amp;gt; ({
+  id,
+  imageUrl,
+  title,
+  type: ActionType.AddTodoDone
+});
+
+export interface IAddTodoDone {
+  id: number,
+  imageUrl: string,
+  title: string,
+  type: ActionType,
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;export interface ITodo {
+  id: number;
+  title: string;
+  done: boolean;
+  imageUrl?: string;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import { ActionType } from &amp;quot;../enums/action-types&amp;quot;;
+import { ITodo } from &amp;quot;../models/todo&amp;quot;;
+
+const addTodo = (state: any, action: any) =&amp;gt; [
+  ...state,
+  {
+    done: false,
+    id: action.id,
+    imageUrl: action.imageUrl,
+    title: action.title,
+  }
+];
+
+const toggleTodo = (state: any, action: any): any =&amp;gt; [
+  ...state.map((todo: ITodo) =&amp;gt;
+      todo.id === action.id ? { ...todo, done: !todo.done } : todo
+  )];
+
+export const todoReducer = (state: any = [], action: any) =&amp;gt; {
+  switch (action.type) {
+    case ActionType.AddTodoDone:
+      return addTodo(state, action);
+    case ActionType.ToggleTodo:
+      return toggleTodo(state, action);
+    default:
+      return state;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…and wire up our app to use the redux saga middleware.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import * as React from &#39;react&#39;;
+import &#39;./App.css&#39;;
+
+import { Provider } from &#39;react-redux&#39;;
+import { applyMiddleware, createStore } from &#39;redux&#39;;
+import createSagaMiddleware from &#39;redux-saga&#39;
+
+import { TodoAdder } from &#39;./components/todo-adder&#39;;
+import { TodoList } from &#39;./components/todo-list&#39;;
+import { todoReducer } from &#39;./reducers/todos&#39;;
+import { watchAddTodoSaga } from &#39;./sagas/add-todo-saga&#39;;
+
+const middleware = createSagaMiddleware()
+const rootStore = createStore(
+  todoReducer,
+  applyMiddleware(middleware));
+
+middleware.run(watchAddTodoSaga);
+
+class App extends React.Component {
+  public render() {
+    return (
+      &amp;lt;Provider store={rootStore}&amp;gt;
+        &amp;lt;div className=&amp;quot;App&amp;quot;&amp;gt;
+          &amp;lt;TodoList /&amp;gt;
+          &amp;lt;TodoAdder /&amp;gt;
+        &amp;lt;/div&amp;gt;
+      &amp;lt;/Provider&amp;gt;
+    );
+  }
+}
+
+export default App;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As a last step, modify the renderTodo function of the todo-list-component to show the images as well:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;private renderTodo = (todo: ITodo) =&amp;gt; (
+    &amp;lt;li
+      key={todo.id}
+      style={{ display: &#39;flex&#39;, textAlign: &#39;left&#39;, ...(todo.done ? styles.todoDone : null) }}
+      onClick={this.props.onTodoClick.bind(this, todo.id)}
+    &amp;gt;
+      &amp;lt;div style={styles.todoImage}&amp;gt;
+        &amp;lt;img src={todo.imageUrl} style={styles.image} /&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div style={styles.todoTitle}&amp;gt;
+        &amp;lt;span&amp;gt;
+          {todo.title}
+        &amp;lt;/span&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/li&amp;gt;
+  );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;stop-demo-time&#34;&gt;Stop — Demo time!&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt=&#34;saga demo&#34; src=&#34;https://cdn-images-1.medium.com/max/2000/1*aO9WI6yW1bSuqJDdyBQ6yg.gif&#34; style=&#34;margin: auto&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There it is! Our finished demo, using both redux and sagas! The demo source code is &lt;a href=&#34;https://github.com/simskij/medium-react-redux-saga-demo&#34;&gt;available in its entirety on GitHub&lt;/a&gt;. It goes without saying that this is not production grade code and that we’ve simplified things &lt;strong&gt;a lot&lt;/strong&gt; by skipping error handling, loading indicators etc. but I hope that it at least got you curious about further experimentation.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +496,70 @@ $ npm install -g create-react-app  Then create a react app with the typescript t
 
 &lt;blockquote&gt;
 &lt;p&gt;Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+&lt;/blockquote&gt;
+
+&lt;p&gt;As stated, Redux is a state container for web applications. It provides a simple interface for dispatching actions to reducers (we’ll get there in a bit) which leads to transitions between states that other components (or Sagas) may react to. The most obvious use case for Redux is to use it together with a frontend framework like React or Angular, which both already have established and mature packages for easy integration.&lt;/p&gt;
+
+&lt;p&gt;With that said however, Redux should be considered an architectural pattern rather than a product/library. See &lt;a href=&#34;https://github.com/GuillaumeSalles/redux.NET&#34;&gt;Redux.NET&lt;/a&gt;, &lt;a href=&#34;https://github.com/luisvinicius167/godux&#34;&gt;godux&lt;/a&gt; and &lt;a href=&#34;https://github.com/usrlocalben/pydux&#34;&gt;pydux&lt;/a&gt; for implementations in other languages than javascript.&lt;/p&gt;
+
+&lt;h2 id=&#34;parts&#34;&gt;Parts&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at an illustration. Your immediate reaction might very well be “well, this does not look that complicated”. Fact of the matter is that it really isn’t. The hardesting about Redux, by far, is getting started.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Redux flow illustrated&#34; src=&#34;https://simme.dev/images/redux-flow.png&#34; style=&#34;margin: auto&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;store&#34;&gt;Store&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;store&lt;/strong&gt; is really not that different from the local state we already store in some way in each component or component controller (depending on the framework used). It’s a centralized, preferably immutable, object graph that represents the application.&lt;/p&gt;
+
+&lt;h3 id=&#34;component&#34;&gt;Component&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;components&lt;/strong&gt; in turn react to the state described by the store. This might take the form of views being rendered, items being visualized in a list, call for actions being available and so forth.&lt;/p&gt;
+
+&lt;p&gt;Interactions with these components may in turn dispatch actions back to the “dispatcher” which, in contrast to flux, is something we won’t have to think about as it is provided by the library itself.&lt;/p&gt;
+
+&lt;h3 id=&#34;action&#34;&gt;Action&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;action&lt;/strong&gt; will then flow through the &lt;strong&gt;reducers&lt;/strong&gt; that, according to their filter criterias, may create a new state that replaces the one currently stored. Effort should be put into making sure that &lt;strong&gt;reducers never have any side effects&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;so-to-provide-a-tl-dr&#34;&gt;So, to provide a TL;DR:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The store contains an object graph representing the current application state.&lt;/li&gt;
+&lt;li&gt;The components react to the state and provide opportunities to interact that may spawn actions.&lt;/li&gt;
+&lt;li&gt;Actions are passed on to the reducers, which will create a new state to replace the previous&lt;/li&gt;
+&lt;li&gt;Repeat&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;what-are-sagas&#34;&gt;What are Sagas?&lt;/h2&gt;
+
+&lt;p&gt;With that out of the way, let’s make an attempt on understanding the concept of sagas as well.&lt;/p&gt;
+
+&lt;p&gt;A saga consists of one or more generator functions that react to certain actions and as a result performs asynchronous work or produces side effects. I like to think of them as background workers available to offload asynchronous work that traditionally would have been performed by each controller and/or service.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Redux flow illustrated&#34; src=&#34;https://simme.dev/images/redux-saga-flow.png&#34; style=&#34;margin: auto&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;generator-functions&#34;&gt;Generator functions&lt;/h3&gt;
+
+&lt;p&gt;Generators (or generator functions) differ from functions in the sense that they dont necessarily run until completion. Instead one may, as many times as needed, pause execution allowing other code to run.&lt;/p&gt;
+
+&lt;p&gt;One thing to note is that a generator that has been paused wont be able to resume execution without being instructed to do so. So how do we go about managing this pause and resume behavior of generator functions?&lt;/p&gt;
+
+&lt;h3 id=&#34;the-yield-keyword&#34;&gt;The yield keyword&lt;/h3&gt;
+
+&lt;p&gt;Yield was introduced with ES6 (2015) and may be thought of as the equivalent of return for generator functions.&lt;/p&gt;
+
+&lt;p&gt;It pauses the execution of the current generator function and returns a IteratorResult object with the two properties value — which contains the yield return — and done which is a boolean value indicating whether the end of the generator function has been reached or not. The generator will then remain paused until its next() function is called, on which it will continue to execute after the previous yield.&lt;/p&gt;
+
+&lt;p&gt;For more on generator functions, give &lt;a href=&#34;undefined&#34;&gt;Dace&lt;/a&gt; a visit and read his &lt;a href=&#34;https://medium.com/@hidace/javascript-es6-generators-part-i-understanding-generators-93dea22bf1b&#34;&gt;excellent write-up&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There’s of course a lot more to talk about regarding redux, sagas and generator functions. However, I hope you’ll find this brief introduction helpful in grasping the core concepts.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&#34;https://simme.dev/posts/redux-and-sagas-2&#34;&gt;&lt;strong&gt;part two&lt;/strong&gt;&lt;/a&gt;, we’ll continue to explore redux and sagas by putting it to practice in a typescript react app.&lt;/p&gt;</description>
     </item>
     
   </channel>

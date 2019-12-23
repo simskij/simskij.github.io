@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>devops on Simon Aronsson</title>
@@ -6,10 +5,66 @@
     <description>Recent content in devops on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Dec 2019 21:57:01 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 04:55:56 +0100</lastBuildDate>
     
-	<atom:link href="https://simme.dev/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://simme.dev/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Practical Devops #2: On Shaming and Blaming</title>
+      <link>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</link>
+      <pubDate>Sun, 22 Dec 2019 04:55:56 +0100</pubDate>
+      
+      <guid>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/practical-devops-2-cover.jpeg&#34; alt=&#34;people taking notes&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;finding-the-root-cause&#34;&gt;Finding the root cause&lt;/h1&gt;
+
+&lt;p&gt;As I often state when I do talks or courses on the topic of DevOps, I&amp;rsquo;m a firm believer that DevOps has very little to do with technology, and a whole lot to do with culture.&lt;/p&gt;
+
+&lt;p&gt;We, as developers, are often very good at performing root cause analysis and present a conclusion whenever things go south. Usually, we&amp;rsquo;re also as good at pinning that mistake onto someone, whether it&amp;rsquo;s a colleague or ourselves.&lt;/p&gt;
+
+&lt;p&gt;I get it, we&amp;rsquo;re analytically inclined and wont rest until we&amp;rsquo;ve found the root cause. This in itself is something positive that we should keep on doing. However, when even our tools use terms as blame (git blame anyone), it&amp;rsquo;s clear that we might need to change how we do this.&lt;/p&gt;
+
+&lt;p&gt;Throughout the years, I&amp;rsquo;ve been in many organisations where, when someone detected an outage or bug in our production systems, everyone got real busy trying to find out who was &amp;ldquo;responsible&amp;rdquo; or &amp;ldquo;caused&amp;rdquo; it. This is a super-effective way to make sure that there is:&lt;/p&gt;
+
+&lt;h1 id=&#34;fear-of-punishment&#34;&gt;Fear of punishment&lt;/h1&gt;
+
+&lt;p&gt;If every failure is met with punishment, whether it&amp;rsquo;s intended or not, the organisation will quickly become less prone to take risks or experiment. This stands in direct contradiction to the DevOps goal of promoting experimentation and collaboration.&lt;/p&gt;
+
+&lt;p&gt;No one wants to be called out as a failure. If the possible outcomes of trying something new ranges between silence or blame, why would anyone ever try to do something differently?&lt;/p&gt;
+
+&lt;h1 id=&#34;missed-learning-opportunities&#34;&gt;Missed learning opportunities&lt;/h1&gt;
+
+&lt;p&gt;Picture yourself learning something new. Maybe a new language, or an instrument. Every time you make a mistake, your friends or partner would call that out and tell you how your mistake ruined the whole song.&lt;/p&gt;
+
+&lt;p&gt;Even if they followed that up by giving constructive, actionable feedback on how you could improve. Would you be inclined to listen and learn from it? I know I wouldn&amp;rsquo;t. Likely, I&amp;rsquo;d even stop trying altogether if it happened frequently.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;so-what-should-we-do&#34;&gt;So what should we do?&lt;/h1&gt;
+
+&lt;p&gt;A former colleague of mine had such an excellent saying on blame and shame:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Focus on making it easier to do things the right way, not harder to do it the wrong way.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;blameless-post-mortems&#34;&gt;Blameless post-mortems&lt;/h2&gt;
+
+&lt;p&gt;Make sure you take every chance you get to inspect the outcome and make sure to understand &lt;em&gt;why&lt;/em&gt; it happened and how to improve, not &lt;em&gt;who&lt;/em&gt; did it and how to punish them.&lt;/p&gt;
+
+&lt;h2 id=&#34;practice-acceptance&#34;&gt;Practice acceptance&lt;/h2&gt;
+
+&lt;p&gt;Things go south and mistakes happen. Until we learn to accept this fact, the expectations we have of ourselves and others won&amp;rsquo;t be reasonable and will only lead to unnecessary stress and disappointment.&lt;/p&gt;
+
+&lt;h2 id=&#34;encourage-change&#34;&gt;Encourage change&lt;/h2&gt;
+
+&lt;p&gt;Someone, unfortunately I don&amp;rsquo;t really remember who, told me that they&amp;rsquo;ve actually renamed git blame to git praise, as in &lt;code&gt;finding out who to praise for having the courage to change something&lt;/code&gt;. While it might not be feasible to replace the word in your tools, the sentiment is great.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Practical Devops #1: The Big Sell</title>
@@ -17,8 +72,36 @@
       <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
       
       <guid>https://simme.dev/posts/practical-devops-the-big-sell/</guid>
-      <description>As those who know me or have seen me speak at a conference know, I&amp;rsquo;m a big fan of DevOps practices. I&amp;rsquo;m also a big fan of automation. After spending a couple of years digging into the topic, practicing it and talking about it with people from all around the world, I thought I&amp;rsquo;d share some of my own thoughts and experiences on the topic.
-The big sell If you&amp;rsquo;re at a shop that&amp;rsquo;s been around for a while, have successful software in production and by every meaningful measure is doing great, then you&amp;rsquo;ll probably have quite a hard time convincing anyone of the need to pivot towards DevOps practices.</description>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/practical-devops-1-cover.jpeg&#34; alt=&#34;team collaborating&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As those who know me or have seen me speak at a conference know, I&amp;rsquo;m a big fan of DevOps practices. I&amp;rsquo;m also a big fan of automation. After spending a couple of years digging into the topic, practicing it and talking about it with people from all around the world, I thought I&amp;rsquo;d share some of my own thoughts and experiences on the topic.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-big-sell&#34;&gt;The big sell&lt;/h1&gt;
+
+&lt;p&gt;If you&amp;rsquo;re at a shop that&amp;rsquo;s been around for a while, have successful software in production and by every meaningful measure is doing great, then you&amp;rsquo;ll probably have quite a hard time convincing anyone of the need to pivot towards DevOps practices.&lt;/p&gt;
+
+&lt;p&gt;That, however, does not mean that you should stop or that your workplace has nothing to win from embracing DevOps practices. It just means that you&amp;rsquo;ll have to take another approach than the blank-sheet-of-paper-startup-unicorns you read about on the internet.&lt;/p&gt;
+
+&lt;p&gt;You don&amp;rsquo;t have to make a big sell and convince everyone of the benefits of a DevOps approach. In fact; You shouldn&amp;rsquo;t. You will thank yourself later for not trying. Start small, in your own team.&lt;/p&gt;
+
+&lt;p&gt;Choose a couple of practices you think would bring value to your team, experiment and evaluate whether they had the impact you where looking for.&lt;/p&gt;
+
+&lt;p&gt;Sooner or later, word will get around about how your team is improving, and with that; other parts of the organization will want to know how you did it.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion:&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Start simple, start small.&lt;/li&gt;
+&lt;li&gt;DevOps takes time.&lt;/li&gt;
+&lt;li&gt;Short-term improvements, while being great morale boosters, should be considered inferior to your long-term goals.&lt;/li&gt;
+&lt;li&gt;Prioritize your experiments by their potential velocity increase.&lt;/li&gt;
+&lt;li&gt;Define measurable goals before starting your experiment.&lt;/li&gt;
+&lt;li&gt;Evaluate and keep doing what works. Stop doing, or change, what does not.&lt;/li&gt;
+&lt;li&gt;Stay humble.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -27,8 +110,60 @@ The big sell If you&amp;rsquo;re at a shop that&amp;rsquo;s been around for a wh
       <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
       
       <guid>https://simme.dev/posts/as-the-sprints-stop-2/</guid>
-      <description>It’s that time a year again. The time when all the nerds, myself included, get forced out of the office for some well-deserved RNR — just like when we were kids and our parents told us we had to go outside and play to “catch some fresh air”.
-Jokes aside, I really love my summer vacay. It gives me plenty of time to travel, read books and reflect on the past year.</description>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-2-cover.jpeg&#34; alt=&#34;relaxing on a bridge&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s &lt;strong&gt;that&lt;/strong&gt; time a year again. The time when all the nerds, myself included, get forced out of the office for some well-deserved RNR — just like when we were kids and our parents told us we had to go outside and play to “catch some fresh air”.&lt;/p&gt;
+
+&lt;p&gt;Jokes aside, I really love my summer vacay. It gives me plenty of time to travel, read books and reflect on the past year. Last year it eventually led up to me quitting my previous job to start my own independent consultancy. So far, I’ve yet to regret it even the tiniest bit. It’s been a wonderful mess of new acquaintances, cool events like &lt;a href=&#34;https://www.githubsatellite.com/&#34;&gt;Github Satellite&lt;/a&gt;, new open source engagement like &lt;a href=&#34;https://github.com/containrrr/watchtower&#34;&gt;watchtower&lt;/a&gt; and speaking engagements.&lt;/p&gt;
+
+&lt;p&gt;I’d love to hear what you’ve been up to this past year as well as any literature you think should’ve been included in the list. Feel free to hit me up either below in the comments or on &lt;a href=&#34;https://www.twitter.com/0x12b&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And now, on to the books:&lt;/p&gt;
+
+&lt;h1 id=&#34;the-devops-handbook&#34;&gt;The DevOps Handbook&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-2-sunrise.jpeg&#34; alt=&#34;A group of people standing in the sunrise&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Last year, one of my tips were &lt;a href=&#34;https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262509&#34;&gt;The Phoenix Project&lt;/a&gt;. A novel about Bill, an IT manager at the fictional company Parts Unlimited. Getting tasked with turning around the company’s most important (and failing) project, Bill starts to realise that IT work has a lot in common with manufacturing. Techniques common in lean and the Toyota Production System seem to have similar effects in IT as well.&lt;/p&gt;
+
+&lt;p&gt;The Phoenix Project is a business novel and, as such, does not go into detail on why’s and the how’s. The DevOps Handbook on the other hand is a manual with the sole purpose of teaching you how to implement DevOps in your organisation and why that would be beneficial for you as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002&#34;&gt;Purchase on Amazon.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;ghost-in-the-wires&#34;&gt;Ghost in the Wires&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-2-wires.jpeg&#34; alt=&#34;Telephone wires&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ghost in the wires tells the story of Kevin Mitnick, at one point one of the most wanted hackers in the world. This book is a great trip down memory lane to a time where hacking were mainly about the challenge and not about the financial incentive. Albeit being non-fiction, it’s really as intense and full of suspense as any fictional crime or thriller I’ve come across.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Ghost-Wires-Adventures-Worlds-Wanted/dp/0316037729&#34;&gt;Purchase on Amazon.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;rolling-rocks-downhill&#34;&gt;Rolling rocks downhill&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-2-downhill.jpeg&#34; alt=&#34;People running downhill&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Rolling rocks downhill is to software development what the phoenix project is to IT operations.&lt;/p&gt;
+
+&lt;p&gt;Many, I even dare to say most, software development teams today struggle to meet budget, deadlines and requirements. Everyone who’s ever worked in a software development project remembers, and dreads, the crunch time needed as the project nears its deadline.&lt;/p&gt;
+
+&lt;p&gt;Rolling rocks downhill tries to teach another way. Crunch time could very well be something of the past using agile methodology and Goldratt’s theory of constraints.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Rolling-Rocks-Downhill-Business-mentions-ebook/dp/B00PJ8HBW8&#34;&gt;Purchase on Amazon.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-goal&#34;&gt;The Goal&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-2-warehouse.jpeg&#34; alt=&#34;Warehouse&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The predecessor of both The Phoenix Project and Rolling rocks downhill and, to my knowledge, the first business novel gaining wide popularity.&lt;/p&gt;
+
+&lt;p&gt;Being almost 40 years old by now, it still manages to stay relevant. The world has changed a lot during that time. For example; manufacturing plants are not that common in the west anymore, and most successful plants already seem to be practicing lean manufacturing.&lt;/p&gt;
+
+&lt;p&gt;With that said however, reading this book feels like reading the source to a lot of knowledge, methodology and techniques that still remain as relevant as ever.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951&#34;&gt;Purchase on Amazon.com&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -40,7 +175,69 @@ Jokes aside, I really love my summer vacay. It gives me plenty of time to travel
       <description>&lt;p&gt;I confess, besides being a comic buff I’m also an avid reader of business and tech literature. Usually, my summer routine consists of piling up on books, novels and comics that I never get around reading during the more hectic part of the year.&lt;/p&gt;
 
 &lt;p&gt;I strongly believe that this habit is a huge factor to why I steadily feel like I keep growing as a professional, leader and knowledge worker while avoiding the feeling of plateauing.
-With that said, here are four books that I strongly suggest you to read this summer.&lt;/p&gt;</description>
+With that said, here are four books that I strongly suggest you to read this summer.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-culture-code-the-secrets-of-highly-succesful-groups-2018&#34;&gt;The Culture Code: The secrets of highly succesful groups (2018)&lt;/h3&gt;
+
+&lt;p&gt;by Daniel Coyle&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-team.jpeg&#34; alt=&#34;Team&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Do I belong here?&lt;br/&gt;
+Do we have a future together?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What is it that makes a group successful? In this book the writer explores qualities besides skill or intelligence that have proven to be key in building lasting, strong and successful teams and organizations.&lt;/p&gt;
+
+&lt;p&gt;This book is a great read both from a business and a behavioral psychology perspective. The examples are many and varied and range from kindergartners to highly successful, widely known, organizations and teams.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://amzn.to/2LJ5zzW&#34;&gt;Purchase on Amazon&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-phoenix-project-a-novel-about-it-devops-and-helping-your-business-win-2013&#34;&gt;The Phoenix Project: A Novel about IT, DevOps and helping your business win (2013)&lt;/h3&gt;
+
+&lt;p&gt;by Gene Kim et al.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-conference.jpeg&#34; alt=&#34;board room&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This book is, as the title implies, a fictional novel. We follow Bill, the director of midrange operations, as he — after some extensive persuasion from the company CEO — takes on the role of VP of IT Operations.&lt;/p&gt;
+
+&lt;p&gt;The company, Parts Unlimited, is just closing in on a deadline for the greatly anticipated high-risk project: Project Phoenix. In a hectic, dysfunctional and silo-based environment, Bill and his colleagues on the IT department becomes responsible for making sure the launch becomes the much needed success the company needs.&lt;/p&gt;
+
+&lt;p&gt;By following Bills journey we get introduced to a lot of common organizational problems, the reasoning behind the decisions that led up to them and suggestions on how to go about solving them.&lt;/p&gt;
+
+&lt;p&gt;The Phoenix Project is a great description of why &lt;strong&gt;DevOps isn’t a technology problem&lt;/strong&gt; and why it’s crucial to a company’s success.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://amzn.to/2xzJfFM&#34;&gt;Purchase on Amazon&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;orbiting-the-giant-hairball-a-corporate-fools-guide-to-surviving-with-grace-1998&#34;&gt;Orbiting the giant hairball: A corporate fools guide to surviving with grace (1998)&lt;/h3&gt;
+
+&lt;p&gt;by Gordon MacKenzie&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-energy.jpeg&#34; alt=&#34;Going crazy&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gordon MacKenzie, for those of you who dont know, is a water colorist who has a long history working for Hallmark Cards.&lt;/p&gt;
+
+&lt;p&gt;One morning, ten years ago, when I was feeling particularly tired of the bureaucratic nature of the large organization I worked for back then, my dear friend Anders Jangbrand left this book on my desk and told me to read it.&lt;/p&gt;
+
+&lt;p&gt;Since then it’s been one of my favorite books that I still re-read from time to time just to remind myself that it’s possible to find a balance between playing by the rules of a large corporation, maintaining creative freedom and fighting harmful corporate culture and normalcy.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262592&#34;&gt;Purchase on Amazon&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;clean-code-2008&#34;&gt;Clean Code (2008)&lt;/h3&gt;
+
+&lt;p&gt;by Robert C Martin&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/as-the-sprints-stop-code.jpeg&#34; alt=&#34;laptop with code&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It amazes me that so many programmers that I come across have yet to read this book. If I were to recommend one single book that every programmer should read, it would probably be this one. While being a shorter read than both The pragmatic programmer (1999) and Code complete (2004) — which both are great books (You should read them too!) — Robert still manages to go through most key concepts presented in these books as well.&lt;/p&gt;
+
+&lt;p&gt;While not being a book centered regarding a specific programming language or solution, it’s a great read for both junior and senior developers.&lt;/p&gt;
+
+&lt;p&gt;In the book Martin goes through what, in his mind, makes up readable, maintainable and testable code. It’s a great mixture of well grounded argumentation for why his proposed style, in most cases, would be preferable and practical refactoring examples on how to get rid of code smell.
+Key concepts like keeping function and class sizes down, function arguments to a minimum and making sure the code is refactored to read like a novel really resonates with me.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/gp/product/0132350882/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=0132350882&amp;amp;linkCode=as2&amp;amp;tag=0x12b-20&amp;amp;linkId=7355020085e125e88dd6c44a84a6cd62&#34;&gt;Purchase on Amazon&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

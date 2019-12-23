@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>react on Simon Aronsson</title>
@@ -8,7 +7,7 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Jun 2018 05:15:20 +0100</lastBuildDate>
     
-	<atom:link href="https://simme.dev/tags/react/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://simme.dev/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -25,7 +24,70 @@
 
 &lt;blockquote&gt;
 &lt;p&gt;Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+&lt;/blockquote&gt;
+
+&lt;p&gt;As stated, Redux is a state container for web applications. It provides a simple interface for dispatching actions to reducers (we’ll get there in a bit) which leads to transitions between states that other components (or Sagas) may react to. The most obvious use case for Redux is to use it together with a frontend framework like React or Angular, which both already have established and mature packages for easy integration.&lt;/p&gt;
+
+&lt;p&gt;With that said however, Redux should be considered an architectural pattern rather than a product/library. See &lt;a href=&#34;https://github.com/GuillaumeSalles/redux.NET&#34;&gt;Redux.NET&lt;/a&gt;, &lt;a href=&#34;https://github.com/luisvinicius167/godux&#34;&gt;godux&lt;/a&gt; and &lt;a href=&#34;https://github.com/usrlocalben/pydux&#34;&gt;pydux&lt;/a&gt; for implementations in other languages than javascript.&lt;/p&gt;
+
+&lt;h2 id=&#34;parts&#34;&gt;Parts&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at an illustration. Your immediate reaction might very well be “well, this does not look that complicated”. Fact of the matter is that it really isn’t. The hardesting about Redux, by far, is getting started.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Redux flow illustrated&#34; src=&#34;https://simme.dev/images/redux-flow.png&#34; style=&#34;margin: auto&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;store&#34;&gt;Store&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;store&lt;/strong&gt; is really not that different from the local state we already store in some way in each component or component controller (depending on the framework used). It’s a centralized, preferably immutable, object graph that represents the application.&lt;/p&gt;
+
+&lt;h3 id=&#34;component&#34;&gt;Component&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;components&lt;/strong&gt; in turn react to the state described by the store. This might take the form of views being rendered, items being visualized in a list, call for actions being available and so forth.&lt;/p&gt;
+
+&lt;p&gt;Interactions with these components may in turn dispatch actions back to the “dispatcher” which, in contrast to flux, is something we won’t have to think about as it is provided by the library itself.&lt;/p&gt;
+
+&lt;h3 id=&#34;action&#34;&gt;Action&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;action&lt;/strong&gt; will then flow through the &lt;strong&gt;reducers&lt;/strong&gt; that, according to their filter criterias, may create a new state that replaces the one currently stored. Effort should be put into making sure that &lt;strong&gt;reducers never have any side effects&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;so-to-provide-a-tl-dr&#34;&gt;So, to provide a TL;DR:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The store contains an object graph representing the current application state.&lt;/li&gt;
+&lt;li&gt;The components react to the state and provide opportunities to interact that may spawn actions.&lt;/li&gt;
+&lt;li&gt;Actions are passed on to the reducers, which will create a new state to replace the previous&lt;/li&gt;
+&lt;li&gt;Repeat&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;what-are-sagas&#34;&gt;What are Sagas?&lt;/h2&gt;
+
+&lt;p&gt;With that out of the way, let’s make an attempt on understanding the concept of sagas as well.&lt;/p&gt;
+
+&lt;p&gt;A saga consists of one or more generator functions that react to certain actions and as a result performs asynchronous work or produces side effects. I like to think of them as background workers available to offload asynchronous work that traditionally would have been performed by each controller and/or service.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Redux flow illustrated&#34; src=&#34;https://simme.dev/images/redux-saga-flow.png&#34; style=&#34;margin: auto&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;generator-functions&#34;&gt;Generator functions&lt;/h3&gt;
+
+&lt;p&gt;Generators (or generator functions) differ from functions in the sense that they dont necessarily run until completion. Instead one may, as many times as needed, pause execution allowing other code to run.&lt;/p&gt;
+
+&lt;p&gt;One thing to note is that a generator that has been paused wont be able to resume execution without being instructed to do so. So how do we go about managing this pause and resume behavior of generator functions?&lt;/p&gt;
+
+&lt;h3 id=&#34;the-yield-keyword&#34;&gt;The yield keyword&lt;/h3&gt;
+
+&lt;p&gt;Yield was introduced with ES6 (2015) and may be thought of as the equivalent of return for generator functions.&lt;/p&gt;
+
+&lt;p&gt;It pauses the execution of the current generator function and returns a IteratorResult object with the two properties value — which contains the yield return — and done which is a boolean value indicating whether the end of the generator function has been reached or not. The generator will then remain paused until its next() function is called, on which it will continue to execute after the previous yield.&lt;/p&gt;
+
+&lt;p&gt;For more on generator functions, give &lt;a href=&#34;undefined&#34;&gt;Dace&lt;/a&gt; a visit and read his &lt;a href=&#34;https://medium.com/@hidace/javascript-es6-generators-part-i-understanding-generators-93dea22bf1b&#34;&gt;excellent write-up&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There’s of course a lot more to talk about regarding redux, sagas and generator functions. However, I hope you’ll find this brief introduction helpful in grasping the core concepts.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&#34;https://simme.dev/posts/redux-and-sagas-2&#34;&gt;&lt;strong&gt;part two&lt;/strong&gt;&lt;/a&gt;, we’ll continue to explore redux and sagas by putting it to practice in a typescript react app.&lt;/p&gt;</description>
     </item>
     
   </channel>

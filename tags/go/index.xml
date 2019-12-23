@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>go on Simon Aronsson</title>
@@ -8,7 +7,7 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Dec 2019 21:54:26 +0100</lastBuildDate>
     
-	<atom:link href="https://simme.dev/tags/go/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://simme.dev/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,8 +16,101 @@
       <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
       
       <guid>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</guid>
-      <description>Test automation Test automation is the practice of taking tests that traditionally have been executed manually and instead implement them programmatically. By making your tests part of the code you also allow yourself to run the tests continuously every time you make a change in the code while adding little to no additional cost.
-A high amount of relevant, high-quality and automated tests is one of the most important factors in maintaining high software quality while keeping the cost of change as low as possible.</description>
+      <description>
+
+&lt;h3 id=&#34;test-automation&#34;&gt;Test automation&lt;/h3&gt;
+
+&lt;p&gt;Test automation is the practice of taking tests that traditionally have been executed manually and instead implement them programmatically. By making your tests part of the code you also allow yourself to run the tests continuously every time you make a change in the code while adding little to no additional cost.&lt;/p&gt;
+
+&lt;p&gt;A high amount of relevant, high-quality and automated tests is one of the most important factors in maintaining high software quality while keeping the cost of change as low as possible.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;
+
+&lt;p&gt;A common problem while practicing test-driven development, or writing unit tests at all for that matter, is that the tests tend to be very centered around the technical implementation.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func TestApprovePurchaseOrder_ShouldCallTheApprovalService(t *t.Testing)
+{
+  service := &amp;amp;MockApprovalService{}
+  order := &amp;amp;PurchaseOrder{
+    ApprovalService: service,
+    // ...
+  }
+  order.Approve()
+  Expect(service.HasBeenCalled).To(Equal(true))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;While ensuring that the code does what we expect it to, this approach has a couple of downsides.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;For someone not fluent in reading code, it might be hard to tell what this test helps ensure.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If someone were to refactor, or change, the code under test; they would be likely to have to spend time rewriting the test - even though the business behavior might not even have changed.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;describing-tests-through-behavior&#34;&gt;Describing tests through behavior&lt;/h4&gt;
+
+&lt;p&gt;This is where using ginkgo and practicing behavior-driven testing really makes a difference. Consider the following test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;the function for approving a purchase order
+should call the approval service
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now let’s rewrite it into a BDD-style test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;given a purchase order
+ when it&#39;s pending approval
+  and we approve it
+ then it should become approved once 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;At least to me, this test title is a lot clearer. Bu using this format, a product stakeholder, even with no coding experience what so ever, will be able to understand what this test case proves and under what circumstances.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s go through each of the building blocks that make up this test description:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Given&lt;/strong&gt;, a certain context or initial condition
+&lt;strong&gt;When&lt;/strong&gt;, a certain state trigger the scenario
+&lt;strong&gt;Then&lt;/strong&gt;, we expect one or more outcome&lt;/p&gt;
+
+&lt;p&gt;This semi-formal form of writing requirements is fairly easy to understand, for developers and business stakeholders alike. By making sure all participants understand what they aim to describe, we have created a behavior specification, or behavior test, that leaves very little room for interpretation.&lt;/p&gt;
+
+&lt;h4 id=&#34;a-possible-solution&#34;&gt;A possible solution&lt;/h4&gt;
+
+&lt;p&gt;Let’s write the whole thing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;  var _ = Describe(&amp;quot;a purchase order&amp;quot;, func() {
+    When(&amp;quot;pending approval&amp;quot;, func() {
+      When(&amp;quot;we approve it&amp;quot;, func() {
+        It(&amp;quot;should become approved once we approve it&amp;quot;, func() {
+          service := &amp;amp;MockApprovalService{}
+          order := &amp;amp;PurchaseOrder{
+            ApprovalService: service,
+            // ...
+          }
+          Expect(order.IsApproved).ToNot(Equal(true))
+          order.Approve()
+          Expect(order.IsApproved).To(Equal(true))
+        })
+      })
+    })
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And that was it! We&amp;rsquo;ve now written our first behavior-driven unit test using ginkgo! 👏🏼&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;so-to-summarize&#34;&gt;So, to summarize:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using &lt;a href=&#34;https://github.com/onsi/ginkgo&#34;&gt;ginkgo&lt;/a&gt;, or &lt;a href=&#34;https://github.com/smartystreets/goconvey/&#34;&gt;goconvey&lt;/a&gt; if you prefer, allows you to easily formulate tests that are decoupled from the actual implementation.&lt;/li&gt;
+&lt;li&gt;Using common written English to describe our tests allows us to generate test reports readable and understandable by anyone on the product team.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks for reading! 🙏🏼&lt;/p&gt;
+</description>
     </item>
     
   </channel>
