@@ -2,6 +2,11 @@
 title: "Practical Devops #2: On Shaming and Blaming"
 date: 2019-12-22T04:55:56+01:00
 draft: false
+tags:
+ - devops
+ - shaming
+ - blaming
+ - agile
 series: "Practical Devops"
 ---
 
