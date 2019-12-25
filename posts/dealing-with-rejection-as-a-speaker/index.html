@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Dealing With Rejection as a Speaker - Simon Aronsson</title>
+    
+    <meta name="description" content="During the last 12 months, I&rsquo;ve been doing a lot of public speaking, both as an instructor and as a conference/meetup speaker. If I count, I end up at:
+ 6 classes 7 conference or meetup talks 1 podcast episode  While being truly grateful for this opportunity, this also means a lot of really hard work and a whole bunch of rejections. Probably about 9 or 10 times the amount of accepts.">
+    <meta name="author" content="">
+    
+    <link href="https://simme.dev/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://simme.dev/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://simme.dev/apple-touch-icon.png">
+    <link rel="icon" href="https://simme.dev/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://simme.dev/index.xml" title="Simon Aronsson">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        <p class="logo"><a href="https://simme.dev/">Simon Aronsson</a></p>
+        
+        
+        <ul class="menu">
+          
+          <li>
+            <a href="/about">about</a>
+          </li>
+          
+          <li>
+            <a href="/videos">videos</a>
+          </li>
+          
+        </ul>
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Dealing With Rejection as a Speaker</h1>
+    <div class="post-meta">
+      
+      December 25, 2019
+      
+    </div>
+    
+  
+    <ul class="post-tags" style="margin-top: 20px">
+      
+      
+      <li><a href="https://simme.dev/tags/techtalks">#techtalks</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/speaking">#speaking</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/conferences">#conferences</a></li>
+      
+    </ul>
+  
+  
+  </header>
+  <div class="post-content">
+
+<p><img src="/images/rejection.jpeg" alt="feeling of rejection" /></p>
+
+<p>During the last 12 months, I&rsquo;ve been doing <strong>a lot</strong> of public speaking, both as an instructor and as a conference/meetup speaker. If I count, I end up at:</p>
+
+<ul>
+<li>6 classes</li>
+<li>7 conference or meetup talks</li>
+<li>1 podcast episode</li>
+</ul>
+
+<p>While being truly grateful for this opportunity, this also means a lot of really hard work and a whole bunch of rejections. Probably about 9 or 10 times the amount of accepts. According to others, the typical acceptance rate might even be as low as 10%. I&rsquo;ve been rejected for more than 20 conferences this year.</p>
+
+<p>This, of course, takes a toll on your feeling of self-worth. As humans, we often tend to focus on these &ldquo;negative&rdquo; experiences over the positive ones.</p>
+
+<p>So, how do we deal with that? Is there any way to make sure that these experiences don&rsquo;t weigh us down to the point of giving up?</p>
+
+<h2 id="your-worth-is-not-defined-in-comparison-to-others">Your worth is not defined in comparison to others</h2>
+
+<p>When applying to conferences, your CFP submission is usually compared to a bunch of other submissions. Sometimes hundreds of them! It&rsquo;s easy to get the feeling that the program committee is comparing <em>you</em> to these other speakers.</p>
+
+<p>That is not the case! A lot of the time, the program committee won&rsquo;t even know who submitted what proposal until the final pick, sometimes not even then.</p>
+
+<h2 id="there-are-always-more-reasons-than-one">There are always more reasons than one</h2>
+
+<p>Sure, your proposal might very well be poorly written or uninteresting. Most of the time, that&rsquo;s likely not the case. Consider aspects like conference focus topics, bad fit, lack of additional speaker slots, overlapping CFP submissions or budget constraints. Those are just as likely reasons as your proposal being bad!</p>
+
+<h2 id="every-rejection-is-a-learning-opportunity">Every rejection is a learning opportunity</h2>
+
+<p>What could we have done differently? Consider following up on the <em>actual</em> speaker lineup and see what you can learn from their titles and abstracts to improve your chances next time.</p>
+
+<h2 id="ask-the-committee-about-constructive-feedback">Ask the committee about constructive feedback</h2>
+
+<p>Depending on what vibe I get from the organizers, I usually email them back and thank them for their response and ask whether they&rsquo;de be willing to give some additional feedback as to why my proposal was rejected and what I could have done differently.</p>
+
+<p>This might not always be feasible depending on the availability of committee spokespersons and whether they&rsquo;ve enough time on their hands to actually formulate some feedback. In case you don&rsquo;t get a reply: remember that most organizers are working pro bono and out of an interest in contributing to their community.</p>
+
+<h2 id="focus-on-your-accomplishments">Focus on your accomplishments</h2>
+
+<p>I write lists. Actually, I even write a lot of them. At least once a year, usually quarterly, I try to sit down and write a list of what I&rsquo;ve accomplished during that year. These lists contain a whole lot of different things, like:</p>
+
+<ul>
+<li>Books I&rsquo;ve read.</li>
+<li>Conferences or meetups I&rsquo;ve attended or spoken at.</li>
+<li>Articles I&rsquo;ve written.</li>
+<li>Contacts I&rsquo;ve established.</li>
+<li>Classes I&rsquo;ve taught and people I&rsquo;ve helped in some way.</li>
+<li>Non-techy accomplishments or decisions I&rsquo;m especially proud of.</li>
+</ul>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<ul>
+<li>You are not defined or valued by the amount of CFP acceptances you receive, nor the rejections.</li>
+<li>See each rejection as a learning opportunity and as such, take some time to reflect over what you could improve next time.</li>
+<li>The program committee did not reject you, only your proposal.</li>
+</ul>
+</div>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://simme.dev/">Simon Aronsson</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://simme.dev/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+

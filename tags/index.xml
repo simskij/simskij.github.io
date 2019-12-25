@@ -5,10 +5,37 @@
     <description>Recent content in Tags on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 04:55:56 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2019 20:43:34 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>conferences</title>
+      <link>https://simme.dev/tags/conferences/</link>
+      <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>speaking</title>
+      <link>https://simme.dev/tags/speaking/</link>
+      <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/speaking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>techtalks</title>
+      <link>https://simme.dev/tags/techtalks/</link>
+      <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/techtalks/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>agile</title>
