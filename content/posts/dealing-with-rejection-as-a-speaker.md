@@ -14,7 +14,7 @@ During the last 12 months, I've been doing **a lot** of public speaking, both as
 
 * 6 classes
 * 7 conference or meetup talks
-* 1 podcast episode
+* 1 podcast episode (in swedish, available [here](https://kodsnack.se/335/))
 
 While being truly grateful for this opportunity, this also means a lot of really hard work and a whole bunch of rejections. Probably about 9 or 10 times the amount of accepts. According to others, the typical acceptance rate might even be as low as 10%. I've been rejected for more than 20 conferences this year.
 
