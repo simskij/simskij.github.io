@@ -4,6 +4,9 @@ title = "Simon Aronsson"
 theme = "paper"
 googleAnalytics = "UA-155244210-1"
 
+[params]
+env = "production"
+
 [menu]
 [[menu.main]]
 identifier = "about"
