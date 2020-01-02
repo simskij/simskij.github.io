@@ -2,13 +2,15 @@ baseURL = "https://simme.dev/"
 languageCode = "en-us"
 title = "Simon Aronsson"
 theme = "paper"
+googleAnalytics = "UA-155244210-1"
 
 [menu]
-    [[menu.main]]
-    identifier = "about"
-    name = "about"
-    url = "/about"
-    [[menu.main]]
-    identifier = "videos"
-    name = "videos"
-    url = "/videos"
+[[menu.main]]
+identifier = "about"
+name = "about"
+url = "/about"
+
+[[menu.main]]
+identifier = "videos"
+name = "videos"
+url = "/videos"

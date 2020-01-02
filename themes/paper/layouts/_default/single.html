@@ -12,7 +12,7 @@
     </div>
     {{ if .Params.tags }}
   
-    <ul class="post-tags" style="margin-top: 20px">
+    <ul class="post-tags" style="margin-top: 0px">
       {{ range .Params.tags }}
       {{ $href := print (absURL "tags/") (urlize .) }}
       <li><a href="{{ $href }}">#{{ . }}</a></li>

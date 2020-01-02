@@ -18,7 +18,7 @@
   class="{{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}first-entry{{ else }}post-entry{{ end }}">
   <header class="entry-header">
     <h2>{{ .Title }}</h2>
-    <ul class="post-tags" style="margin-top: 10px">
+    <ul class="post-tags" style="margin-top: 0px">
       {{ range .Params.tags }}
       {{ $href := print (absURL "tags/") (urlize .) }}
       <li><a href="{{ $href }}">#{{ . }}</a></li>
