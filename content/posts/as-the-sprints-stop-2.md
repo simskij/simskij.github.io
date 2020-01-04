@@ -8,20 +8,15 @@ tags:
     - devops
 ---
 
-
-![relaxing on a bridge](/images/as-the-sprints-stop-2-cover.jpeg)
-
 It’s **that** time a year again. The time when all the nerds, myself included, get forced out of the office for some well-deserved RNR — just like when we were kids and our parents told us we had to go outside and play to “catch some fresh air”.
 
-Jokes aside, I really love my summer vacay. It gives me plenty of time to travel, read books and reflect on the past year. Last year it eventually led up to me quitting my previous job to start my own independent consultancy. So far, I’ve yet to regret it even the tiniest bit. It’s been a wonderful mess of new acquaintances, cool events like [Github Satellite](https://www.githubsatellite.com/), new open source engagement like [watchtower](https://github.com/containrrr/watchtower) and speaking engagements.
+Jokes aside, I really love my summer vacay. It gives me plenty of time to travel, read books and reflect on the past year. Last year it eventually led up to me quitting my previous job to start my own independent consultancy. So far, I’ve yet to regret it even the tiniest bit. It’s been a wonderful mess of new acquaintances, cool events like [Github Satellite](https://www.githubsatellite.com/), new open source engagements like [watchtower](https://github.com/containrrr/watchtower) as well as some public speaking.
 
 I’d love to hear what you’ve been up to this past year as well as any literature you think should’ve been included in the list. Feel free to hit me up either below in the comments or on [twitter](https://www.twitter.com/0x12b).
 
 And now, on to the books:
 
-# The DevOps Handbook
-
-![A group of people standing in the sunrise](/images/as-the-sprints-stop-2-sunrise.jpeg)
+### The DevOps Handbook (2014), by Gene Kim et al.
 
 Last year, one of my tips were [The Phoenix Project](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262509). A novel about Bill, an IT manager at the fictional company Parts Unlimited. Getting tasked with turning around the company’s most important (and failing) project, Bill starts to realise that IT work has a lot in common with manufacturing. Techniques common in lean and the Toyota Production System seem to have similar effects in IT as well.
 
@@ -29,17 +24,13 @@ The Phoenix Project is a business novel and, as such, does not go into detail on
 
 [Purchase on Amazon.com](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002)
 
-# Ghost in the Wires
-
-![Telephone wires](/images/as-the-sprints-stop-2-wires.jpeg)
+### Ghost in the Wires (2012), by Kevin Mitnick
 
 Ghost in the wires tells the story of Kevin Mitnick, at one point one of the most wanted hackers in the world. This book is a great trip down memory lane to a time where hacking were mainly about the challenge and not about the financial incentive. Albeit being non-fiction, it’s really as intense and full of suspense as any fictional crime or thriller I’ve come across.
 
 [Purchase on Amazon.com](https://www.amazon.com/Ghost-Wires-Adventures-Worlds-Wanted/dp/0316037729)
 
-# Rolling rocks downhill
-
-![People running downhill](/images/as-the-sprints-stop-2-downhill.jpeg)
+### Rolling rocks downhill (2014), by Clarke Ching
 
 Rolling rocks downhill is to software development what the phoenix project is to IT operations.
 
@@ -49,9 +40,7 @@ Rolling rocks downhill tries to teach another way. Crunch time could very well b
 
 [Purchase on Amazon.com](https://www.amazon.com/Rolling-Rocks-Downhill-Business-mentions-ebook/dp/B00PJ8HBW8)
 
-# The Goal
-
-![Warehouse](/images/as-the-sprints-stop-2-warehouse.jpeg)
+### The Goal (1984), by Eliyahu M. Goldratt
 
 The predecessor of both The Phoenix Project and Rolling rocks downhill and, to my knowledge, the first business novel gaining wide popularity.
 
