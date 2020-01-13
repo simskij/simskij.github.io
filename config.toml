@@ -14,6 +14,11 @@ name = "about"
 url = "/about"
 
 [[menu.main]]
+identifier = "uses"
+name = "uses"
+url = "/uses"
+
+[[menu.main]]
 identifier = "videos"
 name = "videos"
 url = "/videos"
