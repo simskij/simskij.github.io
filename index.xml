@@ -56,6 +56,91 @@
     </item>
     
     <item>
+      <title>Uses</title>
+      <link>https://simme.dev/uses/</link>
+      <pubDate>Sat, 21 Dec 2019 23:23:38 +0100</pubDate>
+      
+      <guid>https://simme.dev/uses/</guid>
+      <description>
+
+&lt;style&gt;
+    body {
+        font-size: .8em;
+    }
+    .about {
+        max-width: 700px;
+        margin: auto;
+    }
+    .about p {
+        text-align: justify;
+        font-size: 16px;
+    }
+    .about img {
+        width: 200px;
+        margin: auto;
+        border-radius: 4px;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0!important;
+    }
+    ul li {
+        padding: 0;
+        margin: 0; 
+    }
+&lt;/style&gt;
+
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;🖥 &lt;a href=&#34;https://www.amazon.com/LG-34WK95U-W-34-Class-UltraWide/dp/B07FT8ZBMR&#34;&gt;LG 34&amp;rdquo; 34WK95U 21:9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💻 Apple MacBook Pro 15&amp;rdquo; 2019 with 32GB RAM&lt;/li&gt;
+&lt;li&gt;⌨️ Apple Magic Keyboard&lt;/li&gt;
+&lt;li&gt;🖱 Apple Magic TrackPad&lt;/li&gt;
+&lt;li&gt;🖱 &lt;a href=&#34;https://www.amazon.com/Logitech-Spectrum-Professional-Wireless-Ambidextrous/dp/B01CEFEMFW&#34;&gt;Logitech G900 Chaos Spectrum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🎧 Apple AirPods Pro&lt;/li&gt;
+&lt;li&gt;🎧 &lt;a href=&#34;https://www.amazon.com/Bose-QuietComfort-Wireless-Headphones-Cancelling/dp/B0756CYWWD&#34;&gt;Bose QuietComfort 35 II&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📱 Apple iPad Pro 12&amp;rdquo; + Magic Pen&lt;/li&gt;
+&lt;li&gt;📱 Apple iPhone X 64GB&lt;/li&gt;
+&lt;li&gt;📚 &lt;a href=&#34;https://www.amazon.com/Kindle-Paperwhite-Waterproof-Unlimited-auto-renewal/dp/B07PP49ZDW&#34;&gt;Kindle Paperwhite&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;📝 &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📝 &lt;a href=&#34;https://www.jetbrains.com/go/&#34;&gt;JetBrains Goland&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🔍 &lt;a href=&#34;https://git-fork.com/&#34;&gt;Fork&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💌 &lt;a href=&#34;https://gmail.com&#34;&gt;Gmail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📅 &lt;a href=&#34;https://calendar.google.com&#34;&gt;Google Calendar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🗒 &lt;a href=&#34;https://www.notion.so/&#34;&gt;Notion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💬 &lt;a href=&#34;https://getstation.com/&#34;&gt;Station&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💬 &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;#️⃣ &lt;a href=&#34;https://iterm2.com/&#34;&gt;iTerm 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📅 &lt;a href=&#34;https://www.mowglii.com/itsycal/&#34;&gt;Itsycal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐚 &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;OhMyZsh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🔠 &lt;a href=&#34;https://github.com/tonsky/FiraCode&#34;&gt;Fira Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🔑 &lt;a href=&#34;https://1password.com/&#34;&gt;1Password&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐳 &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⏰ &lt;a href=&#34;https://toggl.com/&#34;&gt;Toggl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🍹 &lt;a href=&#34;https://www.macbartender.com/&#34;&gt;Bartender&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📏 &lt;a href=&#34;http://www.irradiatedsoftware.com/sizeup/&#34;&gt;SizeUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🎨 &lt;a href=&#34;https://www.sketch.com/&#34;&gt;Sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🎨 &lt;a href=&#34;https://affinity.serif.com/&#34;&gt;Affinity Designer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📚 &lt;a href=&#34;https://calibre-ebook.com/&#34;&gt;Calibre&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🖥 &lt;a href=&#34;http://easyresapp.com/&#34;&gt;Easyres&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🎦 &lt;a href=&#34;https://gif.ski/&#34;&gt;Gifski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🎦 &lt;a href=&#34;https://getkap.co/&#34;&gt;Kap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🎵 &lt;a href=&#34;https://www.spotify.com&#34;&gt;Spotify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🚀 &lt;a href=&#34;https://matthewpalmer.net/rocket/&#34;&gt;Rocket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🍺 &lt;a href=&#34;https://brew.sh/&#34;&gt;Brew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🤓 &lt;a href=&#34;https://grammarly.com/&#34;&gt;Grammarly&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://simme.dev/videos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
