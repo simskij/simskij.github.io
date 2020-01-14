@@ -2,6 +2,11 @@
 title: "Practical DevOps #3: Shifting Left"
 date: 2020-01-14T23:01:00+01:00
 draft: false
+tags:
+  - devops
+  - agile
+  - testing
+  - cost
 ---
 
 One topic I always keep coming back to when it comes to DevOps is shift-left testing. 
