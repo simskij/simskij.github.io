@@ -22,3 +22,8 @@ url = "/uses"
 identifier = "videos"
 name = "videos"
 url = "/videos"
+
+[[menu.main]]
+identifier = "projects"
+name = "projects"
+url = "/projects"
