@@ -1,0 +1,23 @@
+{{ if .IsNamedParams }}
+
+<div>
+  <h3>
+					{{ .Get "icon" }} {{ .Get "title" }}
+  </h3>
+  
+	<p>
+	  {{.Inner | markdownify }}
+  </p>
+  
+  <a class="github-button"
+		 href="{{ .Get "url" }}" 
+      data-icon="octicon-star" 
+      data-size="large" 
+      data-show-count="true" 
+      aria-label="Star simskij/awesome-software-architecture on GitHub">
+    Star
+  </a>
+</div>
+
+{{ end }}
+
