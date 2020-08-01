@@ -14,6 +14,11 @@ name = "about"
 url = "/about"
 
 [[menu.main]]
+identifier = "speaking"
+name = "speaking"
+url = "/speaking"
+
+[[menu.main]]
 identifier = "uses"
 name = "uses"
 url = "/uses"
