@@ -123,6 +123,416 @@ It is also usable as a standalone CLI tool.
     </item>
     
     <item>
+      <title></title>
+      <link>https://simme.dev/speaking/</link>
+      <pubDate>Sat, 07 Mar 2020 13:14:38 +0100</pubDate>
+      
+      <guid>https://simme.dev/speaking/</guid>
+      <description>
+
+&lt;h2 id=&#34;upcoming&#34;&gt;Upcoming&lt;/h2&gt;
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    12 November 2020
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Ministry of Testing Meetup
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Introduction to Chaos Engineering
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    11 August 2020
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    DataDog Dash
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Effortless load testing with k6 and DataDog
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+&lt;h2 id=&#34;past&#34;&gt;Past&lt;/h2&gt;
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    16 July 2020
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    GDG East Sweden #2
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Setting up a local Kubernetes environment using k3s
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    12 July 2020
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    GoWayFest 4.0
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Expectations of Go 2.0 (panel)
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    18 June 2020
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    GopherCon Europe 2020
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Notifications everywhere with Shoutrrr
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    2 June 2020
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    PerfGuild 2020
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 A code-first approach to performance engineering
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    4 February 2020
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Go and DevOps, a love story
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 GDG East Sweden #1
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    12 December 2019
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Zmarta Meetup
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Agile, DevOps and Beyond - measuring maturity in organizations and teams
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    2 October 2019
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Go Stockholm Meetup
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 DevOps and Go, a love story
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    10 September 2019
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Day of the Programmer
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Everyone is talking about DevOps
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    5 July 2019
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    GoWayFest 3.0
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 DevOps and Go, a love story
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    4 June 2019
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    HiQ Smarter
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Diversity Rocks! - on diversity in tech
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    27 April 2019
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Global Azure Bootcamp 2019
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 DevOps in practice on Azure
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    24 September 2018
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    HiQ Smarter
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Ditching the metal: An introduction to Go on GCP
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    6 September 2018
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Go Stockholm Conference
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Ditching the metal: An introduction to Go on GCP
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    23 April 2018
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    HiQ Code Club
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Going serverless with Azure Functions
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    21 April 2018
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    Global Azure Bootcamp 2018
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Going serverless with Azure Functions
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;div&gt;
+  &lt;div&gt;
+    23 November 2016
+    &lt;br/&gt;
+  &lt;/div&gt;
+  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
+    HiQ Smarter
+  &lt;/h3&gt;
+  &lt;div style=&#34;font-size: 1.2em&#34;&gt;
+					 Building chatbots in C# using Luis.ai and Microsoft BotBuilder
+  &lt;/div&gt;
+	&lt;p&gt;
+	  
+  &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+</description>
+    </item>
+    
+    <item>
       <title>Posts</title>
       <link>https://simme.dev/posts/</link>
       <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
