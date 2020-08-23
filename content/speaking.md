@@ -7,6 +7,10 @@ events:
     event: Ministry of Testing Meetup
     date: 2020-11-12
     location: Cork, Ireland / Online
+  - title: Code-first performance testing
+    event: Passion for Testing
+    date: 2020-10-08
+    location: Göteborg / Online
   - title: Effortless load testing with k6 and DataDog
     event: DataDog Dash
     date: 2020-08-11
