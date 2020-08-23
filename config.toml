@@ -7,6 +7,11 @@ googleAnalytics = "UA-155244210-1"
 [params]
 env = "production"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [menu]
 [[menu.main]]
 identifier = "about"

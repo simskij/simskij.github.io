@@ -1,0 +1,15 @@
+## Upcoming
+
+{{ range .Page.Params.events }}
+  {{ if ge (time .date) now }}
+  {{ partial "talk.html" . }}
+  {{ end }}
+{{ end }}
+
+## Past
+
+{{ range .Page.Params.events }}
+  {{ if lt (time .date) now }}
+  {{ partial "talk.html" . }}
+  {{ end }}
+{{ end }}
