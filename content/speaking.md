@@ -75,7 +75,7 @@ events:
     event: Global Azure Bootcamp 2018
     date: 2018-04-21
     location: Linköping, Sweden
-  - title: Building chatbots in C# using Luis.ai and   MicrosoftBotBuilder
+  - title: Building chatbots in C# using Luis.ai and   Microsoft BotBuilder
     event: HiQ Smarter
     date: 2016-11-23
     location: Linköping, Sweden
