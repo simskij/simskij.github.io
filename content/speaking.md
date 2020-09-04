@@ -4,13 +4,17 @@ draft: false
 type: page
 events:
   - title: Introduction to Chaos Engineering
-    event: Ministry of Testing Meetup
+    event: Ministry of Testing
     date: 2020-11-12
-    location: Cork, Ireland / Online
+    location: Cork
+  - title: Using goja as a scripting layer for go applications
+    event: Golang Live (4 days)
+    location: Moscow
+    date: 2020-10-14
   - title: Code-first performance testing
     event: Passion for Testing
     date: 2020-10-08
-    location: Göteborg / Online
+    location: Göteborg
   - title: Effortless load testing with k6 and DataDog
     event: DataDog Dash
     date: 2020-08-11
@@ -18,15 +22,15 @@ events:
   - title: Setting up a local Kubernetes environment using k3s
     event: GDG East Sweden #2
     date: 2020-07-16
-    location: Online
+    location: Norrköping
   - title: Expectations of Go 2.0 (panel)
     event: GoWayFest 4.0
     date: 2020-07-12
-    location: Online
+    location: Minsk
   - title: Notifications everywhere with Shoutrrr
     event: GopherCon Europe 2020
     date: 2020-06-18
-    location: Online
+    location: Berlin
   - title: A code-first approach to performance engineering
     event: PerfGuild 2020
     date: 2020-06-02
@@ -35,7 +39,7 @@ events:
     event: Go and DevOps, a love story
     date: 2020-02-04
     location: Norrköping, Sweden
-  - title: Agile, DevOps and Beyond - measuring maturity   inorganizations and teams
+  - title: Agile, DevOps and Beyond
     event: Zmarta Meetup
     date: 2019-12-12
     location: Jönköping, Sweden
@@ -75,7 +79,7 @@ events:
     event: Global Azure Bootcamp 2018
     date: 2018-04-21
     location: Linköping, Sweden
-  - title: Building chatbots in C# using Luis.ai and   Microsoft BotBuilder
+  - title: Chatbots in C# using Luis.ai and BotBuilder
     event: HiQ Smarter
     date: 2016-11-23
     location: Linköping, Sweden

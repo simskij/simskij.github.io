@@ -1,15 +1,41 @@
+<style>
+  body {
+    background-color: rgb(238, 238, 238);
+  }
+</style>
+
 ## Upcoming
 
+<div class="upcoming-talks">
 {{ range .Page.Params.events }}
   {{ if ge (time .date) now }}
   {{ partial "talk.html" . }}
   {{ end }}
 {{ end }}
+</div>
 
 ## Past
 
+<div class="previous-talks">
+  <table>
+  <tbody>
 {{ range .Page.Params.events }}
-  {{ if lt (time .date) now }}
-  {{ partial "talk.html" . }}
-  {{ end }}
+{{ if lt (time .date) now }}
+<tr>
+  <td>
+    {{ .date }}
+  </td>
+  <td>
+    <span style="font-weight: 600">
+      {{ .event }}, {{ .location }}
+    </span>
+  </td>
+  <td>
+    {{ .title }}
+  </td>
+</tr>
 {{ end }}
+{{ end }}
+  </tbody>
+  </table>
+</div>

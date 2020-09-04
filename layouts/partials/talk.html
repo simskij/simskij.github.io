@@ -1,14 +1,12 @@
 <div>
-  <div>
-    {{ dateFormat "2 January 2006" .date }}
-    <br/>
-  </div>
   <h3 style="margin: 10px 0;">
     {{ .event }}
   </h3>
-  <div style="font-size: 1.2em">
-    {{ .icon }} {{ .title }}
+  <div>
+    {{ dateFormat "2 Jan 2006" .date }}, {{ .location }}
   </div>
-  <p></p>
+    <div style="font-size: 1.2em;margin-top: 10px;line-height: 1.6em;">
+      {{ .icon }} {{ .title }}
+    </div>
 </div>
 

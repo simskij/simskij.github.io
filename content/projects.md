@@ -44,6 +44,4 @@ It is also usable as a standalone CLI tool.
 
 {{< /project >}}
 
-<hr/>
-
 {{< follow-me >}}
