@@ -523,12 +523,6 @@ img {
   height: 22px;
 }
 
-.upcoming-talks {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 331px);
-}
-
 .previous-talks tr {
   margin: 0;
   padding: 0;
@@ -545,4 +539,5 @@ img {
   border-radius: var(--radius);
   padding: var(--gap);
   background: var(--theme);
+  margin-bottom: 16px;
 }
