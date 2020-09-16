@@ -15,6 +15,10 @@ events:
     event: Passion for Testing
     date: 2020-10-08
     location: Göteborg
+  - title: Introduction to Chaos Engineering
+    event: GDG East Sweden
+    date: 2020-09-24
+    location: Norrköping, Sweden
   - title: Effortless load testing with k6 and DataDog
     event: DataDog Dash
     date: 2020-08-11
