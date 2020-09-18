@@ -1,0 +1,243 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubernetes on Simon Aronsson</title>
+    <link>https://simme.dev/tags/kubernetes/</link>
+    <description>Recent content in kubernetes on Simon Aronsson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Sep 2020 21:07:28 +0100</lastBuildDate>
+    
+        <atom:link href="https://simme.dev/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up a kubernetes lab cluster</title>
+      <link>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</link>
+      <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
+      
+      <guid>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;This article assumes some experience with containers in general, using for instance docker, as
+well as a basic understanding of what kubernetes is and what kind of problems it aims to solve.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;k3s&lt;/code&gt; is a lightweight kubernetes distribution. It&amp;rsquo;s been validated by the CNCF as a true
+kubernetes distribution, making it a viable option to running the full, original kubernetes
+project, especially for labs or dev environments.&lt;/p&gt;
+
+&lt;p&gt;What would then be the perks of running k3s over k8s? Well, k8s is designed with really high
+availability and scalability in mind.&lt;/p&gt;
+
+&lt;p&gt;After all, it&amp;rsquo;s built by google to support workloads at their scale of operation. If you read
+some of the best practices on how to design your clusters, you&amp;rsquo;ll soon realise that it takes
+&lt;strong&gt;a lot&lt;/strong&gt; of machines just to get started.&lt;/p&gt;
+
+&lt;p&gt;Some common best practices include&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;separating the nodes and the controller plane leaders&lt;/li&gt;
+&lt;li&gt;scaling out etcd to multiple nodes - or even its own cluster, as well as&lt;/li&gt;
+&lt;li&gt;separating ingress nodes from regular work nodes to make sure they stay snappy for incoming
+requests.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While all of this is sound advice, setting up such an architecture could easily have you end
+up with 2-3 leader instances, 2-3 etcd servers, 1-2 ingress servers. That&amp;rsquo;s 5 servers in the
+best case, but more likely 6 or 7. This might feel like overkill for a lab or dev environment,
+and certainly not feasible for most local labs.&lt;/p&gt;
+
+&lt;p&gt;This is where k3s really shines!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It consists of one binary of less than 50MB!&lt;/li&gt;
+&lt;li&gt;As it is a CNCF certified distribution, it is fully compliant to the more complete, full k8s.&lt;/li&gt;
+&lt;li&gt;Instead of using &lt;code&gt;etcd&lt;/code&gt;, it uses an embedded &lt;code&gt;sqlite&lt;/code&gt; database, which is fully sufficient for most
+local or lab use cases, although not suitable for HA environments.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;creating-our-virtual-machines&#34;&gt;Creating our virtual machines&lt;/h2&gt;
+
+&lt;p&gt;As I&amp;rsquo;m running on MacOS, the first thing we need to do is to create a linux vm capable of
+running k3s. This can be done easily using &lt;a href=&#34;https://multipass.run/&#34;&gt;multipass&lt;/a&gt;, a command line
+tool for fast and simple orchestration of Ubuntu VMs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://simme.dev/images/multi-pass.gif&#34; alt=&#34;multipass&#34; style=&#34;width:100%&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s create a leader and two nodes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ multipass launch \
+    --name k3s \
+    --cpus 4 \
+    --mem 4g \
+    --disk 20g
+
+Launched: k3s
+
+$ multipass launch \
+    --name k3s-node1 \
+    --cpus 1 \
+    --mem 1024M \
+    --disk 3G
+
+Launched: k3s-node1
+
+$ multipass launch \
+    --name k3s-node2 \
+    --cpus 1 \
+    --mem 1024M \
+    --disk 3G
+
+Launched: k3s-node2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;installing-k3s&#34;&gt;Installing k3s&lt;/h3&gt;
+
+&lt;p&gt;Installation is simple, and if we where installing k3s directly on our machine, we&amp;rsquo;d get away
+with just pipe:ing the install script to &lt;code&gt;sh&lt;/code&gt; like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -sfL https://get.k3s.io | sh -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, as we&amp;rsquo;re going to be running k3s in multiple virtual machines using multipass, we need to
+take a somewhat different approach:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ multipass exec k3s -- bash -c \
+    &amp;quot;curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&amp;quot;644&amp;quot; sh -&amp;quot;
+
+[INFO]  Finding release for channel stable
+[INFO]  Using v1.18.8+k3s1 as release
+[INFO]  Downloading hash https://github.com/rancher/k3s/releases/download/v1.18.8+k3s1/sha256sum-amd64.txt
+[INFO]  Downloading binary https://github.com/rancher/k3s/releases/download/v1.18.8+k3s1/k3s
+[INFO]  Verifying binary download
+[INFO]  Installing k3s to /usr/local/bin/k3s
+[INFO]  Creating /usr/local/bin/kubectl symlink to k3s
+[INFO]  Creating /usr/local/bin/crictl symlink to k3s
+[INFO]  Creating /usr/local/bin/ctr symlink to k3s
+[INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+[INFO]  Creating uninstall script /usr/local/bin/k3s-uninstall.sh
+[INFO]  env: Creating environment file /etc/systemd/system/k3s.service.env
+[INFO]  systemd: Creating service file /etc/systemd/system/k3s.service
+[INFO]  systemd: Enabling k3s unit
+Created symlink /etc/systemd/system/multi-user.target.wants/k3s.service → /etc/systemd/system/k3s.service.
+[INFO]  systemd: Starting k3s
+
+$ export K3S_LEAD_URL=&amp;quot;https://$(multipass info k3s | grep &amp;quot;IPv4&amp;quot; | awk -F&#39; &#39; &#39;{print $2}&#39;):6443&amp;quot;
+$ export \
+    K3S_TOKEN=&amp;quot;$(multipass exec k3s -- /bin/bash -c &amp;quot;sudo cat /var/lib/rancher/k3s/server/node-token&amp;quot;)&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With that, our leader is created and the leader URL as well as the node token has been exported to
+variables. Let&amp;rsquo;s set up our nodes and add them to the cluster.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ multipass exec \
+    k3s-node1 \
+    -- /bin/bash -c \
+    &amp;quot;curl -sfL https://get.k3s.io | K3S_TOKEN=${K3S_TOKEN} K3S_URL=${K3S_LEAD_URL} sh -&amp;quot;
+
+[INFO]  Finding release for channel stable
+[INFO]  Using v1.18.8+k3s1 as release
+[INFO]  Downloading hash https://github.com/rancher/k3s/releases/download/v1.18.8+k3s1/sha256sum-amd64.txt
+[INFO]  Downloading binary https://github.com/rancher/k3s/releases/download/v1.18.8+k3s1/k3s
+[INFO]  Verifying binary download
+[INFO]  Installing k3s to /usr/local/bin/k3s
+[INFO]  Creating /usr/local/bin/kubectl symlink to k3s
+[INFO]  Creating /usr/local/bin/crictl symlink to k3s
+[INFO]  Creating /usr/local/bin/ctr symlink to k3s
+[INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+[INFO]  Creating uninstall script /usr/local/bin/k3s-agent-uninstall.sh
+[INFO]  env: Creating environment file /etc/systemd/system/k3s-agent.service.env
+[INFO]  systemd: Creating service file /etc/systemd/system/k3s-agent.service
+[INFO]  systemd: Enabling k3s-agent unit
+Created symlink /etc/systemd/system/multi-user.target.wants/k3s-agent.service
+  → /etc/systemd/system/k3s-agent.service.
+[INFO]  systemd: Starting k3s-agent
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ multipass exec \
+    k3s-node2 \
+    -- /bin/bash -c \
+    &amp;quot;curl -sfL https://get.k3s.io | K3S_TOKEN=${K3S_TOKEN} K3S_URL=${K3S_LEAD_URL} sh -&amp;quot;
+
+[INFO]  Finding release for channel stable
+[INFO]  Using v1.18.8+k3s1 as release
+[INFO]  Downloading hash https://github.com/rancher/k3s/releases/download/v1.18.8+k3s1/sha256sum-amd64.txt
+[INFO]  Downloading binary https://github.com/rancher/k3s/releases/download/v1.18.8+k3s1/k3s
+[INFO]  Verifying binary download
+[INFO]  Installing k3s to /usr/local/bin/k3s
+[INFO]  Creating /usr/local/bin/kubectl symlink to k3s
+[INFO]  Creating /usr/local/bin/crictl symlink to k3s
+[INFO]  Creating /usr/local/bin/ctr symlink to k3s
+[INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+[INFO]  Creating uninstall script /usr/local/bin/k3s-agent-uninstall.sh
+[INFO]  env: Creating environment file /etc/systemd/system/k3s-agent.service.env
+[INFO]  systemd: Creating service file /etc/systemd/system/k3s-agent.service
+[INFO]  systemd: Enabling k3s-agent unit
+Created symlink /etc/systemd/system/multi-user.target.wants/k3s-agent.service
+  → /etc/systemd/system/k3s-agent.service.
+[INFO]  systemd: Starting k3s-agent
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As a last step, we need to copy the &lt;code&gt;kubeconfig&lt;/code&gt; file created during setup to our local machine
+so that we&amp;rsquo;ll be able to access the cluster from our local machine.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ multipass exec k3s \
+    -- /bin/bash -c \
+    &amp;quot;sudo cat /etc/rancher/k3s/k3s.yaml&amp;quot; \
+    &amp;gt; k3s.yaml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The kubeconfig file will contain a lot of references to localhost, so we also need to switch
+those to our leader IP.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sed -i &#39;&#39; &amp;quot;s/127.0.0.1/$(multipass info k3s | grep IPv4 | awk &#39;{print $2}&#39;)/&amp;quot; k3s.yaml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s install kubectl locally and move our config file to the right location. If you&amp;rsquo;re not
+using macOS, you will need to switch this to the appropriate command for your platform.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ brew install kubectl
+$ cp k3s.yaml ~/.kube/config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s try a couple of command to make sure everything works.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ kubectl get nodes
+
+NAME        STATUS   ROLES    AGE   VERSION
+k3s-node2   Ready    &amp;lt;none&amp;gt;   18m   v1.18.8+k3s1
+k3s         Ready    master   28m   v1.18.8+k3s1
+k3s-node1   Ready    &amp;lt;none&amp;gt;   26m   v1.18.8+k3s1
+
+$ kubectl get pods --all-namespaces
+
+NAMESPACE     NAME                                     READY   STATUS      RESTARTS   AGE
+kube-system   metrics-server-7566d596c8-2n65k          1/1     Running     0          29m
+kube-system   local-path-provisioner-6d59f47c7-z4625   1/1     Running     0          29m
+kube-system   helm-install-traefik-j26f7               0/1     Completed   0          29m
+kube-system   coredns-7944c66d8d-gc2r4                 1/1     Running     0          29m
+kube-system   svclb-traefik-f7lrp                      2/2     Running     0          28m
+kube-system   traefik-758cd5fc85-9zmpq                 1/1     Running     0          28m
+kube-system   svclb-traefik-rrpz4                      2/2     Running     0          27m
+kube-system   svclb-traefik-cg6s8                      2/2     Running     0          18m
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your output looks somewhat along the lines of this, then awesome! Our lab environment is now
+ready and we should be able to use it just as we would with any kubernetes cluster.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In this article, we&amp;rsquo;ve gone through how to deploy a local kubernetes lab cluster on our local
+computer using the incredibly lightweight k3s. We&amp;rsquo;ve also added two nodes to our new cluster.&lt;/p&gt;
+
+&lt;p&gt;Next time, we&amp;rsquo;ll explore how to do a deployment, how to set up metallb for
+external ip provisioning, as well as how to use load balancing services to allow access to our
+deployed pods.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
