@@ -7,7 +7,10 @@
       {{- if or .Params.author .Site.Params.author -}}
       {{ .Params.author | default .Site.Params.author }} · {{ end }}
       {{ if or (eq .Params.Type false) (ne .Params.type "page") }}
-      {{ .Date.Format "January 2, 2006" }}
+        {{ .Date.Format "January 2, 2006" }}
+        {{ if .ReadingTime }}
+        · {{ .ReadingTime }} min read
+        {{ end }}
       {{ end }}
     </div>
     {{ if .Params.tags }}
@@ -20,6 +23,7 @@
     </ul>
   
   {{ end }}
+
   </header>
   <div class="post-content">{{ .Content }}</div>
   <!-- Comments area start -->
