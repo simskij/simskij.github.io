@@ -193,22 +193,22 @@ $ cp k3s.yaml ~/.kube/config
 
 &lt;pre&gt;&lt;code&gt;$ kubectl get nodes
 
-NAME STATUS ROLES AGE VERSION
-k3s-node2 Ready &amp;lt;none&amp;gt; 18m v1.18.8+k3s1
-k3s Ready master 28m v1.18.8+k3s1
-k3s-node1 Ready &amp;lt;none&amp;gt; 26m v1.18.8+k3s1
+NAME      STATUS ROLES  AGE VERSION
+k3s       Ready  master 28m v1.18.8+k3s1
+k3s-node2 Ready  &amp;lt;none&amp;gt; 18m v1.18.8+k3s1
+k3s-node1 Ready  &amp;lt;none&amp;gt; 26m v1.18.8+k3s1
 
 $ kubectl get pods --all-namespaces
 
-NAMESPACE NAME READY STATUS RESTARTS AGE
-kube-system metrics-server-7566d596c8-2n65k 1/1 Running 0 29m
-kube-system local-path-provisioner-6d59f47c7-z4625 1/1 Running 0 29m
-kube-system helm-install-traefik-j26f7 0/1 Completed 0 29m
-kube-system coredns-7944c66d8d-gc2r4 1/1 Running 0 29m
-kube-system svclb-traefik-f7lrp 2/2 Running 0 28m
-kube-system traefik-758cd5fc85-9zmpq 1/1 Running 0 28m
-kube-system svclb-traefik-rrpz4 2/2 Running 0 27m
-kube-system svclb-traefik-cg6s8 2/2 Running 0 18m
+NAMESPACE   NAME                                   READY STATUS    RESTARTS AGE
+kube-system metrics-server-7566d596c8-2n65k        1/1   Running   0        29m
+kube-system local-path-provisioner-6d59f47c7-z4625 1/1   Running   0        29m
+kube-system helm-install-traefik-j26f7             0/1   Completed 0        29m
+kube-system coredns-7944c66d8d-gc2r4               1/1   Running   0        29m
+kube-system svclb-traefik-f7lrp                    2/2   Running   0        28m
+kube-system traefik-758cd5fc85-9zmpq               1/1   Running   0        28m
+kube-system svclb-traefik-rrpz4                    2/2   Running   0        27m
+kube-system svclb-traefik-cg6s8                    2/2   Running   0        18m
 
 &lt;/code&gt;&lt;/pre&gt;
 
