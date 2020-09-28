@@ -39,8 +39,8 @@ events:
     event: PerfGuild 2020
     date: 2020-06-02
     location: Online
-  - title: GDG East Sweden #1
-    event: Go and DevOps, a love story
+  - title: Go and DevOps, a love story
+    event: GDG East Sweden #1
     date: 2020-02-04
     location: Norrköping, Sweden
   - title: Agile, DevOps and Beyond
