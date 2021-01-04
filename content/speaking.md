@@ -3,18 +3,30 @@ date: 2020-03-07T13:14:38+01:00
 draft: false
 type: page
 events:
+  - title: Using Chaos Engineering to Test Distributed Systems
+    event: Automation Guild 2021
+    date: 2021-02-08
+    location: Online
+  - title: "Find problems faster: How to use load testing to manage performance in production"
+    event: New Relic & k6 Webinar
+    date: 2021-01-19
+    location: Online Webinar
+  - title: Code-first performance testing
+    event: Passion for Testing
+    date: 2021-01-14
+    location: Göteborg
   - title: Introduction to Chaos Engineering
     event: Ministry of Testing
     date: 2020-11-12
     location: Cork
-  - title: Using goja as a scripting layer for go applications
-    event: Golang Live (4 days)
+  - title: Host / Emcee
+    event: DevFest Sweden 2020
+    location: Online
+    date: 2020-10-16
+  - title: Goja as a scripting layer for go applications (cancelled d/t sickness)
+    event: Golang Live
     location: Moscow
     date: 2020-10-14
-  - title: Code-first performance testing
-    event: Passion for Testing
-    date: 2020-10-08
-    location: Göteborg
   - title: Introduction to Chaos Engineering
     event: GDG East Sweden
     date: 2020-09-24
