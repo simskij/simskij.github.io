@@ -172,18 +172,6 @@ It is also usable as a standalone CLI tool.
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div&gt;
-  &lt;h3 style=&#34;margin: 10px 0;&#34;&gt;
-    Online Golang Conf 2021
-  &lt;/h3&gt;
-  &lt;div&gt;
-    23 Jan 2021, Online
-  &lt;/div&gt;
-    &lt;div style=&#34;font-size: 1.2em;margin-top: 10px;line-height: 1.6em;&#34;&gt;
-       Goja as a scripting layer for go applications
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;/div&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;past&#34;&gt;Past&lt;/h2&gt;
@@ -196,6 +184,20 @@ It is also usable as a standalone CLI tool.
 
 
 
+
+&lt;tr&gt;
+  &lt;td&gt;
+    2021-01-23
+  &lt;/td&gt;
+  &lt;td&gt;
+    &lt;span style=&#34;font-weight: 600&#34;&gt;
+      Online Golang Conf 2021, Online
+    &lt;/span&gt;
+  &lt;/td&gt;
+  &lt;td&gt;
+    Goja as a scripting layer for go applications
+  &lt;/td&gt;
+&lt;/tr&gt;
 
 
 
