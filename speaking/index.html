@@ -7,9 +7,7 @@
     
     <title> - Simon Aronsson</title>
     
-      <meta name="description" content="body { background-color: rgb(238, 238, 238); }  Upcoming  QBox Meetup   25 Feb 2021, Online  Alla pratar om DevOps    Automation Guild 2021   8 Feb 2021, Online  Using Chaos Engineering to Test Distributed Systems  
-
-Past     2021-01-23   Online Golang Conf 2021, Online    Goja as a scripting layer for go applications     2021-01-19   New Relic &amp; k6 Webinar, Online Webinar    Find problems faster: How to use load testing to manage performance in production     2021-01-14   Passion for Testing, Göteborg    Code-first performance testing     2020-11-12   Ministry of Testing, Cork    Introduction to Chaos Engineering     2020-10-16   DevFest Sweden 2020, Online    Host / Emcee     2020-10-14   Golang Live, Moscow    Goja as a scripting layer for go applications (cancelled d/t sickness)     2020-09-24   GDG East Sweden, Norrköping, Sweden    Introduction to Chaos Engineering     2020-08-11   DataDog Dash, Online    Effortless load testing with k6 and DataDog     2020-07-16   GDG East Sweden, Norrköping    Setting up a local Kubernetes environment using k3s     2020-07-12   GoWayFest 4.">
+      <meta name="description" content="body { background-color: rgb(238, 238, 238); } .main { margin: 0 auto; padding: 0 var(--gap); } .talks { font-size: .8em; } .talks table tbody tr .date { margin: 0; padding: 0;font-variant-numeric: tabular-nums; } .talks table tbody tr .event { font-weight: bold;margin: 0; padding: 0 } .talks table tbody tr .title { margin: 0; padding: 4px 0 } @media (min-width:500px){ .talks table { display: table; } .talks .list { display: none; } } @media (max-width:499px){ .">
       <meta name="author" content="">
     <link href="https://simme.dev/nord-highlightjs.css" rel="stylesheet">
     <link href="https://simme.dev/style.css" rel="stylesheet">
@@ -120,441 +118,229 @@ if (!doNotTrack) {
     
 
   </header>
-  <div class="post-content">
-
-<style>
+  <div class="post-content"><style>
   body {
     background-color: rgb(238, 238, 238);
   }
+
+  .main {
+    margin: 0 auto;
+    padding: 0 var(--gap);
+  }
+
+  .talks {
+    font-size: .8em;
+  }
+
+  .talks table tbody tr .date {
+    margin: 0; padding: 0;font-variant-numeric: tabular-nums;
+  }
+
+  .talks table tbody tr .event {
+    font-weight: bold;margin: 0; padding: 0
+  }
+  .talks table tbody tr .title {
+    margin: 0; padding: 4px 0
+  }
+
+  @media (min-width:500px){
+    .talks table { 
+      display: table;
+    }
+    .talks .list { 
+      display: none; 
+    }
+  }
+  @media (max-width:499px){
+    .talks, 
+    .talks table, 
+    .talks table tbody, 
+    .talks table tbody tr { 
+      display: block;
+      width:100%;
+    } 
+
+    .talks table tbody tr {
+      margin-bottom: 8px;
+    }
+
+    .talks table tr td { 
+      display: block; 
+      text-overflow: ellipsis; 
+      white-space: nowrap;
+      max-width:100%;
+      overflow: hidden; 
+    } 
+    .talks .list { 
+      display: block;
+    }}
+
 </style>
 
-<h2 id="upcoming">Upcoming</h2>
-
-<div class="upcoming-talks">
-
-  
-  <div>
-  <h3 style="margin: 10px 0;">
-    QBox Meetup
-  </h3>
-  <div>
-    25 Feb 2021, Online
-  </div>
-    <div style="font-size: 1.2em;margin-top: 10px;line-height: 1.6em;">
-       Alla pratar om DevOps
-    </div>
-</div>
-
-<p><div>
-  <h3 style="margin: 10px 0;">
-    Automation Guild 2021
-  </h3>
-  <div>
-    8 Feb 2021, Online
-  </div>
-    <div style="font-size: 1.2em;margin-top: 10px;line-height: 1.6em;">
-       Using Chaos Engineering to Test Distributed Systems
-    </div>
-</div></p>
-
-<p></div></p>
-
-<h2 id="past">Past</h2>
-
-<div class="previous-talks">
+<div class="talks">
   <table>
   <tbody>
-
-
-
-
-
-
-<tr>
-  <td>
-    2021-01-23
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Online Golang Conf 2021, Online
-    </span>
-  </td>
-  <td>
-    Goja as a scripting layer for go applications
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2021-01-19
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      New Relic &amp; k6 Webinar, Online Webinar
-    </span>
-  </td>
-  <td>
-    Find problems faster: How to use load testing to manage performance in production
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2021-01-14
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Passion for Testing, Göteborg
-    </span>
-  </td>
-  <td>
-    Code-first performance testing
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-11-12
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Ministry of Testing, Cork
-    </span>
-  </td>
-  <td>
-    Introduction to Chaos Engineering
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-10-16
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      DevFest Sweden 2020, Online
-    </span>
-  </td>
-  <td>
-    Host / Emcee
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-10-14
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Golang Live, Moscow
-    </span>
-  </td>
-  <td>
-    Goja as a scripting layer for go applications (cancelled d/t sickness)
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-09-24
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      GDG East Sweden, Norrköping, Sweden
-    </span>
-  </td>
-  <td>
-    Introduction to Chaos Engineering
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-08-11
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      DataDog Dash, Online
-    </span>
-  </td>
-  <td>
-    Effortless load testing with k6 and DataDog
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-07-16
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      GDG East Sweden, Norrköping
-    </span>
-  </td>
-  <td>
-    Setting up a local Kubernetes environment using k3s
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-07-12
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      GoWayFest 4.0, Minsk
-    </span>
-  </td>
-  <td>
-    Expectations of Go 2.0 (panel)
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-06-18
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      GopherCon Europe 2020, Berlin
-    </span>
-  </td>
-  <td>
-    Notifications everywhere with Shoutrrr
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-06-02
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      PerfGuild 2020, Online
-    </span>
-  </td>
-  <td>
-    A code-first approach to performance engineering
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2020-02-04
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      GDG East Sweden, Norrköping, Sweden
-    </span>
-  </td>
-  <td>
-    Go and DevOps, a love story
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2019-12-12
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Zmarta Meetup, Jönköping, Sweden
-    </span>
-  </td>
-  <td>
-    Agile, DevOps and Beyond
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2019-10-02
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Go Stockholm Meetup, Linköping, Sweden
-    </span>
-  </td>
-  <td>
-    DevOps and Go, a love story
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2019-09-10
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Day of the Programmer, Jönköping, Sweden
-    </span>
-  </td>
-  <td>
-    Everyone is talking about DevOps
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2019-07-05
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      GoWayFest 3.0, Minsk, Belarus
-    </span>
-  </td>
-  <td>
-    DevOps and Go, a love story
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2019-06-04
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      HiQ Smarter, Linköping, Sweden
-    </span>
-  </td>
-  <td>
-    Diversity Rocks! - on diversity in tech
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2019-04-27
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Global Azure Bootcamp 2019, Linköping, Sweden
-    </span>
-  </td>
-  <td>
-    DevOps in practice on Azure
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2018-09-24
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      HiQ Smarter, Linköping, Sweden
-    </span>
-  </td>
-  <td>
-    Ditching the metal: An introduction to Go on GCP
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2018-09-06
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Go Stockholm Conference, Stockholm, Sweden
-    </span>
-  </td>
-  <td>
-    Ditching the metal: An introduction to Go on GCP
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2018-04-23
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      HiQ Code Club, Norrköping, Sweden
-    </span>
-  </td>
-  <td>
-    Going serverless with Azure Functions
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2018-04-21
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      Global Azure Bootcamp 2018, Linköping, Sweden
-    </span>
-  </td>
-  <td>
-    Going serverless with Azure Functions
-  </td>
-</tr>
-
-
-
-<tr>
-  <td>
-    2016-11-23
-  </td>
-  <td>
-    <span style="font-weight: 600">
-      HiQ Smarter, Linköping, Sweden
-    </span>
-  </td>
-  <td>
-    Chatbots in C# using Luis.ai and BotBuilder
-  </td>
-</tr>
-
-
+  
+  <tr>
+    <td class="date">2021-02-25</td>
+    <td class="event"> QBox Meetup </td>
+    <td class="title"> Everyone is talking about DevOps </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2021-02-08</td>
+    <td class="event"> Automation Guild 2021 </td>
+    <td class="title"> Using Chaos Engineering to Test Distributed Systems </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2021-01-23</td>
+    <td class="event"> Online Golang Conf 2021 </td>
+    <td class="title"> Goja as a scripting layer for go applications </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2021-01-19</td>
+    <td class="event"> New Relic &amp; k6 Webinar </td>
+    <td class="title"> Find problems faster by load testing in production </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2021-01-14</td>
+    <td class="event"> Passion for Testing </td>
+    <td class="title"> Code-first performance testing </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-11-12</td>
+    <td class="event"> Ministry of Testing </td>
+    <td class="title"> Introduction to Chaos Engineering </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-10-16</td>
+    <td class="event"> DevFest Sweden 2020 </td>
+    <td class="title"> Host / Emcee </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-10-14</td>
+    <td class="event"> Golang Live </td>
+    <td class="title"> Goja as a scripting layer for go applications (cancelled d/t sickness) </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-09-24</td>
+    <td class="event"> GDG East Sweden </td>
+    <td class="title"> Introduction to Chaos Engineering </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-08-11</td>
+    <td class="event"> DataDog Dash </td>
+    <td class="title"> Effortless load testing with k6 and DataDog </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-07-16</td>
+    <td class="event"> GDG East Sweden </td>
+    <td class="title"> Setting up a local Kubernetes environment using k3s </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-07-12</td>
+    <td class="event"> GoWayFest 4.0 </td>
+    <td class="title"> Expectations of Go 2.0 Panel </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-06-18</td>
+    <td class="event"> GopherCon Europe 2020 </td>
+    <td class="title"> Notifications everywhere with Shoutrrr </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-06-02</td>
+    <td class="event"> PerfGuild 2020 </td>
+    <td class="title"> A code-first approach to performance engineering </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2020-02-04</td>
+    <td class="event"> GDG East Sweden </td>
+    <td class="title"> Go and DevOps, a love story </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2019-12-12</td>
+    <td class="event"> Zmarta Meetup </td>
+    <td class="title"> Agile, DevOps and Beyond </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2019-10-02</td>
+    <td class="event"> Go Stockholm Meetup </td>
+    <td class="title"> DevOps and Go, a love story </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2019-09-10</td>
+    <td class="event"> Day of the Programmer </td>
+    <td class="title"> Everyone is talking about DevOps </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2019-07-05</td>
+    <td class="event"> GoWayFest 3.0 </td>
+    <td class="title"> DevOps and Go, a love story </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2019-06-04</td>
+    <td class="event"> HiQ Smarter </td>
+    <td class="title"> Diversity Rocks! - on diversity in tech </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2019-04-27</td>
+    <td class="event"> Global Azure Bootcamp 2019 </td>
+    <td class="title"> DevOps in practice on Azure </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2018-09-24</td>
+    <td class="event"> HiQ Smarter </td>
+    <td class="title"> Ditching the metal: An introduction to Go on GCP </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2018-09-06</td>
+    <td class="event"> Go Stockholm Conference </td>
+    <td class="title"> Ditching the metal: An introduction to Go on GCP </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2018-04-23</td>
+    <td class="event"> HiQ Code Club </td>
+    <td class="title"> Going serverless with Azure Functions </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2018-04-21</td>
+    <td class="event"> Global Azure Bootcamp 2018 </td>
+    <td class="title"> Going serverless with Azure Functions </td>
+  </tr>
+  
+  <tr>
+    <td class="date">2016-11-23</td>
+    <td class="event"> HiQ Smarter </td>
+    <td class="title"> Chatbots in C# using Luis.ai and BotBuilder </td>
+  </tr>
+  
   </tbody>
   </table>
+
+
 </div>
 </div>
   
