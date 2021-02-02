@@ -4,7 +4,7 @@ draft: false
 type: page
 ---
 
-Software development is not only my dayjob but also one of my biggest passions. Some of the software projects
+Software development is not only my day job but also one of my biggest passions. Some of the software projects
 I pour time into outside of work are:
 
 {{< project

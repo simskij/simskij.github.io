@@ -4,7 +4,7 @@ draft: false
 type: page
 events:
 
-  - title: Alla pratar om DevOps
+  - title: Everyone is talking about DevOps
     event: QBox Meetup
     date: 2021-02-25
     location: Online
@@ -19,7 +19,7 @@ events:
     date: 2021-01-23
     location: Online
 
-  - title: "Find problems faster: How to use load testing to manage performance in production"
+  - title: "Find problems faster by load testing in production"
     event: New Relic & k6 Webinar
     date: 2021-01-19
     location: Online Webinar
@@ -59,7 +59,7 @@ events:
     date: 2020-07-16
     location: Norrköping
 
-  - title: Expectations of Go 2.0 (panel)
+  - title: Expectations of Go 2.0 Panel
     event: GoWayFest 4.0
     date: 2020-07-12
     location: Minsk
