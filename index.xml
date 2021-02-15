@@ -199,15 +199,27 @@ It is also usable as a standalone CLI tool.
   &lt;tbody&gt;
   
   &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2021-05-11&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; DevOps Pro Europe 2021 &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; The glorious art of breaking things on purpose &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
     &lt;td class=&#34;date&#34;&gt;2021-02-25&lt;/td&gt;
     &lt;td class=&#34;event&#34;&gt; QBox Meetup &lt;/td&gt;
     &lt;td class=&#34;title&#34;&gt; Everyone is talking about DevOps &lt;/td&gt;
   &lt;/tr&gt;
   
   &lt;tr&gt;
-    &lt;td class=&#34;date&#34;&gt;2021-02-08&lt;/td&gt;
+    &lt;td class=&#34;date&#34;&gt;2021-02-11&lt;/td&gt;
     &lt;td class=&#34;event&#34;&gt; Automation Guild 2021 &lt;/td&gt;
     &lt;td class=&#34;title&#34;&gt; Using Chaos Engineering to Test Distributed Systems &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2021-02-10&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; Prisma.io Livestream &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; Using k6 to test the performance of Prisma in production &lt;/td&gt;
   &lt;/tr&gt;
   
   &lt;tr&gt;
