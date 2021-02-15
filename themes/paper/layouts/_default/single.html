@@ -11,6 +11,9 @@
         {{ if .ReadingTime }}
         · {{ .ReadingTime }} min read
         {{ end }}
+        {{ if .Params.canonical_url }}
+        ·  <a href="{{ .Params.canonical_url }}">original</a>
+        {{ end }}
       {{ end }}
     </div>
     {{ if .Params.tags }}
@@ -25,6 +28,7 @@
   {{ end }}
 
   </header>
+
   <div class="post-content">{{ .Content }}</div>
   <!-- Comments area start -->
   {{ if not (eq .Params.comments false) }}
