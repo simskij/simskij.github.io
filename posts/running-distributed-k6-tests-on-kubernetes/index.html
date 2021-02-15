@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Running distributed k6 tests on Kubernetes - Simon Aronsson</title>
+    
+      <meta name="description" content="One of the questions we often get in the forum is how to run distributed k6 tests on your own infrastructure. While we believe that running large load tests is possible even when running on a single node, we do appreciate that this is something some of our users might want to do.">
+      <meta name="author" content="">
+    <link href="https://simme.dev/nord-highlightjs.css" rel="stylesheet">
+    <link href="https://simme.dev/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://simme.dev/apple-touch-icon.png">
+    <link rel="icon" href="https://simme.dev/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+
+    <link rel="alternate" type="application/atom+xml" href="https://simme.dev/index.xml" title="Simon Aronsson">
+    
+      <link rel="canonical" href="https://k6.io/blog/running-distributed-tests-on-k8s">
+    
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-155244210-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+  <body class="single">
+    <header class="header">
+      
+      <nav class="nav">
+        <ul class="menu">
+          <li>
+            <a href="/">start</a>
+          </li>
+          
+            
+            <li>
+              <a href="/about">about</a>
+            </li>
+            
+            <li>
+              <a href="/speaking">speaking</a>
+            </li>
+            
+            <li>
+              <a href="/videos">videos</a>
+            </li>
+            
+            <li>
+              <a href="/projects">projects</a>
+            </li>
+            
+            <li>
+              <a href="/uses">uses</a>
+            </li>
+            
+          
+        </ul>
+        <ul class="menu social">
+          <li>
+            <a href="https://dev.to/0x12b">
+              <span class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M120.12 208.29c-3.88-2.9-7.77-4.35-11.65-4.35H91.03v104.47h17.45c3.88 0 7.77-1.45 11.65-4.35 3.88-2.9 5.82-7.25 5.82-13.06v-69.65c-.01-5.8-1.96-10.16-5.83-13.06zM404.1 32H43.9C19.7 32 .06 51.59 0 75.8v360.4C.06 460.41 19.7 480 43.9 480h360.2c24.21 0 43.84-19.59 43.9-43.8V75.8c-.06-24.21-19.7-43.8-43.9-43.8zM154.2 291.19c0 18.81-11.61 47.31-48.36 47.25h-46.4V172.98h47.38c35.44 0 47.36 28.46 47.37 47.28l.01 70.93zm100.68-88.66H201.6v38.42h32.57v29.57H201.6v38.41h53.29v29.57h-62.18c-11.16.29-20.44-8.53-20.72-19.69V193.7c-.27-11.15 8.56-20.41 19.71-20.69h63.19l-.01 29.52zm103.64 115.29c-13.2 30.75-36.85 24.63-47.44 0l-38.53-144.8h32.57l29.71 113.72 29.57-113.72h32.58l-38.46 144.8z"/></svg>
+</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.goodreads.com/user/show/58357572-simme">
+              <span class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M299.9 191.2c5.1 37.3-4.7 79-35.9 100.7-22.3 15.5-52.8 14.1-70.8 5.7-37.1-17.3-49.5-58.6-46.8-97.2 4.3-60.9 40.9-87.9 75.3-87.5 46.9-.2 71.8 31.8 78.2 78.3zM448 88v336c0 30.9-25.1 56-56 56H56c-30.9 0-56-25.1-56-56V88c0-30.9 25.1-56 56-56h336c30.9 0 56 25.1 56 56zM330 313.2s-.1-34-.1-217.3h-29v40.3c-.8.3-1.2-.5-1.6-1.2-9.6-20.7-35.9-46.3-76-46-51.9.4-87.2 31.2-100.6 77.8-4.3 14.9-5.8 30.1-5.5 45.6 1.7 77.9 45.1 117.8 112.4 115.2 28.9-1.1 54.5-17 69-45.2.5-1 1.1-1.9 1.7-2.9.2.1.4.1.6.2.3 3.8.2 30.7.1 34.5-.2 14.8-2 29.5-7.2 43.5-7.8 21-22.3 34.7-44.5 39.5-17.8 3.9-35.6 3.8-53.2-1.2-21.5-6.1-36.5-19-41.1-41.8-.3-1.6-1.3-1.3-2.3-1.3h-26.8c.8 10.6 3.2 20.3 8.5 29.2 24.2 40.5 82.7 48.5 128.2 37.4 49.9-12.3 67.3-54.9 67.4-106.3z"/></svg>
+</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/simskij">
+              <span class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.dribbble.com/arcticbit">
+              <span class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>
+</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/simonaronsson">
+              <span class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/0x12b">
+              <span class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Running distributed k6 tests on Kubernetes</h1>
+    <div class="post-meta">
+      
+        February 11, 2021
+        
+        · 10 min read
+        
+        
+        ·  <a href="https://k6.io/blog/running-distributed-tests-on-k8s">original</a>
+        
+      
+    </div>
+    
+  
+    <ul class="post-tags" style="margin-top: 0px">
+      
+      
+      <li><a href="https://simme.dev/tags/performance">#performance</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/cloud">#cloud</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/testing">#testing</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/kubernetes">#kubernetes</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/k6">#k6</a></li>
+      
+      
+      <li><a href="https://simme.dev/tags/operator">#operator</a></li>
+      
+    </ul>
+  
+  
+
+  </header>
+
+  <div class="post-content"><p>One of the questions we often get in the forum is how to run distributed k6 tests on your own infrastructure. While we believe that <a href="https://k6.io/docs/testing-guides/running-large-tests">running large load tests</a> is possible even when running on a single node, we do appreciate that this is something some of our users might want to do.</p>
+
+<blockquote>
+<h3 id="what-you-will-learn">📖What you will learn</h3>
+
+<ul>
+<li>What the operator pattern is and when it is useful</li>
+<li>Deploying the k6 operator in your kubernetes cluster</li>
+<li>Running a distributed k6 test in your own cluster</li>
+</ul>
+
+<h4 id="experimental">⚠️ Experimental</h4>
+
+<p>The project used in this article is experimental and changes a lot between commits. Use at your own discretion .</p>
+</blockquote>
+
+<p><a href="/blog/static/49d58b70df40a0fa1aa75dd1f6d1f670/acdd1/operator.png"><img src="https://k6.io/blog/static/49d58b70df40a0fa1aa75dd1f6d1f670/7842b/operator.png" alt="operator" title="operator" /></a></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>There are at least a couple of reasons why you would want to do this:</p>
+
+<ul>
+<li><p>You run everything else in Kubernetes and would like k6 to be executed in the same fashion as all your other infrastructure components.</p></li>
+
+<li><p>You have access to a couple of high-end nodes and want to pool their resources into a large-scale stress test.</p></li>
+
+<li><p>You have access to multiple low-end or highly utilized nodes and need to pool their resources to be able to reach your target VU count or Requests per Second (RPS).</p></li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To be able to follow along in this guide, you’ll need access to a Kubernetes cluster, with enough privileges to apply objects.</p>
+
+<p>You’ll also need:</p>
+
+<ul>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/">Kustomize</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Kubectl</a></li>
+<li><a href="https://www.gnu.org/software/make/">Make</a></li>
+</ul>
+
+<h2 id="the-kubernetes-operator-pattern">The Kubernetes Operator pattern</h2>
+
+<p>The <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/operator/">operator pattern</a> is a way of extending Kubernetes so that you may use <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">custom resources</a> to manage applications running in the cluster. The pattern aims to automate the tasks that a human operator would usually do, like provisioning new application components, changing the configuration, or resolving problems that occur.</p>
+
+<p>This is accomplished using custom resources which, for the scope of this article, could be compared to the traditional service requests that you would file to your system operator to get changes applied to the environment.</p>
+
+<p><a href="/blog/static/8bc25b5fb3de365092d17de6121c3280/d9c41/pattern.png"><img src="https://k6.io/blog/static/8bc25b5fb3de365092d17de6121c3280/7842b/pattern.png" alt="operator pattern" title="operator pattern" /></a></p>
+
+<p>The operator will listen for changes to, or creation of, K6 custom resource objects. Once a change is detected, it will react by modifying the cluster state, spinning up k6 test jobs as needed. It will then use the parallelism argument to figure out how to split the workload between the jobs using <a href="https://k6.io/docs/using-k6/options#execution-segment">execution segments</a>.</p>
+
+<h2 id="using-the-k6-operator-to-run-a-distributed-load-test-in-your-kubernetes-cluster">Using the k6 operator to run a distributed load test in your Kubernetes cluster</h2>
+
+<p>We&rsquo;ll now go through the steps required to deploy, run, and clean up after the k6 operator.</p>
+
+<h3 id="cloning-the-repository">Cloning the repository</h3>
+
+<p>Before we get started, we need to clone the operator repository from GitHub and navigate to the repository root:</p>
+
+<pre><code>$ git clone https://github.com/k6io/operator &amp;&amp; cd operator
+
+</code></pre>
+
+<h3 id="deploying-the-operator">Deploying the operator</h3>
+
+<p>Deploying the operator is done by running the command below, with kubectl configured to use the context of the cluster that you want to deploy it to.</p>
+
+<p>First, make sure you are using the right context:</p>
+
+<pre><code>$ kubectl config get-contexts
+
+CURRENT NAME CLUSTER AUTHINFO NAMESPACE
+* harley harley harley
+          jean jean jean
+          ripley ripley ripley
+
+</code></pre>
+
+<p>Then deploy the operator bundle using make. This will also apply the roles, namespaces, bindings and services needed to run the operator.</p>
+
+<pre><code>$ make deploy
+
+/Users/simme/.go/bin/controller-gen &quot;crd:trivialVersions=true&quot; rbac:roleName=manager-role webhook paths=&quot;./...&quot; output:crd:artifacts:config=config/crd/bases
+cd config/manager &amp;&amp; /Users/simme/.go/bin/kustomize edit set image controller=ghcr.io/k6io/operator:latest
+/Users/simme/.go/bin/kustomize build config/default | kubectl apply -f -
+namespace/k6-operator-system created
+customresourcedefinition.apiextensions.k8s.io/k6s.k6.io created
+role.rbac.authorization.k8s.io/k6-operator-leader-election-role created
+clusterrole.rbac.authorization.k8s.io/k6-operator-manager-role created
+clusterrole.rbac.authorization.k8s.io/k6-operator-proxy-role created
+clusterrole.rbac.authorization.k8s.io/k6-operator-metrics-reader created
+rolebinding.rbac.authorization.k8s.io/k6-operator-leader-election-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/k6-operator-manager-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/k6-operator-proxy-rolebinding created
+service/k6-operator-controller-manager-metrics-service created
+deployment.apps/k6-operator-controller-manager created
+
+</code></pre>
+
+<h3 id="writing-our-test-script">Writing our test script</h3>
+
+<p>Once that is done, we need to create a config map containing the test script. For the operator to pick up our script, we need to name the file <code>test.js</code>. For this article, we’ll be using the test script below:</p>
+
+<pre><code>import http from 'k6/http';
+import { check } from 'k6';
+
+export let options = {
+  stages: [
+    { target: 200, duration: '30s' },
+    { target: 0, duration: '30s' },
+  ],
+};
+
+export default function () {
+  const result = http.get('https://test-api.k6.io/public/crocodiles/');
+  check(result, {
+    'http response status code is 200': result.status === 200,
+  });
+}
+
+</code></pre>
+
+<p>Before we continue, we&rsquo;ll run the script once locally to make sure it works:</p>
+
+<pre><code>$ k6 run test.js
+
+</code></pre>
+
+<p>If you’ve never written a k6 test before, we recommend that you start by reading <a href="https://k6.io/docs/getting-started/running-k6">this getting started article from the documentation</a>, just to get a feel for how it works.</p>
+
+<p>Let’s walk through this script and make sure we understand what is happening: We’ve set up two stages that will run for 30 seconds each. The first one will ramp up to linearly to 200 VUs over 30 seconds. The second one will ramp down to 0 again over 30 seconds.</p>
+
+<p>In this case the operator will tell each test runner to run only a portion of the total VUs. For instance, if the script calls for 40 VUs, and <code>parallelism</code> is set to 4, the test runners would have 10 VUs each.</p>
+
+<p>Each VU will then loop over the default function as many times as possible during the execution. It will execute an HTTP GET request against the URL we’ve configured, and make sure that the responds with HTTP Status 200. In a real test, we&rsquo;d probably throw in a sleep here to emulate the think time of the user, but as the purpose of this article is to run a distributed test with as much throughput as possible, I&rsquo;ve deliberately skipped it.</p>
+
+<h3 id="deploying-our-test-script">Deploying our test script</h3>
+
+<p>Once the test script is done, we have to deploy it to the kubernetes cluster. We’ll use a <code>ConfigMap</code> to accomplish this. The name of the map can be whatever you like, but for this demo we&rsquo;ll go with <code>crocodile-stress-test</code>.</p>
+
+<p>If you want more than one test script available in your cluster, you just repeat this process for each one, giving the maps different names.</p>
+
+<pre><code>$ kubectl create configmap crocodile-stress-test --from-file /path/to/our/test.js
+
+configmap/crocodile-stress-test created
+
+</code></pre>
+
+<blockquote>
+<h4 id="namespaces">⚠️ Namespaces</h4>
+
+<p>For this to work, the k6 custom resource and the config map needs to be deployed in the same namespace.</p>
+</blockquote>
+
+<p>Let’s have a look at the result:</p>
+
+<pre><code>$ kubectl describe configmap crocodile-stress-test
+
+Name: crocodile-stress-test
+Namespace: default
+Labels: &lt;none&gt;
+Annotations: &lt;none&gt;
+
+Data
+====
+test.js:
+----
+import http from 'k6/http';
+import { check } from 'k6';
+
+export let options = {
+  stages: [
+    { target: 200, duration: '30s' },
+    { target: 0, duration: '30s' },
+  ],
+};
+
+export default function () {
+  const result = http.get('https://test-api.k6.io/public/crocodiles/');
+  check(result, {
+    'http response status code is 200': result.status === 200,
+  });
+}
+
+Events: &lt;none&gt;
+
+</code></pre>
+
+<p>The config map contains the content of our test file, labelled as test.js. The operator will later search through our config map for this key, and use its content as the test script.</p>
+
+<h3 id="creating-our-custom-resource-cr">Creating our custom resource (CR)</h3>
+
+<p>To communicate with the operator, we’ll use a custom resource called <code>K6</code>. Custom resources behave just as native kubernetes objects, while being fully customizable. In this case, the data of the custom resource contains all the information necessary for k6 operator to be able to start a distributed load test:</p>
+
+<pre><code>apiVersion: k6.io/v1alpha1
+kind: K6
+metadata:
+  name: k6-sample
+spec:
+  parallelism: 4
+  script: crocodile-stress-test
+
+</code></pre>
+
+<p>For Kubernetes to know what to do with this custom resource, we first need to specify what API Version we want to use to interpret its content, in this case <code>k6.io/v1alpha1</code>. We’ll then set the kind to K6, and give our resource a name.</p>
+
+<p>As the specification for our custom resource, we now have the option to use a couple of different properties:</p>
+
+<h4 id="parallelism">Parallelism</h4>
+
+<p>Configures how many k6 test runner jobs the operator should spawn.</p>
+
+<h4 id="script">Script</h4>
+
+<p>The name of the config map containing our <code>script.js</code> file.</p>
+
+<h4 id="separate">Separate</h4>
+
+<p>Whether the operator should allow multiple k6 jobs to run concurrently at the same node. The default value for this property is <code>false</code>, allowing each node to run multiple jobs.</p>
+
+<h4 id="arguments">Arguments</h4>
+
+<p>Allowing you to pass arguments to each k6 job, just as you would from the CLI. For instance <code>--tag testId=crocodile-stress-test-1</code>,<code>--out cloud</code>, or <code>—no-connection-reuse</code>.</p>
+
+<h3 id="deploying-our-custom-resource">Deploying our Custom Resource</h3>
+
+<p>We will now deploy our custom resource using kubectl, and by that, start the test:</p>
+
+<pre><code>$ kubectl apply -f /path/to/our/k6/custom-resource.yml
+
+k6.k6.io/k6-sample created
+
+</code></pre>
+
+<p>Once we do this, the k6 operator will pick up the changes and start the execution of the test. This looks somewhat along the lines of what is shown in this diagram:</p>
+
+<p><a href="/blog/static/8c12a4c120f2f4feed3d7284df4be089/14945/pattern-k6.png"><img src="https://k6.io/blog/static/8c12a4c120f2f4feed3d7284df4be089/14945/pattern-k6.png" alt="k6 pattern" title="k6 pattern" /></a></p>
+
+<p>Let’s make sure everything went as expected:</p>
+
+<pre><code>$ kubectl get k6 
+
+NAME AGE
+k6-sample 2s
+
+$ kubectl get jobs
+
+NAME COMPLETIONS DURATION AGE
+k6-sample-1 0/1 12s 12s
+k6-sample-2 0/1 12s 12s
+k6-sample-3 0/1 12s 12s
+k6-sample-4 0/1 12s 12s
+
+$ kubectl get pods
+NAME READY STATUS RESTARTS AGE
+k6-sample-3-s7hdk 1/1 Running 0 20s
+k6-sample-4-thnpw 1/1 Running 0 20s
+k6-sample-2-f9bbj 1/1 Running 0 20s
+k6-sample-1-f7ktl 1/1 Running 0 20s
+
+</code></pre>
+
+<p>The pods have now been created and put in a paused state until the operator has made sure they’re all ready to execute the test. Once that’s the case, the operator deploys another job, k6-sample-starter which is responsible for making sure all our runners start execution at the same time.</p>
+
+<p>Let’s wait a couple of seconds and then list our pods again:</p>
+
+<pre><code>$ kubectl get pods
+
+NAME READY STATUS RESTARTS AGE
+k6-sample-3-s7hdk 1/1 Running 0 76s
+k6-sample-4-thnpw 1/1 Running 0 76s
+k6-sample-2-f9bbj 1/1 Running 0 76s
+k6-sample-1-f7ktl 1/1 Running 0 76s
+k6-sample-starter-scw59 0/1 Completed 0 56s
+
+</code></pre>
+
+<p>All right! The starter has completed and our tests are hopefully running. To make sure, we may check the logs of one of the jobs:</p>
+
+<pre><code>$ kubectl logs k6-sample-1-f7ktl
+
+[...]
+
+Run [100%] paused
+default [0%]
+
+Run [100%] paused
+default [0%]
+
+running (0m00.7s), 02/50 VUs, 0 complete and 0 interrupted iterations
+default [1%] 02/50 VUs 0m00.7s/1m00.0s
+
+running (0m01.7s), 03/50 VUs, 13 complete and 0 interrupted iterations
+default [3%] 03/50 VUs 0m01.7s/1m00.0s
+
+running (0m02.7s), 05/50 VUs, 41 complete and 0 interrupted iterations
+default [4%] 05/50 VUs 0m02.7s/1m00.0s
+
+[...]
+
+</code></pre>
+
+<p>And with that, our test is running! 🎉 After a couple of minutes, we’re now able to list the jobs again to verify they’ve all completed:</p>
+
+<pre><code>$ kubectl get jobs
+
+NAME COMPLETIONS DURATION AGE
+k6-sample-starter 1/1 8s 6m2s
+k6-sample-3 1/1 96s 6m22s
+k6-sample-2 1/1 96s 6m22s
+k6-sample-1 1/1 97s 6m22s
+k6-sample-4 1/1 97s 6m22s
+
+</code></pre>
+
+<h3 id="cleaning-up">Cleaning up</h3>
+
+<p>To clean up after a test run, we delete all resources using the same yaml file we used to deploy it:</p>
+
+<pre><code>$ kubectl delete -f /path/to/our/k6/custom-resource.yml
+
+k6.k6.io &quot;k6-sample&quot; deleted
+
+</code></pre>
+
+<p>Which deletes all the resources created by the operator as well, as shown below:</p>
+
+<pre><code>$ kubectl get jobs
+No resources found in default namespace.
+
+$ kubectl get pods
+No resources found in default namespace.
+
+</code></pre>
+
+<blockquote>
+<h4 id="deleting-the-operator">⚠️ Deleting the operator</h4>
+
+<p>If you for some reason would like to delete the operator altogether, just run make delete from the root of the project..</p>
+
+<p>The idea behind the operator however, is that you let it remain in your cluster between test executions, only applying and deleting the actual K6 custom resources used to run the tests.</p>
+</blockquote>
+
+<h2 id="things-to-consider">Things to consider</h2>
+
+<p>While the operator makes running distributed load tests a lot easier, it still comes with a couple of drawbacks or gotchas that you need to be aware of and plan for. For instance, the lack of metric aggregation.</p>
+
+<p>We’ll go through in detail how to set up the monitoring and visualisation of these test runs in a future article, but for now, here’s a list of things you might want to consider:</p>
+
+<h3 id="metrics-will-not-be-automatically-aggregated">Metrics will not be automatically aggregated</h3>
+
+<p>Metrics generated by running distributed k6 tests using the operator won’t be aggregated, which means that each test runner will produce its own results and end-of-test summary.</p>
+
+<p><strong>To be able to aggregate your metrics and analyse them together, you’ll either need to:</strong></p>
+
+<p>1) Set up some kind of monitoring or visualisation software and configure your K6 custom resource to make your jobs output there.</p>
+
+<p>2) Use <a href="https://github.com/elastic/logstash">logstash</a>, <a href="https://github.com/fluent/fluentd">fluentd</a>, splunk, or similar to parse and aggregate the logs yourself.</p>
+
+<h3 id="thresholds-are-not-evaluated-across-jobs-at-runtime">Thresholds are not evaluated across jobs at runtime</h3>
+
+<p>As the metrics are not aggregated at runtime, your thresholds won’t be evaluated using aggregation either. Currently, the best way to solve this is by setting up alarms for passed thresholds in your monitoring or visualisation software instead.</p>
+
+<h3 id="overpopulated-nodes-might-create-bottlenecks">Overpopulated nodes might create bottlenecks</h3>
+
+<p>You want to make sure your k6 jobs have enough cpu and memory resources to actually perform your test. Using parallelism alone might not be sufficient. If you run into this issue, experiment with using the separate property.</p>
+
+<h3 id="experimental-1">Experimental</h3>
+
+<p>As mentioned in the beginning of the article, the operator <em>is</em> experimental, and as such it might change a lot from commit to commit.</p>
+
+<h3 id="total-cost-of-ownership">Total cost of ownership</h3>
+
+<p>The k6 operator significantly simplifies the process of running distributed load tests in your own cluster. However, there still is a maintenance burden associated with self-hosting. If you&rsquo;d rather skip that, as well as the other drawbacks listed above, and instead get straight to load testing, you might want to have a look at the <a href="https://k6.io/cloud">k6 cloud offering</a>.</p>
+
+<h2 id="see-also">See also</h2>
+
+<ul>
+<li><a href="https://github.com/k6io/operator">The k6 operator project on GitHub</a></li>
+</ul></div>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2021 <a href="https://simme.dev/">Simon Aronsson</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+</footer>
+  <script src="https://simme.dev/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
+

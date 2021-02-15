@@ -5,10 +5,82 @@
     <description>Recent content in Tags on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Sep 2020 21:07:28 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cloud</title>
+      <link>https://simme.dev/tags/cloud/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k6</title>
+      <link>https://simme.dev/tags/k6/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/k6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://simme.dev/tags/kubernetes/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operator</title>
+      <link>https://simme.dev/tags/operator/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/operator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://simme.dev/tags/performance/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://simme.dev/tags/testing/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>https://simme.dev/tags/api/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grpc</title>
+      <link>https://simme.dev/tags/grpc/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
+      
+      <guid>https://simme.dev/tags/grpc/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>devops</title>
@@ -16,15 +88,6 @@
       <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
       
       <guid>https://simme.dev/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://simme.dev/tags/kubernetes/</link>
-      <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
-      
-      <guid>https://simme.dev/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -52,15 +115,6 @@
       <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
       
       <guid>https://simme.dev/tags/cost/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>testing</title>
-      <link>https://simme.dev/tags/testing/</link>
-      <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
-      
-      <guid>https://simme.dev/tags/testing/</guid>
       <description></description>
     </item>
     
