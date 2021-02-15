@@ -3,6 +3,10 @@ date: 2020-03-07T13:14:38+01:00
 draft: false
 type: page
 events:
+  - title: The glorious art of breaking things on purpose
+    event: DevOps Pro Europe 2021
+    date: 2021-05-11
+    location: Vilnius
 
   - title: Everyone is talking about DevOps
     event: QBox Meetup
@@ -11,7 +15,12 @@ events:
 
   - title: Using Chaos Engineering to Test Distributed Systems
     event: Automation Guild 2021
-    date: 2021-02-08
+    date: 2021-02-11
+    location: Online
+
+  - title: Using k6 to test the performance of Prisma in production
+    event: Prisma.io Livestream
+    date: 2021-02-10
     location: Online
 
   - title: Goja as a scripting layer for go applications
