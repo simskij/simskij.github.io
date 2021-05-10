@@ -2,7 +2,6 @@ baseURL: 'https://simme.dev/'
 title: Simon Aronsson
 languageCode: en-us
 
-theme: paper
 googleAnalytics: UA-155244210-1
 
 params:

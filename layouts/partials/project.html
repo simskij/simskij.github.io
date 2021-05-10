@@ -1,0 +1,18 @@
+<div>
+  <h3>
+    {{ .title }}
+  </h3>
+  
+	<p>
+	  {{.description | markdownify }}
+  </p>
+  
+  <a class="github-button"
+		 href="{{ .url }}" 
+      data-icon="octicon-star" 
+      data-size="large" 
+      data-show-count="true" 
+      aria-label="Star {{ .title }} on GitHub">
+    Star
+  </a>
+</div>

@@ -1,0 +1,7 @@
+{{ range .Site.Data.projects }}
+{{ range .projects }}
+
+{{ partial "project.html" . }}
+
+{{ end }}
+{{ end }}
