@@ -60,12 +60,14 @@
 <div class="talks">
   <table>
   <tbody>
-  {{ range .Page.Params.events }}
+  {{ range .Site.Data.events }}
+  {{ range .talks }}
   <tr>
     <td class="date">{{ .date }}</td>
     <td class="event"> {{ .event }} </td>
     <td class="title"> {{ .title }} </td>
   </tr>
+  {{ end }}
   {{ end }}
   </tbody>
   </table>
