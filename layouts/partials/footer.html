@@ -1,8 +1,34 @@
 </main>
 <footer class="footer">
-  <span>&copy; {{ now.Year }} <a href="{{ "" | absURL }}">{{ .Site.Title }}</a></span>
-  <span>&middot;</span>
-  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <div style="padding-top: 16px; display: flex; flex-direction: row">
+    <div style="flex: 1;font-size: 12px">
+      <a href="https://twitter.com/0x12b">
+        🐤 
+        <span style="padding-left: 8px;text-decoration: none;">
+          @0x12b
+        </span>
+      </a>
+      <br/>
+      <a href="https://github.com/simskij">
+        🐙
+        <span style="padding-left: 8px;text-decoration: none;">
+          @simskij
+        </span>
+      </a>
+      <br/>
+      <a href="mailto:simme@arcticbit.se">
+        ✉️
+        <span style="padding-left: 8px;text-decoration: none;">
+          simme@arcticbit.se
+        </span>
+      </a>
+    </div>
+    <div style="flex: 1; text-align: right;">
+      &copy; {{ now.Year }} <a href="{{ "" | absURL }}">{{ .Site.Title }}</a>
+    </div>
+</div>    
+
+
 </footer>
   <script src="{{ "highlight.min.js" | absURL }}"></script>
   <script>

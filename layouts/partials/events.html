@@ -1,0 +1,58 @@
+<style>
+  body {
+    background-color: rgb(238, 238, 238);
+  }
+
+  .main {
+    margin: 0 auto;
+    padding: 0 var(--gap);
+  }
+
+  .talks {
+    font-size: .8em;
+  }
+
+  .talks table tbody tr .date {
+    margin: 0; padding: 0;font-variant-numeric: tabular-nums;
+  }
+
+  .talks table tbody tr .event {
+    font-weight: bold;margin: 0; padding: 0
+  }
+  .talks table tbody tr .title {
+    margin: 0; padding: 4px 0
+  }
+
+  @media (min-width:500px){
+    .talks table { 
+      display: table;
+    }
+    .talks .list { 
+      display: none; 
+    }
+  }
+  @media (max-width:499px){
+    .talks, 
+    .talks table, 
+    .talks table tbody, 
+    .talks table tbody tr { 
+      display: block;
+      width:100%;
+    } 
+
+    .talks table tbody tr {
+      margin-bottom: 8px;
+    }
+
+    .talks table tr td { 
+      display: block; 
+      text-overflow: ellipsis; 
+      white-space: nowrap;
+      max-width:100%;
+      overflow: hidden; 
+    } 
+    .talks .list { 
+      display: block;
+    }}
+
+</style>

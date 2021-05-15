@@ -11,10 +11,10 @@ projects:
     url: https://github.com/containrrr/shoutrrr
     description: >
       Shoutrrr is a notification package for go applications, heavily inspired by the python library 
-      [caronc/apprise](https://github.com/caronc/apprise). It is also usable as a standalone CLI tool.
+      [caronc/apprise](https://github.com/caronc/apprise). It is also usable as a standalone CLI tool. Maintained by the Containrrr team.
 
   - title: containrrr/watchtower
     url: https://github.com/containrrr/watchtower
     description: >
       Watchtower is currently the most popular solution for automating the updates of base images for 
-      docker containers. The project is written exclusively in Go. Maintained through the Containrrr team.
+      docker containers. The project is written exclusively in Go. Maintained by the Containrrr team.

@@ -8,4 +8,3 @@ Software development is not only my day job but also one of my biggest passions.
 I pour time into outside of work are:
 
 {{< projects >}}
-{{< follow-me >}}
