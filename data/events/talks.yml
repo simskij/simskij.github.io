@@ -14,6 +14,11 @@ talks:
     date: 2021-05-12
     location: Vilnius
 
+  - title: Site Reliability Engineering (Panel)
+    event: contributing.today
+    date: 2021-04-21
+    location: Online
+
   - title: Everyone is talking about DevOps
     event: QBox Meetup
     date: 2021-02-25
