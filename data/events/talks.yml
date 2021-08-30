@@ -1,4 +1,24 @@
 talks:
+  - title: The glorious art of breaking things on purpose
+    event: DevOpStar 2021
+    date: 2021-11-23
+    location: Online
+
+  - title: Chaos Engineering on Docker
+    event: Docker Community All-Hands
+    date: 2021-09-16
+    location: Online
+    
+  - title: Load testing .Net applications with k6
+    event: On .Net Show
+    date: 2021-09-16
+    location: Online
+
+  - title: Following the thread - Observability in Production
+    event: TestCon EU 2021
+    date: 2021-09-09
+    location: Online
+
   - title: Error Economics - How to avoid breaking the budget
     event: SLOConf 2021
     date: 2021-05-17
