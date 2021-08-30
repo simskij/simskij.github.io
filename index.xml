@@ -186,6 +186,30 @@ I pour time into outside of work are:&lt;/p&gt;
   
   
   &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2021-11-23&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; DevOpStar 2021 &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; The glorious art of breaking things on purpose &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2021-09-16&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; Docker Community All-Hands &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; Chaos Engineering on Docker &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2021-09-16&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; On .Net Show &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; Load testing .Net applications with k6 &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2021-09-09&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; TestCon EU 2021 &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; Following the thread - Observability in Production &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
     &lt;td class=&#34;date&#34;&gt;2021-05-17&lt;/td&gt;
     &lt;td class=&#34;event&#34;&gt; SLOConf 2021 &lt;/td&gt;
     &lt;td class=&#34;title&#34;&gt; Error Economics - How to avoid breaking the budget &lt;/td&gt;
