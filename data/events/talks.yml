@@ -1,9 +1,4 @@
 talks:
-  - title: The glorious art of breaking things on purpose
-    event: DevOpStar 2021
-    date: 2021-11-23
-    location: Online
-
   - title: Chaos Engineering on Docker
     event: Docker Community All-Hands
     date: 2021-09-16
@@ -12,11 +7,6 @@ talks:
   - title: Load testing .Net applications with k6
     event: On .Net Show
     date: 2021-09-16
-    location: Online
-
-  - title: Following the thread - Observability in Production
-    event: TestCon EU 2021
-    date: 2021-09-09
     location: Online
 
   - title: Error Economics - How to avoid breaking the budget
@@ -78,11 +68,6 @@ talks:
     event: DevFest Sweden 2020
     location: Online
     date: 2020-10-16
-
-  - title: Goja as a scripting layer for go applications (cancelled d/t sickness)
-    event: Golang Live
-    location: Moscow
-    date: 2020-10-14
 
   - title: Introduction to Chaos Engineering
     event: GDG East Sweden
