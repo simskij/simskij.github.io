@@ -155,8 +155,8 @@ Let's set those as our thresholds in our k6 script.
 ```
   export const options = {
     thresholds: {
-      http_req_duration: ['p(95.0049)<300'] // 95% below 300ms, accounting for planned downtime
-      http_req_failed: ['rate<0.00951'] // 99,99049% successful, accounting for planned downtime
+      http_req_duration: ['p(95.0049)<300'], // 95% below 300ms, accounting for planned downtime
+      http_req_failed: ['rate<0.00951'], // 99,99049% successful, accounting for planned downtime
     }
   }
 
