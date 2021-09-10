@@ -5,10 +5,172 @@
     <description>Recent content in testing on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Error Economics - How to avoid breaking the budget</title>
+      <link>https://simme.dev/posts/error-economics/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/posts/error-economics/</guid>
+      <description>&lt;p&gt;At &lt;a href=&#34;https://www.sloconf.com/&#34;&gt;SLOConf 2021&lt;/a&gt; I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/9Z06PxppYOM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;As Site Reliability Engineers, one of our primary goals is to reduce manual labor, or toil, to a minimum while at the same time keeping the systems we manage as reliable and available as possible. To be able to do this in a safe way, it&amp;rsquo;s really important that we&amp;rsquo;re able to easily inspect the state of the system.&lt;/p&gt;
+
+&lt;p&gt;To measure whether we&amp;rsquo;re successful in this endeavour, we establish service level agreements (SLA), service level indicators (SLI) and service level objectives (SLO). Traditional monitoring is really helpful in doing this, but it won&amp;rsquo;t allow you to take action until the issue is already present, likely already affecting your users, in prod.&lt;/p&gt;
+
+&lt;p&gt;To be able to take action proactively, we may use something like a load generator or reliability testing tool to simulate load in our system, measuring how it behaves even before we&amp;rsquo;ve released anything in production. While we&amp;rsquo;ll never will be able to compensate fully for the fact that it won&amp;rsquo;t be running in production, we can still simulate production-like load, possibly even while injecting real-world turbulence into the system, giving us a pretty good picture of what we can expect in production as well.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-do-we-measure-success-for-site-reliability&#34;&gt;How do we measure success for site reliability?&lt;/h2&gt;
+
+&lt;p&gt;When we start out creating these service level artifacts, it&amp;rsquo;s usually tempting to over-engineer them, trying to take every edge case into account. My recommendation is that you try to avoid this to the extent possible.&lt;/p&gt;
+
+&lt;p&gt;Instead, aim for a simple set of indicators and objectives, that are generic enough so that you may use them for multiple systems. You may then expand on them and make them more specific as your understanding of the systems you manage increase over time. Doing this is likely to save you a lot of time, as we otherwise tend to come up with unrealistic or irrelevant measurements or requirements, mainly due to our lack of experience.&lt;/p&gt;
+
+&lt;h2 id=&#34;service-level-indicators&#34;&gt;Service Level Indicators&lt;/h2&gt;
+
+&lt;p&gt;Service level indicators are quantitative measures of a system&amp;rsquo;s health. To make it easy to remember, we may think of this as what we are measuring. If we, for instance, try to come up with some SLIs for a typical web application, we are likely to end up with things like request duration, uptime, and error rates.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-slis-and-slos&#34;&gt;Creating SLIs and SLOs&lt;/h2&gt;
+
+&lt;p&gt;What should be included? In most cases, we only want to include valid requests. A good formula to follow when crafting SLIs is available in the &lt;a href=&#34;https://sre.google/&#34;&gt;Google SRE docs&lt;/a&gt;. Those state that an SLI equals the amount of good events, divided by the amount of valid events, times a hundred, expressed as percentages.&lt;/p&gt;
+
+&lt;p&gt;As an example: if a user decides to send us a request that is not within the defined constraints of the service, we should of course handle it gracefully, letting the user know the request is unsupported. However, we shouldn&amp;rsquo;t be held responsible for the request not being processed properly.&lt;/p&gt;
+
+&lt;h2 id=&#34;service-level-objectives&#34;&gt;Service Level Objectives&lt;/h2&gt;
+
+&lt;p&gt;Service level objectives on the other hand, are the targets we set for our SLIs. Think of it as what the measures should show to be OK. For instance, if our SLI is based on request duration, and shows how many percent of all requests are below 500ms, our SLO would express how big a percentage we expect to be below 500ms for our service to be considered to be within the limits.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-an-error-budget&#34;&gt;What is an error budget?&lt;/h2&gt;
+
+&lt;p&gt;An error budget is the remainder of the SLI once the SLO has been applied. For instance, if our SLO is 99.9%, that would mean our error budget is the remaining .1% up to a 100%. To not breach our SLOs, we then need to be able to fit all events that would not adhere to the criteria we set up into that .1%. This includes outages, service degradations and even planned maintenance windows.&lt;/p&gt;
+
+&lt;p&gt;What I&amp;rsquo;m trying to say is that while it might feel tempting to go for four nines, or even three as your SLO (99.99%, 99,9%), this has astronomic impact on the engineering effort needed. For a downtime/unavailability SLI, a three nine SLO basically means that you can afford as little as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Daily: 1m 26s&lt;/li&gt;
+&lt;li&gt;Weekly: 10m 4s&lt;/li&gt;
+&lt;li&gt;Monthly: 43m 49s&lt;/li&gt;
+&lt;li&gt;Quarterly: 2h 11m 29s&lt;/li&gt;
+&lt;li&gt;Yearly: 8h 45m 56s&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For comparing &amp;ldquo;nines&amp;rdquo;, navigate to &lt;a href=&#34;https://uptime.is&#34;&gt;uptime.is&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In my experience, very few systems are critical enough to motivate this level of availability. With an SLO like this, even with rolling restarts and zero downtime deploys, we can&amp;rsquo;t really afford to make any mistakes at all.&lt;/p&gt;
+
+&lt;h2 id=&#34;burning-the-budget&#34;&gt;Burning the budget&lt;/h2&gt;
+
+&lt;p&gt;When would it be acceptable to burn the budget on purpose? I like to use the following sentence as a rule of thumb:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It is only acceptable to burn error budget on purpose if the goal of the activity causing the burn is to reduce the burn-rate going forward.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;setting-expectations&#34;&gt;Setting expectations&lt;/h2&gt;
+
+&lt;h3 id=&#34;picking-our-slis&#34;&gt;Picking our SLIs&lt;/h3&gt;
+
+&lt;p&gt;In this demo, we&amp;rsquo;ll be testing a made-up online food ordering service called Hipster Pizza. As service level indicators, we&amp;rsquo;ll be using the response time of requests and the HTTP response status success rate.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://simme.dev/blog/static/b61c2d22b2b553d2a050bfefec97a066/37e03/hipster-pizza.jpg&#34;&gt;&lt;img src=&#34;https://k6.io/blog/static/b61c2d22b2b553d2a050bfefec97a066/37e03/hipster-pizza.jpg&#34; alt=&#34;hipster pizza&#34; title=&#34;hipster pizza&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;picking-our-slos&#34;&gt;Picking our SLOs&lt;/h3&gt;
+
+&lt;p&gt;What would be reasonable SLOs for these SLIs? First we got to ask ourselves if we already have commitments to our customers or users in the form of SLAs. If we do, we at the very least need to stay within that.&lt;/p&gt;
+
+&lt;p&gt;However, it&amp;rsquo;s also good to agree on our internal ambitions. And usually, these ambitions turn out to be far less forgiving than whatever we dare to promise our users.&lt;/p&gt;
+
+&lt;p&gt;In this example, we&amp;rsquo;ll use the following SLOs:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;95% of all valid requests will have a response time below 300ms&lt;/li&gt;
+&lt;li&gt;99.9% of all valid requests will reply with a successful HTTP Response status.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means that the error budget for response time is 5%, while the error budget for HTTP success is 0.1%.&lt;/p&gt;
+
+&lt;h2 id=&#34;measuring&#34;&gt;Measuring&lt;/h2&gt;
+
+&lt;p&gt;To know whether we are able to stay within budget, we need to measure this in production. And we also need to assign a time window to our SLOs. For instance, that the SLO is measured on a month-to-month basis, or a sliding 7-day window.&lt;/p&gt;
+
+&lt;p&gt;We also need to test this somehow continuously to make sure whether a certain change introduces regression, preventing us from hitting our target. This is where k6, or load generators in general, come in.&lt;/p&gt;
+
+&lt;p&gt;Most of the time we only speak about monitoring our SLOs. I would like to propose that we take this one step further. With the traditional approach of monitoring, we&amp;rsquo;re not really equipped to react prior to consuming the budget, especially with the extremely tight budgets we had a look at earlier. Instead we&amp;rsquo;re only going to be alerted once we&amp;rsquo;re already approaching SLO game over.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t get me wrong here, I still believe we need, and should, monitor our production SLOs, but we should also complement this with some kind of indicative testing, allowing us to take action before the budget breach has occured. Possibly even stopping the release altogether until the issue has been resolved.&lt;/p&gt;
+
+&lt;p&gt;By running a test that simulates the traffic and behavior of users in production, we&amp;rsquo;re able to extrapolate the effect a change would have over time and use that as an indicator of how the change would affect production SLOs.&lt;/p&gt;
+
+&lt;p&gt;Before we get into that, however, we also need to talk a bit about scheduled downtime, or maintenance windows.&lt;/p&gt;
+
+&lt;h2 id=&#34;accounting-for-scheduled-downtime&#34;&gt;Accounting for scheduled downtime&lt;/h2&gt;
+
+&lt;p&gt;In a real-world production system, these likely occur all the time. In some cases, this is possible without requiring any downtime whatsoever, but for the vast majority, some downtime every now and then is unavoidable, even with rolling restarts, canaries, feature flags and red-green deployments in place.&lt;/p&gt;
+
+&lt;p&gt;We should put some time into identifying what activities we do that actually require downtime, and account for that in our test. If our SLOs are measured on a month to month basis, and we usually have 10 minutes of downtime every workday, we also need to deduct a corresponding amount from our error budget.&lt;/p&gt;
+
+&lt;p&gt;For a month with 31 one days, 22 of them being workdays, 10 minutes of downtime every workday would mean we have a planned downtime of 220 minutes per 744 hours, or 0.0049%.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;220/(744*60) = 0,0049%
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll now adjust the SLOs we use in our test accordingly, prior to calculating the error budget. Heavily simplified, not taking usage volume spread and such into account, this would in our case mean the actual error budgets for our test would be 0,0951% and 4,9951%.&lt;/p&gt;
+
+&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;By using these calculated error budgets, we may then express them as thresholds in our tests, and use them as pass/fail criteria for whether our build was successful or not. And once we have those in our CI workflow, we&amp;rsquo;ll also be able to increase our confidence in product iterations not breaking the error budget.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s have a look at how this could look in k6. k6 is available for free and as open-source. Hooking it up with your pre-existing CI pipelines is usually done without any additional cost or significant time investment.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re using some other load testing tool that also support setting runtime thresholds, this will likely work just as well there. For this demo, we&amp;rsquo;re gonna use this small test script.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import http from &#39;k6/http&#39;
+
+export const options = {
+  vus: 60,
+  duration: &#39;30s&#39;
+}
+
+export default function() {
+  const res = http.get(&#39;https://test-api.k6.io&#39;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So what does this script actually do? For a duration of 30 seconds, it will run 50 virtual users in parallel, all visiting the page &lt;a href=&#34;https://test-api.k6.io&#34;&gt;https://test-api.k6.io&lt;/a&gt; as many times as possible. In a real world scenario, this test would most likely be a lot more extensive, and try to mimic a user&amp;rsquo;s interaction with the service we&amp;rsquo;re defining our SLO for.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s run our test and have a look at the stats it returns:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http_req_duration..............: avg=132.05ms min=101.44ms med=127.55ms max=284.2ms p(90)=156.19ms p(95)=165.75ms
+http_req_failed................: 0.00% ✓ 0 ✗ 6576
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we already get all the information we need to be able to make out whether we fulfil our SLOs. Let&amp;rsquo;s also define some thresholds to automatically detect whether our test busted our error budget or not.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s set those as our thresholds in our k6 script.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  export const options = {
+    thresholds: {
+      http_req_duration: [&#39;p(95.0049)&amp;lt;300&#39;] // 95% below 300ms, accounting for planned downtime
+      http_req_failed: [&#39;rate&amp;lt;0.00951&#39;] // 99,99049% successful, accounting for planned downtime
+    }
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! By using your SLOs and SLIs as pass/fail thresholds in your CI workflow you&amp;rsquo;ll be able to increase your confidence in product iterations not breaking the error budget.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Running distributed k6 tests on Kubernetes</title>
@@ -656,6 +818,380 @@ default ✓ [======================================] 1 VUs 00m01.4s/10m0s 1/1 it
 &lt;li&gt;&lt;a href=&#34;https://grpc.io/&#34;&gt;The official website of the gRPC project&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/grpc/grpc/tree/master/examples&#34;&gt;Official examples from the gRPC repo on GitHub&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Performance testing with generated data</title>
+      <link>https://simme.dev/posts/performance-testing-with-generated-data/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/posts/performance-testing-with-generated-data/</guid>
+      <description>&lt;p&gt;While performance testing, it might not be a huge issue if the data you submit as part of your tests only vary slightly. In some cases, however, you might find yourself in a position where you&amp;rsquo;d like to keep not only the user interactions but also the data, as realistic as possible. How do we accomplish this without having to maintain long data tables? In this article, we&amp;rsquo;ll explore how we may utilize [fakerjs]() and k6 to perform load tests using realistic generated data.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-is-k6&#34;&gt;What is k6?&lt;/h3&gt;
+
+&lt;p&gt;k6 is an open-source performance testing tool written and maintained by the team at &lt;a href=&#34;https://k6.io/&#34;&gt;k6&lt;/a&gt;. One of the main goals of the project is to provide users with a developer-centered, code-first approach to performance testing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;completely-new-to-k6&#34;&gt;🤓 Completely new to k6?&lt;/h3&gt;
+
+&lt;p&gt;Then it might be a good idea to start out with this &lt;a href=&#34;https://dev.to/mostafa/beginner-s-guide-to-load-testing-with-k6-1od2&#34;&gt;Beginners guide to k6&lt;/a&gt;, written by &lt;a href=&#34;https://dev.to/mostafa&#34;&gt;Mostafa Moradian&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;what-is-faker&#34;&gt;What is Faker?&lt;/h3&gt;
+
+&lt;p&gt;Faker is a tool used for generating realistic data. It&amp;rsquo;s available for a lot of different languages - &lt;a href=&#34;https://github.com/joke2k/faker&#34;&gt;python&lt;/a&gt;, &lt;a href=&#34;https://github.com/faker-ruby/faker&#34;&gt;ruby&lt;/a&gt;, &lt;a href=&#34;https://github.com/fzaninotto/Faker&#34;&gt;php&lt;/a&gt; and &lt;a href=&#34;https://github.com/DiUS/java-faker&#34;&gt;java&lt;/a&gt; to name a few.&lt;/p&gt;
+
+&lt;p&gt;In this particular case, we&amp;rsquo;ll use the javascript implementation, fakerjs, as it allows us to use it from within our test script, rather than generating the data before execution.&lt;/p&gt;
+
+&lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;Historically performance testing, to a large extent, has been performed by running your test and then manually analyzing the result to spot performance degradation or deviations. k6 uses a different approach, utilizing goal-oriented performance thresholds to create pass/fail tollgates. Let&amp;rsquo;s formulate a scenario (or use case if you prefer) for this test and what it tries to measure.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-acme-corp-scenario&#34;&gt;The Acme Corp Scenario&lt;/h3&gt;
+
+&lt;p&gt;Acme Corp is about to release a submission form, allowing users to sign up for their newsletter. As they plan to release this form during Black Friday, they want to make sure that it can withstand the pressure of a lot of simultaneous registrations. After all, they are a company in the business of making everything, so they expect a surge of traffic Friday morning.&lt;/p&gt;
+
+&lt;h3 id=&#34;our-test-goals&#34;&gt;Our test goals&lt;/h3&gt;
+
+&lt;p&gt;While we could very well set up complex custom thresholds, it&amp;rsquo;s usually more than enough to stick with the basics. In this case, we&amp;rsquo;ll measure the number of requests where we don&amp;rsquo;t receive an HTTP OK (200) status code in the response, as well as the total duration of each request.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll also perform the test with 300 virtual users, which will all perform these requests simultaneously.&lt;/p&gt;
+
+&lt;h4 id=&#34;configuration&#34;&gt;Configuration&lt;/h4&gt;
+
+&lt;p&gt;In k6, we express this as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  // ...
+  vus: 300,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;what-does-this-mean&#34;&gt;What does this mean?&lt;/h4&gt;
+
+&lt;p&gt;So, let&amp;rsquo;s go through what we&amp;rsquo;ve done here. With 300 virtual users trying to fetch and submit the subscription form every second, we&amp;rsquo;ve set up the following performance goals:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Less than 10% are allowed to fail in retrieving the form&lt;/li&gt;
+&lt;li&gt;Less than 10% are allowed to fail in submitting the form data&lt;/li&gt;
+&lt;li&gt;Only 5% or less are permitted to have a request duration longer than 400ms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;the-actual-test&#34;&gt;The actual test&lt;/h2&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s get on to the actual test code. The test code, which is executed by each VU once for each iteration, is put inside an anonymous function. We then expose this function as a default export.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-sleep-test&#34;&gt;The sleep test 😴&lt;/h3&gt;
+
+&lt;p&gt;To make sure our environment is working, I usually start by setting up a test that does nothing except sleeping for a second and execute it once.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { sleep } from &#39;k6&#39;;
+
+export default function () {
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which, when run, produces output similar to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/mck8bbbkeyhe659a7k4i.png&#34; alt=&#34;Running a k6 script with just sleep&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-our-thresholds&#34;&gt;Adding our thresholds&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { sleep } from &#39;k6&#39;;
+import { Rate } from &#39;k6/metrics&#39;;
+
+const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  // ...
+  vus: 300,
+  duration: &#39;10s&#39;,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+
+export default function () {
+  formFailRate.add(0);
+  submitFailRate.add(0);
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the two new lines in the default function? For each iteration, we&amp;rsquo;re now adding data points to our &lt;a href=&#34;https://k6.io/docs/using-k6/thresholds&#34;&gt;threshold&lt;/a&gt; metrics, telling it that our requests did not fail. We&amp;rsquo;ll hook these up to do something meaningful as we proceed. We also added a duration to make the script run for more than one iteration.&lt;/p&gt;
+
+&lt;p&gt;For now, running the script should give you the following output:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/tofe0dhv86f4pcfesjnk.png&#34; alt=&#34;Running a k6 script with sleep and rates&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Yay, it passes! Two green checks!&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-requests&#34;&gt;Adding requests&lt;/h3&gt;
+
+&lt;p&gt;To be able to measure anything useful, we also need to add some actual requests. In this example, we&amp;rsquo;ll use &lt;a href=&#34;https://httpbin.test.loadimpact.com/&#34;&gt;https://httpbin.test.loadimpact.com/&lt;/a&gt; as our API, which is our mirror of the popular tool &lt;a href=&#34;https://httpbin.org/&#34;&gt;HTTPBin&lt;/a&gt;. Feel free to use whatever HTTP Request sink you prefer!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { sleep } from &#39;k6&#39;;
+import { Rate } from &#39;k6/metrics&#39;;
+import http from &#39;k6/http&#39;;
+
+const baseUrl = &#39;https://httpbin.test.loadimpact.com/anything&#39;;
+const urls = {
+  form: `${baseUrl}/form`,
+  submit: `${baseUrl}/form/subscribe`,
+};
+
+const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  vus: 300,
+  duration: &#39;10s&#39;,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+
+const getForm = () =&amp;gt; {
+  const formResult = http.get(urls.form);
+  formFailRate.add(formResult.status !== 200);
+};
+
+const submitForm = () =&amp;gt; {
+  const submitResult = http.post(urls.submit, {});
+  submitFailRate.add(submitResult.status !== 200);
+};
+
+export default function () {
+  getForm();
+  submitForm();
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And once again:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/zhtf4sdrgpqzrnxxq569.png&#34; alt=&#34;Running k6 with requests&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The output now also includes metrics around our HTTP requests, as well as a little green check next to the duration.&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-bundling-and-transpiling&#34;&gt;Adding Bundling and Transpiling&lt;/h3&gt;
+
+&lt;p&gt;Now that we&amp;rsquo;ve got our script to work, it&amp;rsquo;s almost time to add faker. Before we do that, we need to make sure that k6 can use the faker library.&lt;/p&gt;
+
+&lt;p&gt;As k6 does not run in a NodeJS environment, but rather in a goja VM, it needs a little help. Thankfully, it&amp;rsquo;s not that complex. We&amp;rsquo;ll use webpack and babel to achieve this, but any bundler compatible with babel would likely work.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start by initializing an npm package and add all the dependencies we&amp;rsquo;ll need:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ yarn init -y &amp;amp;&amp;amp; yarn add \
+    @babel/core \
+    @babel/preset-env \
+    babel-loader \
+    core-js \
+    webpack \
+    webpack-cli
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll then create our webpack config. The details of webpack and babel are outside the scope of this article, but there are plenty of great resources out there on how it works.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// webpack.config.js
+
+module.exports = {
+  mode: &#39;production&#39;,
+  entry: &#39;./src/index.js&#39;,
+  output: {
+    path: __dirname + &#39;/dist&#39;,
+    filename: &#39;test.[name].js&#39;,
+    libraryTarget: &#39;commonjs&#39;,
+  },
+  module: {
+    rules: [{ test: /\.js$/, use: &#39;babel-loader&#39; }],
+  },
+  stats: {
+    colors: true,
+  },
+  target: &#39;web&#39;,
+  externals: /k6(\/.*)?/,
+  devtool: &#39;source-map&#39;,
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and the &lt;code&gt;.babelrc&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;presets&amp;quot;: [
+    [
+      &amp;quot;@babel/preset-env&amp;quot;,
+      {
+        &amp;quot;useBuiltIns&amp;quot;: &amp;quot;usage&amp;quot;,
+        &amp;quot;corejs&amp;quot;: 3
+      }
+    ]
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll also modify our package.json so that we can launch our tests using yarn:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;k6-faker&amp;quot;,
+  &amp;quot;scripts&amp;quot;: {
++   &amp;quot;pretest&amp;quot;: &amp;quot;webpack&amp;quot;,
++   &amp;quot;test&amp;quot;: &amp;quot;k6 run ./dist/test.main.js&amp;quot;
+  },
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;did-you-know&#34;&gt;🧠 Did you know?&lt;/h3&gt;
+
+&lt;p&gt;Using &lt;code&gt;pre&lt;/code&gt; or &lt;code&gt;post&lt;/code&gt; at the beginning of a script name, results in that script running before/after the script you&amp;rsquo;re invoking. In this case, the &lt;code&gt;pretest&lt;/code&gt; script ensures that every time we run our test, webpack first creates a new, fresh bundle from the source code. - Sweet, huh? 👍🏻&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;enter-faker&#34;&gt;Enter Faker!&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s get right into it then! The first step is to add faker to our dependencies:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ yarn add faker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Faker has a quite extensive library of data that it&amp;rsquo;s able to generate, ranging from company details to catchphrases and profile pictures. While these are all handy to have, we&amp;rsquo;ll only use a tiny subset of what faker has to offer. Our object follows this structure:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;jane doe&amp;quot;,
+  &amp;quot;title&amp;quot;: &amp;quot;intergalactic empress&amp;quot;,
+  &amp;quot;company&amp;quot;: &amp;quot;Worldeaters Inc&amp;quot;,
+  &amp;quot;email&amp;quot;: &amp;quot;jane@doe.example&amp;quot;,
+  &amp;quot;country&amp;quot;: &amp;quot;N/A&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll now go ahead and create a service that we may use to generate said persons:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// subscriber.js
+
+import * as faker from &#39;faker/locale/en_US&#39;;
+
+export const generateSubscriber = () =&amp;gt; ({
+  name: `SUBSCRIPTION_TEST - ${faker.name.firstName()} ${faker.name.lastName()}`,
+  title: faker.name.jobTitle(),
+  company: faker.company.companyName(),
+  email: faker.internet.email(),
+  country: faker.address.country(),
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;possible-performance-issues-ahead&#34;&gt;👿 Possible performance issues ahead!&lt;/h3&gt;
+
+&lt;p&gt;All dependencies added tend to balloon the memory consumption to some extent, especially when they scale up to 300 concurrent instances. Because of this, it&amp;rsquo;s crucial that we only import the locale(s) we are using in our test case.&lt;/p&gt;
+
+&lt;p&gt;While putting together the example repository for this article, I noticed that using faker adds about 2.3MB of memory per VU, which for 300 VUs resulted in a total memory footprint of around 1.5GB.&lt;/p&gt;
+
+&lt;p&gt;You can read more about the javascript performance in k6 and how to tune it &lt;a href=&#34;https://k6.io/docs/using-k6/javascript-compatibility-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You might have noticed that we prepend the name of the generated user with &lt;code&gt;SUBSCRIPTION_TEST&lt;/code&gt;. Adding a unique identifier for your test data is just something I find convenient to be able to quickly filter out all dummy data I&amp;rsquo;ve created as part of a test. While optional, this is usually a good idea - especially if you test against an environment that you can&amp;rsquo;t easily prune.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;final-assembly&#34;&gt;Final assembly&lt;/h2&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s put it all together!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// index.js
+
+import { sleep } from &#39;k6&#39;;
+import http from &#39;k6/http&#39;;
+import { Rate } from &#39;k6/metrics&#39;;
+
+import { generateSubscriber } from &#39;./subscriber&#39;;
+
+const baseUrl = &#39;https://httpbin.test.loadimpact.com/anything&#39;;
+const urls = {
+  form: `${baseUrl}/form`,
+  submit: `${baseUrl}/form/subscribe`,
+};
+
+const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  vus: 300,
+  duration: &#39;10s&#39;,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+
+const getForm = () =&amp;gt; {
+  const formResult = http.get(urls.form);
+  formFailRate.add(formResult.status !== 200);
+};
+
+const submitForm = () =&amp;gt; {
+  const person = generateSubscriber();
+  const payload = JSON.stringify(person);
+
+  const submitResult = http.post(urls.submit, payload);
+  submitFailRate.add(submitResult.status !== 200);
+};
+
+export default function () {
+  getForm();
+  submitForm();
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// subscriber.js
+
+import * as faker from &#39;faker/locale/en_US&#39;;
+
+export const generateSubscriber = () =&amp;gt; ({
+  name: `SUBSCRIPTION_TEST - ${faker.name.firstName()} ${faker.name.lastName()}`,
+  title: faker.name.jobTitle(),
+  company: faker.company.companyName(),
+  email: faker.internet.email(),
+  country: faker.address.country(),
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And with that, we&amp;rsquo;re ready to go:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/g89wqlleq9867qw8ce7r.png&#34; alt=&#34;Running k6 with faker, thresholds and http requests&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;closing-thoughts&#34;&gt;Closing thoughts&lt;/h2&gt;
+
+&lt;p&gt;While the flexibility you get by combining the javascript engine used in k6 with webpack and babel is near endless, it&amp;rsquo;s essential to keep track of the memory consumption and performance of the actual test. After all, getting false positives due to our load generator being out of resources is not particularly helpful.&lt;/p&gt;
+
+&lt;p&gt;All the code from this article is available as an example repository on
+&lt;a href=&#34;https://github.com/k6io/example-data-generation&#34;&gt;GitHub&lt;/a&gt;, which I try to keep up to date with new versions of k6 and faker.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d love to hear your thoughts, so please hit me up with questions and comments in the field below. 👇🏼&lt;/p&gt;</description>
     </item>
     
     <item>

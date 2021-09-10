@@ -1,0 +1,388 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tutorial on Simon Aronsson</title>
+    <link>https://simme.dev/tags/tutorial/</link>
+    <description>Recent content in tutorial on Simon Aronsson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://simme.dev/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Performance testing with generated data</title>
+      <link>https://simme.dev/posts/performance-testing-with-generated-data/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/posts/performance-testing-with-generated-data/</guid>
+      <description>&lt;p&gt;While performance testing, it might not be a huge issue if the data you submit as part of your tests only vary slightly. In some cases, however, you might find yourself in a position where you&amp;rsquo;d like to keep not only the user interactions but also the data, as realistic as possible. How do we accomplish this without having to maintain long data tables? In this article, we&amp;rsquo;ll explore how we may utilize [fakerjs]() and k6 to perform load tests using realistic generated data.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-is-k6&#34;&gt;What is k6?&lt;/h3&gt;
+
+&lt;p&gt;k6 is an open-source performance testing tool written and maintained by the team at &lt;a href=&#34;https://k6.io/&#34;&gt;k6&lt;/a&gt;. One of the main goals of the project is to provide users with a developer-centered, code-first approach to performance testing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;completely-new-to-k6&#34;&gt;🤓 Completely new to k6?&lt;/h3&gt;
+
+&lt;p&gt;Then it might be a good idea to start out with this &lt;a href=&#34;https://dev.to/mostafa/beginner-s-guide-to-load-testing-with-k6-1od2&#34;&gt;Beginners guide to k6&lt;/a&gt;, written by &lt;a href=&#34;https://dev.to/mostafa&#34;&gt;Mostafa Moradian&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;what-is-faker&#34;&gt;What is Faker?&lt;/h3&gt;
+
+&lt;p&gt;Faker is a tool used for generating realistic data. It&amp;rsquo;s available for a lot of different languages - &lt;a href=&#34;https://github.com/joke2k/faker&#34;&gt;python&lt;/a&gt;, &lt;a href=&#34;https://github.com/faker-ruby/faker&#34;&gt;ruby&lt;/a&gt;, &lt;a href=&#34;https://github.com/fzaninotto/Faker&#34;&gt;php&lt;/a&gt; and &lt;a href=&#34;https://github.com/DiUS/java-faker&#34;&gt;java&lt;/a&gt; to name a few.&lt;/p&gt;
+
+&lt;p&gt;In this particular case, we&amp;rsquo;ll use the javascript implementation, fakerjs, as it allows us to use it from within our test script, rather than generating the data before execution.&lt;/p&gt;
+
+&lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;Historically performance testing, to a large extent, has been performed by running your test and then manually analyzing the result to spot performance degradation or deviations. k6 uses a different approach, utilizing goal-oriented performance thresholds to create pass/fail tollgates. Let&amp;rsquo;s formulate a scenario (or use case if you prefer) for this test and what it tries to measure.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-acme-corp-scenario&#34;&gt;The Acme Corp Scenario&lt;/h3&gt;
+
+&lt;p&gt;Acme Corp is about to release a submission form, allowing users to sign up for their newsletter. As they plan to release this form during Black Friday, they want to make sure that it can withstand the pressure of a lot of simultaneous registrations. After all, they are a company in the business of making everything, so they expect a surge of traffic Friday morning.&lt;/p&gt;
+
+&lt;h3 id=&#34;our-test-goals&#34;&gt;Our test goals&lt;/h3&gt;
+
+&lt;p&gt;While we could very well set up complex custom thresholds, it&amp;rsquo;s usually more than enough to stick with the basics. In this case, we&amp;rsquo;ll measure the number of requests where we don&amp;rsquo;t receive an HTTP OK (200) status code in the response, as well as the total duration of each request.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll also perform the test with 300 virtual users, which will all perform these requests simultaneously.&lt;/p&gt;
+
+&lt;h4 id=&#34;configuration&#34;&gt;Configuration&lt;/h4&gt;
+
+&lt;p&gt;In k6, we express this as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  // ...
+  vus: 300,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;what-does-this-mean&#34;&gt;What does this mean?&lt;/h4&gt;
+
+&lt;p&gt;So, let&amp;rsquo;s go through what we&amp;rsquo;ve done here. With 300 virtual users trying to fetch and submit the subscription form every second, we&amp;rsquo;ve set up the following performance goals:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Less than 10% are allowed to fail in retrieving the form&lt;/li&gt;
+&lt;li&gt;Less than 10% are allowed to fail in submitting the form data&lt;/li&gt;
+&lt;li&gt;Only 5% or less are permitted to have a request duration longer than 400ms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;the-actual-test&#34;&gt;The actual test&lt;/h2&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s get on to the actual test code. The test code, which is executed by each VU once for each iteration, is put inside an anonymous function. We then expose this function as a default export.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-sleep-test&#34;&gt;The sleep test 😴&lt;/h3&gt;
+
+&lt;p&gt;To make sure our environment is working, I usually start by setting up a test that does nothing except sleeping for a second and execute it once.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { sleep } from &#39;k6&#39;;
+
+export default function () {
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which, when run, produces output similar to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/mck8bbbkeyhe659a7k4i.png&#34; alt=&#34;Running a k6 script with just sleep&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-our-thresholds&#34;&gt;Adding our thresholds&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { sleep } from &#39;k6&#39;;
+import { Rate } from &#39;k6/metrics&#39;;
+
+const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  // ...
+  vus: 300,
+  duration: &#39;10s&#39;,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+
+export default function () {
+  formFailRate.add(0);
+  submitFailRate.add(0);
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the two new lines in the default function? For each iteration, we&amp;rsquo;re now adding data points to our &lt;a href=&#34;https://k6.io/docs/using-k6/thresholds&#34;&gt;threshold&lt;/a&gt; metrics, telling it that our requests did not fail. We&amp;rsquo;ll hook these up to do something meaningful as we proceed. We also added a duration to make the script run for more than one iteration.&lt;/p&gt;
+
+&lt;p&gt;For now, running the script should give you the following output:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/tofe0dhv86f4pcfesjnk.png&#34; alt=&#34;Running a k6 script with sleep and rates&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Yay, it passes! Two green checks!&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-requests&#34;&gt;Adding requests&lt;/h3&gt;
+
+&lt;p&gt;To be able to measure anything useful, we also need to add some actual requests. In this example, we&amp;rsquo;ll use &lt;a href=&#34;https://httpbin.test.loadimpact.com/&#34;&gt;https://httpbin.test.loadimpact.com/&lt;/a&gt; as our API, which is our mirror of the popular tool &lt;a href=&#34;https://httpbin.org/&#34;&gt;HTTPBin&lt;/a&gt;. Feel free to use whatever HTTP Request sink you prefer!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { sleep } from &#39;k6&#39;;
+import { Rate } from &#39;k6/metrics&#39;;
+import http from &#39;k6/http&#39;;
+
+const baseUrl = &#39;https://httpbin.test.loadimpact.com/anything&#39;;
+const urls = {
+  form: `${baseUrl}/form`,
+  submit: `${baseUrl}/form/subscribe`,
+};
+
+const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  vus: 300,
+  duration: &#39;10s&#39;,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+
+const getForm = () =&amp;gt; {
+  const formResult = http.get(urls.form);
+  formFailRate.add(formResult.status !== 200);
+};
+
+const submitForm = () =&amp;gt; {
+  const submitResult = http.post(urls.submit, {});
+  submitFailRate.add(submitResult.status !== 200);
+};
+
+export default function () {
+  getForm();
+  submitForm();
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And once again:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/zhtf4sdrgpqzrnxxq569.png&#34; alt=&#34;Running k6 with requests&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The output now also includes metrics around our HTTP requests, as well as a little green check next to the duration.&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-bundling-and-transpiling&#34;&gt;Adding Bundling and Transpiling&lt;/h3&gt;
+
+&lt;p&gt;Now that we&amp;rsquo;ve got our script to work, it&amp;rsquo;s almost time to add faker. Before we do that, we need to make sure that k6 can use the faker library.&lt;/p&gt;
+
+&lt;p&gt;As k6 does not run in a NodeJS environment, but rather in a goja VM, it needs a little help. Thankfully, it&amp;rsquo;s not that complex. We&amp;rsquo;ll use webpack and babel to achieve this, but any bundler compatible with babel would likely work.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start by initializing an npm package and add all the dependencies we&amp;rsquo;ll need:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ yarn init -y &amp;amp;&amp;amp; yarn add \
+    @babel/core \
+    @babel/preset-env \
+    babel-loader \
+    core-js \
+    webpack \
+    webpack-cli
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll then create our webpack config. The details of webpack and babel are outside the scope of this article, but there are plenty of great resources out there on how it works.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// webpack.config.js
+
+module.exports = {
+  mode: &#39;production&#39;,
+  entry: &#39;./src/index.js&#39;,
+  output: {
+    path: __dirname + &#39;/dist&#39;,
+    filename: &#39;test.[name].js&#39;,
+    libraryTarget: &#39;commonjs&#39;,
+  },
+  module: {
+    rules: [{ test: /\.js$/, use: &#39;babel-loader&#39; }],
+  },
+  stats: {
+    colors: true,
+  },
+  target: &#39;web&#39;,
+  externals: /k6(\/.*)?/,
+  devtool: &#39;source-map&#39;,
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and the &lt;code&gt;.babelrc&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;presets&amp;quot;: [
+    [
+      &amp;quot;@babel/preset-env&amp;quot;,
+      {
+        &amp;quot;useBuiltIns&amp;quot;: &amp;quot;usage&amp;quot;,
+        &amp;quot;corejs&amp;quot;: 3
+      }
+    ]
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll also modify our package.json so that we can launch our tests using yarn:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;k6-faker&amp;quot;,
+  &amp;quot;scripts&amp;quot;: {
++   &amp;quot;pretest&amp;quot;: &amp;quot;webpack&amp;quot;,
++   &amp;quot;test&amp;quot;: &amp;quot;k6 run ./dist/test.main.js&amp;quot;
+  },
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;did-you-know&#34;&gt;🧠 Did you know?&lt;/h3&gt;
+
+&lt;p&gt;Using &lt;code&gt;pre&lt;/code&gt; or &lt;code&gt;post&lt;/code&gt; at the beginning of a script name, results in that script running before/after the script you&amp;rsquo;re invoking. In this case, the &lt;code&gt;pretest&lt;/code&gt; script ensures that every time we run our test, webpack first creates a new, fresh bundle from the source code. - Sweet, huh? 👍🏻&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;enter-faker&#34;&gt;Enter Faker!&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s get right into it then! The first step is to add faker to our dependencies:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ yarn add faker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Faker has a quite extensive library of data that it&amp;rsquo;s able to generate, ranging from company details to catchphrases and profile pictures. While these are all handy to have, we&amp;rsquo;ll only use a tiny subset of what faker has to offer. Our object follows this structure:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;jane doe&amp;quot;,
+  &amp;quot;title&amp;quot;: &amp;quot;intergalactic empress&amp;quot;,
+  &amp;quot;company&amp;quot;: &amp;quot;Worldeaters Inc&amp;quot;,
+  &amp;quot;email&amp;quot;: &amp;quot;jane@doe.example&amp;quot;,
+  &amp;quot;country&amp;quot;: &amp;quot;N/A&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll now go ahead and create a service that we may use to generate said persons:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// subscriber.js
+
+import * as faker from &#39;faker/locale/en_US&#39;;
+
+export const generateSubscriber = () =&amp;gt; ({
+  name: `SUBSCRIPTION_TEST - ${faker.name.firstName()} ${faker.name.lastName()}`,
+  title: faker.name.jobTitle(),
+  company: faker.company.companyName(),
+  email: faker.internet.email(),
+  country: faker.address.country(),
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;possible-performance-issues-ahead&#34;&gt;👿 Possible performance issues ahead!&lt;/h3&gt;
+
+&lt;p&gt;All dependencies added tend to balloon the memory consumption to some extent, especially when they scale up to 300 concurrent instances. Because of this, it&amp;rsquo;s crucial that we only import the locale(s) we are using in our test case.&lt;/p&gt;
+
+&lt;p&gt;While putting together the example repository for this article, I noticed that using faker adds about 2.3MB of memory per VU, which for 300 VUs resulted in a total memory footprint of around 1.5GB.&lt;/p&gt;
+
+&lt;p&gt;You can read more about the javascript performance in k6 and how to tune it &lt;a href=&#34;https://k6.io/docs/using-k6/javascript-compatibility-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You might have noticed that we prepend the name of the generated user with &lt;code&gt;SUBSCRIPTION_TEST&lt;/code&gt;. Adding a unique identifier for your test data is just something I find convenient to be able to quickly filter out all dummy data I&amp;rsquo;ve created as part of a test. While optional, this is usually a good idea - especially if you test against an environment that you can&amp;rsquo;t easily prune.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;final-assembly&#34;&gt;Final assembly&lt;/h2&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s put it all together!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// index.js
+
+import { sleep } from &#39;k6&#39;;
+import http from &#39;k6/http&#39;;
+import { Rate } from &#39;k6/metrics&#39;;
+
+import { generateSubscriber } from &#39;./subscriber&#39;;
+
+const baseUrl = &#39;https://httpbin.test.loadimpact.com/anything&#39;;
+const urls = {
+  form: `${baseUrl}/form`,
+  submit: `${baseUrl}/form/subscribe`,
+};
+
+const formFailRate = new Rate(&#39;failed form fetches&#39;);
+const submitFailRate = new Rate(&#39;failed form submits&#39;);
+
+export const options = {
+  vus: 300,
+  duration: &#39;10s&#39;,
+  thresholds: {
+    &#39;failed form submits&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    &#39;failed form fetches&#39;: [&#39;rate&amp;lt;0.1&#39;],
+    http_req_duration: [&#39;p(95)&amp;lt;400&#39;],
+  },
+};
+
+const getForm = () =&amp;gt; {
+  const formResult = http.get(urls.form);
+  formFailRate.add(formResult.status !== 200);
+};
+
+const submitForm = () =&amp;gt; {
+  const person = generateSubscriber();
+  const payload = JSON.stringify(person);
+
+  const submitResult = http.post(urls.submit, payload);
+  submitFailRate.add(submitResult.status !== 200);
+};
+
+export default function () {
+  getForm();
+  submitForm();
+  sleep(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// subscriber.js
+
+import * as faker from &#39;faker/locale/en_US&#39;;
+
+export const generateSubscriber = () =&amp;gt; ({
+  name: `SUBSCRIPTION_TEST - ${faker.name.firstName()} ${faker.name.lastName()}`,
+  title: faker.name.jobTitle(),
+  company: faker.company.companyName(),
+  email: faker.internet.email(),
+  country: faker.address.country(),
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And with that, we&amp;rsquo;re ready to go:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dev-to-uploads.s3.amazonaws.com/i/g89wqlleq9867qw8ce7r.png&#34; alt=&#34;Running k6 with faker, thresholds and http requests&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;closing-thoughts&#34;&gt;Closing thoughts&lt;/h2&gt;
+
+&lt;p&gt;While the flexibility you get by combining the javascript engine used in k6 with webpack and babel is near endless, it&amp;rsquo;s essential to keep track of the memory consumption and performance of the actual test. After all, getting false positives due to our load generator being out of resources is not particularly helpful.&lt;/p&gt;
+
+&lt;p&gt;All the code from this article is available as an example repository on
+&lt;a href=&#34;https://github.com/k6io/example-data-generation&#34;&gt;GitHub&lt;/a&gt;, which I try to keep up to date with new versions of k6 and faker.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d love to hear your thoughts, so please hit me up with questions and comments in the field below. 👇🏼&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

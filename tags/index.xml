@@ -5,10 +5,55 @@
     <description>Recent content in Tags on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>performance</title>
+      <link>https://simme.dev/tags/performance/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reliability</title>
+      <link>https://simme.dev/tags/reliability/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/tags/reliability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>service-levels</title>
+      <link>https://simme.dev/tags/service-levels/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/tags/service-levels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sre</title>
+      <link>https://simme.dev/tags/sre/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/tags/sre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://simme.dev/tags/testing/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/tags/testing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cloud</title>
@@ -47,24 +92,6 @@
     </item>
     
     <item>
-      <title>performance</title>
-      <link>https://simme.dev/tags/performance/</link>
-      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
-      <guid>https://simme.dev/tags/performance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>testing</title>
-      <link>https://simme.dev/tags/testing/</link>
-      <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
-      <guid>https://simme.dev/tags/testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>api</title>
       <link>https://simme.dev/tags/api/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
@@ -92,11 +119,20 @@
     </item>
     
     <item>
-      <title>sre</title>
-      <link>https://simme.dev/tags/sre/</link>
-      <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
+      <title>javascript</title>
+      <link>https://simme.dev/tags/javascript/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://simme.dev/tags/sre/</guid>
+      <guid>https://simme.dev/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://simme.dev/tags/tutorial/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://simme.dev/tags/tutorial/</guid>
       <description></description>
     </item>
     
@@ -205,15 +241,6 @@
       <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
       
       <guid>https://simme.dev/tags/career/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://simme.dev/tags/javascript/</link>
-      <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
-      <guid>https://simme.dev/tags/javascript/</guid>
       <description></description>
     </item>
     
