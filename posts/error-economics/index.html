@@ -297,8 +297,8 @@ http_req_failed................: 0.00% ✓ 0 ✗ 6576
 
 <pre><code>  export const options = {
     thresholds: {
-      http_req_duration: ['p(95.0049)&lt;300'] // 95% below 300ms, accounting for planned downtime
-      http_req_failed: ['rate&lt;0.00951'] // 99,99049% successful, accounting for planned downtime
+      http_req_duration: ['p(95.0049)&lt;300'], // 95% below 300ms, accounting for planned downtime
+      http_req_failed: ['rate&lt;0.00951'], // 99,99049% successful, accounting for planned downtime
     }
   }
 
