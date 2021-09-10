@@ -41,59 +41,53 @@
     {{ end }}
   </head>
   <body class="{{if eq .Kind `page` }}single{{else}}list{{ if .IsHome }} home{{ end }}{{end}}">
-    <header class="header">
-      <!-- <div>
-        {{ if .IsHome }}
-        <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
-        {{ else }}
-        <p class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></p>
-        {{ end }}
-      </div> -->
-      <nav class="nav">
-        <ul class="menu">
-          <li>
-            <a href="/">start</a>
-          </li>
-          {{ if .Site.Menus.main }}
-            {{ range .Site.Menus.main }}
-            <li>
-              <a href="{{ .URL }}">{{ .Name }}</a>
-            </li>
-            {{ end }}
-          {{ end }}
-        </ul>
-        <ul class="menu social">
-          <li>
-            <a href="https://dev.to/0x12b">
-              {{ partial "fontawesome.html" "dev" }}
-            </a>
-          </li>
-          <li>
-            <a href="https://www.goodreads.com/user/show/58357572-simme">
-              {{ partial "fontawesome.html" "goodreads" }}
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/simskij">
-              {{ partial "fontawesome.html" "github" }}
-            </a>
-          </li>
-          <li>
-            <a href="https://www.dribbble.com/arcticbit">
-              {{ partial "fontawesome.html" "dribbble" }}
-            </a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/simonaronsson">
-              {{ partial "fontawesome.html" "linkedin" }}
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/0x12b">
-              {{ partial "fontawesome.html" "twitter" }}
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main">
+    <div class="main">
+
+      {{ if .IsHome }}
+      <div>
+        <h1>
+          Hi, my name is Simme!
+        </h1>
+        <br/>
+        <p>
+          I'm a software engineer, open-source aficionado and engineering manager from Sweden. I've 
+          spent most of my career building performant and reliable systems and teams. Every now and
+          then, I also do some <a href="#public-speaking">public speaking</a>.
+        </p>
+        <br/>
+        <p>
+          On this page, you'll find some of the things I write around community building,
+          open-source, leadership, observability, and site-reliability engineering. If you'd like
+          to read my raw notes, they're available <a href="https://publish.obsidian.md/simme">here</a>
+          and get updated as I explore new topics.
+        </p>
+        <br/>
+        <p>
+          In my spare time, you'll usually find me either out and about in the forest with the dog,
+          skiing, doing gardening, or playing with my Commodore 64.
+        </p>
+        <br/>
+        <p>
+          You can also find me on 
+          <a href="https://twitter.com/0x12b">
+            {{ partial "fontawesome.html" "twitter" }}
+          </a>, 
+          <a href="https://linkedin.com/in/simonaronsson">
+            {{ partial "fontawesome.html" "linkedin" }}
+          </a>, 
+          <a href="https://github.com/simskij">
+            {{ partial "fontawesome.html" "github" }}
+          </a>, 
+          <a href="https://www.goodreads.com/user/show/58357572-simme">
+            {{ partial "fontawesome.html" "goodreads" }}
+          </a>, 
+          <a href="https://www.dribbble.com/arcticbit">
+            {{ partial "fontawesome.html" "dribbble" }}
+          </a>, and
+          <a href="https://dev.to/0x12b">
+            {{ partial "fontawesome.html" "dev" }}
+          </a>
+        </p>
+      </div>
+      <br/>
+      {{ end}}
