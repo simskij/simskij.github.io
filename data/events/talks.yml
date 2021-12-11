@@ -1,9 +1,14 @@
 talks:
+  - title: Model-Driven Observability with Juju
+    event: Canonical Webinar
+    date: 2021-12-13
+    location: Online
+
   - title: Chaos Engineering on Docker
     event: Docker Community All-Hands
     date: 2021-09-16
     location: Online
-    
+
   - title: Load testing .Net applications with k6
     event: On .Net Show
     date: 2021-09-16
