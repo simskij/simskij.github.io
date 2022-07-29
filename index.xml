@@ -186,6 +186,18 @@ I pour time into outside of work are:&lt;/p&gt;
   
   
   &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2022-07-22&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; Canonical Community Call &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; Building a Production-Grade Charmed Operator &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+    &lt;td class=&#34;date&#34;&gt;2022-05-16&lt;/td&gt;
+    &lt;td class=&#34;event&#34;&gt; Operator Day 2022 &lt;/td&gt;
+    &lt;td class=&#34;title&#34;&gt; Observability for Developers of Charmed Operators &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
     &lt;td class=&#34;date&#34;&gt;2021-12-13&lt;/td&gt;
     &lt;td class=&#34;event&#34;&gt; Canonical Webinar &lt;/td&gt;
     &lt;td class=&#34;title&#34;&gt; Model-Driven Observability with Juju &lt;/td&gt;
