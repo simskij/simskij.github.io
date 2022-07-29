@@ -1,4 +1,15 @@
 talks:
+
+  - title: Building a Production-Grade Charmed Operator
+    event: Canonical Community Call
+    date: 2022-07-22
+    location: Online
+    
+  - title: Observability for Developers of Charmed Operators
+    event: Operator Day 2022
+    date: 2022-05-16
+    location: Online
+    
   - title: Model-Driven Observability with Juju
     event: Canonical Webinar
     date: 2021-12-13
@@ -54,7 +65,7 @@ talks:
     date: 2021-01-23
     location: Online
 
-  - title: "Find problems faster by load testing in production"
+  - title: Find problems faster by load testing in production
     event: New Relic & k6 Webinar
     date: 2021-01-19
     location: Online Webinar
