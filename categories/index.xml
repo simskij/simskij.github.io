@@ -5,6 +5,8 @@
     <description>Recent content in Categories on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Sat, 21 Dec 2019 21:57:01 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/categories/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>devops</title>
       <link>https://simme.dev/categories/devops/</link>
       <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/categories/devops/</guid>
       <description></description>
     </item>
@@ -23,7 +25,7 @@
       <title>programming</title>
       <link>https://simme.dev/categories/programming/</link>
       <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/categories/programming/</guid>
       <description></description>
     </item>

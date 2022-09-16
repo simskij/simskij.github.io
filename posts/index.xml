@@ -5,6 +5,8 @@
     <description>Recent content in Posts on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Wed, 14 Sep 2022 19:30:00 +0200</lastBuildDate>
     
         <atom:link href="https://simme.dev/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Observability is becoming mission critical, but who watches the watchmen?</title>
       <link>https://simme.dev/posts/who-watches-the-watchmen/</link>
       <pubDate>Wed, 14 Sep 2022 19:30:00 +0200</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/who-watches-the-watchmen/</guid>
       <description>
 
@@ -74,7 +76,7 @@
       <title>Introduction to distributed tracing with Tempo, OpenTelemetry and Grafana Cloud</title>
       <link>https://simme.dev/posts/intro-to-distributed-tracing/</link>
       <pubDate>Thu, 23 Sep 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/intro-to-distributed-tracing/</guid>
       <description>
 
@@ -589,7 +591,7 @@ INFO  Reporting span c3d3fa296e838a66:c3d3fa296e838a66:0:1
       <title>Error Economics - How to avoid breaking the budget</title>
       <link>https://simme.dev/posts/error-economics/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/error-economics/</guid>
       <description>&lt;p&gt;At &lt;a href=&#34;https://www.sloconf.com/&#34;&gt;SLOConf 2021&lt;/a&gt; I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.&lt;/p&gt;
 
@@ -751,7 +753,7 @@ http_req_failed................: 0.00% ✓ 0 ✗ 6576
       <title>Running distributed k6 tests on Kubernetes</title>
       <link>https://simme.dev/posts/running-distributed-k6-tests-on-kubernetes/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/running-distributed-k6-tests-on-kubernetes/</guid>
       <description>&lt;p&gt;One of the questions we often get in the forum is how to run distributed k6 tests on your own infrastructure. While we believe that &lt;a href=&#34;https://k6.io/docs/testing-guides/running-large-tests&#34;&gt;running large load tests&lt;/a&gt; is possible even when running on a single node, we do appreciate that this is something some of our users might want to do.&lt;/p&gt;
 
@@ -1140,7 +1142,7 @@ No resources found in default namespace.
       <title>Performance testing gRPC services</title>
       <link>https://simme.dev/posts/performance-testing-grpc-services/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/performance-testing-grpc-services/</guid>
       <description>&lt;p&gt;In this article, we&amp;rsquo;ll go through how to use k6 to performance test your gRPC services.&lt;/p&gt;
 
@@ -1399,7 +1401,7 @@ default ✓ [======================================] 1 VUs 00m01.4s/10m0s 1/1 it
       <title>Setting up a kubernetes lab cluster</title>
       <link>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</link>
       <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</guid>
       <description>
 
@@ -1611,7 +1613,7 @@ kube-system svclb-traefik-cg6s8                    2/2   Running   0        18m
       <title>Performance testing with generated data</title>
       <link>https://simme.dev/posts/performance-testing-with-generated-data/</link>
       <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/performance-testing-with-generated-data/</guid>
       <description>&lt;p&gt;While performance testing, it might not be a huge issue if the data you submit as part of your tests only vary slightly. In some cases, however, you might find yourself in a position where you&amp;rsquo;d like to keep not only the user interactions but also the data, as realistic as possible. How do we accomplish this without having to maintain long data tables? In this article, we&amp;rsquo;ll explore how we may utilize [fakerjs]() and k6 to perform load tests using realistic generated data.&lt;/p&gt;
 
@@ -1985,7 +1987,7 @@ export const generateSubscriber = () =&amp;gt; ({
       <title>Practical DevOps #3: Shifting Left</title>
       <link>https://simme.dev/posts/practical-devops-shifting-left/</link>
       <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/practical-devops-shifting-left/</guid>
       <description>
 
@@ -2051,7 +2053,7 @@ export const generateSubscriber = () =&amp;gt; ({
       <title>Dealing With Rejection as a Speaker</title>
       <link>https://simme.dev/posts/dealing-with-rejection-as-a-speaker/</link>
       <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/dealing-with-rejection-as-a-speaker/</guid>
       <description>
 
@@ -2118,7 +2120,7 @@ export const generateSubscriber = () =&amp;gt; ({
       <title>Practical Devops #2: On Shaming and Blaming</title>
       <link>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</link>
       <pubDate>Sun, 22 Dec 2019 04:55:56 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</guid>
       <description>
 
@@ -2174,7 +2176,7 @@ export const generateSubscriber = () =&amp;gt; ({
       <title>Practical Devops #1: The Big Sell</title>
       <link>https://simme.dev/posts/practical-devops-the-big-sell/</link>
       <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/practical-devops-the-big-sell/</guid>
       <description>
 
@@ -2212,7 +2214,7 @@ export const generateSubscriber = () =&amp;gt; ({
       <title>Behavior Driven Testing in Go Using Ginkgo</title>
       <link>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</link>
       <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</guid>
       <description>
 
@@ -2315,7 +2317,7 @@ should call the approval service
       <title>As the sprints stop #2</title>
       <link>https://simme.dev/posts/as-the-sprints-stop-2/</link>
       <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/as-the-sprints-stop-2/</guid>
       <description>
 
@@ -2367,7 +2369,7 @@ should call the approval service
       <title>An introduction to Redux and Sagas #2</title>
       <link>https://simme.dev/posts/redux-and-sagas-2/</link>
       <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/redux-and-sagas-2/</guid>
       <description>
 
@@ -2839,7 +2841,7 @@ export default App;
       <title>An introduction to Redux and Sagas #1</title>
       <link>https://simme.dev/posts/redux-and-sagas-1/</link>
       <pubDate>Fri, 15 Jun 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/redux-and-sagas-1/</guid>
       <description>&lt;p&gt;Before we dive into redux and sagas, it might be nice to get some background.&lt;/p&gt;
 
@@ -2919,7 +2921,7 @@ export default App;
       <title>As the sprints stops #1</title>
       <link>https://simme.dev/posts/as-the-sprints-stop/</link>
       <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/as-the-sprints-stop/</guid>
       <description>
 

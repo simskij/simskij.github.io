@@ -5,6 +5,8 @@
     <description>Recent content in cloud on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Running distributed k6 tests on Kubernetes</title>
       <link>https://simme.dev/posts/running-distributed-k6-tests-on-kubernetes/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/running-distributed-k6-tests-on-kubernetes/</guid>
       <description>&lt;p&gt;One of the questions we often get in the forum is how to run distributed k6 tests on your own infrastructure. While we believe that &lt;a href=&#34;https://k6.io/docs/testing-guides/running-large-tests&#34;&gt;running large load tests&lt;/a&gt; is possible even when running on a single node, we do appreciate that this is something some of our users might want to do.&lt;/p&gt;
 

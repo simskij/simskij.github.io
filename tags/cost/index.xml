@@ -5,6 +5,8 @@
     <description>Recent content in cost on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Tue, 14 Jan 2020 23:01:00 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/cost/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Practical DevOps #3: Shifting Left</title>
       <link>https://simme.dev/posts/practical-devops-shifting-left/</link>
       <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/practical-devops-shifting-left/</guid>
       <description>
 

@@ -5,6 +5,8 @@
     <description>Recent content in conferences on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Wed, 25 Dec 2019 20:43:34 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Dealing With Rejection as a Speaker</title>
       <link>https://simme.dev/posts/dealing-with-rejection-as-a-speaker/</link>
       <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/dealing-with-rejection-as-a-speaker/</guid>
       <description>
 

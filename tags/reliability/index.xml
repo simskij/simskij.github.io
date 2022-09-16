@@ -5,6 +5,8 @@
     <description>Recent content in reliability on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/reliability/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Error Economics - How to avoid breaking the budget</title>
       <link>https://simme.dev/posts/error-economics/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/error-economics/</guid>
       <description>&lt;p&gt;At &lt;a href=&#34;https://www.sloconf.com/&#34;&gt;SLOConf 2021&lt;/a&gt; I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.&lt;/p&gt;
 

@@ -5,6 +5,8 @@
     <description>Recent content in Tags on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Wed, 14 Sep 2022 19:30:00 +0200</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>monitoring</title>
       <link>https://simme.dev/tags/monitoring/</link>
       <pubDate>Wed, 14 Sep 2022 19:30:00 +0200</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/monitoring/</guid>
       <description></description>
     </item>
@@ -23,7 +25,7 @@
       <title>observability</title>
       <link>https://simme.dev/tags/observability/</link>
       <pubDate>Wed, 14 Sep 2022 19:30:00 +0200</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/observability/</guid>
       <description></description>
     </item>
@@ -32,7 +34,7 @@
       <title>sre</title>
       <link>https://simme.dev/tags/sre/</link>
       <pubDate>Wed, 14 Sep 2022 19:30:00 +0200</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/sre/</guid>
       <description></description>
     </item>
@@ -41,7 +43,7 @@
       <title>performance</title>
       <link>https://simme.dev/tags/performance/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/performance/</guid>
       <description></description>
     </item>
@@ -50,7 +52,7 @@
       <title>reliability</title>
       <link>https://simme.dev/tags/reliability/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/reliability/</guid>
       <description></description>
     </item>
@@ -59,7 +61,7 @@
       <title>service-levels</title>
       <link>https://simme.dev/tags/service-levels/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/service-levels/</guid>
       <description></description>
     </item>
@@ -68,7 +70,7 @@
       <title>testing</title>
       <link>https://simme.dev/tags/testing/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/testing/</guid>
       <description></description>
     </item>
@@ -77,7 +79,7 @@
       <title>cloud</title>
       <link>https://simme.dev/tags/cloud/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/cloud/</guid>
       <description></description>
     </item>
@@ -86,7 +88,7 @@
       <title>k6</title>
       <link>https://simme.dev/tags/k6/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/k6/</guid>
       <description></description>
     </item>
@@ -95,7 +97,7 @@
       <title>kubernetes</title>
       <link>https://simme.dev/tags/kubernetes/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/kubernetes/</guid>
       <description></description>
     </item>
@@ -104,7 +106,7 @@
       <title>operator</title>
       <link>https://simme.dev/tags/operator/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/operator/</guid>
       <description></description>
     </item>
@@ -113,7 +115,7 @@
       <title>api</title>
       <link>https://simme.dev/tags/api/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/api/</guid>
       <description></description>
     </item>
@@ -122,7 +124,7 @@
       <title>grpc</title>
       <link>https://simme.dev/tags/grpc/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/grpc/</guid>
       <description></description>
     </item>
@@ -131,7 +133,7 @@
       <title>devops</title>
       <link>https://simme.dev/tags/devops/</link>
       <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/devops/</guid>
       <description></description>
     </item>
@@ -140,7 +142,7 @@
       <title>javascript</title>
       <link>https://simme.dev/tags/javascript/</link>
       <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/javascript/</guid>
       <description></description>
     </item>
@@ -149,7 +151,7 @@
       <title>tutorial</title>
       <link>https://simme.dev/tags/tutorial/</link>
       <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/tutorial/</guid>
       <description></description>
     </item>
@@ -158,7 +160,7 @@
       <title>agile</title>
       <link>https://simme.dev/tags/agile/</link>
       <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/agile/</guid>
       <description></description>
     </item>
@@ -167,7 +169,7 @@
       <title>cost</title>
       <link>https://simme.dev/tags/cost/</link>
       <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/cost/</guid>
       <description></description>
     </item>
@@ -176,7 +178,7 @@
       <title>conferences</title>
       <link>https://simme.dev/tags/conferences/</link>
       <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/conferences/</guid>
       <description></description>
     </item>
@@ -185,7 +187,7 @@
       <title>speaking</title>
       <link>https://simme.dev/tags/speaking/</link>
       <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/speaking/</guid>
       <description></description>
     </item>
@@ -194,7 +196,7 @@
       <title>techtalks</title>
       <link>https://simme.dev/tags/techtalks/</link>
       <pubDate>Wed, 25 Dec 2019 20:43:34 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/techtalks/</guid>
       <description></description>
     </item>
@@ -203,7 +205,7 @@
       <title>blaming</title>
       <link>https://simme.dev/tags/blaming/</link>
       <pubDate>Sun, 22 Dec 2019 04:55:56 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/blaming/</guid>
       <description></description>
     </item>
@@ -212,7 +214,7 @@
       <title>shaming</title>
       <link>https://simme.dev/tags/shaming/</link>
       <pubDate>Sun, 22 Dec 2019 04:55:56 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/shaming/</guid>
       <description></description>
     </item>
@@ -221,7 +223,7 @@
       <title>bdd</title>
       <link>https://simme.dev/tags/bdd/</link>
       <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/bdd/</guid>
       <description></description>
     </item>
@@ -230,7 +232,7 @@
       <title>go</title>
       <link>https://simme.dev/tags/go/</link>
       <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/go/</guid>
       <description></description>
     </item>
@@ -239,7 +241,7 @@
       <title>tdd</title>
       <link>https://simme.dev/tags/tdd/</link>
       <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/tdd/</guid>
       <description></description>
     </item>
@@ -248,7 +250,7 @@
       <title>books</title>
       <link>https://simme.dev/tags/books/</link>
       <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/books/</guid>
       <description></description>
     </item>
@@ -257,7 +259,7 @@
       <title>career</title>
       <link>https://simme.dev/tags/career/</link>
       <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/career/</guid>
       <description></description>
     </item>
@@ -266,7 +268,7 @@
       <title>redux</title>
       <link>https://simme.dev/tags/redux/</link>
       <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/redux/</guid>
       <description></description>
     </item>
@@ -275,7 +277,7 @@
       <title>saga</title>
       <link>https://simme.dev/tags/saga/</link>
       <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/saga/</guid>
       <description></description>
     </item>
@@ -284,7 +286,7 @@
       <title>typescript</title>
       <link>https://simme.dev/tags/typescript/</link>
       <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/typescript/</guid>
       <description></description>
     </item>
@@ -293,7 +295,7 @@
       <title>react</title>
       <link>https://simme.dev/tags/react/</link>
       <pubDate>Fri, 15 Jun 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/tags/react/</guid>
       <description></description>
     </item>

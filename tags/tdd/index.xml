@@ -5,6 +5,8 @@
     <description>Recent content in tdd on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Sat, 21 Dec 2019 21:54:26 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Behavior Driven Testing in Go Using Ginkgo</title>
       <link>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</link>
       <pubDate>Sat, 21 Dec 2019 21:54:26 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/behavior-driven-testing-in-go-using-ginkgo/</guid>
       <description>
 

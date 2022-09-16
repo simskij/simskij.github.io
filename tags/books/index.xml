@@ -5,6 +5,8 @@
     <description>Recent content in books on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Thu, 27 Jun 2019 05:07:28 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/books/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>As the sprints stop #2</title>
       <link>https://simme.dev/posts/as-the-sprints-stop-2/</link>
       <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/as-the-sprints-stop-2/</guid>
       <description>
 
@@ -66,7 +68,7 @@
       <title>As the sprints stops #1</title>
       <link>https://simme.dev/posts/as-the-sprints-stop/</link>
       <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/as-the-sprints-stop/</guid>
       <description>
 

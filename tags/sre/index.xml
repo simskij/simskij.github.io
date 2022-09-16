@@ -5,6 +5,8 @@
     <description>Recent content in sre on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Wed, 14 Sep 2022 19:30:00 +0200</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/sre/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Observability is becoming mission critical, but who watches the watchmen?</title>
       <link>https://simme.dev/posts/who-watches-the-watchmen/</link>
       <pubDate>Wed, 14 Sep 2022 19:30:00 +0200</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/who-watches-the-watchmen/</guid>
       <description>
 
@@ -74,7 +76,7 @@
       <title>Error Economics - How to avoid breaking the budget</title>
       <link>https://simme.dev/posts/error-economics/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/error-economics/</guid>
       <description>&lt;p&gt;At &lt;a href=&#34;https://www.sloconf.com/&#34;&gt;SLOConf 2021&lt;/a&gt; I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.&lt;/p&gt;
 
@@ -236,7 +238,7 @@ http_req_failed................: 0.00% ✓ 0 ✗ 6576
       <title>Setting up a kubernetes lab cluster</title>
       <link>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</link>
       <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</guid>
       <description>
 

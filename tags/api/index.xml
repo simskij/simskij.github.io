@@ -5,6 +5,8 @@
     <description>Recent content in api on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/api/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Performance testing gRPC services</title>
       <link>https://simme.dev/posts/performance-testing-grpc-services/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/performance-testing-grpc-services/</guid>
       <description>&lt;p&gt;In this article, we&amp;rsquo;ll go through how to use k6 to performance test your gRPC services.&lt;/p&gt;
 

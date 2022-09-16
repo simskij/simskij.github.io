@@ -5,6 +5,8 @@
     <description>Recent content in devops on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Thu, 17 Sep 2020 21:07:28 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/devops/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Setting up a kubernetes lab cluster</title>
       <link>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</link>
       <pubDate>Thu, 17 Sep 2020 21:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/setting-up-a-kubernetes-lab-cluster/</guid>
       <description>
 
@@ -226,7 +228,7 @@ kube-system svclb-traefik-cg6s8                    2/2   Running   0        18m
       <title>Practical DevOps #3: Shifting Left</title>
       <link>https://simme.dev/posts/practical-devops-shifting-left/</link>
       <pubDate>Tue, 14 Jan 2020 23:01:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/practical-devops-shifting-left/</guid>
       <description>
 
@@ -292,7 +294,7 @@ kube-system svclb-traefik-cg6s8                    2/2   Running   0        18m
       <title>Practical Devops #2: On Shaming and Blaming</title>
       <link>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</link>
       <pubDate>Sun, 22 Dec 2019 04:55:56 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/practical-devops-on-shaming-and-blaming/</guid>
       <description>
 
@@ -348,7 +350,7 @@ kube-system svclb-traefik-cg6s8                    2/2   Running   0        18m
       <title>Practical Devops #1: The Big Sell</title>
       <link>https://simme.dev/posts/practical-devops-the-big-sell/</link>
       <pubDate>Sat, 21 Dec 2019 21:57:01 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/practical-devops-the-big-sell/</guid>
       <description>
 
@@ -386,7 +388,7 @@ kube-system svclb-traefik-cg6s8                    2/2   Running   0        18m
       <title>As the sprints stop #2</title>
       <link>https://simme.dev/posts/as-the-sprints-stop-2/</link>
       <pubDate>Thu, 27 Jun 2019 05:07:28 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/as-the-sprints-stop-2/</guid>
       <description>
 
@@ -438,7 +440,7 @@ kube-system svclb-traefik-cg6s8                    2/2   Running   0        18m
       <title>As the sprints stops #1</title>
       <link>https://simme.dev/posts/as-the-sprints-stop/</link>
       <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/as-the-sprints-stop/</guid>
       <description>
 

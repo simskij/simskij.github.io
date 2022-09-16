@@ -5,6 +5,8 @@
     <description>Recent content in performance on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/performance/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Error Economics - How to avoid breaking the budget</title>
       <link>https://simme.dev/posts/error-economics/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/error-economics/</guid>
       <description>&lt;p&gt;At &lt;a href=&#34;https://www.sloconf.com/&#34;&gt;SLOConf 2021&lt;/a&gt; I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.&lt;/p&gt;
 
@@ -176,7 +178,7 @@ http_req_failed................: 0.00% ✓ 0 ✗ 6576
       <title>Running distributed k6 tests on Kubernetes</title>
       <link>https://simme.dev/posts/running-distributed-k6-tests-on-kubernetes/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/running-distributed-k6-tests-on-kubernetes/</guid>
       <description>&lt;p&gt;One of the questions we often get in the forum is how to run distributed k6 tests on your own infrastructure. While we believe that &lt;a href=&#34;https://k6.io/docs/testing-guides/running-large-tests&#34;&gt;running large load tests&lt;/a&gt; is possible even when running on a single node, we do appreciate that this is something some of our users might want to do.&lt;/p&gt;
 
@@ -565,7 +567,7 @@ No resources found in default namespace.
       <title>Performance testing gRPC services</title>
       <link>https://simme.dev/posts/performance-testing-grpc-services/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/performance-testing-grpc-services/</guid>
       <description>&lt;p&gt;In this article, we&amp;rsquo;ll go through how to use k6 to performance test your gRPC services.&lt;/p&gt;
 
@@ -824,7 +826,7 @@ default ✓ [======================================] 1 VUs 00m01.4s/10m0s 1/1 it
       <title>Performance testing with generated data</title>
       <link>https://simme.dev/posts/performance-testing-with-generated-data/</link>
       <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/performance-testing-with-generated-data/</guid>
       <description>&lt;p&gt;While performance testing, it might not be a huge issue if the data you submit as part of your tests only vary slightly. In some cases, however, you might find yourself in a position where you&amp;rsquo;d like to keep not only the user interactions but also the data, as realistic as possible. How do we accomplish this without having to maintain long data tables? In this article, we&amp;rsquo;ll explore how we may utilize [fakerjs]() and k6 to perform load tests using realistic generated data.&lt;/p&gt;
 

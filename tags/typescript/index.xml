@@ -5,6 +5,8 @@
     <description>Recent content in typescript on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Sat, 14 Jul 2018 05:15:20 +0100</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>An introduction to Redux and Sagas #2</title>
       <link>https://simme.dev/posts/redux-and-sagas-2/</link>
       <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/redux-and-sagas-2/</guid>
       <description>
 
@@ -486,7 +488,7 @@ export default App;
       <title>An introduction to Redux and Sagas #1</title>
       <link>https://simme.dev/posts/redux-and-sagas-1/</link>
       <pubDate>Fri, 15 Jun 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/redux-and-sagas-1/</guid>
       <description>&lt;p&gt;Before we dive into redux and sagas, it might be nice to get some background.&lt;/p&gt;
 

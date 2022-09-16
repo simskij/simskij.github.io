@@ -5,6 +5,8 @@
     <description>Recent content in javascript on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://simme.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Performance testing with generated data</title>
       <link>https://simme.dev/posts/performance-testing-with-generated-data/</link>
       <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/performance-testing-with-generated-data/</guid>
       <description>&lt;p&gt;While performance testing, it might not be a huge issue if the data you submit as part of your tests only vary slightly. In some cases, however, you might find yourself in a position where you&amp;rsquo;d like to keep not only the user interactions but also the data, as realistic as possible. How do we accomplish this without having to maintain long data tables? In this article, we&amp;rsquo;ll explore how we may utilize [fakerjs]() and k6 to perform load tests using realistic generated data.&lt;/p&gt;
 
@@ -388,7 +390,7 @@ export const generateSubscriber = () =&amp;gt; ({
       <title>An introduction to Redux and Sagas #2</title>
       <link>https://simme.dev/posts/redux-and-sagas-2/</link>
       <pubDate>Sat, 14 Jul 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/redux-and-sagas-2/</guid>
       <description>
 
@@ -860,7 +862,7 @@ export default App;
       <title>An introduction to Redux and Sagas #1</title>
       <link>https://simme.dev/posts/redux-and-sagas-1/</link>
       <pubDate>Fri, 15 Jun 2018 05:15:20 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/redux-and-sagas-1/</guid>
       <description>&lt;p&gt;Before we dive into redux and sagas, it might be nice to get some background.&lt;/p&gt;
 

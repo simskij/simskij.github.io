@@ -5,6 +5,8 @@
     <description>Recent content on Simon Aronsson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>simme@arcticbit.se (Simon Aronsson)</managingEditor>
+    <webMaster>simme@arcticbit.se (Simon Aronsson)</webMaster>
     <lastBuildDate>Wed, 14 Sep 2022 19:30:00 +0200</lastBuildDate>
     
         <atom:link href="https://simme.dev/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Posts</title>
       <link>https://simme.dev/posts/</link>
       <pubDate>Wed, 14 Sep 2022 19:30:00 +0200</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/posts/</guid>
       <description></description>
     </item>
@@ -23,7 +25,7 @@
       <title></title>
       <link>https://simme.dev/projects/</link>
       <pubDate>Sat, 07 Mar 2020 13:14:38 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/projects/</guid>
       <description>&lt;p&gt;Software development is not only my day job but also one of my biggest passions. Some of the software projects
 I pour time into outside of work are:&lt;/p&gt;
@@ -119,7 +121,7 @@ I pour time into outside of work are:&lt;/p&gt;
       <title></title>
       <link>https://simme.dev/speaking/</link>
       <pubDate>Sat, 07 Mar 2020 13:14:38 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/speaking/</guid>
       <description>&lt;style&gt;
   body {
@@ -408,7 +410,7 @@ I pour time into outside of work are:&lt;/p&gt;
       <title></title>
       <link>https://simme.dev/about/</link>
       <pubDate>Sat, 21 Dec 2019 23:23:38 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/about/</guid>
       <description>&lt;p&gt;&lt;style&gt;
     .about {
@@ -444,7 +446,7 @@ I pour time into outside of work are:&lt;/p&gt;
       <title>Uses</title>
       <link>https://simme.dev/uses/</link>
       <pubDate>Sat, 21 Dec 2019 23:23:38 +0100</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/uses/</guid>
       <description>
 
@@ -535,7 +537,7 @@ I pour time into outside of work are:&lt;/p&gt;
       <title></title>
       <link>https://simme.dev/videos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
+      <author>simme@arcticbit.se (Simon Aronsson)</author>
       <guid>https://simme.dev/videos/</guid>
       <description>
 
