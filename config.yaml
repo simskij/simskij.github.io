@@ -1,6 +1,11 @@
 baseURL: 'https://simme.dev/'
 title: Simon Aronsson
 languageCode: en-us
+rssLimit: 20
+
+author:
+  name: Simon Aronsson
+  email: simme@arcticbit.se
 
 googleAnalytics: UA-155244210-1
 
