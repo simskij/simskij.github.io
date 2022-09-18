@@ -9,6 +9,7 @@ Doing streams and online conferences, I've been asked more than once what gear I
 
 <div class="uses">
 
+
 * 🖥 LG 34" 34WK95U 21:9
 * 💪🏼 Multibrackets M VESA Gas Lift Arm Single Silver HD
 * ⌨️  ZSA Moonlander MK I
@@ -22,5 +23,6 @@ Doing streams and online conferences, I've been asked more than once what gear I
 * 📷 Sony Alpha A7 II
 * 🕑 TimeBox Evo
 * ⬛️  Orbitkey Desk Mat
+
 
 </div>
