@@ -7,7 +7,7 @@
     
     <title> - Simon Aronsson</title>
     
-      <meta name="description" content="body { background-color: rgb(238, 238, 238); } .main { margin: 0 auto; padding: 0 var(--gap); } .talks { font-size: .8em; } .talks table tbody tr .date { margin: 0; padding: 0;font-variant-numeric: tabular-nums; } .talks table tbody tr .event { font-weight: bold;margin: 0; padding: 0 } .talks table tbody tr .title { margin: 0; padding: 4px 0 } @media (min-width:500px){ .talks table { display: table; } .talks .list { display: none; } } @media (max-width:499px){ .">
+      <meta name="description" content=".talks { font-size: .8em; } .talks table tbody tr .date { margin: 0; padding: 0;font-variant-numeric: tabular-nums; } .talks table tbody tr .event { font-weight: bold;margin: 0; padding: 0 } .talks table tbody tr .title { margin: 0; padding: 4px 0 } @media (min-width:500px){ .talks table { display: table; } .talks .list { display: none; } } @media (max-width:499px){ .talks, .talks table, .talks table tbody, .talks table tbody tr { display: block; width:100%; } .">
       <meta name="author" content="">
     <link href="https://simme.dev/nord-highlightjs.css" rel="stylesheet">
     <link href="https://simme.dev/style.css" rel="stylesheet">
@@ -39,12 +39,41 @@ if (!doNotTrack) {
   </head>
   <body class="single">
     <div class="main">
-
+      <div class="header">
+        <div class="title">
+          <a href="/">
+            simme.dev
+          </a>
+        </div>
+        <div class="menu">
+          <a href="/posts">
+            <div>
+              Posts
+            </div>
+          </a>
+          <a href="/speaking">
+            <div>
+              Speaking
+            </div>
+          </a>
+          <a href="/uses">
+            <div>
+              Gear
+            </div>
+          </a>
+          <a href="mailto:simme@arcticbit.se">
+            <div>
+              Get in touch
+            </div>
+          </a>
+        </div>
+      </div>
       
 
 <article class="post-single">
   <header class="post-header">
     <a href="/" style="font-size: .8em">← Back</a>
+    <br/><br/>
     <h1 class="post-title"></h1>
     <div class="post-meta">
       
@@ -54,14 +83,6 @@ if (!doNotTrack) {
   </header>
 
   <div class="post-content"><style>
-  body {
-    background-color: rgb(238, 238, 238);
-  }
-
-  .main {
-    margin: 0 auto;
-    padding: 0 var(--gap);
-  }
 
   .talks {
     font-size: .8em;
