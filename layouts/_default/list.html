@@ -5,17 +5,14 @@
 {{ if .IsHome }}
 {{ $pctx = .Site }}
 {{ else }}
+
 <header class="page-header">
-  <h1>{{ if eq .Data.Singular "tag" }}#{{ .Data.Term }}{{ else }}Posts{{ end }}</h1>
+  <a href="/" style="font-size: .8em">← Back</a>
+  <h1 class="post-title">{{ if eq .Data.Singular "tag" }}#{{ .Data.Term }}{{ else }}{{ end }}</h1>
 </header>
 {{ end }}
 
-<h3>
-  Posts
-</h3>
-<br/>
-
-<table>
+<table style="font-size: .8em">
   {{ range $index, $page := (where $pctx.RegularPages "Type" "in" .Site.Params.mainSections) }}
   <tr>
     <td style="font-variant-numeric: tabular-nums;width:200px">{{ $page.Date.Format "2006-01-02" }}</td>
@@ -27,28 +24,5 @@
   </tr>
   {{ end }}
 </table>
-<br/>
-<div class="talks">
-  <h3>
-    Public Speaking
-  </h3>
-  <br/>
-  <table>
-  <tbody>
-  {{ range .Site.Data.events }}
-  {{ range .talks }}
-  <tr>
-    <td style="font-variant-numeric: tabular-nums; width:200px;">{{ .date }}</td>
-    <td class="title"> {{ .title }}</td>
-      <td>{{ .event }}</td>
-  </tr>
-  {{ end }}
-  {{ end }}
-  </tbody>
-  </table>
-
-
-</div>
-</div>
 
 {{ partial "footer.html" . }}

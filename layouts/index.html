@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+
+{{ $pctx := . }}
+
+{{ if .IsHome }}
+    {{ $pctx = .Site }}
+{{ end }}
+
+{{ partial "footer.html" . }}

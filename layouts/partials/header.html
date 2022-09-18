@@ -45,9 +45,39 @@
   </head>
   <body class="{{if eq .Kind `page` }}single{{else}}list{{ if .IsHome }} home{{ end }}{{end}}">
     <div class="main">
-
+      <div class="header">
+        <div class="title">
+          <a href="/">
+            simme.dev
+          </a>
+        </div>
+        <div class="menu">
+          <a href="/posts">
+            <div>
+              Posts
+            </div>
+          </a>
+          <a href="/speaking">
+            <div>
+              Speaking
+            </div>
+          </a>
+          <a href="/uses">
+            <div>
+              Gear
+            </div>
+          </a>
+          <a href="mailto:simme@arcticbit.se">
+            <div>
+              Get in touch
+            </div>
+          </a>
+        </div>
+      </div>
       {{ if .IsHome }}
       <div>
+        <div style="width: 100%; height: 50vh; background: url('/images/mountains-faded.png'); background-position: center center; background-size: cover; filter: saturate(30%);margin: 40px 0;">
+        </div>
         <h1>
           Hi, my name is Simme!
         </h1>
@@ -55,7 +85,9 @@
         <p>
           I'm a software engineer, open-source aficionado and engineering manager from Sweden. I've 
           spent most of my career building performant and reliable systems and teams. Every now and
-          then, I also do some <a href="#public-speaking">public speaking</a>.
+          then, I also do some <a href="#public-speaking">public speaking</a>. In 2021, I became a
+          <a href="https://www.docker.com/captains/simon-aronsson/">Docker Captain</a>, which I then
+          followed up in 2022 by also becoming a <a href="https://developers.google.com/community/experts/directory/profile/profile-simon-aronsson">Google Developer Expert</a> in the Cloud and Modern Architecture category.
         </p>
         <br/>
         <p>
