@@ -1,4 +1,13 @@
 talks:
+  - title: Careers at Canonical
+    event: Ubuntu Summit 2023
+    date: 2023-11-04
+    location: Riga
+
+  - title: The power of Juju
+    event: Operator Day at Kubecon EU 2023
+    date: 2023-04-28
+    location: Online
 
   - title: Building a Production-Grade Charmed Operator
     event: Canonical Community Call
@@ -6,7 +15,7 @@ talks:
     location: Online
     
   - title: Observability for Developers of Charmed Operators
-    event: Operator Day 2022
+    event: Operator Day at Kubecon EU 2022
     date: 2022-05-16
     location: Online
     

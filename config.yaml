@@ -39,7 +39,3 @@ menu:
       weight: 50
       name: projects
       url: /projects
-    - identifier: uses
-      weight: 60
-      name: uses
-      url: /uses

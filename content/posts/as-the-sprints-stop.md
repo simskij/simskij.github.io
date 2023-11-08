@@ -1,5 +1,5 @@
 ---
-title: "As the sprints stops #1"
+title: "As the sprints stop #1"
 subtitle: Summer reads for lazy days away from the keyboard
 date: 2018-06-12
 draft: false
