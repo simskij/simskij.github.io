@@ -7,18 +7,24 @@ The theory of constraints describes a workflow of how to work with constraints t
 
 The workflow described is divided into five separate steps:
 
-- [[#Identify]]
-- [[#Exploit]]
-- [[#Subordinate]]
-- [[#Elevate]]
-- [[#Repeat]]
+- Identify
+- Exploit
+- Subordinate
+- Elevate
+- Repeat
 
 By using the workflow below, the idea is to gain additional understanding about a system's weaknesses and where time is best spent to further increase its efficiency. Ideas like [[Optimizations should be made at the bottleneck]] origin from this theory.
 
-```
+```mermaid
+graph TD
 
-.-> Identify -> Exploit -> Subordinate -> Elevate -.
-'--------------------- Repeat ---------------------'
+ A[Identify]
+ B[Exploit]
+ C[Subordinate]
+ D[Elevate]
+
+ A --> B --> C --> D
+ D --> |Repeat|A
 ```
 
 ## Steps

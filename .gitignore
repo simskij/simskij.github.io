@@ -6,3 +6,6 @@ _notes/.obsidian
 _notes/Public/.obsidian
 _notes/Private
 _notes/old
+public
+_notes
+!_notes/Public

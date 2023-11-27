@@ -2,7 +2,7 @@
 title: Observability
 feed: show
 ---
-Observability is a term used to describe to what extent the state of a system can be inferred from it's inputs and outputs. 
+Observability is a term used to describe to what extent the state of a system can be inferred from it's inputs and outputs. The term is often used interchangably with the term [[Monitoring]].
 
 ### Concepts
 - [[Alerting]]

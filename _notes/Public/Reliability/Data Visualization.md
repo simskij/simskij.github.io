@@ -1,7 +1,6 @@
 ---
 title: Data Visualization
 ---
-
 ### Tools
 - [[Grafana]]
 - [[Graphite]]

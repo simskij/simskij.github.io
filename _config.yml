@@ -24,7 +24,7 @@ preferences:
     enabled: true
 
 encoding: utf-8
-
+mermaid: true
 theme: null
 plugins:
   - jekyll-diagrams
