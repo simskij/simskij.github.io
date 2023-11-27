@@ -1,6 +1,6 @@
 ---
 title: Uses
-feed: show
+feed: hide
 permalink: /uses
 ---
 
