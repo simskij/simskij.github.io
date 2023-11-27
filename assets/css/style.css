@@ -6,39 +6,39 @@ layout: Stylesheet
 
 html,
 html[data-theme="light"] {
-    --color-bg-main: #FFFFFF;
-    --color-bg-sub: #FAFAFC;
-    --color-text-main: #282832;
-    --color-text-sub: #5D5D67;
-    --color-text-link: #2380ED;
-    --color-border-dark: #363636;
-    --color-border: #BABCBD;
-    --color-border-light: #E5E5E5;
+    --color-bg-main: #eff1f5;
+    --color-bg-sub: #e6e9ef;
+    --color-text-main: #4c4f69;
+    --color-text-sub: #5c5f77;
+    --color-text-link: #dd7878;
+    --color-border-dark: #7c7f93;
+    --color-border: #8c8fa1;
+    --color-border-light: #9ca0b0;
 }
 
 html[data-theme="dark"] {
-    --color-bg-main: #262626;
-    --color-bg-sub: #18181C;
-    --color-text-main: #FAFAFC;
-    --color-text-sub: #FFFEFF;
-    --color-text-link: #6D9EFF;
-    --color-border-dark: #E6E6E6;
-    --color-border: #696969;
-    --color-border-light: #353535;
+    --color-bg-main: #24273a;
+    --color-bg-sub: #363a4f;
+    --color-text-main: #cad3f5;
+    --color-text-sub: #b8c0e0;
+    --color-text-link: #8aadf4;
+    --color-border-dark: #6e738d;
+    --color-border: #8087a2;
+    --color-border-light: #939ab7;
 }
 
 @media (prefers-color-scheme: dark) {
 
     html,
     html[data-theme="dark"] {
-        --color-bg-main: #262626;
-        --color-bg-sub: #18181C;
-        --color-text-main: #FAFAFC;
-        --color-text-sub: #FFFEFF;
-        --color-text-link: #6D9EFF;
-        --color-border-dark: #E6E6E6;
-        --color-border: #696969;
-        --color-border-light: #353535;
+        --color-bg-main: #24273a;
+        --color-bg-sub: #363a4f;
+        --color-text-main: #cad3f5;
+        --color-text-sub: #b8c0e0;
+        --color-text-link: #8aadf4;
+        --color-border-dark: #6e738d;
+        --color-border: #8087a2;
+        --color-border-light: #939ab7;
     }
 
     html[data-theme="light"] {
@@ -610,8 +610,13 @@ hr {
 }
 
 .stale-link {
-    background-color: var(--color-border-light);
     color: var(--color-text-sub) !important;
+    opacity: 50%;
+    border-bottom: 1px dashed var(--color-text-sub);
+}
+
+.stale-link:hover {
+    text-decoration: none!important;
 }
 
 
@@ -1535,6 +1540,7 @@ a[href^="http"] {
 }
 
 .home-sub-text {
+    text-align: justify;
     padding-top: 2rem;
     color: var(--color-text-sub);
 }
@@ -1580,7 +1586,7 @@ a[href^="http"] {
 }
 
 .home-intro {
-    padding: 5% 10%;
+    
 }
 
 @media screen and (max-width:320px)

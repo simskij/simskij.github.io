@@ -16,8 +16,6 @@ html {
     --highlight-color-whitespace: #888888;
 }
 
-.highlight pre { background-color: var(--color-border-light); }
-.highlight .hll { background-color: var(--color-border-light); }
 .highlight .c { color: var(--highlight-color-green); font-style: italic; background-color: var(--color-border-light); } /* Comment */
 .highlight .err { color: var(--color-text); } /* Error */
 .highlight .g { color: var(--color-text); } /* Generic */
