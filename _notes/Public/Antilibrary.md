@@ -1,0 +1,363 @@
+---
+title: Antilibrary
+format: list
+---
+This antilibrary could just as easily have been called my reading backlog, or things I'll likely never get around to. It consists of books that I want to read, but haven't yet. Some of them I already own, but the vast majority I don't.
+### Fiction
+- [[Sandworms of Dune (Dune, #8)]] by Herbert, Frank
+- [[Hunters of Dune (Dune, #7)]] by Herbert, Frank
+- [[Chapterhouse: Dune (Dune, #6)]]] by Herbert, Frank
+- [[Heretics of Dune (Dune, #5)]] by Herbert, Frank
+- [[God Emperor of Dune (Dune, #4)]] by Herbert, Frank
+- [[Children of Dune (Dune, #3)]] by Herbert, Frank
+- [[Dune Messiah (Dune, #2)]] by Herbert, Frank
+- [[Dune (Dune, #1)]] by Herbert, Frank
+- [[The Handmaid’s Tale (The Handmaid's Tale, #1)]] by Atwood, Margaret
+- [[The Testaments (The Handmaid's Tale, #2)]] by Atwood, Margaret
+- [[One Flew Over the Cuckoo's Nest]] by Kesey, Ken
+- [[A Tale of Two Cities]] by Dickens, Charles
+- [[A Game of Thrones (A Song of Ice and Fire, #1)]] by Martin, George R.R.
+- [[Kurs i självutplåning]] by Bromander, Henrik
+- [[Uppgång & fall]] by Strömquist, Liv
+- [[Dracula]] by Stoker, Bram
+- [[Moby-Dick or, The Whale]] by Melville, Herman
+- [[Twilight (The Twilight Saga, #1)]] by Meyer, Stephenie
+- [[On the Road]] by Kerouac, Jack
+- [[War and Peace]] by Tolstoy, Leo
+- [[A Christmas Carol]] by Dickens, Charles
+- [[The Odyssey]] by Homer
+- [[Les Misérables]] by Hugo, Victor
+- [[Gone with the Wind]] by Mitchell, Margaret
+- [[Green Eggs and Ham]] by Dr. Seuss
+- [[Fahrenheit 451]] by Bradbury, Ray
+- [[The Book Thief]] by Zusak, Markus
+- [[Daemon Time]] by Viita, Kristoffer
+- [[Eragon]] by Paolini, Christopher
+- [[Divergent]] by Roth, Veronica
+- [[The Golden Compass]] by Pullman, Philip
+- [[Memoirs of a Geisha]] by Golden, Arthur
+- [[The Princess Bride]] by Goldman, William
+- [[Wyrd Sisters: The Play]] by Briggs, Stephen
+- [[Guards! Guards!: The Play]] by Briggs, Stephen
+- [[Cryptonomicon]] by Stephenson, Neal 
+- [[American Gods]] by Gaiman, Neil
+- [[Peace Talks]] by Butcher, Jim
+- [[Mina drömmars stad]] by Fogelström, Per Anders
+- [[Foundation and Chaos (Second Foundation Trilogy, #2)]] by Bear, Greg
+- [[Neverwhere]] by Gaiman, Neil
+- [[Do Androids Dream of Electric Sheep?]] by Dick, Philip K.
+- [[Animal Farm]] by Orwell, George
+- [[The Perks of Being a Wallflower]] by Chbosky, Stephen
+- [[Horrorstör]] by Hendrix, Grady 
+- [[JPod]] by Coupland, Douglas
+- [[Microserfs]] by Coupland, Douglas
+- [[The Hunger Games (The Hunger Games, #1)]] by Collins, Suzanne
+- [[1984]] by Orwell, George
+- [[To Kill a Mockingbird]] by Lee, Harper
+- [[Miss Peregrine's Home for Peculiar Children]] by Riggs, Ransom
+- [[The Ocean at the End of the Lane]] by Gaiman, Neil 
+- [[The Shining]] by King, Stephen
+- [[It]] by King, Stephen 
+- [[Into the Wild]] by Krakauer, Jon 
+- [[American Psycho]] by Ellis, Bret Easton
+- [[The War of the Worlds]] by Wells, H.G.
+- [[The Time Machine]] by Wells, H.G.
+- [[Beach Read]] by Henry, Emily 
+- [[The Godfather]] by Puzo, Mario
+- [[Ender’s Game (Ender's Saga, #1)]] by Card, Orson Scott
+- [[2001: A Space Odyssey]] by Clarke, Arthur C.
+- [[The Great Gatsby]] by Fitzgerald, F. Scott
+- [[Lord of the Flies]] by Golding, William
+- [[Frankenstein: The 1818 Text]] by Shelley, Mary
+- [[Brave New World]] by Huxley, Aldous
+- [[A Clockwork Orange]] by Burgess, Anthony
+- [[The Summer Without Men]] by Hustvedt, Siri
+- [[Choke]] by Palahniuk, Chuck
+- [[The Rum Diary]] by Thompson, Hunter S.
+- [[Fear and Loathing in Las Vegas]] by Thompson, Hunter S.
+- [[The Martian]] by Weir, Andy
+- [[The Emigrants (The Emigrants, #1)]] by Moberg, Vilhelm
+- [[Hyperion (Hyperion Cantos, #1)]] by Simmons, Dan
+### Comics
+- [[Heartstopper: Volume One]] by Oseman, Alice
+- [[Long Way Down: The Graphic Novel]] by Reynolds, Jason
+- [[Snotgirl, Vol. 1: Green Hair Don't Care]] by O'Malley, Bryan Lee
+- [[The Complete Maus]] by Spiegelman, Art
+- [[Lonesome Dove]] by McMurtry, Larry
+- [[Anne Frank's Diary: The Graphic Adaptation]] by Folman, Ari
+- [[French Milk]] by Knisley, Lucy 
+- [[Relish: My Life in the Kitchen]] by Knisley, Lucy
+- [[The Arab of the Future: A Childhood in the Middle East, 1978-1984]] by Sattouf, Riad
+- [[El Deafo]] by Bell, Cece
+- [[Petty Theft]] by Girard, Pascal
+- [[Batman vs. Predator]] by Gibbons, Dave
+- [[The Tiny Book of Tiny Stories, Vol. 1]] by Gordon-Levitt, Joseph
+- [[Stitches: A Memoir]] by Small, David
+- [[Burma Chronicles]] by Delisle, Guy
+- [[Before Watchmen: Moloch #1]] by Straczynski, J. Michael
+- [[Before Watchmen: Silk Spectre #1]] by Cooke, Darwyn
+- [[Before Watchmen: Rorschach #1]] by Azzarello, Brian
+- [[Before Watchmen: Minutemen #1]] by Cooke, Darwyn
+- [[Blankets]] by Thompson, Craig
+- [[Bitch Planet #1]] by DeConnick, Kelly Sue
+- [[Anya's Ghost]] by Brosgol, Vera
+- [[Habibi]] by Thompson, Craig
+- [[Välkommen till din psykos]] by Johansson, Nanna
+- [[Hur man botar en feminist]] by Johansson, Nanna
+- [[Life Zone]] by Hanselmann, Simon
+- [[Hundra procent fett]] by Strömquist, Liv
+- [[Ja till Liv!: Liv Strömquists ABC]] by Strömquist, Liv
+- [[Einsteins fru]] by Strömquist, Liv
+- [[Prins Charles känsla]] by Strömquist, Liv
+- [[Kunskapens frukt]] by Strömquist, Liv
+- [[Ghost World]] by Clowes, Daniel
+- [[Footnotes in Gaza]] by Sacco, Joe
+- [[The Catcher in the Rye]] by Salinger, J.D.
+- [[Action Philosophers!: the lives and thoughts of history's A-list brain trust]] by Van Lente, Fred
+- [[Chroniques de Jérusalem]] by Delisle, Guy
+- [[Batman: Harley and Ivy]] by Dini, Paul
+- [[Sin City]] by Miller, Frank
+- [[Batman & Dracula: Red Rain]] by Moench, Doug
+- [[Astonishing X-Men, Vol. 1: Gifted]] by Whedon, Joss
+- [[Swamp Thing, Vol. 1: Saga of the Swamp Thing]] by Moore, Alan 
+- [[Kick-Ass]] by Millar, Mark 
+- [[The Walking Dead: Compendium One]] by Kirkman, Robert
+- [[The Walking Dead, Book One]] by Kirkman, Robert
+- [[Embroideries]] by Satrapi, Marjane
+- [[Hellboy, Vol. 1: Seed of Destruction]] by Mignola, Mike
+- [[X-Men: The Dark Phoenix Saga]] by Claremont, Chris
+- [[300]] by Miller, Frank
+- [[Buffy the Vampire Slayer: The Long Way Home]] by Whedon, Joss
+- [[Daytripper]] by Moon, Fábio
+- [[Hawkeye, Volume 1: My Life as a Weapon]] by Fraction, Matt
+- [[Sin City Volume 1: The Hard Goodbye]] by Miller, Frank
+- [[From Hell, Vol. 1]] by Moore, Alan
+- [[Planetary, Volume 2: The Fourth Man]] by Ellis, Warren
+- [[The League of Extraordinary Gentlemen, Vol. 1]] by Moore, Alan
+- [[The Sandman, Vol. 3: Dream Country]] by Gaiman, Neil
+- [[Scott Pilgrim's Precious Little Life]] by O'Malley, Bryan Lee
+- [[Batman: The Dark Knight Returns]] by Miller, Frank
+- [[The Sandman: Overture]] by Gaiman, Neil 
+### Biographies, Memoirs & History
+- [[Just for Fun: The Story of an Accidental Revolutionary]] by Torvalds, Linus
+- [[Hackers: Heroes of the Computer Revolution]] by Levy, Steven
+- [[Crossing the Chasm: Marketing and Selling High-Tech Products to Mainstream Customers]] by Moore, Geoffrey A.
+- [[Skunk Works: A Personal Memoir of My Years at Lockheed]] by Rich, Ben R.
+- [["Surely You're Joking, Mr. Feynman!": Adventures of a Curious Character]] by Feynman, Richard
+- [["What Do You Care What Other People Think?": Further Adventures of a Curious Character]] by Feynman, Richard
+- [[In the Beginning...Was the Command Line]] by Stephenson, Neal
+- [[Where Wizards Stay Up Late: The Origins of the Internet]] by Hafner, Katie
+- [[UNIX: A History and a Memoir]] by Kernighan, Brian W.
+- [[Longitude: The True Story of a Lone Genius Who Solved the Greatest Scientific Problem of His Time]] by Sobel, Dava
+- [[Masters of Doom: How Two Guys Created an Empire and Transformed Pop Culture]] by Kushner, David
+- [[The Green Book: With new introduction]] by Muammar Ghadaffi
+- [[The Girl with the Lower Back Tattoo]] by Schumer, Amy
+- [[Shockaholic]] by Fisher, Carrie
+- [[In Memory Yet Green: The Autobiography, 1920-1954]] by Asimov, Isaac
+- [[Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future]] by Vance, Ashlee 
+- [[The Diary of a Young Girl]] by Frank, Anne
+- [[Haruki Murakami and the Music of Words]] Rubin, Jay
+- [[Haruki Murakami]] by Mussari, Mark
+- [[The Autobiography of Malcolm X]] by X, Malcolm
+- [[Steve Jobs]] by Isaacson, Walter
+- [[On Writing: A Memoir of the Craft]] by King, Stephen 
+- [[Bound for Glory]] by Guthrie, Woody
+- [[Miles: The Autobiography]] by Davis, Miles
+- [[Just Kids]] by Smith, Patty
+
+### Business & Self-Improvement
+- [[Made to Stick: Why Some Ideas Survive and Others Die]] by Heath, Chip
+- [[Silos, Politics and Turf Wars]] by Lencioni, Patrick
+- [[Making Work Visible: Exposing Time Theft to Optimize Work & Flow]] by Degrandis, Dominica
+- [[Range: Why Generalists Triumph in a Specialized World]] by Epstein, David
+- [[Hyperfocus: How to Be More Productive in a World of Distraction]] by Bailey, Chris
+- [[Necessary But Not Sufficient]] by Goldratt, Eliyahu M.
+- [[Isn't It Obvious?]] by Goldratt, Eliyahu M.
+- [[Critical Chain]] by Goldratt, Eliyahu M.
+- [[It's Not Luck]] by Goldratt, Eliyahu M.
+- [[Scramble: How agile strategy can build epic brands in record time]] by Neumeier, Marty
+- [[Deep Work: Rules for Focused Success in a Distracted World]] by Newport, Cal
+- [[Switch: How to Change Things When Change Is Hard]] by Heath, Chip
+- [[Conversational Intelligence: How Great Leaders Build Trust and Get Extraordinary Results]] by Glaser, Judith E.
+- [[Everybody Writes: Your Go-To Guide to Creating Ridiculously Good Content]] by Handley, Ann 
+- [[Show Your Work!: 10 Ways to Share Your Creativity and Get Discovered]] by Kleon, Austin
+- [[Working in Public: The Making and Maintenance of Open Source Software]] by Eghbal, Nadia
+- [[Time Off: A Practical Guide to Building Your Rest Ethic and Finding Success Without the Stress]] by Fitch, John
+- [[Smarter Faster Better: The Secrets of Being Productive in Life and Business]] by Duhigg, Charles
+- [[The Culture Code: The Secrets of Highly Successful Groups]] by Coyle, Daniel
+- [[Radical Candor: Be a Kick-Ass Boss Without Losing Your Humanity]] by Scott, Kim Malone
+- [[Emotional Intelligence 2.0]] by Bradberry, Travis
+- [[The Effective Executive: The Definitive Guide to Getting the Right Things Done]] by Drucker, Peter F.
+- [[Blockbusters: Hit-making, Risk-taking, and the Big Business of Entertainment]] by Elberse, Anita
+- [[I Will Teach You to Be Rich: No Guilt. No Excuses. No BS. Just a 6-Week Program That Works]] by Sethi, Ramit
+- [[Why We Sleep: Unlocking the Power of Sleep and Dreams]] by Walker, Matthew
+- [[The Art of Gathering: How We Meet and Why It Matters]] by Parker, Priya
+- [[Build Your Dream Network: Forging Powerful Relationships in a Hyper-Connected World]] by Hoey, J. Kelly
+- [[Built to Last: Successful Habits of Visionary Companies]] by Collins, James C.
+- [[The Making of a Manager: What to Do When Everyone Looks to You]] by Zhuo, Julie
+- [[Liar's Poker]] by Lewis, Michael
+- [[The Scrum Field Guide: Practical Advice for Your First Year]] by Lacey, Mitch
+- [[Outliers: The Story of Success]] by Gladwell, Malcolm
+- [[Thinking In Systems: A Primer]] by Meadows, Donella H.
+- [[Agile Estimating and Planning]] by Cohn, Mike
+- [[The Decision: Overcoming Today's BS for Tomorrow's Success]] by Hart, Kevin
+- [[Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency]] by DeMarco, Tom
+- [[The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life]] by Manson, Mark 
+- [[How to Win Friends and Influence People]] by Carnegie, Dale
+- [[Freakonomics: A Rogue Economist Explores the Hidden Side of Everything]] by Levitt, Steven D.
+- [[Digital Minimalism: Choosing a Focused Life in a Noisy World]] by Newport, Cal
+- [[Designing Your Life: Build a Life that Works for You]] by Burnett, Bill
+- [[What Got You Here Won't Get You There: How Successful People Become Even More Successful]] by Goldsmith, Marshall
+- [[Rich Dad, Poor Dad]] by Kiyosaki, Robert T.
+- [[Team Topologies: Organizing Business and Technology Teams for Fast Flow]] by Skelton, Matthew 
+- [[The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change]] by Fournier, Camille
+- [[Extreme Ownership: How U.S. Navy SEALs Lead and Win]] by Willink, Jocko
+- [[Never Split the Difference: Negotiating As If Your Life Depended On It]] by Voss, Chris
+- [[Scrum Mastery: From Good To Great Servant-Leadership]] by Watts, Geoff
+- [[The Starfish and the Spider: The Unstoppable Power of Leaderless Organizations]] by Brafman, Ori
+- [[The 5 Elements of Effective Thinking]] by Burger, Edward B.
+- [[Measure What Matters]] by Doerr, John
+- [[The Power of Habit: Why We Do What We Do in Life and Business]] by Duhigg, Charles
+- [[Beyond the Goal: Eliyahu Goldratt Speaks on the Theory of Constraints]] by Goldratt, Eliyahu M.
+- [[Managing Humans: Biting and Humorous Tales of a Software Engineering Manager]] by Lopp, Michael
+- [[Agile Retrospectives: Making Good Teams Great]] by Derby, Esther
+- [[The Visible Ops Handbook: Starting ITIL in 4 Practical Steps]] Behr, Kevin
+- [[What Machines Can't Do: Politics and Technology in the Industrial Enterprise]] by Thomas, Robert J.
+- [[How Learning Works: Seven Research-Based Principles for Smart Teaching]] by Ambrose, Susan A.
+- [[Exit, Voice, and Loyalty: Responses to Decline in Firms, Organizations, and States]] by Hirschman, Albert O.
+- [[Peopleware: Productive Projects and Teams]] by DeMarco, Tom
+- [[Thinking, Fast and Slow]] by Kahneman, Daniel
+- [[Start with Why: How Great Leaders Inspire Everyone to Take Action]] by Sinek, Simon
+- [[Talking to Strangers: What We Should Know About the People We Don’t Know]] by Gladwell, Malcolm
+
+### Community
+- [[Developer Evangelist Handbook]] by Heilmann, Chris
+- [[The Art of Community: Building the New Age of Participation]] by Bacon, Jono
+### Gardening
+- [[Carrots Love Tomatoes: Secrets of Companion Planting for Successful Gardening]] by Riotte, Louise
+
+### Philosophy
+- [[The Myth of Sisyphus and Other Essays]] by Camus, Albert
+- [[The Art of War]] by Sun Tzu
+- [[Everything Is F*cked: A Book About Hope]] by Manson, Mark
+- [[Hackers and Painters: Big Ideas from the Computer Age]] by Graham, Paul
+
+### Psychology
+- [[Moral Tribes: Emotion, Reason, and the Gap Between Us and Them]] by Greene, Joshua D.
+### Politics
+- [[Feminist Fight Club: An Office Survival Manual for a Sexist Workplace]] by Bennett, Jessica
+- [[Technically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech]] by Wachter-Boettcher, Sara
+- [[Brotopia: Breaking Up the Boys' Club of Silicon Valley]] by Chang, Emily
+- [[Talking from 9 to 5: Women and Men at Work]] by Tannen, Deborah
+- [[Pink Brain, Blue Brain: How Small Differences Grow into Troublesome Gaps — and What We Can Do About It]] by Eliot, Lise
+- [[Delusions of Gender: How Our Minds, Society, and Neurosexism Create Difference]] by Fine, Cordelia
+- [[Why Are All The Black Kids Sitting Together in the Cafeteria?]] by Tatum, Beverly Daniel
+- [[You Don't Know Us Negroes and Other Essays]] by Hurston, Zora Neale
+- [[Wahala]] by May, Nikki
+- [[The Art of Insubordination: How to Dissent and Defy Effectively]] by Kashdan, Todd
+- [[Bad Feminist]] by Gay, Roxane
+- [[All the White Friends I Couldn't Keep: Hope—And Hard Pills to Swallow—About Fighting for Black Lives]] by Henry, Andre
+- [[Black Joy: Stories of Resistance, Resilience, and Restoration]] by Lewis-Giggetts, Tracey Michae’l
+- [[You Truly Assumed]] by Sabreen, Laila
+- [[Nobody's Magic]] by Birdsong, Destiny O.
+- [[The Chosen One: A First-Generation Ivy League Odyssey]] by Brown, Echo
+- [[The Caged Virgin: An Emancipation Proclamation for Women and Islam]] by Hirsi Ali, Ayaan
+- [[Bitch Doctrine: Essays for Dissenting Adults]] by Penny, Laurie
+- [[Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy]] by O'Neil, Cathy
+- [[Data Feminism]] by D’Ignazio, Catherine
+- [[Beyond Common Sense: Psychological Science in the Courtroom]] by Borgida, Eugene
+- [[Confronting Racism: The Problem and the Response]] by Eberhardt, Jennifer L.
+- [[Loserthink: How Untrained Brains Are Ruining America]] by Adams, Scott
+- [[Middlesex]] by Eugenides, Jeffrey
+- [[The Crunk Feminist Collection]] by Cooper, Brittney
+- [[Algorithms of Oppression: How Search Engines Reinforce Racism]] by Noble, Safiya Umoja
+- [[White on White/Black on Black]] by  Yancy, George
+- [[How to Be Black]] by Thurston, Baratunde R.
+- [[Global Crisis: War, Climate Change and Catastrophe in the Seventeenth Century]] by Parker, Geoffrey
+- [[The Works of Simone de Beauvoir: The Second Sex and The Ethics Of Ambiguity]] by Beauvoir, Simone de
+
+### Science
+- [[The Gene: An Intimate History]] by Mukherjee, Siddhartha
+- [[Sapiens: A Brief History of Humankind]] by Harari, Yuval Noah
+### Tech
+- [[Kubernetes: Up & Running]] by Hightower, Kelsey
+- [[Terraform: Up & Running: Writing Infrastructure as Code]] by Brikman, Yevgeniy
+- [[Seeking SRE: Conversations About Running Production Systems at Scale]] by Blank-Edelman, David N.
+- [[Software Engineering at Google: Lessons Learned from Programming Over Time]] by Winters, Titus
+- [[Rethinking Agile: Why Agile Teams Have Nothing To Do With Business Agility]] by Leopold, Klaus
+- [[Agile Conversations: Transform Your Conversations, Transform Your Culture]] by Squirrel, Douglas
+- [[Explore It!: Reduce Risk and Increase Confidence with Exploratory Testing]] by Hendrickson, Elisabeth
+- [[99 Bottles of OOP]] by Metz, Sandi
+- [[The Missing README: A Guide for the New Software Engineer]] by Ricoomini, Chris 
+- [[Gödel, Escher, Bach: An Eternal Golden Braid]] by Hofstadter, Douglas R.
+- [[Observability Engineering: Achieving Production Excellence]] by Majors, Charity
+- [[Engineering Management for the Rest of Us]] by Drasner, Sarah
+- [[The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change]] by Reilly, Tanya
+- [[Architecture Patterns with Python: Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices]] by Percival, Harry
+- [[Building Event-Driven Microservices: Leveraging Organizational Data at Scale]] by Bellemare, Adam
+- [[The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage]] by Stoll, Clifford
+- [[New Dark Age: Technology and the End of the Future]] by Bridle, James
+- [[Designing Data-Intensive Applications]] by Kleppmann, Martin
+- [[The Site Reliability Workbook: Practical Ways to Implement SRE]] by Beyer, Betsy
+- [[Kubernetes Best Practices: Blueprints for Building Successful Applications on Kubernetes]] by Burns, Brendan
+- [[Becoming a Technical Leader: An Organic Problem-Solving Approach]] by Weinberg, Gerald M.
+- [[The Soul of a New Machine]] by Kidder, Tracy
+- [[97 Things Every Software Architect Should Know]] by Monson-Haefel, Richard
+- [[97 Things Every Programmer Should Know: Collective Wisdom from the Experts]] by Henney, Kevlin
+- [[Seven Languages in Seven Weeks: A Pragmatic Guide to Learning Programming Languages]] by Tate, Bruce A.
+- [[Domain-Driven Design: Tackling Complexity in the Heart of Software]] by Evans, Eric
+- [[Design Patterns: Elements of Reusable Object-Oriented Software]] by Gamma, Erich
+- [[The Mythical Man-Month: Essays on Software Engineering]] by Brooks Jr., Frederick P.
+- [[Refactoring: Improving the Design of Existing Code]] by Fowler, Martin
+- [[Programming Pearls]] by Bentley, Jon L.
+- [[Jävla skitsystem! Hur en usel digital arbetsmiljö stressar oss på jobbet – och hur vi kan ta tillbaka kontrollen]] by Söderström, Jonas
+- [[The D Programming Language]] by Alexandrescu, Andrei
+- [[Clean Agile: Back to Basics]] by Martin, Robert C.
+- [[Extreme Programming Explained: Embrace Change]] by Beck, Kent
+- [[The Passionate Programmer: Creating a Remarkable Career in Software Development]] by Fowler, Chad
+- [[Soft Skills: The Software Developer's Life Manual]] by Sonmez, John Z.
+- [[Agile Software Development, Principles, Patterns, and Practices]] by Martin, Robert C.
+- [[Working Effectively with Legacy Code]] by Feathers, Michael C. 
+- [[Building Microservices: Designing Fine-Grained Systems]] by Newman, Sam
+- [[The Effective Engineer: How to Leverage Your Efforts In Software Engineering to Make a Disproportionate and Meaningful Impact]] by Lau, Edmond
+- [[The Art of Computer Programming, Volume 1: Fundamental Algorithms]] by Knuth, Donald Ervin
+- [[Code: The Hidden Language of Computer Hardware and Software]] by Petzold, Charles
+- [[Inclusive Design Patterns - Coding Accessibility Into Web Design]] by Pickering, Heydon
+- [[Inclusive Components — Accessible web interfaces, piece by piece]] by Pickering, Heydon
+- [[Cracking the Coding Interview: 150 Programming Questions and Solutions]] by McDowell, Gayle Laakmann 
+- [[Site Reliability Engineering: How Google Runs Production Systems]] by Beyer, Betsy
+- [[Implementing Domain-Driven Design]] by Vernon, Vaughn
+- [[Continuous API Management: Making the Right Decisions in an Evolving Landscape]] by Medjaoui, Mehdi
+- [[The Design of Web APIs]] by Lauret, Arnaud
+- [[The Architecture of Open Source Applications, Volume I]] by Brown, Amy
+- [[The Architecture of Open Source Applications, Volume II]] by Brown, Amy
+
+### Unsorted
+- [[Behave: The Biology of Humans at Our Best and Worst]] by Sapolsky, Robert M. 
+- [[The Science of Sherlock Holmes]] by Wagner, E.J.
+- [[This Is Your Brain on Birth Control]] by Hill, Sarah E.
+- [[A Short History of Drunkenness]] by Forsyth, Mark
+- [[Invisible: How Young Women with Serious Health Issues Navigate Work, Relationships, and the Pressure to Seem Just Fine]] by Hirsch, Michele Lent
+- [[Redshirts]] by Scalzi, John
+- [[A Short History of Nearly Everything]] by Bryson, Bill
+- [[Blink: The Power of Thinking Without Thinking]] by Gladwell, Malcolm
+- [[No Longer Human]] by Dazai, Osamu
+- [[Great Short Books: A Year of Reading―Briefly]] by Davis, Kenneth C.
+- [[Catch-22]] by Heller, Joseph
+- [[The Dawn of Everything: A New History of Humanity]] by Graeber, David
+- [[The People in the Trees]] by Yanagihara, Hanya 
+- [[Practical Doomsday: A User's Guide to the End of the World]] by Zalewski, Michal
+- [[Vinyl Moon]] by Browne, Mahogany L.
+- [[Ain't Burned All the Bright]] by Reynolds, Jason
+- [[The Power of Now: A Guide to Spiritual Enlightenment]] by Tolle, Eckhart
+- [[Alas, Babylon]] by Frank, Pat
+- [[The Elements of Style]] by Strunk Jr., William
+- [[A Promised Land]] by Obama, Barack
+- [[Drift into Failure]] by Dekker, Sidney
+- [[Antifragile: Things that Gain from Disorder]] by Taleb, Nassim Nicholas
+- [[Dominion: The Making of the Western Mind]] by Holland, Tom
+- [[The Kingdom of God in Africa: A History of African Christianity]] by Shaw, Mark
+- [[The Color Purple]] by Walker, Alice
+- [[Jag tror på köttets lust och på själens obotliga ensamhet: De bästa citaten]] by Attorps, Kaj
+- [[This One Summer]] by Tamaki, Mariko
+- [[Vägmärken]] by Hammarskjöld, Dag
