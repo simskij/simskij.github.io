@@ -8,6 +8,9 @@ Git is a distributed version management tool. It gained popularity in the 2010s,
 - [[Analysing the total size of a Git Repository]]
 - [[Deep cleaning Git Repositories]]
 
+## GitOps
+- [[ArgoCD]]
+
 ## Services
 - [[GitHub]]
 - [[Launchpad]]

@@ -1,6 +1,6 @@
 ---
 title: Kubernetes
-feed: show
+feed: hide
 ---
 Kubernetes is a container orchestration system []()used to operate distributed workloads in a modular, scalable fashion.
 
