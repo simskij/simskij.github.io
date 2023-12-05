@@ -1,5 +1,6 @@
 ---
 title: 'Observability is becoming mission critical, but who watches the watchmen?'
+redirect_from: /posts/who-watches-the-watchmen
 ---
 
 

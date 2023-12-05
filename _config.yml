@@ -27,7 +27,7 @@ encoding: utf-8
 mermaid: true
 theme: null
 plugins:
-  - jekyll-diagrams
+  - jekyll-redirect-from
   - jekyll-feed 
   - jekyll-sitemap 
   - jekyll-tidy
