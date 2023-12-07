@@ -331,6 +331,7 @@ This antilibrary could just as easily have been called my reading backlog, or th
 - [[The Design of Web APIs]] by Lauret, Arnaud
 - [[The Architecture of Open Source Applications, Volume I]] by Brown, Amy
 - [[The Architecture of Open Source Applications, Volume II]] by Brown, Amy
+- [[Samizdat: And Other Issues Regarding the 'Source' of Open Source Code]] by Brown, Kenneth
 
 ### Unsorted
 - [[Behave: The Biology of Humans at Our Best and Worst]] by Sapolsky, Robert M. 
