@@ -43,6 +43,9 @@ function recalculate() {
     }
 
     document.getElementById('machine').innerHTML = `
+      <h3>
+        System Requirements
+      </h3>
       ${totals.cpu} Cores<br/>
       ${totals.mem} GB Memory<br/>
       ${totals.disk} GB Disk / Day

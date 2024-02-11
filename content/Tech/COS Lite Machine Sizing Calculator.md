@@ -3,9 +3,6 @@
 
 <script type="text/javascript" src="/static/js/calculator.js">
 </script>
-<script>
-    recalculate()
-</script>
 <style>
     #metric-slider,
     #log-lines-slider {
@@ -91,3 +88,7 @@
 
 <div id="machine">
 </div>
+
+<script>
+    recalculate()
+</script>
