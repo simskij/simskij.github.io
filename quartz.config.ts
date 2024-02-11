@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: 'simme.dev',
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -22,14 +22,14 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#eff1f5",
+          lightgray: "#ccd0da",
+          gray: "#9ca0b0",
+          darkgray: "#6c6f85",
+          dark: "#4c4f69",
+          secondary: "#6c6f85",
+          tertiary: "#7287fd",
+          highlight: "#ccd0da",
         },
         darkMode: {
           light: "#161618",
@@ -65,7 +65,6 @@ const config: QuartzConfig = {
       Plugin.AliasRedirects(),
       Plugin.ComponentResources({ fontOrigin: "googleFonts" }),
       Plugin.ContentPage(),
-      Plugin.FolderPage(),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
