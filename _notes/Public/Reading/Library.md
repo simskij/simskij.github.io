@@ -7,10 +7,12 @@ format: list
 - [[Konsten att hitta kärleken i smurfkläder]] by Pamuk, Anna
 - [[Hela Jakthunden]] by Pamuk, Anna
 - [[An Elegant Puzzle: Systems of Engineering Management]] by Larson, Will
-- [[The Stranger]] by Camus, Albert
+- [[Häng City]] by Yvesand, Mikael
 
 ## Read
-
+### 2024
+- [[The Stranger]] by Camus, Albert
+- [[Pro Git]] by  Chacon, Scott and Straub, Ben
 ### 2023
 - [[Eftersök : Teknik - juridik - hundar - skytte]] by Törnström, Dan
 - [[The Culture Map: Decoding How People Think, Lead, and Get Things Done Across Cultures]] by Meyer, Erin
