@@ -1,34 +1,6 @@
 ---
 ---
 
-<script type="text/javascript" src="/static/js/calculator.js">
-</script>
-<style>
-    #metric-slider,
-    #log-lines-slider {
-        -webkit-appearance: none;  /* Override default CSS styles */
-        appearance: none;
-        height: 22px; /* Specified height */
-        padding: 8px;
-        background: var(--lightgray); /* Grey background */
-        outline: none; /* Remove outline */
-        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-        transition: opacity .2s;
-    }
-    #metric-datapoints,
-    #log-lines {
-      background: transparent;
-      border: 2px solid #ccc;
-      padding: 8px;
-      height: 20px;
-      font-size: 1.2em;
-      width: 100px;
-    }
-    .controls {
-        display: flex;
-    }
-</style>
 <div>
   <label for="metric-slider" style="display: block">
     <h3>
@@ -88,7 +60,34 @@
 
 <div id="machine">
 </div>
-
+<style>
+    #metric-slider,
+    #log-lines-slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        height: 22px; /* Specified height */
+        padding: 8px;
+        background: var(--lightgray); /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+    }
+    #metric-datapoints,
+    #log-lines {
+      background: transparent;
+      border: 2px solid #ccc;
+      padding: 8px;
+      height: 20px;
+      font-size: 1.2em;
+      width: 100px;
+    }
+    .controls {
+        display: flex;
+    }
+</style>
+<script type="text/javascript" src="/static/js/calculator.js">
+</script>
 <script>
     recalculate()
 </script>
