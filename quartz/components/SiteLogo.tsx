@@ -1,13 +1,19 @@
+import { classNames } from "../util/lang";
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
-function SiteLogo({ cfg, fileData }: QuartzComponentProps) {
-  const ogImagePath = `/static/me.png`
-  return <div><a href="/"><img class="site-logo" style="max-width: 200px;" src={ogImagePath} alt="Return to Home Page"></img></a></div>
+function SiteLogo({ cfg, fileData, displayClass }: QuartzComponentProps) {
+  const ogImagePath = `/static/me.png`;
+  return <div class={classNames(displayClass, "site-logo")}>
+    <a href="/">
+      <img src={ogImagePath} alt="Return to Home Page"/>
+    </a>
+  </div>
 }
 SiteLogo.css = `
 .site-logo {
   margin: .5rem;
   text-align: center;
+  max-width: 200px;
 }
 `
 

@@ -19,7 +19,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.SiteLogo(),
+    Component.DesktopOnly(Component.SiteLogo()),
+    Component.MobileOnly(Component.Darkmode()),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.DesktopOnly(Component.Explorer({
@@ -27,8 +28,8 @@ export const defaultContentPageLayout: PageLayout = {
     })),
   ],
   right: [
-    Component.Darkmode(),
-    Component.Graph(),
+    Component.DesktopOnly(Component.Darkmode()),
+    Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
