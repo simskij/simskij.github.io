@@ -47,7 +47,7 @@ button#explorer {
   overflow: hidden;
   max-height: none;
   transition: max-height 0.35s ease;
-  margin-top: 0.5rem;
+
 
   &.collapsed > .overflow::after {
     opacity: 0;
@@ -65,6 +65,7 @@ button#explorer {
       color: var(--dark);
       opacity: 0.75;
       pointer-events: all;
+      font-weight: 100;
     }
   }
 }
@@ -85,9 +86,9 @@ svg {
 
   & div > a {
     color: var(--secondary);
-    font-family: var(--headerFont);
+    font-family: var(--bodyFont);
     font-size: 0.95rem;
-    font-weight: $boldWeight;
+    font-weight: 100!important;
     line-height: 1.5rem;
     display: inline-block;
   }
@@ -112,7 +113,7 @@ svg {
       font-size: 0.95rem;
       display: inline-block;
       color: var(--secondary);
-      font-weight: $boldWeight;
+      font-weight: 100;
       margin: 0;
       line-height: 1.5rem;
       pointer-events: none;

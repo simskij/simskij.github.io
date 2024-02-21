@@ -66,7 +66,7 @@ Yield was introduced with ES6 (2015) and may be thought of as the equivalent of 
 
 It pauses the execution of the current generator function and returns a IteratorResult object with the two properties value — which contains the yield return — and done which is a boolean value indicating whether the end of the generator function has been reached or not. The generator will then remain paused until its next() function is called, on which it will continue to execute after the previous yield.
 
-For more on generator functions, give [Dace](undefined) a visit and read his [excellent write-up](https://medium.com/@hidace/javascript-es6-generators-part-i-understanding-generators-93dea22bf1b).
+For more on generator functions, give [Dace](https://medium.com/@hidace/) a visit and read his [excellent write-up](https://medium.com/@hidace/javascript-es6-generators-part-i-understanding-generators-93dea22bf1b).
 
 ## Conclusion
 

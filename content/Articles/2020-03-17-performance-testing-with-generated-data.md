@@ -9,7 +9,7 @@ tags:
   - "#k6"
 ---
 
-While performance testing, it might not be a huge issue if the data you submit as part of your tests only vary slightly. In some cases, however, you might find yourself in a position where you'd like to keep not only the user interactions but also the data, as realistic as possible. How do we accomplish this without having to maintain long data tables? In this article, we'll explore how we may utilize [fakerjs]() and k6 to perform load tests using realistic generated data.
+While performance testing, it might not be a huge issue if the data you submit as part of your tests only vary slightly. In some cases, however, you might find yourself in a position where you'd like to keep not only the user interactions but also the data, as realistic as possible. How do we accomplish this without having to maintain long data tables? In this article, we'll explore how we may utilize [fakerjs](https://fakerjs.dev/) and k6 to perform load tests using realistic generated data.
 
 <!--more-->
 

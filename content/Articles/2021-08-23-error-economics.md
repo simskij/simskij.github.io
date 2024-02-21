@@ -65,7 +65,9 @@ When would it be acceptable to burn the budget on purpose? I like to use the fol
 
 In this demo, we'll be testing a made-up online food ordering service called Hipster Pizza. As service level indicators, we'll be using the response time of requests and the HTTP response status success rate.
 
-[![hipster pizza](https://k6.io/blog/static/b61c2d22b2b553d2a050bfefec97a066/37e03/hipster-pizza.jpg 'hipster pizza')](/blog/static/b61c2d22b2b553d2a050bfefec97a066/37e03/hipster-pizza.jpg)
+<div style="text-align:center">
+  <img src="static/img/hipster-pizza.jpg" alt="Hipster with Pizza" />
+</div>
 
 ### Picking our SLOs
 
@@ -143,7 +145,7 @@ As you can see, we already get all the information we need to be able to make ou
 
 Let's set those as our thresholds in our k6 script.
 
-{% raw %}
+
 ```plain
   export const options = {
     thresholds: {
@@ -152,6 +154,6 @@ Let's set those as our thresholds in our k6 script.
     }
   }
 ```
-{% endraw %}
+
 
 That's it! By using your SLOs and SLIs as pass/fail thresholds in your CI workflow you'll be able to increase your confidence in product iterations not breaking the error budget.

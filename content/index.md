@@ -9,3 +9,5 @@ Every now and then, I also do some public speaking. In 2021, I became a Docker C
 On this page, you'll find some of the things I write around community building, open-source, leadership, observability, and site-reliability engineering. If you'd like to read my raw notes, they're available here and get updated as I explore new topics.
 
 In my spare time, you'll usually find me either out and about in the forest with the dogs, skiing, doing gardening, or playing with my Commodore 64.
+
+If you're interested in more processed and polished content, have a look at my [[Articles]].

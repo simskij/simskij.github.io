@@ -108,7 +108,6 @@ export const TodoAdder = connect
 
 ### The Todo List
 
-{% raw %}
 ```jsx
 import * as React from "react";
 
@@ -166,7 +165,7 @@ const styles = {
   },
 };
 ```
-{% endraw %}
+
 
 ```jsx
 import { connect } from "react-redux";
@@ -452,7 +451,7 @@ export default App;
 
 As a last step, modify the renderTodo function of the todo-list-component to show the images as well:
 
-{% raw %}
+
 ```jsx
 private renderTodo = (todo: ITodo) => (
     <li
@@ -477,7 +476,7 @@ private renderTodo = (todo: ITodo) => (
     </li>
   );
 ```
-{% endraw %}
+
 
 ## Stop — Demo time!
 

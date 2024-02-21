@@ -6,7 +6,7 @@ This antilibrary could just as easily have been called my reading backlog, or th
 ### Fiction
 - [[Sandworms of Dune \(Dune, 8\)]] by Herbert, Frank
 - [[Hunters of Dune (Dune, 7)]] by Herbert, Frank
-- [[Chapterhouse: Dune (Dune, 6)]]] by Herbert, Frank
+- [[Chapterhouse Dune (Dune, 6)]]] by Herbert, Frank
 - [[Heretics of Dune (Dune, 5)]] by Herbert, Frank
 - [[God Emperor of Dune (Dune, 4)]] by Herbert, Frank
 - [[Children of Dune (Dune, 3)]] by Herbert, Frank

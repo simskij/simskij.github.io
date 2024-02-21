@@ -87,7 +87,7 @@ export default ((userOpts?: Partial<Options>) => {
           data-savestate={opts.useSavedState}
           data-tree={jsonTree}
         >
-          <h1>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h1>
+          { /*<h1>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h1> 
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -101,8 +101,9 @@ export default ((userOpts?: Partial<Options>) => {
             class="fold"
           >
             <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
+          </svg>*/}
         </button>
+        
         <div id="explorer-content">
           <ul class="overflow" id="explorer-ul">
             <ExplorerNode node={fileTree} opts={opts} fileData={fileData} />

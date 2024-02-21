@@ -54,7 +54,8 @@ ul,
 }
 
 a {
-  font-weight: $boldWeight;
+  font-weight: 100;
+  padding: 0 4px!important;
   text-decoration: none;
   transition: color 0.2s ease;
   color: var(--secondary);
@@ -145,7 +146,7 @@ a {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1rem;
       top: 0;
       width: $sidePanelWidth;
       margin-top: $topSpacing;
@@ -254,7 +255,7 @@ h4,
 h5,
 h6,
 thead {
-  font-family: var(--headerFont);
+  font-family: var(--bodyFont);
   color: var(--dark);
   font-weight: revert;
   margin-bottom: 0;
@@ -394,11 +395,11 @@ pre {
 
 code {
   font-size: 0.9em;
-  color: var(--dark);
+  color: var(--light);
   font-family: var(--codeFont);
   border-radius: 5px;
   padding: 0.1rem 0.2rem;
-  background: var(--lightgray);
+  background: var(--dark);
 }
 
 tbody,

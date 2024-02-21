@@ -23,7 +23,7 @@ With the increasing interest in observability as a practice, and decreasing barr
 As this transition in value happens, a new question is starting to gain in importance: who watches the watchmen? Or to put it in words that speak less of my geeky obsession with comics, and more of the topic at hand: what observes the observability stack? How will we be made aware if it is starting to have issues?
 
 <div style="text-align: center;">
-  <img src="/assets/img/who-watches-the-watchmen.png" alt="Who watches the watchmen?" style="margin: auto;" />
+  <img src="/static/img/who-watches-the-watchmen.png" alt="Who watches the watchmen?" style="margin: auto;" />
   <br/><br/>
 </div>
 
@@ -44,7 +44,7 @@ To keep it short: as long as our alerting continues to work, and the telemetry s
 Let's say we're running a stack where [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) is responsible of alerting. If this (or these) Alertmanager stops working, there will no longer be anything in place to alert us about the fact that it's down (duh). Some would probably argue that this is why you have something like Grafana in place, with dedicated monitoring screens on the wall displaying the state of your solution in realtime. I don't know about you, but I personally forget to look at those screens as soon as I get caught up in something. I also want to be able to get lunch, go to the bathroom every now and then or even refill my cup of coffee.
 
 <div style="text-align: center;">
-  <img src="/assets/img/keep-calm-and-alert-on-failure.jpeg" alt="Keep calm and alert on failures" style="margin: auto" />
+  <img src="/static/img/keep-calm-and-alert-on-failure.jpeg" alt="Keep calm and alert on failures" style="margin: auto" />
   <br/><br/>
 </div>
 
