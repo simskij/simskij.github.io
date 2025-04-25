@@ -1,1 +1,0 @@
-Formulating and presenting your opinions in a strong manner, but remaining open to conflicting ideas. Allowing yourself to change your mind when presented with a better alternative.

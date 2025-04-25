@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simme.dev</title>
+    <style>
+        html
+        body {
+            background: #1e1e2e !important;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #cdd6f4;
+        }
+        .blink_me {
+            animation: blinker 1s infinite;
+        }
+
+        @keyframes blinker {
+        49% { opacity: 1; }
+        50% {
+            opacity: 0;
+        }
+        99% { opacity: 0; }
+
+        }
+        .main {
+            width: 100ch;
+            margin: auto;
+            padding: 2ch;
+            font-family: monospace;
+        }
+        a {
+            color: #cdd6f4;
+            text-decoration: none;
+            border-bottom: 1.2px dashed;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <pre>$ cat ./logo
+
+
+                    .-.                                                          
+                 .--.-'  .-.                                 (_)`)-.                  
+                (  (_)   `-'  .-. .-.   .-. .-.     .-.         /   \    .-. .    .-. 
+                `-.    /    /   )   ) /   )   ) .-/--' .-.    /     \ ./--'  |  /    
+              _.   )_.(__._/   /   /_/   /   / / (__.' `-' .-/.      )(__.'  |_/     
+             (____'                          `´           (_/  `----'                
+
+
+                    <b>simon aronsson • eu-north-1 • observability @ canonical</b>
+
+
+ $ <span class="blink_me">_</span></pre>
+    </div>
+</body>
+</html>
