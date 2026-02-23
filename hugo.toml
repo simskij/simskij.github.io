@@ -1,0 +1,17 @@
+baseURL = 'https://simme.dev/'
+languageCode = 'en-us'
+title = 'Simon Aronsson'
+theme = 'simme'
+summaryLength = 20
+
+[params]
+  description = 'Simon Aronsson — software engineer'
+  github = 'https://github.com/simskij'
+  linkedin = 'https://linkedin.com/in/simonaronsson'
+  mastodon = 'https://fosstodon.org/@simskij'
+
+[menus]
+  [[menus.main]]
+    name = 'blog'
+    url = '/posts/'
+    weight = 10

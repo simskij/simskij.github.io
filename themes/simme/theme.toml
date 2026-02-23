@@ -1,0 +1,6 @@
+name = "simme"
+license = "MIT"
+description = "Custom terminal-aesthetic theme for simme.dev"
+
+[author]
+  name = "Simon Aronsson"

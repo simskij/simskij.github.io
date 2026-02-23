@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ .Content }}
+<div class="post-list">
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="post-preview">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <div class="post-meta">
+      {{ .Date.Format "2006-01-02" }} &middot; {{ .WordCount }} words &middot; {{ .ReadingTime }} min read
+    </div>
+    {{ with .GetTerms "tags" }}
+    <div class="post-tags">
+      {{ range . }}<a href="{{ .Permalink }}" class="tag">{{ .LinkTitle }}</a>{{ end }}
+    </div>
+    {{ end }}
+    <p class="post-excerpt">{{ .Summary }}</p>
+  </article>
+  {{ end }}
+</div>
+{{ end }}

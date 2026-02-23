@@ -1,0 +1,269 @@
+/* Catppuccin Macchiato (dark) */
+:root {
+  --base: #24273a;
+  --mantle: #1e2030;
+  --crust: #181926;
+  --text: #cad3f5;
+  --subtext0: #a5adcb;
+  --surface0: #363a4f;
+  --surface1: #494d64;
+  --blue: #8aadf4;
+  --green: #a6da95;
+  --mauve: #c6a0f6;
+  --peach: #f5a97f;
+  --red: #ed8796;
+  --yellow: #eed49f;
+}
+
+/* Catppuccin Latte (light) */
+[data-theme="light"] {
+  --base: #eff1f5;
+  --mantle: #e6e9ef;
+  --crust: #dce0e8;
+  --text: #4c4f69;
+  --subtext0: #6c6f85;
+  --surface0: #ccd0da;
+  --surface1: #bcc0cc;
+  --blue: #1e66f5;
+  --green: #40a02b;
+  --mauve: #8839ef;
+  --peach: #fe640b;
+  --red: #d20f39;
+  --yellow: #df8e1d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--base);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.site-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
+/* Header / nav */
+.site-header {
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .site-title {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-header nav a {
+  color: var(--subtext0);
+  font-size: 0.9rem;
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--subtext0);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+  display: inline;
+}
+
+/* Portrait */
+.portrait {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+  margin-bottom: 4rem;
+  display: block;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  color: var(--subtext0);
+  display: inline-flex;
+}
+
+.social-links a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Blog list */
+.post-preview {
+  margin-bottom: 2.5rem;
+}
+
+.post-preview h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.post-preview h2 a {
+  color: var(--text);
+}
+
+.post-preview h2 a:hover {
+  color: var(--blue);
+}
+
+.post-excerpt {
+  color: var(--subtext0);
+  margin: 0.5rem 0 0;
+}
+
+/* Single post */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.post-meta {
+  color: var(--subtext0);
+  font-size: 0.85rem;
+}
+
+.post-tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--subtext0);
+  background: var(--surface0);
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  margin-right: 0.35rem;
+}
+
+.tag:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-tags-inline {
+  font-size: 0.8rem;
+}
+
+/* Content images */
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Content typography */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+.content code {
+  background: var(--surface0);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+}
+
+.content pre {
+  background: var(--mantle);
+  padding: 1.25rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid var(--surface0);
+}
+
+.content pre code {
+  background: none;
+  padding: 0;
+}
+
+.content blockquote {
+  border-left: 3px solid var(--surface1);
+  margin-left: 0;
+  padding-left: 1.25rem;
+  color: var(--subtext0);
+}
+
+.content hr {
+  border: none;
+  border-top: 1px solid var(--surface0);
+  margin: 2rem 0;
+}
