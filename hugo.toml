@@ -11,7 +11,7 @@ summaryLength = 20
   description = 'Simon Aronsson — software engineer'
   github = 'https://github.com/simskij'
   linkedin = 'https://linkedin.com/in/simonaronsson'
-  mastodon = 'https://fosstodon.org/@simskij'
+  mastodon = 'https://hachyderm.io/@simskij'
 
 [menus]
   [[menus.main]]
