@@ -4,6 +4,9 @@ title = 'Simon Aronsson'
 theme = 'simme'
 summaryLength = 20
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   description = 'Simon Aronsson — software engineer'
   github = 'https://github.com/simskij'
@@ -12,6 +15,6 @@ summaryLength = 20
 
 [menus]
   [[menus.main]]
-    name = 'blog'
+    name = 'Blog'
     url = '/posts/'
     weight = 10

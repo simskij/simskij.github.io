@@ -1,0 +1,11 @@
+{{- $posts := where .Site.RegularPages "Section" "posts" -}}
+[{{ range $i, $p := $posts }}{{ if $i }},{{ end }}
+  {
+    "title": {{ $p.Title | jsonify }},
+    "url": {{ $p.Permalink | jsonify }},
+    "date": {{ $p.Date.Format "2006-01-02" | jsonify }},
+    "content": {{ $p.Plain | jsonify }},
+    "tags": [{{ range $j, $t := $p.GetTerms "tags" }}{{ if $j }},{{ end }}{{ $t.LinkTitle | jsonify }}{{ end }}]
+  }
+{{- end }}
+]

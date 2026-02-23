@@ -45,7 +45,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
 }
 
@@ -72,13 +72,18 @@ a:hover {
   flex: 1;
 }
 
+.site-content h1 {
+  margin: 0;
+}
+
 /* Header / nav */
 .site-header {
   padding: 1rem 0;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--text);
 }
 
 .site-header .site-title {
@@ -90,7 +95,7 @@ a:hover {
 .site-header nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .site-header nav a {
@@ -101,6 +106,98 @@ a:hover {
 .site-header nav a:hover {
   color: var(--text);
   text-decoration: none;
+}
+
+.search-toggle {
+  background: none;
+  border: none;
+  color: var(--subtext0);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.search-toggle:hover {
+  color: var(--text);
+}
+
+/* Search overlay */
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  justify-content: center;
+  padding-top: 20vh;
+}
+
+.search-overlay.active {
+  display: flex;
+}
+
+.search-modal {
+  background: var(--base);
+  border: 1px solid var(--surface0);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#search-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--surface0);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1rem;
+  outline: none;
+}
+
+#search-input::placeholder {
+  color: var(--subtext0);
+}
+
+#search-results {
+  overflow-y: auto;
+}
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--surface0);
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result:hover {
+  background: var(--surface0);
+  text-decoration: none;
+}
+
+.search-result-date {
+  color: var(--subtext0);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.search-empty {
+  padding: 1rem;
+  color: var(--subtext0);
+  text-align: center;
 }
 
 .theme-toggle {
@@ -163,16 +260,15 @@ a:hover {
   margin-bottom: 2.5rem;
 }
 
-.post-preview h2 {
+.post-preview h1 {
   margin: 0 0 0.25rem;
-  font-size: 1.25rem;
 }
 
-.post-preview h2 a {
+.post-preview h1 a {
   color: var(--text);
 }
 
-.post-preview h2 a:hover {
+.post-preview h1 a:hover {
   color: var(--blue);
 }
 
@@ -187,8 +283,8 @@ a:hover {
 }
 
 .post-header h1 {
-  font-size: 1.75rem;
   font-weight: 600;
+  margin: 0;
   margin-bottom: 0.25rem;
 }
 
@@ -198,17 +294,29 @@ a:hover {
 }
 
 .post-tags {
-  margin-top: 0.5rem;
+  margin-top: 0.15rem;
 }
 
 .tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
   font-size: 0.8rem;
   color: var(--subtext0);
-  background: var(--surface0);
-  padding: 0.15em 0.5em;
-  border-radius: 3px;
   margin-right: 0.35rem;
+}
+
+.tag::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z'/%3E%3Ccircle cx='7.5' cy='7.5' r='.5' fill='currentColor'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z'/%3E%3Ccircle cx='7.5' cy='7.5' r='.5' fill='currentColor'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  flex-shrink: 0;
 }
 
 .tag:hover {

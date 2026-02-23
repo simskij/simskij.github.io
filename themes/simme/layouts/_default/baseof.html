@@ -16,6 +16,54 @@
       {{ block "main" . }}{{ end }}
     </main>
   </div>
+  <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+      <div id="search-results"></div>
+    </div>
+  </div>
+  <script>
+    var searchIndex = null;
+    function openSearch() {
+      document.getElementById('search-overlay').classList.add('active');
+      document.getElementById('search-input').value = '';
+      document.getElementById('search-results').innerHTML = '';
+      document.getElementById('search-input').focus();
+      if (!searchIndex) {
+        fetch('/index.json')
+          .then(function(r) { return r.json(); })
+          .then(function(data) { searchIndex = data; });
+      }
+    }
+    function closeSearch() {
+      document.getElementById('search-overlay').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSearch();
+      if (e.key === '/' && !document.getElementById('search-overlay').classList.contains('active') && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        openSearch();
+      }
+    });
+    document.getElementById('search-input').addEventListener('input', function(e) {
+      var q = e.target.value.toLowerCase().trim();
+      var results = document.getElementById('search-results');
+      if (!q || !searchIndex) { results.innerHTML = ''; return; }
+      var matches = searchIndex.filter(function(p) {
+        return p.title.toLowerCase().includes(q) || p.content.toLowerCase().includes(q) || p.tags.some(function(t) { return t.toLowerCase().includes(q); });
+      });
+      if (matches.length === 0) {
+        results.innerHTML = '<div class="search-empty">No results</div>';
+        return;
+      }
+      results.innerHTML = matches.map(function(p) {
+        return '<a class="search-result" href="' + p.url + '">' +
+          '<span class="search-result-title">' + p.title + '</span>' +
+          '<span class="search-result-date">' + p.date + '</span>' +
+          '</a>';
+      }).join('');
+    });
+  </script>
   <script>
     function toggleTheme() {
       var isLight = document.body.getAttribute('data-theme') === 'light';
