@@ -12,7 +12,9 @@
       {{ range . }}<a href="{{ .Permalink }}" class="tag">{{ .LinkTitle }}</a>{{ end }}
     </div>
     {{ end }}
-    <p class="post-excerpt">{{ .Summary }}</p>
+    {{ $clean := .Content | replaceRE `(?s)<aside class="disclaimer">.*?</aside>` "" | replaceRE `<p><img [^>]+></p>` "" }}
+    {{ $paras := findRE `(?s)<p>.*?</p>` $clean }}
+    <div class="post-excerpt">{{ range first 2 $paras }}{{ . | safeHTML }}{{ end }}</div>
   </article>
   {{ end }}
 </div>

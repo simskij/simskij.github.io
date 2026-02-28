@@ -64,6 +64,21 @@
       }).join('');
     });
   </script>
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+  <script>
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('.content img')) {
+        var lb = document.getElementById('lightbox');
+        document.getElementById('lightbox-img').src = e.target.src;
+        lb.classList.add('active');
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+    });
+  </script>
   <script>
     function toggleTheme() {
       var isLight = document.body.getAttribute('data-theme') === 'light';

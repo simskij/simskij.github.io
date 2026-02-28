@@ -44,7 +44,7 @@ body {
   color: var(--text);
   margin: 0;
   padding: 0;
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
   line-height: 1.7;
 }
@@ -60,7 +60,7 @@ a:hover {
 
 /* Layout */
 .site-wrapper {
-  max-width: 640px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   min-height: 100vh;
@@ -83,7 +83,6 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--text);
 }
 
 .site-header .site-title {
@@ -261,6 +260,7 @@ a:hover {
 }
 
 .post-preview h1 {
+  font-size: 1.15rem;
   margin: 0 0 0.25rem;
 }
 
@@ -275,6 +275,74 @@ a:hover {
 .post-excerpt {
   color: var(--subtext0);
   margin: 0.5rem 0 0;
+}
+
+/* Single post layout */
+.post-layout {
+  display: flex;
+  gap: 3rem;
+}
+
+.post-layout article {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Table of contents sidebar */
+.toc {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.toc-inner {
+  position: sticky;
+  top: 2rem;
+}
+
+.toc h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--subtext0);
+  margin: 0 0 0.75rem;
+}
+
+.toc nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc nav ul ul {
+  padding-left: 0.75rem;
+}
+
+.toc nav li {
+  margin-top: 0.5rem;
+  line-height: 1rem;
+}
+
+.toc nav a {
+  color: var(--subtext0);
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+.toc nav a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .toc {
+    display: none;
+  }
+}
+
+/* Cover image */
+.post-cover {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
 }
 
 /* Single post */
@@ -333,6 +401,30 @@ a:hover {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
+  cursor: zoom-in;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 200;
+  cursor: zoom-out;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 6px;
+  object-fit: contain;
 }
 
 /* Content typography */
@@ -374,4 +466,23 @@ h3 {
   border: none;
   border-top: 1px solid var(--surface0);
   margin: 2rem 0;
+}
+
+/* Disclaimer box */
+.disclaimer {
+  background: var(--mantle);
+  border-left: 3px solid var(--yellow);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--subtext0);
+}
+
+.disclaimer p:first-child {
+  margin-top: 0;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
 }
