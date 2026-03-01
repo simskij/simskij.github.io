@@ -6,6 +6,7 @@ tags:
   - Reliability
   - Performance
   - Site-Reliability Engineering
+cover: cover.png
 ---
 
 At SLOConf 2021 I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.

@@ -468,6 +468,13 @@ h3 {
   margin: 2rem 0;
 }
 
+/* YouTube embeds */
+.content div:has(> iframe) {
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 /* Disclaimer box */
 .disclaimer {
   background: var(--mantle);
