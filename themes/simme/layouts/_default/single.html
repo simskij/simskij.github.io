@@ -16,6 +16,11 @@
 <div class="post-layout">
   <article>
     <div class="content">
+      {{ with .Params.canonical }}
+      <aside class="canonical-notice">
+        {{ $u := urls.Parse . }}This article was originally published on <a href="{{ . }}">{{ $u.Host }}</a>.
+      </aside>
+      {{ end }}
       {{ .Content }}
     </div>
   </article>

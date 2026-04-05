@@ -475,6 +475,16 @@ h3 {
   overflow: hidden;
 }
 
+/* Canonical notice */
+.canonical-notice {
+  background: var(--mantle);
+  border-left: 3px solid var(--blue);
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+  color: var(--subtext0);
+}
+
 /* Disclaimer box */
 .disclaimer {
   background: var(--mantle);
