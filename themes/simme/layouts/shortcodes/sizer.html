@@ -1,0 +1,283 @@
+<div class="obs-size-widget" data-obs-sizing>
+  <div class="obs-size-card">
+
+    <div class="obs-size-control">
+      <label>
+        Logs per minute:
+        <strong data-role="logsValue">180,000</strong>
+      </label>
+      <input
+        data-role="logsSlider"
+        type="range"
+        min="0"
+        max="360000"
+        step="60000"
+        value="180000"
+      />
+    </div>
+
+    <div class="obs-size-control">
+      <label>
+        Metric datapoints per minute:
+        <strong data-role="metricsValue">3,000,000</strong>
+      </label>
+      <input
+        data-role="metricsSlider"
+        type="range"
+        min="0"
+        max="6000000"
+        step="1000000"
+        value="3000000"
+      />
+    </div>
+
+    <div class="obs-size-control">
+      <label>
+        Retention period:
+        <strong><span data-role="retentionValue">30</span> days</strong>
+      </label>
+      <input
+        data-role="retentionSlider"
+        type="range"
+        min="1"
+        max="90"
+        step="1"
+        value="30"
+      />
+    </div>
+
+    <div class="obs-size-grid">
+      <div class="obs-size-result">
+        <div class="obs-size-label">Recommended CPU</div>
+        <div class="obs-size-number">
+          <span data-role="cpuRounded">6</span>
+          <span class="obs-size-unit">vCPU</span>
+        </div>
+        <div class="obs-size-detail">
+          Raw: <span data-role="cpuRaw">4.85</span> vCPUs
+        </div>
+      </div>
+
+      <div class="obs-size-result">
+        <div class="obs-size-label">Recommended memory</div>
+        <div class="obs-size-number">
+          <span data-role="memRounded">13</span>
+          <span class="obs-size-unit">GB</span>
+        </div>
+        <div class="obs-size-detail">
+          Raw: <span data-role="memRaw">10.93</span> GB
+        </div>
+      </div>
+
+      <div class="obs-size-result">
+        <div class="obs-size-label">Recommended daily disk</div>
+        <div class="obs-size-number">
+          <span data-role="diskRounded">74</span>
+          <span class="obs-size-unit">GB/day</span>
+        </div>
+        <div class="obs-size-detail">
+          Raw: <span data-role="diskRaw">66.69</span> GB/day
+        </div>
+      </div>
+
+      <div class="obs-size-result">
+        <div class="obs-size-label">Recommended total storage</div>
+        <div class="obs-size-number">
+          <span data-role="storageRounded">2201</span>
+          <span class="obs-size-unit">GB</span>
+        </div>
+        <div class="obs-size-detail">
+          Raw: <span data-role="storageRaw">2000.70</span> GB
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .obs-size-widget {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+}
+
+
+  .obs-size-card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+
+  .obs-size-subtle {
+    margin: 1.25rem 0;
+  }
+
+  .obs-size-control {
+    margin: 1.25rem 0;
+  }
+
+  .obs-size-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .obs-size-control input[type="range"] {
+    width: 100%;
+  }
+
+  .obs-size-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 1.5rem;
+  }
+
+  .obs-size-result {
+    font-size: .8rem;
+    border: 1px solid var(--surface1);
+    border-radius: 14px;
+    padding: 16px;
+    background: var(--surface0);
+  }
+
+  .obs-size-result-wide {
+    grid-column: 1 / -1;
+  }
+
+  details summary {
+    margin-top: 1rem;
+    color: var(--text);
+  }
+
+  .obs-size-label {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--subtext0);
+    margin-bottom: 0.35rem;
+  }
+
+  .obs-size-number {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .obs-size-unit {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .obs-size-footnote {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .obs-size-footnote code {
+    background: var(--subtext0);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .obs-size-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .obs-size-result-wide {
+      grid-column: auto;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const MARGIN = 1.10;
+
+    function formatInteger(value) {
+      return new Intl.NumberFormat("en-US", {
+        maximumFractionDigits: 0
+      }).format(value);
+    }
+
+    function formatDecimal(value, decimals) {
+      return new Intl.NumberFormat("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }).format(value);
+    }
+
+    function calculateSizing(L, M, retentionDays) {
+      const disk = 3.011e-4 * L + 3.823e-6 * M + 1.023;
+      const cpu = 1.89 * Math.atan(1.365e-4 * L) + 1.059e-7 * M + 1.644;
+      const mem = 2.063 * Math.atan(2.539e-3 * L) + 1.464e-6 * M + 3.3;
+      const retainedStorage = disk * retentionDays;
+
+      return {
+        raw: {
+          disk,
+          cpu,
+          mem,
+          retainedStorage
+        },
+        recommended: {
+          disk: Math.ceil(disk * MARGIN),
+          cpu: Math.ceil(cpu * MARGIN),
+          mem: Math.ceil(mem * MARGIN),
+          retainedStorage: Math.ceil(retainedStorage * MARGIN)
+        }
+      };
+    }
+
+    document.querySelectorAll("[data-obs-sizing]").forEach(function (root) {
+      const logsSlider = root.querySelector('[data-role="logsSlider"]');
+      const metricsSlider = root.querySelector('[data-role="metricsSlider"]');
+      const retentionSlider = root.querySelector('[data-role="retentionSlider"]');
+
+      const logsValue = root.querySelector('[data-role="logsValue"]');
+      const metricsValue = root.querySelector('[data-role="metricsValue"]');
+      const retentionValue = root.querySelector('[data-role="retentionValue"]');
+
+      const cpuRaw = root.querySelector('[data-role="cpuRaw"]');
+      const memRaw = root.querySelector('[data-role="memRaw"]');
+      const diskRaw = root.querySelector('[data-role="diskRaw"]');
+      const storageRaw = root.querySelector('[data-role="storageRaw"]');
+
+      const cpuRounded = root.querySelector('[data-role="cpuRounded"]');
+      const memRounded = root.querySelector('[data-role="memRounded"]');
+      const diskRounded = root.querySelector('[data-role="diskRounded"]');
+      const storageRounded = root.querySelector('[data-role="storageRounded"]');
+
+      function update() {
+        const L = Number(logsSlider.value);
+        const M = Number(metricsSlider.value);
+        const retentionDays = Number(retentionSlider.value);
+
+        const result = calculateSizing(L, M, retentionDays);
+
+        logsValue.textContent = formatInteger(L);
+        metricsValue.textContent = formatInteger(M);
+        retentionValue.textContent = formatInteger(retentionDays);
+
+        cpuRaw.textContent = formatDecimal(result.raw.cpu, 0);
+        memRaw.textContent = formatDecimal(result.raw.mem, 0);
+        diskRaw.textContent = formatDecimal(result.raw.disk, 0);
+        storageRaw.textContent = formatDecimal(result.raw.retainedStorage, 0);
+
+        cpuRounded.textContent = formatInteger(result.recommended.cpu);
+        memRounded.textContent = formatInteger(result.recommended.mem);
+        diskRounded.textContent = formatInteger(result.recommended.disk);
+        storageRounded.textContent = formatInteger(result.recommended.retainedStorage);
+      }
+
+      logsSlider.addEventListener("input", update);
+      metricsSlider.addEventListener("input", update);
+      retentionSlider.addEventListener("input", update);
+
+      update();
+    });
+  })();
+</script>
