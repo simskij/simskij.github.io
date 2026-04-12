@@ -6,7 +6,6 @@ tags:
   - agentic workflows
   - llm
   - autonomous agents
-cover: cover.png
 ---
 
 Up until about a month ago, my interactions with AI had been the same as most others: you open a window, type something, get a response and some action, and then you iterate until the work is done for the time being and you close the window. Next time you launch the agent, it won't remember you. It won't have any opinions about what you should work on. It waits for instructions, and does (in the best case) what you ask of it.
