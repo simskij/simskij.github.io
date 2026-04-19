@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="about-box">
+  <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" class="about-avatar">
+  <div class="about-body">
+    <div class="content">{{ .Content }}</div>
+    <div class="social-links">
+      {{ partial "social-links.html" . }}
+    </div>
+  </div>
+</div>
+{{ end }}

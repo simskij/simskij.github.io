@@ -8,13 +8,20 @@ summaryLength = 20
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  description = 'Simon Aronsson — software engineer'
+  author = 'Simon Aronsson'
+  avatar = '/img/portrait.webp'
+  description = 'Engineering leader at Canonical from eu-north1, currently helping SREs to prevent their 💻 from going 💥. Previously Grafana, k6, HiQ International. I write about observability, distributed systems, and engineering culture.'
   github = 'https://github.com/simskij'
   linkedin = 'https://linkedin.com/in/simonaronsson'
   mastodon = 'https://hachyderm.io/@simskij'
+  bluesky = 'https://bsky.app/profile/simme.dev'
 
 [menus]
   [[menus.main]]
-    name = 'Blog'
+    name = 'Archive'
     url = '/posts/'
     weight = 10
+  [[menus.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 20

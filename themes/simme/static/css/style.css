@@ -254,27 +254,42 @@ a:hover {
   text-decoration: none;
 }
 
-/* Blog list */
-.post-preview {
-  margin-bottom: 2.5rem;
+/* Archive list */
+.post-year-group {
+  margin-bottom: 2rem;
 }
 
-.post-preview h1 {
-  font-size: 1.15rem;
-  margin: 0 0 0.25rem;
+.post-year {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--surface0);
 }
 
-.post-preview h1 a {
+.post-row {
+  padding: 0.5rem 0;
+}
+
+.post-row-title {
+  display: block;
+  font-size: 1rem;
   color: var(--text);
 }
 
-.post-preview h1 a:hover {
+.post-row-title:hover {
   color: var(--blue);
+  text-decoration: none;
 }
 
-.post-excerpt {
+.post-row-meta {
+  font-size: 0.8rem;
   color: var(--subtext0);
-  margin: 0.5rem 0 0;
+}
+
+.post-row-tags {
+  margin-top: 0.1rem;
 }
 
 /* Single post layout */
@@ -336,6 +351,53 @@ a:hover {
   .toc {
     display: none;
   }
+}
+
+@media (max-width: 480px) {
+  .author-box {
+    flex-direction: column;
+  }
+
+  .author-avatar {
+    width: 72px;
+    aspect-ratio: 1;
+    align-self: flex-start;
+  }
+
+  .about-avatar {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+/* About page */
+.about-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-avatar {
+  width: 160px;
+  height: 213px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-body {
+  max-width: 600px;
+}
+
+.about-body .content h1 {
+  margin-top: 0;
+}
+
+.about-box .social-links {
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 /* Cover image */
@@ -502,4 +564,76 @@ h3 {
 
 .disclaimer p:last-child {
   margin-bottom: 0;
+}
+
+/* Author box */
+.author-box {
+  display: flex;
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--surface0);
+}
+
+.author-avatar {
+  aspect-ratio: 3 / 4;
+  max-width: 130px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.author-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--subtext0);
+  margin-bottom: 0.15rem;
+}
+
+.author-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.author-bio {
+  font-size: 0.85rem;
+  color: var(--subtext0);
+}
+
+.author-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.author-links a {
+  color: var(--subtext0);
+  display: inline-flex;
+}
+
+.author-links a:hover {
+  color: var(--text);
+}
+
+/* Reading progress bar */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(to right, var(--blue), var(--mauve));
+  z-index: 1000;
+  transition: width 0.1s linear;
 }

@@ -1,4 +1,12 @@
 {{ define "main" }}
+<div id="reading-progress"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    var el = document.documentElement;
+    var pct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+    document.getElementById('reading-progress').style.width = pct + '%';
+  });
+</script>
 {{ with .Params.cover }}
 <img class="post-cover" src="{{ . }}" alt="">
 {{ end }}
@@ -22,6 +30,17 @@
       </aside>
       {{ end }}
       {{ .Content }}
+    </div>
+    <div class="author-box">
+      <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" class="author-avatar">
+      <div class="author-info">
+        <div class="author-label">Written by</div>
+        <div class="author-name">{{ .Site.Params.author }}</div>
+        <div class="author-bio">{{ .Site.Params.description }}</div>
+        <div class="author-links">
+          {{ partial "social-links.html" . }}
+        </div>
+      </div>
     </div>
   </article>
   {{ if .TableOfContents }}
