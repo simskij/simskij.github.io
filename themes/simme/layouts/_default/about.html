@@ -5,12 +5,10 @@
     <div class="page-margin-sticky">
       <p class="margin-eyebrow">Field notes</p>
       <div class="margin-body">{{ .Site.Params.author }} · engineering leader at Canonical · writes from eu-north-1.</div>
+      {{ if .TableOfContents }}
       <p class="margin-eyebrow" style="margin-top:24px;">On this page</p>
-      <ul class="margin-toc-list">
-        <li><a href="#what-i-work-on">What I work on</a></li>
-        <li><a href="#elsewhere">Elsewhere</a></li>
-        <li><a href="#colophon">Colophon</a></li>
-      </ul>
+      <div class="margin-toc">{{ .TableOfContents }}</div>
+      {{ end }}
     </div>
   </aside>
 
