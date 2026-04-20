@@ -8,8 +8,6 @@ tags:
   - Canonical Observability Stack
 ---
 
-## What's this?
-
 This is a sizing tool for COS Lite deployments. It used to live here but got lost in one of my many blog migrations.
 
 Use the sliders above to interactively adjust your log and metric ingestion rates and retention period, and get an estimate of the CPU, memory, and disk sizing you may need for your COS Lite deployment.

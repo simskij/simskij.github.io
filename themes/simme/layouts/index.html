@@ -17,7 +17,7 @@
         presently
       </div>
       <div class="home-presently-body">
-        <span class="dim">Reading</span> {{ .reading }}. <span class="dim">Building</span> {{ .building }}. <span class="dim">Located</span> {{ .location }}.
+        <span class="dim">Reading</span> {{ .reading }}. <span class="dim">Building</span> {{ .building }}. <span class="dim">Foraging</span> {{ .foraging }}.
       </div>
     </div>
     {{ end }}
@@ -40,7 +40,7 @@
     <img src="{{ $coverParam }}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;">
     {{ else }}
     <div class="home-featured-placeholder">
-      {{ with .GetTerms "tags" }}essay — {{ (index . 0).LinkTitle | lower }}{{ else }}essay{{ end }}
+      {{ with .Params.tags }}essay — {{ index . 0 | lower }}{{ else }}essay{{ end }}
     </div>
     {{ end }}
     <div class="home-featured-body">
@@ -48,7 +48,7 @@
         <span style="color:var(--accent);">◆ featured</span>
         <span>{{ .Date.Format "Jan 2, 2006" }}</span>
         <span>{{ .ReadingTime }} min read</span>
-        {{ with .GetTerms "tags" }}<span>{{ (index . 0).LinkTitle }}</span>{{ end }}
+        {{ with .Params.tags }}<span>{{ index . 0 }}</span>{{ end }}
       </div>
       <a href="{{ .Permalink }}" class="home-featured-title">{{ .Title }}</a>
       <p class="home-featured-excerpt">{{ .Summary }}</p>
@@ -74,7 +74,7 @@
       </div>
       <p class="home-essay-item-excerpt">{{ .Summary }}</p>
       <div class="home-essay-item-tag">
-        {{ with .GetTerms "tags" }}{{ (index . 0).LinkTitle }} · {{ end }}{{ .ReadingTime }} min read
+        {{ with .Params.tags }}{{ index . 0 }} · {{ end }}{{ .ReadingTime }} min read
       </div>
     </div>
     {{ end }}

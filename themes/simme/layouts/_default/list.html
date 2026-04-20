@@ -42,7 +42,7 @@
         <div>
           <div class="archive-row-title">{{ .Title }}</div>
           <div class="archive-row-sub">
-            {{ with .GetTerms "tags" }}<span class="tag-accent">{{ (index . 0).LinkTitle }}</span> · {{ end }}{{ .ReadingTime }} min read
+            {{ with .Params.tags }}<span class="tag-accent">{{ index . 0 }}</span> · {{ end }}{{ .ReadingTime }} min read
           </div>
         </div>
         <div class="archive-row-date">{{ .Date.Format "Jan 02" }}</div>

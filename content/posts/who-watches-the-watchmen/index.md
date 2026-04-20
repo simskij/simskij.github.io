@@ -8,10 +8,6 @@ tags:
 cover: who-watches-the-watchmen.png
 ---
 
-{{< disclaimer >}}
-Before we get started, I just want to get this out of the way: I work at Canonical, and more specifically, I run the observability product team there, currently doing lots of cool stuff [around observability in Juju on both K8s and machines](https://charmhub.io/topics/canonical-observability-stack). In this piece, I'm actively trying to stay neutral, but it is nonetheless information worth disclosing. I'm also hiring, so if you're one of those that get super-excited about the prospect of building world-class observability solutions, [don't be shy - apply!](https://canonical.com/careers/2166631)
-{{< /disclaimer >}}
-
 The last couple of years, there has been quite a lot of development in the area of lowering the barrier of entry for observability. There are now quite a few, reasonably mature options out there that lets you set up a good monitoring stack either through a few clicks or by a few one-liners in the terminal.
 
 In the managed open-source space, the most successful one so far probably is [Grafana Cloud](https://grafana.com/products/cloud/), but there definitely is no shortage of closed-source vendors providing APM solutions where everything you need to get started is to drop either a single or multiple agents into your cluster or your machine.
@@ -32,9 +28,9 @@ What I'm trying to say here is that while the stability of course is important, 
 
 ## Understanding the failure modes
 
-Before we go into analysing likely failure modes, I just want to make one thing clear: the visualisation tool, like Grafana, is **not** something I consider to be a critical part of the stack.  While useful, as long as the rest of our tooling works, we'd always be able to spin up a new visualisation tool somewhere else and connect our datasources to it.
+Before we go into analysing likely failure modes, I just want to make one thing clear: the visualisation tool, like Grafana, is **not** something I consider to be a critical part of the stack. While useful, as long as the rest of our tooling works, we'd always be able to spin up a new visualisation tool somewhere else and connect our datasources to it.
 
-To keep it short: as long as our alerting continues to work, and the telemetry signals get collected - we're good.  We should of course monitor our visualisation tool as well, but from a comparative point of view, it's by far the least important one. Instead, let's focus on two really critical, fairly common failure modes:
+To keep it short: as long as our alerting continues to work, and the telemetry signals get collected - we're good. We should of course monitor our visualisation tool as well, but from a comparative point of view, it's by far the least important one. Instead, let's focus on two really critical, fairly common failure modes:
 
 ### Alerts not firing
 
@@ -50,10 +46,14 @@ As for any specific tool or service to help you with this, it's totally up to yo
 
 We can of course monitor the CPU and memory consumption of our ingesters to give us an early warning of when things are about to go south. We may also monitor and alert on the ingestion rate, using for instance the `prometheus_remote_storage_succeeded_samples_total` metric. This metrics however, is leaving us a bit vulnerable, as the ingesters being overloaded naturally also will prevent the very same ingesters to ingest metrics about themselves and their own performance.
 
-Just as for the previous failure mode,  this one will also require us to alert in the **absence** of something expected. In this case, rather than the absence of an alert, we want to alert on the absence of telemetry being ingested. PromQL and LogQL both have facilities for this, using [`absent`](https://prometheus.io/docs/prometheus/latest/querying/functions/#absent) and [`absent_over_time`](https://prometheus.io/docs/prometheus/latest/querying/functions/#absent_over_time). This will allow us to set up an alert rule that tracks the absence of a metric for a certain time range, and when there no longer is any new data points within that range, the alert will trigger. As for the alerting expression, we could use the ingestion rate metric above, or something even simpler like the `up` metric, wrapping it in an `absent` function. Anything will do really, as long as it is being ingested regularly.
+Just as for the previous failure mode, this one will also require us to alert in the **absence** of something expected. In this case, rather than the absence of an alert, we want to alert on the absence of telemetry being ingested. PromQL and LogQL both have facilities for this, using [`absent`](https://prometheus.io/docs/prometheus/latest/querying/functions/#absent) and [`absent_over_time`](https://prometheus.io/docs/prometheus/latest/querying/functions/#absent_over_time). This will allow us to set up an alert rule that tracks the absence of a metric for a certain time range, and when there no longer is any new data points within that range, the alert will trigger. As for the alerting expression, we could use the ingestion rate metric above, or something even simpler like the `up` metric, wrapping it in an `absent` function. Anything will do really, as long as it is being ingested regularly.
 
 ## What's next?
 
 This is by no means an exhaustive list of failure modes for an observability stack. It pinpoints two fairly common and fairly critical scenarios that are easily guarded against.
 
 As your understanding of your observability stack deepens, you'll be able to identify more possible failure modes, and using the telemetry provided by each component of your stack; guard against them. The very same telemetry is not only useful for observing the behaviour of your stack, but also for observing the behaviour of your incident response team. But that will be a topic for some other time.
+
+{{< disclaimer >}}
+I just want to get this out of the way: I work at Canonical, and more specifically, I run the observability product team there, currently doing lots of cool stuff [around observability in Juju on both K8s and machines](https://charmhub.io/topics/canonical-observability-stack). In this piece, I'm actively trying to stay neutral, but it is nonetheless information worth disclosing. I'm also hiring, so if you're one of those that get super-excited about the prospect of building world-class observability solutions, [don't be shy - apply!](https://canonical.com/careers/2166631)
+{{< /disclaimer >}}

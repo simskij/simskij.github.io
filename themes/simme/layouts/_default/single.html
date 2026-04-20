@@ -7,7 +7,10 @@
     document.getElementById('reading-progress').style.width = pct + '%';
   });
 </script>
-{{ with .Params.cover }}
+{{ $coverRes := .Resources.GetMatch "cover.*" }}
+{{ $coverSrc := "" }}
+{{ if $coverRes }}{{ $coverSrc = $coverRes.RelPermalink }}{{ else if .Params.cover }}{{ $coverSrc = .Params.cover }}{{ end }}
+{{ with $coverSrc }}
 <div style="padding:32px 56px 0;max-width:1120px;margin:0 auto;">
   <img class="post-cover" src="{{ . }}" alt="">
 </div>
@@ -20,7 +23,7 @@
       {{ with .Description }}
       <div class="margin-body">{{ . }}</div>
       {{ else }}
-      <div class="margin-body">{{ .Summary | truncate 140 }}</div>
+      <div class="margin-body">{{ .Summary | truncate 160 "…" }}</div>
       {{ end }}
       {{ if .TableOfContents }}
       <p class="margin-eyebrow" style="margin-top:24px;">In this essay</p>
@@ -32,13 +35,13 @@
   <!-- Body -->
   <div class="page-main">
     <div class="meta-row">
-      <span class="meta-accent">◆ {{ with .GetTerms "tags" }}{{ (index . 0).LinkTitle }}{{ else }}essay{{ end }}</span>
+      <span class="meta-accent">◆ {{ with .Params.tags }}{{ index . 0 | lower }}{{ else }}essay{{ end }}</span>
       {{ with .Date }}<span>{{ .Format "Jan 2, 2006" }}</span>{{ end }}
       <span>{{ .ReadingTime }} min read</span>
     </div>
 
     <h1 class="page-title">{{ .Title }}</h1>
-    {{ with .Params.lede }}
+    {{ with .Description }}
     <p class="page-lede">{{ . }}</p>
     {{ end }}
 

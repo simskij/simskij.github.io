@@ -2,7 +2,7 @@ baseURL = 'https://simme.dev/'
 languageCode = 'en-us'
 title = 'Simon Aronsson'
 theme = 'simme'
-summaryLength = 20
+summaryLength = 40
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -26,7 +26,7 @@ summaryLength = 20
 
 [menus]
   [[menus.main]]
-    name = 'writing'
+    name = 'Writing'
     url = '/posts/'
     weight = 10
   [[menus.main]]
