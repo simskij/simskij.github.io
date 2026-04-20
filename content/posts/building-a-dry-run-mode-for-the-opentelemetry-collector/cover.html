@@ -1,0 +1,99 @@
+<div style="position:relative;width:100%;aspect-ratio:3/1;overflow:hidden;">
+  <canvas id="metrics-canvas" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--paper) 0%, transparent 12%, transparent 88%, var(--paper) 100%);pointer-events:none;"></div>
+</div>
+<script>
+(function() {
+  var canvas = document.getElementById('metrics-canvas');
+  var ctx    = canvas.getContext('2d');
+  var raf, t = 0, offset = 0;
+  var POINTS = 600;
+  var PUSH_EVERY = 6;
+
+  var lines = [
+    { amp: 0.13, freq: 0.07, phase: 0.0, colorVar: '--ink', alpha: 0.9,  width: 2.0 },
+    { amp: 0.08, freq: 0.04, phase: 1.8, colorVar: '--ink', alpha: 0.5,  width: 1.5 },
+    { amp: 0.05, freq: 0.11, phase: 3.5, colorVar: '--dim', alpha: 0.7,  width: 1.0 },
+  ];
+
+  function sample(line, time) {
+    return 0.5
+      + line.amp * Math.sin(line.freq * time + line.phase)
+      + line.amp * 0.4 * Math.sin(line.freq * 2.618 * time + line.phase + 1.2);
+  }
+
+  var buffers = lines.map(function(line) {
+    var buf = [];
+    for (var i = 0; i < POINTS; i++) buf.push(sample(line, i * 0.3));
+    return buf;
+  });
+  t = POINTS * 0.3;
+
+  function getColor(v) {
+    return getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  }
+
+  function resize() {
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width  = canvas.offsetWidth  * dpr;
+    canvas.height = canvas.offsetHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function draw() {
+    var w = canvas.offsetWidth, h = canvas.offsetHeight;
+
+    offset += 1 / PUSH_EVERY;
+    if (offset >= 1) {
+      offset -= 1;
+      lines.forEach(function(line, i) {
+        buffers[i].shift();
+        buffers[i].push(sample(line, t));
+      });
+      t += 0.3;
+    }
+
+    ctx.fillStyle = getColor('--paper');
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.strokeStyle = getColor('--rule');
+    ctx.lineWidth = 0.5;
+    for (var g = 1; g < 4; g++) {
+      ctx.beginPath();
+      ctx.moveTo(0, h * g / 4);
+      ctx.lineTo(w, h * g / 4);
+      ctx.stroke();
+    }
+
+    var slotW = w / (POINTS - 1);
+    var xShift = offset * slotW;
+    lines.forEach(function(line, i) {
+      ctx.strokeStyle  = getColor(line.colorVar);
+      ctx.globalAlpha  = line.alpha;
+      ctx.lineWidth    = line.width;
+      ctx.beginPath();
+      buffers[i].forEach(function(v, x) {
+        var px = x * slotW - xShift;
+        var py = v * h;
+        x === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      });
+      ctx.stroke();
+      ctx.globalAlpha = 1.0;
+    });
+
+    raf = requestAnimationFrame(draw);
+  }
+
+  function restart() {
+    cancelAnimationFrame(raf);
+    resize();
+    draw();
+  }
+
+  restart();
+  window.addEventListener('resize', restart);
+  new MutationObserver(restart).observe(document.documentElement, {
+    attributes: true, attributeFilter: ['data-theme']
+  });
+})();
+</script>
