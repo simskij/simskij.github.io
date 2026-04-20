@@ -3,9 +3,8 @@ title: What I'm doing now.
 layout: now
 date: 2026-04-20
 presently:
-  reading: "Designing Data-Intensive Applications — Kleppmann"
-  building: "A dry-run mode for the OpenTelemetry Collector"
-  foraging: "Chanterelles, if the rain holds"
+  reading: "JPod by Coupland"
+  building: "Modules for Conduit"
 ---
 
 ## Building
