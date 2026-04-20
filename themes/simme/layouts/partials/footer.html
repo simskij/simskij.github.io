@@ -9,7 +9,7 @@
           </span>
           <span class="site-footer-wordmark-name">{{ .Site.Params.author }}</span>
         </div>
-        <p class="site-footer-bio">Engineering leader from eu-north-1. Currently at Canonical, working on observability.</p>
+        <p class="site-footer-bio">{{ .Site.Params.description }}</p>
         <p class="site-footer-bio">Email is open — <a href="#" class="js-mailto" data-mailto="{{ .Site.Params.email | base64Encode }}" style="color:var(--ink);border-bottom:1px solid var(--rule);"><span class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span></a>.</p>
       </div>
       <div>
@@ -29,8 +29,8 @@
       </div>
     </div>
     <div class="site-footer-bottom">
-      <span>&copy; {{ now.Year }} Simon Aronsson</span>
-      <span>simme.dev</span>
+      <span>&copy; {{ now.Year }} {{ .Site.Params.author }}</span>
+      <span>{{ (urls.Parse .Site.BaseURL).Host }}</span>
     </div>
   </div>
 </footer>

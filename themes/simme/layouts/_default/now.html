@@ -3,7 +3,7 @@
   <aside class="page-margin">
     <div class="page-margin-sticky">
       <p class="margin-eyebrow">Last revised</p>
-      <div class="margin-body">{{ .Date.Format "Jan 2, 2006" }} · from {{ .Site.Params.now.location }}</div>
+      <div class="margin-body">{{ .Date.Format "Jan 2, 2006" }} · from {{ .Site.Params.location }}</div>
       <p class="margin-eyebrow" style="margin-top:24px;">About this page</p>
       <div class="margin-body">A <a href="https://nownownow.com" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--rule);">now page</a> — a snapshot of what I'm focused on at the moment the URL was last touched. No archive, no RSS.</div>
     </div>
@@ -12,7 +12,7 @@
     <div class="meta-row">
       <span class="meta-accent">◆ now</span>
       <span>{{ .Date.Format "Jan 2006" | lower }}</span>
-      <span>eu-north-1</span>
+      <span>{{ .Site.Params.location }}</span>
     </div>
     <h1 class="page-title">{{ .Title }}</h1>
     <p class="page-lede">Specifically this week. Broader strokes than the feed, sharper than the about page.</p>
