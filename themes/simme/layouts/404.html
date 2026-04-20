@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="page-layout">
+  <aside class="page-margin">
+    <div class="page-margin-sticky">
+      <p class="margin-eyebrow">Reference</p>
+      <div class="margin-body" style="font-family:var(--mono);line-height:1.7;">
+        <div>HTTP 404</div>
+        <div style="margin-top:8px;color:var(--ink);word-break:break-all;" id="404-path">/</div>
+        <div style="margin-top:8px;">timestamp</div>
+        <div style="color:var(--ink);" id="404-time"></div>
+      </div>
+    </div>
+  </aside>
+  <div class="page-main">
+    <div class="meta-row">
+      <span class="meta-accent">◆ 404</span>
+      <span>not found</span>
+    </div>
+    <h1 class="page-title">This note isn't filed yet.</h1>
+    <p class="page-lede">Either the URL is mistyped, or the essay moved during a renumbering of the drawers. Both are possible. Neither is your fault.</p>
+    <div class="accent-divider"></div>
+
+    <div style="font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim);margin-bottom:12px;">Suggested next moves</div>
+    <div>
+      <a href="{{ "/posts/" | relURL }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:baseline;color:var(--ink);">
+        <span style="font-size:17px;font-weight:500;letter-spacing:-0.2px;">Browse the archive</span>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;">/posts/</span>
+      </a>
+      <a href="{{ "/" | relURL }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:baseline;color:var(--ink);">
+        <span style="font-size:17px;font-weight:500;letter-spacing:-0.2px;">Back to home</span>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;">/</span>
+      </a>
+      <a href="https://github.com/simskij" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:baseline;color:var(--ink);">
+        <span style="font-size:17px;font-weight:500;letter-spacing:-0.2px;">Find me on GitHub</span>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;">github.com/simskij</span>
+      </a>
+      <a href="mailto:{{ .Site.Params.email }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 0;align-items:baseline;color:var(--ink);">
+        <span style="font-size:17px;font-weight:500;letter-spacing:-0.2px;">Email me about it</span>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;">{{ .Site.Params.email }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('404-path').textContent = window.location.pathname;
+  document.getElementById('404-time').textContent = new Date().toISOString().slice(0,19).replace('T',' ') + 'Z';
+</script>
+{{ end }}

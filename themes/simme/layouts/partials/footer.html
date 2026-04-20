@@ -1,3 +1,36 @@
 <footer class="site-footer">
-  <span>&copy; {{ now.Year }} Simon Aronsson</span>
+  <div class="site-footer-inner">
+    <div class="site-footer-grid">
+      <div>
+        <div class="site-footer-wordmark">
+          <span class="owl-mark" style="width:20px;height:20px;" aria-hidden="true">
+            <span class="owl-layer owl-layer-body"></span>
+            <span class="owl-layer owl-layer-eyes"></span>
+          </span>
+          <span class="site-footer-wordmark-name">{{ .Site.Params.author }}</span>
+        </div>
+        <p class="site-footer-bio">Engineering leader from eu-north-1. Currently at Canonical, working on observability.</p>
+        <p class="site-footer-bio">Email is open — <a href="mailto:{{ .Site.Params.email }}" style="color:var(--ink);border-bottom:1px solid var(--rule);">{{ .Site.Params.email }}</a>.</p>
+      </div>
+      <div>
+        <div class="site-footer-section-label">Site</div>
+        <div class="site-footer-links">
+          {{ range .Site.Menus.main }}
+            <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+          {{ end }}
+          <a href="/index.xml">RSS</a>
+        </div>
+      </div>
+      <div>
+        <div class="site-footer-section-label">Elsewhere</div>
+        <div class="site-footer-socials">
+          {{ partial "social-links.html" . }}
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>&copy; {{ now.Year }} Simon Aronsson</span>
+      <span>simme.dev</span>
+    </div>
+  </div>
 </footer>

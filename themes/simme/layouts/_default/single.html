@@ -8,21 +8,42 @@
   });
 </script>
 {{ with .Params.cover }}
-<img class="post-cover" src="{{ . }}" alt="">
-{{ end }}
-<div class="post-header">
-  <h1>{{ .Title }}</h1>
-  <div class="post-meta">
-    {{ with .Date }}<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:0.25rem"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>{{ .Format "2006-01-02" }} &middot; {{ end }}<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:0.25rem"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>{{ .WordCount }} words &middot; <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:0.25rem"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>{{ .ReadingTime }} min read
-  </div>
-  {{ with .GetTerms "tags" }}
-  <div class="post-tags">
-    {{ range . }}<a href="{{ .Permalink }}" class="tag">{{ .LinkTitle }}</a>{{ end }}
-  </div>
-  {{ end }}
+<div style="padding:32px 56px 0;max-width:1120px;margin:0 auto;">
+  <img class="post-cover" src="{{ . }}" alt="">
 </div>
-<div class="post-layout">
-  <article>
+{{ end }}
+<div class="page-layout">
+  <!-- Field notes margin -->
+  <aside class="page-margin">
+    <div class="page-margin-sticky">
+      <p class="margin-eyebrow">Field notes</p>
+      {{ with .Description }}
+      <div class="margin-body">{{ . }}</div>
+      {{ else }}
+      <div class="margin-body">{{ .Summary | truncate 140 }}</div>
+      {{ end }}
+      {{ if .TableOfContents }}
+      <p class="margin-eyebrow" style="margin-top:24px;">In this essay</p>
+      <div class="margin-toc">{{ .TableOfContents }}</div>
+      {{ end }}
+    </div>
+  </aside>
+
+  <!-- Body -->
+  <div class="page-main">
+    <div class="meta-row">
+      <span class="meta-accent">◆ {{ with .GetTerms "tags" }}{{ (index . 0).LinkTitle }}{{ else }}essay{{ end }}</span>
+      {{ with .Date }}<span>{{ .Format "Jan 2, 2006" }}</span>{{ end }}
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Params.lede }}
+    <p class="page-lede">{{ . }}</p>
+    {{ end }}
+
+    <div class="accent-divider"></div>
+
     <div class="content">
       {{ with .Params.canonical }}
       <aside class="canonical-notice">
@@ -31,24 +52,11 @@
       {{ end }}
       {{ .Content }}
     </div>
-    <div class="author-box">
-      <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" class="author-avatar">
-      <div class="author-info">
-        <div class="author-label">Written by</div>
-        <div class="author-name">{{ .Site.Params.author }}</div>
-        <div class="author-bio">{{ .Site.Params.description }}</div>
-        <div class="author-links">
-          {{ partial "social-links.html" . }}
-        </div>
-      </div>
+
+    <div class="post-footer">
+      <a href="{{ "/posts/" | relURL }}">← Archive</a>
+      <a href="mailto:{{ .Site.Params.email }}">Reply by email</a>
     </div>
-  </article>
-  {{ if .TableOfContents }}
-  <aside class="toc">
-    <div class="toc-inner">
-      {{ .TableOfContents }}
-    </div>
-  </aside>
-  {{ end }}
+  </div>
 </div>
 {{ end }}

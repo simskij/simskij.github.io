@@ -7,15 +7,14 @@
   <script>
     (function() {
       var t = localStorage.getItem('theme');
-      if (t === 'light') document.body.setAttribute('data-theme', 'light');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     })();
   </script>
-  <div class="site-wrapper">
-    {{ partial "header.html" . }}
-    <main class="site-content">
-      {{ block "main" . }}{{ end }}
-    </main>
-  </div>
+  {{ partial "header.html" . }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
   <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
     <div class="search-modal">
       <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
@@ -70,24 +69,22 @@
   <script>
     document.addEventListener('click', function(e) {
       if (e.target.matches('.content img')) {
-        var lb = document.getElementById('lightbox');
         document.getElementById('lightbox-img').src = e.target.src;
-        lb.classList.add('active');
+        document.getElementById('lightbox').classList.add('active');
       }
     });
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
     });
-  </script>
-  <script>
     function toggleTheme() {
-      var isLight = document.body.getAttribute('data-theme') === 'light';
-      if (isLight) {
-        document.body.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.body.setAttribute('data-theme', 'light');
+      var html = document.documentElement;
+      var isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        html.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
       }
     }
   </script>

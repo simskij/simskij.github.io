@@ -1,0 +1,95 @@
+---
+title: Resume
+layout: resume
+params:
+  jobtitle: "Senior Engineering Manager"
+  location: "Norrköping, Sweden"
+  updated: "Apr 2026"
+  phone: "+46 707 20 03 51"
+  summary: "Engineering leader with experience building and scaling high-performing, globally distributed teams in cloud and observability domains. Accountable for multi-team product areas, managing managers and driving strategy, delivery excellence, and cross-functional alignment across product, SRE, and field engineering. Proven track record improving roadmap execution, standardizing platforms for enterprise delivery, and building high-retention engineering organizations with strong engagement. Combines deep technical expertise with pragmatic business alignment."
+  experience:
+    - role: "Senior Engineering Manager"
+      org: "Canonical Ltd"
+      loc: "Remote, Global"
+      dates: "Nov 2022 — Present"
+      bullets:
+        - "Accountable for Canonical's global Observability offering — leading strategy and execution across product design, implementation, and delivery."
+        - "Built and scaled three teams totaling 12 engineers across two engineering managers, developing modern, low-operations open-source observability and cloud networking software."
+        - "Led global cross-functional initiatives spanning field engineering, product engineering, and SRE."
+        - "Standardized the observability platform across all commercial cloud engagements, strengthening the enterprise offering and reducing customer integration overhead."
+        - "Built a high-retention engineering organization with engagement scores 30% above company average."
+    - role: "Engineering Manager"
+      org: "Canonical Ltd"
+      loc: "Remote, Global"
+      dates: "Oct 2021 — Nov 2022"
+      bullets:
+        - "Led and delivered product engineering of the company's next-generation observability offering with a team of five engineers."
+        - "Reduced time-to-market significantly and ensured timely delivery on agreed roadmaps and targets."
+        - "Took the team from delivering on 50% of their roadmap goals to consistently hitting 90%."
+    - role: "Head of Developer Relations"
+      org: "Grafana k6"
+      loc: "Remote, Global"
+      dates: "Jan 2020 — Sep 2021"
+      bullets:
+        - "Launched, staffed and paved the ground for the Developer Relations program at k6."
+        - "Built a process for constructing roadmaps and a community impact review framework."
+        - "Launched a full revamp of the product documentation, the weekly k6 office hours YouTube show, and the k6 extension ecosystem offering."
+        - "In early 2021, we were acquired by Grafana to strengthen their story around performance and reliability engineering."
+    - role: "Senior Engineering Consultant"
+      org: "Arctic Bit AB"
+      loc: "Norrköping, Sweden"
+      dates: "Jan 2018 — Jan 2020"
+      bullets:
+        - "Provided consulting services, training and coaching in software development, system architecture, agile coaching, and Linux."
+        - "Delivered workshops and mentoring around Engineering Excellence to customers including Axis Communications, Informator, MindRoad, Edument, Advania, and HiQ Ace."
+        - "Frequently spoke at industry conferences — over 20 sessions in 2019 alone."
+    - role: "Senior Engineering Consultant"
+      org: "HiQ Ace"
+      loc: "Linköping, Sweden"
+      dates: "Jul 2016 — Dec 2017"
+      bullets:
+        - "Delivered consulting engagements across enterprise clients, focusing on software development, agile transformation, and engineering excellence."
+        - "Organized recurring internal upskilling programs and workshops, increasing the number of certified Scrum practitioners by 80%."
+        - "Selected as one of four to establish a new development center in Linköping, defining engineering processes and architectural standards."
+        - "Designed and implemented a structured technical interview framework to support hiring, improving evaluation consistency and long-term quality standards."
+  skills:
+    - group: "Leadership & Strategy"
+      items:
+        - "Organizational Design"
+        - "Engineering Strategy"
+        - "Hiring & Talent Development"
+        - "Performance Management"
+        - "Agile & DevOps Transformation"
+        - "Cross-Functional Leadership"
+    - group: "Technical"
+      items:
+        - "Cloud Platforms (AWS, Azure, GCP)"
+        - "Observability & SRE"
+        - "Distributed Systems"
+        - "Enterprise Architecture"
+        - "Go, JS, TS, Python, C#"
+        - "Efficient AI usage"
+    - group: "Other"
+      items:
+        - "Public speaking"
+        - "Documentation"
+        - "UML & modelling"
+  education:
+    - degree: "Informatics"
+      school: "Högskolan Dalarna, Falun, Sweden"
+      dates: "2013 — 2016"
+  honors:
+    - title: "Docker Captain"
+      org: "Docker Inc"
+      dates: "2021 — 2024"
+    - title: "Google Developer Expert — Cloud"
+      org: "Google"
+      dates: "2022 — 2024"
+    - title: "Azure Community Hero"
+      org: "Microsoft"
+      dates: "2022"
+  publications:
+    - title: "97 Things Every Cloud Engineer Should Know"
+      publisher: "Curated by Emily Freeman, O'Reilly Media"
+      year: "2021"
+---

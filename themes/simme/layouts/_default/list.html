@@ -1,17 +1,60 @@
 {{ define "main" }}
-{{ .Content }}
-<div class="post-list">
-  {{ range (.Pages.ByDate.Reverse.GroupByDate "2006") }}
-  <div class="post-year-group">
-    <h2 class="post-year">{{ .Key }}</h2>
-    {{ range .Pages }}
-    <div class="post-row">
-      <a href="{{ .Permalink }}" class="post-row-title">{{ .Title }}</a>
-      <div class="post-row-meta"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:0.25rem"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>{{ .Date.Format "Jan 02" }} &middot; <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:0.25rem"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>{{ .ReadingTime }} min read</div>
-      {{ with .GetTerms "tags" }}<div class="post-row-tags">{{ range . }}<a href="{{ .Permalink }}" class="tag">{{ .LinkTitle }}</a>{{ end }}</div>{{ end }}
-    </div>
-    {{ end }}
-  </div>
+{{ $allTags := slice }}
+{{ range .Pages }}
+  {{ range .GetTerms "tags" }}
+    {{ $allTags = $allTags | append .LinkTitle }}
   {{ end }}
+{{ end }}
+{{ $allTags = $allTags | uniq }}
+<div class="page-layout">
+  <!-- Margin -->
+  <aside class="page-margin">
+    <div class="page-margin-sticky">
+      <p class="margin-eyebrow">Index</p>
+      <div class="margin-body">{{ len .Pages }} essays · reverse-chronological.</div>
+      {{ if $allTags }}
+      <p class="margin-eyebrow" style="margin-top:24px;">Tags</p>
+      <ul class="margin-toc-list">
+        {{ range $allTags }}
+        <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </aside>
+
+  <!-- Body -->
+  <div class="page-main">
+    <div class="meta-row">
+      <span class="meta-accent">◆ archive</span>
+      <span>{{ len .Pages }} essays</span>
+    </div>
+    <h1 class="page-title">Writing</h1>
+    <p class="page-lede">Essays on observability, engineering leadership, and the occasional digression.</p>
+
+    <div class="accent-divider"></div>
+
+    {{ range (.Pages.ByDate.Reverse.GroupByDate "2006") }}
+    <section class="archive-year">
+      <h2 class="archive-year-header">{{ .Key }}</h2>
+      {{ range .Pages }}
+      <a href="{{ .Permalink }}" class="archive-row">
+        <div>
+          <div class="archive-row-title">{{ .Title }}</div>
+          <div class="archive-row-sub">
+            {{ with .GetTerms "tags" }}<span class="tag-accent">{{ (index . 0).LinkTitle }}</span> · {{ end }}{{ .ReadingTime }} min read
+          </div>
+        </div>
+        <div class="archive-row-date">{{ .Date.Format "Jan 02" }}</div>
+      </a>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    <div class="post-footer">
+      <a href="{{ "/" | relURL }}">← Home</a>
+      <a href="/index.xml">/feed.xml</a>
+    </div>
+  </div>
 </div>
 {{ end }}

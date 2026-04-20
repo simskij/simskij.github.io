@@ -1,0 +1,139 @@
+{{ define "main" }}
+{{ $r := .Params }}
+<style>
+@media print {
+  @page { margin: 14mm; size: A4; }
+  html, body { background: #fff !important; color: #000 !important; }
+  .site-header, .site-footer, .page-margin, .post-footer { display: none !important; }
+  .page-layout { display: block !important; padding: 0 !important; max-width: none !important; }
+  .page-main { max-width: none !important; }
+  .resume-role { break-inside: avoid; }
+}
+</style>
+<div class="page-layout">
+  <aside class="page-margin">
+    <div class="page-margin-sticky">
+      <p class="margin-eyebrow">Contact</p>
+      <div class="margin-body" style="font-family:var(--mono);line-height:1.7;">
+        <div style="color:var(--ink);">{{ .Site.Params.email }}</div>
+        {{ with $r.phone }}<div>{{ . }}</div>{{ end }}
+        {{ with $r.location }}<div>{{ . }}</div>{{ end }}
+      </div>
+      {{ with $r.pdf }}
+      <div style="margin-top:24px;">
+        <a href="{{ . }}" style="font-family:var(--mono);font-size:12px;letter-spacing:0.4px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:1px;">Download PDF ↓</a>
+      </div>
+      {{ end }}
+      <p class="margin-eyebrow" style="margin-top:28px;">On this page</p>
+      <ul class="margin-toc-list">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#honors">Honors &amp; awards</a></li>
+        <li><a href="#publications">Publications</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="page-main">
+    <div class="meta-row">
+      <span class="meta-accent">◆ resume</span>
+      {{ with $r.location }}<span>{{ . }}</span>{{ end }}
+      {{ with $r.updated }}<span>updated {{ . }}</span>{{ end }}
+    </div>
+    <h1 class="page-title">{{ .Site.Params.author }}</h1>
+    {{ with $r.jobtitle }}<p class="page-lede">{{ . }}</p>{{ end }}
+
+    <div class="accent-divider"></div>
+
+    <!-- Summary -->
+    {{ with $r.summary }}
+    <section style="margin-bottom:48px;" id="summary">
+      <h2 class="resume-section-header">Summary</h2>
+      <p style="margin:0;font-family:var(--serif);font-size:19px;line-height:1.6;color:var(--ink);text-wrap:pretty;">{{ . }}</p>
+    </section>
+    {{ end }}
+
+    <!-- Experience -->
+    {{ with $r.experience }}
+    <section style="margin-bottom:48px;" id="experience">
+      <h2 class="resume-section-header">Experience</h2>
+      {{ range . }}
+      <div class="resume-role" style="padding:18px 0;border-bottom:1px solid var(--rule);">
+        <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;margin-bottom:4px;">
+          <div style="font-size:18px;font-weight:600;color:var(--ink);letter-spacing:-0.2px;">{{ .role }}</div>
+          <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;white-space:nowrap;">{{ .dates }}</div>
+        </div>
+        <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;text-transform:uppercase;margin-bottom:12px;">{{ .org }} · {{ .loc }}</div>
+        <ul style="margin:0;padding-left:18px;font-size:15px;line-height:1.6;color:var(--ink);">
+          {{ range .bullets }}<li style="margin-bottom:4px;">{{ . }}</li>{{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    <!-- Skills -->
+    {{ with $r.skills }}
+    <section style="margin-bottom:48px;" id="skills">
+      <h2 class="resume-section-header">Skills</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;">
+        {{ range . }}
+        <div>
+          <div style="font-family:var(--mono);font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">{{ .group }}</div>
+          <ul style="margin:0;padding:0;list-style:none;font-size:14px;line-height:1.7;color:var(--ink);">
+            {{ range .items }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <!-- Education -->
+    {{ with $r.education }}
+    <section style="margin-bottom:48px;" id="education">
+      <h2 class="resume-section-header">Education</h2>
+      {{ range . }}
+      <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.55;">
+        <div><b style="font-weight:600;">{{ .degree }}</b> · <span style="color:var(--dim);">{{ .school }}</span></div>
+        <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;white-space:nowrap;">{{ .dates }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    <!-- Honors -->
+    {{ with $r.honors }}
+    <section style="margin-bottom:48px;" id="honors">
+      <h2 class="resume-section-header">Honors &amp; awards</h2>
+      {{ range . }}
+      <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.55;">
+        <div><b style="font-weight:600;">{{ .title }}</b> · <span style="color:var(--dim);">{{ .org }}</span></div>
+        <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;white-space:nowrap;">{{ .dates }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    <!-- Publications -->
+    {{ with $r.publications }}
+    <section id="publications">
+      <h2 class="resume-section-header">Publications</h2>
+      {{ range . }}
+      <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.55;">
+        <div><b style="font-weight:600;">{{ .title }}</b> · <span style="color:var(--dim);">{{ .publisher }}</span></div>
+        <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;white-space:nowrap;">{{ .year }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    <div class="post-footer">
+      <a href="{{ "/posts/" | relURL }}">← Writing</a>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+    </div>
+  </div>
+</div>
+{{ end }}

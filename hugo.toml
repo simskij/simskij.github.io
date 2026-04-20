@@ -10,18 +10,34 @@ summaryLength = 20
 [params]
   author = 'Simon Aronsson'
   avatar = '/img/portrait.webp'
-  description = 'Engineering leader at Canonical from eu-north1, currently helping SREs to prevent their 💻 from going 💥. Previously Grafana, k6, HiQ International. I write about observability, distributed systems, and engineering culture.'
+  email = 'simme@arcticbit.se'
+  description = 'Engineering leader at Canonical, focused on making observability accessible and valuable to teams of any size.'
   github = 'https://github.com/simskij'
   linkedin = 'https://linkedin.com/in/simonaronsson'
   mastodon = 'https://hachyderm.io/@simskij'
   bluesky = 'https://bsky.app/profile/simme.dev'
+  x = 'https://x.com/simskij'
+
+[params.now]
+  reading  = 'Designing Data-Intensive Applications — Kleppmann'
+  building = 'A dry-run mode for the OpenTelemetry Collector'
+  foraging = 'Chanterelles, if the rain holds'
+  location = 'Norrköping, Sweden'
 
 [menus]
   [[menus.main]]
-    name = 'Archive'
+    name = 'writing'
     url = '/posts/'
     weight = 10
   [[menus.main]]
     name = 'About'
     url = '/about/'
     weight = 20
+  [[menus.main]]
+    name = 'Resume'
+    url = '/resume/'
+    weight = 30
+  [[menus.main]]
+    name = 'Now'
+    url = '/now/'
+    weight = 40

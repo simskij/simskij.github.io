@@ -1,8 +1,76 @@
 {{ define "main" }}
-{{ $latest := (where .Site.RegularPages "Section" "posts" | first 1) }}
-{{ with index $latest 0 }}
-<script>window.location.replace("{{ .Permalink }}");</script>
-<noscript><meta http-equiv="refresh" content="0; url={{ .Permalink }}"></noscript>
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $posts = $posts.ByDate.Reverse }}
+{{ $hero := index $posts 0 }}
+{{ $rest := after 1 $posts }}
+
+<!-- Hero -->
+<section class="home-hero">
+  <div class="home-hero-inner">
+    <div class="home-eyebrow">— {{ .Site.Params.author }} · simme.dev</div>
+    <h1 class="home-title">Notes on software, observability, and running teams.</h1>
+    <p class="home-subtitle">{{ .Site.Params.description }} This site is where I keep essays I've written, talks I've given, and things I'm currently thinking about.</p>
+    {{ with .Site.Params.now }}
+    <div class="home-presently">
+      <div class="home-presently-label">
+        <span class="home-presently-dot"></span>
+        presently
+      </div>
+      <div class="home-presently-body">
+        <span class="dim">Reading</span> {{ .reading }}. <span class="dim">Building</span> {{ .building }}. <span class="dim">Located</span> {{ .location }}.
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- Featured post -->
+{{ with $hero }}
+<div class="home-writing">
+  <div class="home-section-header">
+    <h2 class="home-section-label">Latest writing</h2>
+    <a href="{{ "/posts/" | relURL }}" class="home-section-link">browse the archive →</a>
+  </div>
+  <div class="home-featured">
+    <div class="home-featured-placeholder">
+      {{ with .GetTerms "tags" }}essay — {{ (index . 0).LinkTitle | lower }}{{ else }}essay{{ end }}
+    </div>
+    <div class="home-featured-body">
+      <div class="home-featured-tagline">
+        <span style="color:var(--accent);">◆ featured</span>
+        <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span>{{ .ReadingTime }} min read</span>
+        {{ with .GetTerms "tags" }}<span>{{ (index . 0).LinkTitle }}</span>{{ end }}
+      </div>
+      <a href="{{ .Permalink }}" class="home-featured-title">{{ .Title }}</a>
+      <p class="home-featured-excerpt">{{ .Summary }}</p>
+      <a href="{{ .Permalink }}" class="home-featured-cta">read the essay →</a>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<!-- More essays -->
+{{ if $rest }}
+<div class="home-more">
+  <div class="home-more-inner">
+    <div class="home-more-header">
+      <h2 class="home-section-label">More essays</h2>
+      <span style="font-family:var(--mono);font-size:12px;color:var(--dim);">{{ len $posts }} total</span>
+    </div>
+    {{ range first 6 $rest }}
+    <div class="home-essay-item">
+      <div class="home-essay-item-row">
+        <a href="{{ .Permalink }}" class="home-essay-item-title">{{ .Title }}</a>
+        <span class="home-essay-item-date">{{ .Date.Format "Jan 2006" }}</span>
+      </div>
+      <p class="home-essay-item-excerpt">{{ .Summary }}</p>
+      <div class="home-essay-item-tag">
+        {{ with .GetTerms "tags" }}{{ (index . 0).LinkTitle }} · {{ end }}{{ .ReadingTime }} min read
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
 {{ end }}
 {{ end }}
-  

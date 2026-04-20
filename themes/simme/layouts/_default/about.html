@@ -1,10 +1,46 @@
 {{ define "main" }}
-<div class="about-box">
-  <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" class="about-avatar">
-  <div class="about-body">
-    <div class="content">{{ .Content }}</div>
-    <div class="social-links">
-      {{ partial "social-links.html" . }}
+<div class="page-layout">
+  <!-- Margin -->
+  <aside class="page-margin">
+    <div class="page-margin-sticky">
+      <p class="margin-eyebrow">Field notes</p>
+      <div class="margin-body">{{ .Site.Params.author }} · engineering leader at Canonical · writes from eu-north-1.</div>
+      <p class="margin-eyebrow" style="margin-top:24px;">On this page</p>
+      <ul class="margin-toc-list">
+        <li><a href="#what-i-work-on">What I work on</a></li>
+        <li><a href="#elsewhere">Elsewhere</a></li>
+        <li><a href="#colophon">Colophon</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Body -->
+  <div class="page-main">
+    <div class="meta-row">
+      <span class="meta-accent">◆ about</span>
+      <span>eu-north-1</span>
+    </div>
+    <h1 class="page-title">{{ .Site.Params.author }}</h1>
+    <p class="page-lede">Engineering leader at Canonical, working on making observability accessible and valuable for teams of any size.</p>
+
+    <div style="margin-top:32px;">
+      <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" style="width:100%;max-width:320px;border-radius:2px;object-fit:cover;object-position:center;display:block;">
+    </div>
+
+    <div class="accent-divider"></div>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <h2 id="elsewhere" style="margin-top:56px;margin-bottom:14px;font-family:var(--mono);font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:var(--accent);">Elsewhere</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;border-top:1px solid var(--rule);padding-top:18px;font-size:14px;">
+      {{ partial "social-links-full.html" . }}
+    </div>
+
+    <div class="post-footer">
+      <a href="{{ "/posts/" | relURL }}">← Writing</a>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
     </div>
   </div>
 </div>
