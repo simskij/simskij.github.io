@@ -20,10 +20,8 @@
   <aside class="page-margin">
     <div class="page-margin-sticky">
       <p class="margin-eyebrow">Field notes</p>
-      {{ with .Description }}
+      {{ with .Params.summary }}
       <div class="margin-body">{{ . }}</div>
-      {{ else }}
-      <div class="margin-body">{{ .Summary | truncate 160 "…" }}</div>
       {{ end }}
       {{ if .TableOfContents }}
       <p class="margin-eyebrow" style="margin-top:24px;">In this essay</p>

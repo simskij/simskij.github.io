@@ -6,10 +6,11 @@ tags:
   - Software Health
   - Boring Code
 cover: cover.png
-description: "If boring code is good, why is it so rare? Clever code is not the result of clever engineers — it's the consequence of organizations that reward cleverness."
+summary: "Why clever code is an organizational output, not an engineering one — and how agents turn a slow-moving problem into a fast one."
+description: "If boring code is good, why is it so rare? Clever code is not the result of clever engineers. It's the consequence of organizations that reward cleverness."
 ---
 
-If boring code is good, why is it so rare? Clever code is not the result of clever engineers. It's the consequence of organizations that reward cleverness. Most teams have survived clever code because it accumulated slowly. That margin is now closing. Boring code is an organizational tell: the codebase doesn't just reflect the organization - it gives it away.
+Most teams have survived clever code because it accumulated slowly. That margin is now closing. Boring code is an organizational tell: the codebase doesn't just reflect the organization - it gives it away.
 
 ## The causality is backwards
 
