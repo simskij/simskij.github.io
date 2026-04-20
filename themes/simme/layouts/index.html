@@ -32,9 +32,17 @@
     <a href="{{ "/posts/" | relURL }}" class="home-section-link">browse the archive →</a>
   </div>
   <div class="home-featured">
+    {{ $coverRes := .Resources.GetMatch "cover.*" }}
+    {{ $coverParam := .Params.cover }}
+    {{ if $coverRes }}
+    <img src="{{ $coverRes.RelPermalink }}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;">
+    {{ else if $coverParam }}
+    <img src="{{ $coverParam }}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;">
+    {{ else }}
     <div class="home-featured-placeholder">
       {{ with .GetTerms "tags" }}essay — {{ (index . 0).LinkTitle | lower }}{{ else }}essay{{ end }}
     </div>
+    {{ end }}
     <div class="home-featured-body">
       <div class="home-featured-tagline">
         <span style="color:var(--accent);">◆ featured</span>
