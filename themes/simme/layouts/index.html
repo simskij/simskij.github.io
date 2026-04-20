@@ -72,7 +72,7 @@
         <a href="{{ .Permalink }}" class="home-essay-item-title">{{ .Title }}</a>
         <span class="home-essay-item-date">{{ .Date.Format "Jan 2006" }}</span>
       </div>
-      <p class="home-essay-item-excerpt">{{ .Summary }}</p>
+      <p class="home-essay-item-excerpt">{{ .Summary | plainify | truncate 200 "…" }}</p>
       <div class="home-essay-item-tag">
         {{ with .Params.tags }}{{ index . 0 }} · {{ end }}{{ .ReadingTime }} min read
       </div>
