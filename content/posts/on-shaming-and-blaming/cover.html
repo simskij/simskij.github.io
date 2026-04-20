@@ -1,0 +1,30 @@
+<style>
+  .cover-grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    --gap-size: 25px;
+    --line-thickness: 1px;
+    --background-color: #111;
+    --line-color: #333;
+    background-color: var(--background-color);
+    background-image:
+      repeating-linear-gradient(var(--line-color) 0 var(--line-thickness), transparent var(--line-thickness) var(--gap-size)),
+      repeating-linear-gradient(90deg, var(--line-color) 0 var(--line-thickness), transparent var(--line-thickness) var(--gap-size));
+    background-size: 100% var(--gap-size), var(--gap-size) 100%;
+    animation: cover-grid-scroll 3s linear infinite;
+    overflow: hidden;
+  }
+  .cover-grid-fade {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, var(--background-color), transparent 30%);
+  }
+  @keyframes cover-grid-scroll {
+    from { background-position: 0 0, 0 0; }
+    to   { background-position: 0 var(--gap-size), 0 0; }
+  }
+</style>
+<div class="cover-grid">
+  <div class="cover-grid-fade"></div>
+</div>
