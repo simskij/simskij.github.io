@@ -30,7 +30,7 @@
 <a href="{{ . }}" rel="me noopener" target="_blank" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:6px 0;">
   <span style="color:var(--accent);display:inline-flex;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span>
   <span style="min-width:72px;color:var(--dim);font-family:var(--mono);font-size:12px;letter-spacing:0.4px;text-transform:uppercase;">X</span>
-  <span style="font-family:var(--mono);font-size:13px;">@simskij</span>
+  <span style="font-family:var(--mono);font-size:13px;">@{{ path.Base . }}</span>
 </a>
 {{ end }}
 <a href="#" class="js-mailto" data-mailto="{{ .Site.Params.email | base64Encode }}" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:6px 0;">
