@@ -56,7 +56,7 @@
 
     <div class="post-footer">
       <a href="{{ "/posts/" | relURL }}">← Archive</a>
-      <a href="mailto:{{ .Site.Params.email }}">Reply by email</a>
+      <a href="#" class="js-mailto" data-mailto="{{ .Site.Params.email | base64Encode }}">Reply by email</a>
     </div>
   </div>
 </div>

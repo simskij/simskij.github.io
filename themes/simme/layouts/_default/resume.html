@@ -15,7 +15,7 @@
     <div class="page-margin-sticky">
       <p class="margin-eyebrow">Contact</p>
       <div class="margin-body" style="font-family:var(--mono);line-height:1.7;">
-        <div style="color:var(--ink);">{{ .Site.Params.email }}</div>
+        <div style="color:var(--ink);"><span class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span></div>
         {{ with $r.phone }}<div>{{ . }}</div>{{ end }}
         {{ with $r.location }}<div>{{ . }}</div>{{ end }}
       </div>
@@ -132,7 +132,7 @@
 
     <div class="post-footer">
       <a href="{{ "/posts/" | relURL }}">← Writing</a>
-      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      <a href="#" class="js-mailto" data-mailto="{{ .Site.Params.email | base64Encode }}"><span class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span></a>
     </div>
   </div>
 </div>

@@ -33,8 +33,8 @@
   <span style="font-family:var(--mono);font-size:13px;">@simskij</span>
 </a>
 {{ end }}
-<a href="mailto:{{ .Site.Params.email }}" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:6px 0;">
+<a href="#" class="js-mailto" data-mailto="{{ .Site.Params.email | base64Encode }}" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:6px 0;">
   <span style="color:var(--accent);display:inline-flex;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
   <span style="min-width:72px;color:var(--dim);font-family:var(--mono);font-size:12px;letter-spacing:0.4px;text-transform:uppercase;">Email</span>
-  <span style="font-family:var(--mono);font-size:13px;">{{ .Site.Params.email }}</span>
+  <span style="font-family:var(--mono);font-size:13px;" class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span>
 </a>

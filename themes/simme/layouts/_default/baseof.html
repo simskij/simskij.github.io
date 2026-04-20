@@ -88,5 +88,13 @@
       }
     }
   </script>
+  <script>
+    document.querySelectorAll('.js-mailto').forEach(function(a) {
+      a.href = 'mailto:' + atob(a.dataset.mailto);
+    });
+    document.querySelectorAll('.js-email-addr').forEach(function(el) {
+      el.textContent = atob(el.dataset.e);
+    });
+  </script>
 </body>
 </html>

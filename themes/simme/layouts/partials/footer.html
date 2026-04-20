@@ -10,7 +10,7 @@
           <span class="site-footer-wordmark-name">{{ .Site.Params.author }}</span>
         </div>
         <p class="site-footer-bio">Engineering leader from eu-north-1. Currently at Canonical, working on observability.</p>
-        <p class="site-footer-bio">Email is open — <a href="mailto:{{ .Site.Params.email }}" style="color:var(--ink);border-bottom:1px solid var(--rule);">{{ .Site.Params.email }}</a>.</p>
+        <p class="site-footer-bio">Email is open — <a href="#" class="js-mailto" data-mailto="{{ .Site.Params.email | base64Encode }}" style="color:var(--ink);border-bottom:1px solid var(--rule);"><span class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span></a>.</p>
       </div>
       <div>
         <div class="site-footer-section-label">Site</div>
