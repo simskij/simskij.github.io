@@ -16,7 +16,7 @@
       <p class="margin-eyebrow">Contact</p>
       <div class="margin-body" style="font-family:var(--mono);line-height:1.7;">
         <div style="color:var(--ink);"><span class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span></div>
-        {{ with $r.phone }}<div>{{ . }}</div>{{ end }}
+        {{ with $r.phone }}<div><span class="js-phone" data-p="{{ . | base64Encode }}">·····</span></div>{{ end }}
         {{ with $r.location }}<div>{{ . }}</div>{{ end }}
       </div>
       {{ with $r.pdf }}
