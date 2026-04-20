@@ -2,13 +2,18 @@
 title: "What happens if you give an AI agent a home instead of a session?"
 date: 2026-04-11
 tags:
-  - ai
-  - agentic workflows
-  - llm
-  - autonomous agents
+  - AI
+  - Autonomous Agents
+summary: |
+  My design goals for building an autonomous AI agent, rather than limiting it to
+  interactive prompting session-by-session.
+description: |
+  Up until about a month ago, my interactions with AI had been the same as most others: you open 
+  a window, type something, get a response and some action, and then you iterate until the work is 
+  done for the time being and you close the window. Next time you launch the agent, it won't 
+  remember you. It won't have any opinions about what you should work on. It waits for instructions, 
+  and does (in the best case) what you ask of it.
 ---
-
-Up until about a month ago, my interactions with AI had been the same as most others: you open a window, type something, get a response and some action, and then you iterate until the work is done for the time being and you close the window. Next time you launch the agent, it won't remember you. It won't have any opinions about what you should work on. It waits for instructions, and does (in the best case) what you ask of it.
 
 I wanted to accomplish something different. I wanted an agent that delivered value not only when I wake it up with a query, but also on its own.
 

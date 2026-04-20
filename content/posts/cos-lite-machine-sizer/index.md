@@ -2,13 +2,12 @@
 title: "COS Lite Machine Sizer"
 date: 2026-04-09
 tags:
-  - SRE
+  - Canonical Observability Stack
+  - Site-Reliability Engineering
   - Juju
   - Observability
-  - Canonical Observability Stack
+summary: A sizing tool for COS Lite deployments. It used to live here but got lost in one of my many blog migrations. Now it's back!
 ---
-
-This is a sizing tool for COS Lite deployments. It used to live here but got lost in one of my many blog migrations.
 
 Use the sliders above to interactively adjust your log and metric ingestion rates and retention period, and get an estimate of the CPU, memory, and disk sizing you may need for your COS Lite deployment.
 

@@ -2,18 +2,20 @@
 title: "Error Economics - How to avoid breaking the budget"
 date: 2021-08-27
 tags:
+  - Site-Reliability Engineering
   - SLOs
   - Reliability
   - Performance
-  - Site-Reliability Engineering
 cover: cover.png
+summary: |
+  At SLOConf 2021 I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.
+description: |
+  As Site Reliability Engineers, one of our primary goals is to reduce manual labor, or toil, to
+  a minimum while at the same time keeping the systems we manage as reliable and available as
+  possible.
 ---
 
-At SLOConf 2021 I talked about how we may use error budgets to add pass/fail criterias to reliability tests we run as part of our CI pipelines.
-
 {{< youtube 9Z06PxppYOM>}}
-
-As Site Reliability Engineers, one of our primary goals is to reduce manual labor, or toil, to a minimum while at the same time keeping the systems we manage as reliable and available as possible. To be able to do this in a safe way, it's really important that we're able to easily inspect the state of the system.
 
 To measure whether we're successful in this endeavour, we establish service level agreements (SLA), service level indicators (SLI) and service level objectives (SLO). Traditional monitoring is really helpful in doing this, but it won't allow you to take action until the issue is already present, likely already affecting your users, in prod.
 

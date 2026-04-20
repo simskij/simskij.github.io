@@ -3,15 +3,13 @@ title: "How I built this page"
 date: 2026-02-23
 tags:
   - Development
-  - AI
-  - Web
   - Writing
-cover: graveyard.png
+summary: |
+  This site has needed a facelift for years. Not because the technology was outdated, but because 
+  every previous version of this blog eventually died. Quietly.
+description: |
+  I've started blogs before. Many of them. They all followed the same lifecycle: excitement → a few posts → silence. Over the years, those genuine attempts quietly turned into a blog graveyard. Apparently, enthusiasm alone isn't a sustainable publishing system.
 ---
-
-This site has needed a facelift for years. Not because the technology was outdated, but because every previous version of this blog eventually died. Quietly.
-
-I’ve started blogs before. Many of them. They all followed the same lifecycle: excitement → a few posts → silence. Over the years, those genuine attempts quietly turned into a blog graveyard. Apparently, enthusiasm alone isn’t a sustainable publishing system.
 
 ## What went wrong before
 

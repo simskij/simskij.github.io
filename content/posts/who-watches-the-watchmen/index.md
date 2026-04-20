@@ -3,18 +3,22 @@ title: "Observability is becoming mission critical, but who watches the watchmen
 date: 2022-09-14
 tags:
   - Observability
-  - SRE
-  - Monitoring
+  - Site-reliability Engineering
 cover: who-watches-the-watchmen.png
+summary: |
+  The last couple of years, there has been quite a lot of development lowering the barrier of entry 
+  for observability. There are now quite a few, reasonably mature options out there that lets you set 
+  up a good monitoring stack either through a few clicks or by a few one-liners in the terminal.
+description: |
+  With the increasing interest in observability as a practice, and decreasing barrier of entry, a lot 
+  of organisations will, if they haven't already, find out that observability will become more and 
+  more critical as their practices improve, to the point where I would argue that it no longer is 
+  icing on the cake, making the work of the SREs easier, but mission-critical for their entire business.
 ---
-
-The last couple of years, there has been quite a lot of development in the area of lowering the barrier of entry for observability. There are now quite a few, reasonably mature options out there that lets you set up a good monitoring stack either through a few clicks or by a few one-liners in the terminal.
 
 In the managed open-source space, the most successful one so far probably is [Grafana Cloud](https://grafana.com/products/cloud/), but there definitely is no shortage of closed-source vendors providing APM solutions where everything you need to get started is to drop either a single or multiple agents into your cluster or your machine.
 
 Even in the case of self-hosted open-source, there are quite a few options available. [Observatorium](https://observatorium.io/), [OpsTrace](https://opstrace.com/) and [COS](https://charmhub.io/topics/canonical-observability-stack) all provide different degrees of out-of-the-box turn-key experiences, even if the most popular option here remains to roll it yourself, picking the tools you think are the best for the job.
-
-With the increasing interest in observability as a practice, and decreasing barrier of entry, a lot of organisations will, if they haven't already, find out that observability will become more and more critical as their practices improve, to the point where I would argue that it no longer is icing on the cake, making the work of the SREs easier, but mission-critical for their entire business.
 
 ## Who watches the watchmen?
 

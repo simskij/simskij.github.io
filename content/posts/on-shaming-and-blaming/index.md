@@ -3,12 +3,14 @@ title: "On shaming and blaming"
 series: "Practical DevOps"
 date: 2019-12-21
 tags:
-  - Devops
+  - Engineering Culture
   - Post Mortems
-  - Agile
+summary: |
+  There are severe consequences of allowing shaming and blaming in your engineering culture. In this
+  essay, I'll suggest a few small things you can do instead.
+description: |
+  As I often state when I do talks or courses on the topic of DevOps, I'm a firm believer that DevOps has very little to do with technology, and a whole lot to do with culture.
 ---
-
-As I often state when I do talks or courses on the topic of DevOps, I'm a firm believer that DevOps has very little to do with technology, and a whole lot to do with culture.
 
 ## Engineers are great at Root Cause Analysis
 

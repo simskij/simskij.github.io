@@ -5,11 +5,14 @@ canonical: https://ubuntu.com/blog/building-a-dry-run-mode-for-the-opentelemetry
 tags:
   - Observability
   - OpenTelemetry
-  - Signal Studio
-cover: cover.jpg
+summary: |
+  Signal Studio explores a deficit in the OpenTelemetry ecosystem: how to assess the impact
+  of changes to your config.yaml *before* rolling out in production.
+description: |
+  Teams continuously deploy programmable telemetry pipelines to production, without having access to a dry-run mode. At the same time, most organizations lack staging environments that resemble production – especially with regards to observability and other platform-level services.
 ---
 
-Teams continuously deploy programmable telemetry pipelines to production, without having access to a dry-run mode. At the same time, most organizations lack staging environments that resemble production – especially with regards to observability and other platform-level services. Despite knowing the potential risks involved due to the lack of a proper safety harness, most teams have no alternative, safe way to determine what telemetry they can actually cut to improve their signal-to-noise ratio without running the risk of missing something important.
+Despite knowing the potential risks involved due to the lack of a proper safety harness, most teams have no alternative, safe way to determine what telemetry they can actually cut to improve their signal-to-noise ratio without running the risk of missing something important.
 
 So, teams resort to experimenting on live traffic.
 

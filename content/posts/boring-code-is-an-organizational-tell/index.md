@@ -2,6 +2,7 @@
 title: "Boring code is an organizational tell"
 date: 2026-04-18
 tags:
+  - Leadership
   - AI
   - Software Health
   - Boring Code
