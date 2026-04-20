@@ -7,12 +7,17 @@
     document.getElementById('reading-progress').style.width = pct + '%';
   });
 </script>
-{{ $coverRes := .Resources.GetMatch "cover.*" }}
+{{ $coverHTML := .Resources.GetMatch "cover.html" }}
+{{ $coverImg := .Resources.GetMatch "cover.{png,jpg,jpeg,gif,webp}" }}
 {{ $coverSrc := "" }}
-{{ if $coverRes }}{{ $coverSrc = $coverRes.RelPermalink }}{{ else if .Params.cover }}{{ $coverSrc = .Params.cover }}{{ end }}
-{{ with $coverSrc }}
+{{ if not $coverHTML }}{{ if $coverImg }}{{ $coverSrc = $coverImg.RelPermalink }}{{ else if .Params.cover }}{{ $coverSrc = .Params.cover }}{{ end }}{{ end }}
+{{ if $coverHTML }}
 <div style="padding:32px 56px 0;max-width:1120px;margin:0 auto;">
-  <img class="post-cover" src="{{ . }}" alt="">
+  {{ $coverHTML.Content | safeHTML }}
+</div>
+{{ else if $coverSrc }}
+<div style="padding:32px 56px 0;max-width:1120px;margin:0 auto;">
+  <img class="post-cover" src="{{ $coverSrc }}" alt="">
 </div>
 {{ end }}
 <div class="page-layout">
