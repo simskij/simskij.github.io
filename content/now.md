@@ -2,24 +2,21 @@
 title: What I'm doing now.
 layout: now
 date: 2026-04-20
+presently:
+  reading: "Designing Data-Intensive Applications — Kleppmann"
+  building: "A dry-run mode for the OpenTelemetry Collector"
+  foraging: "Chanterelles, if the rain holds"
 ---
 
 ## Building
 
-Dry-run mode for the OpenTelemetry Collector. The goal is for operators to type-check a pipeline without shipping data — to know a config change is safe before it reaches production. Most of the interesting work is in the edges: what "type-check" means when a component can self-register schemas at runtime, and which errors should be warnings.
+Modules for Conduit to make my life easier! I'll write about it in the next part of the autonomous agent series.
 
 ## Reading
 
-*Designing Data-Intensive Applications* by Kleppmann, slowly, in the mornings. On the engineering side, whatever papers from SOSP / NSDI look interesting and relatively practical — the stack-trace work that came out of Meta this winter, in particular.
+Recent papers on the effects of agentic workflows. They all seem to suggest similar things: there is a
+tangible productivity and efficiency boost, but it also requires **a lot** of hand-holding and engineering discipline as soon as you move from prototyping or one-offs to serious engineering.
 
 ## Thinking about
 
-The gap between "senior engineer" and "engineering leader." People cross it poorly in both directions, and most of the hiring advice I see is written by people who only crossed it once.
-
-## Foraging
-
-Chanterelles, if the rain holds. Mostly for eating. The wet spring means they should be early this year if the weather holds.
-
-## Declining
-
-New consulting engagements through the summer. Conference talks that aren't in northern Europe. Anything that requires a standing meeting before 09:00.
+The gap between Senior Engineer and Engineering Leader. People cross it poorly in both directions, and except [Charity Majors](https://charity.wtf/), most of the advice I see is written by people who only crossed it once.

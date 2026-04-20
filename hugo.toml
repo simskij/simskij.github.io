@@ -16,13 +16,7 @@ summaryLength = 40
   linkedin = 'https://linkedin.com/in/simonaronsson'
   mastodon = 'https://hachyderm.io/@simskij'
   bluesky = 'https://bsky.app/profile/simme.dev'
-  x = 'https://x.com/simskij'
-
-[params.now]
-  reading  = 'Designing Data-Intensive Applications — Kleppmann'
-  building = 'A dry-run mode for the OpenTelemetry Collector'
-  foraging = 'Chanterelles, if the rain holds'
-  location = 'Norrköping, Sweden'
+  x = 'https://x.com/0x12b'
 
 [menus]
   [[menus.main]]

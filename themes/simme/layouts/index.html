@@ -10,7 +10,7 @@
     <div class="home-eyebrow">— {{ .Site.Params.author }} · simme.dev</div>
     <h1 class="home-title">Notes on software, observability, and running teams.</h1>
     <p class="home-subtitle">{{ .Site.Params.description }} This site is where I keep essays I've written, talks I've given, and things I'm currently thinking about.</p>
-    {{ with .Site.Params.now }}
+    {{ with (.Site.GetPage "/now").Params.presently }}
     <div class="home-presently">
       <div class="home-presently-label">
         <span class="home-presently-dot"></span>
