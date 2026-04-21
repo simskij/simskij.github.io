@@ -1,0 +1,48 @@
+baseURL: https://simme.dev/
+languageCode: en-us
+title: Simon Aronsson
+theme: simme
+summaryLength: 40
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  author: Simon Aronsson
+  avatar: /img/portrait.webp
+  email: simme@arcticbit.se
+  location: eu-north-1
+  tagline: Field notes on software, observability, and running teams.
+  description: |
+    Engineering leader at Canonical, focused on making observability accessible 
+    and valuable to teams of any size. Based in eu-north-1.
+  intro: |
+    Engineering leader at Canonical, focused on making observability accessible 
+    and valuable to teams of any size. Over the years I've worked across software 
+    engineering, open source, developer tooling, and technical leadership, with 
+    a particular interest in helping teams build systems that are understandable, 
+    reliable, and worth operating. This site is where I publish essays, talks, 
+    and notes on software, observability, and running teams.
+  linkedin: https://linkedin.com/in/simonaronsson
+  mastodon: https://hachyderm.io/@simskij
+  bluesky: https://bsky.app/profile/simme.dev
+  github: https://github.com/simskij
+  x: https://x.com/0x12b
+
+menus:
+  main:
+    - name: Writing
+      url: /posts/
+      weight: 10
+    - name: About
+      url: /about/
+      weight: 20
+    - name: Resume
+      url: /resume/
+      weight: 30
+    - name: Now
+      url: /now/
+      weight: 40

@@ -1,6 +1,24 @@
 ---
 title: About
 layout: about
+projects:
+  - name: Watchtower
+    url: https://github.com/containrrr/watchtower
+    description: |
+      Archived project that I ran for ~6 years with 24k+ stars on GitHub. Was the de-facto
+      standard for running automatic updates of Docker containers when new images were
+      available.
+  - name: Shoutrrr
+    url: https://github.com/containrrr/shoutrrr
+    description: |
+      Notification library for gophers and their furry friends. Heavily inspired by 
+      [caronc/apprise](https://github.com/caronc/apprise). Supports Slack, Telegram, Discord, 
+      and more.
+  - name: Signal Studio
+    url: https://github.com/canonical/signal-studio
+    description: |
+      Diagnostic layer for OpenTelemetry Collector pipelines — static analysis, 
+      live metrics, and dry-run filter evaluation.
 ---
 
 ## What I work on
@@ -16,5 +34,3 @@ This site is where I keep essays I've written, talks I've given, and things I'm 
 ## Talk to me about
 
 Engineering leadership, observability, Go, open-source, or hunting dogs. I have opinions on all of them!
-
-## Elsewhere

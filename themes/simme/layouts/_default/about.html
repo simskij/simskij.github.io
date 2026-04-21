@@ -31,9 +31,24 @@
       {{ .Content }}
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;border-top:1px solid var(--rule);padding-top:18px;font-size:14px;margin-top:14px;">
-      {{ partial "social-links-full.html" . }}
-    </div>
+    {{ with .Params.projects }}
+    <section style="margin-top:48px;">
+      <h2 class="resume-section-header" style="border-bottom:none;padding-bottom:0;">Selected projects</h2>
+      {{ range . }}
+      <div style="padding:14px 0;">
+        <a href="{{ .url }}" style="font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);letter-spacing:-0.2px;text-decoration:none;border-bottom:1px solid var(--rule);" target="_blank" rel="noopener">{{ .name }}</a>
+        <div style="margin:6px 0 0;font-family:var(--serif);font-size:15px;line-height:1.6;color:var(--dim);">{{ .description | markdownify }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    <section style="margin-top:48px;">
+      <h2 class="resume-section-header" style="border-bottom:none;padding-bottom:0;">Elsewhere</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;font-size:14px;">
+        {{ partial "social-links-full.html" . }}
+      </div>
+    </section>
 
     <div class="post-footer">
       <a href="{{ "/posts/" | relURL }}">← Writing</a>
