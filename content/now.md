@@ -1,7 +1,7 @@
 ---
 title: What I'm doing now.
 layout: now
-date: 2026-04-20
+date: 2026-04-29
 presently:
   reading: "JPod by Coupland"
   building: "Modules for Conduit"
@@ -9,13 +9,12 @@ presently:
 
 ## Building
 
-Modules for Conduit to make my life easier! I'll write about it in the next part of the autonomous agent series.
+This week I've decided to focus on writing, so there are no exciting project updates to report.
 
 ## Reading
 
-Recent papers on the effects of agentic workflows. They all seem to suggest similar things: there is a
-tangible productivity and efficiency boost, but it also requires **a lot** of hand-holding and engineering discipline as soon as you move from prototyping or one-offs to serious engineering.
+A [paper](https://cmustrudel.github.io/papers/msr2026he.pdf) by the good folks at STRUDEL on how the speed of agentic development might come at the cost of quality.
 
 ## Thinking about
 
-The gap between Senior Engineer and Engineering Leader. People cross it poorly in both directions, and except [Charity Majors](https://charity.wtf/), most of the advice I see is written by people who only crossed it once.
+Documentation as a way of creating durable organizational knowledge.
