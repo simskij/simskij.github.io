@@ -4,7 +4,7 @@ layout: now
 date: 2026-04-29
 presently:
   reading: "JPod by Coupland"
-  building: "Modules for Conduit"
+  building: "No - Writing"
 ---
 
 ## Building
