@@ -13,14 +13,14 @@ params:
       loc: "Remote, Global"
       dates: "Oct 2021 — Present"
       bullets:
-      - Own Canonical’s observability product portfolio end to end, spanning roadmap, delivery, adoption, and lifecycle. Used across commercial cloud engagements, open-source users, and internal operations. Lead a 13-person product engineering organization across 3 teams, with engineering managers as direct reports, delivering enterprise-scale observability for cloud-native environments.
-      - Defined and delivered Canonical Observability Stack from start to generally available: a supported open-source observability product for public and private cloud-native environments, built for both enterprise-scale centralized deployments and lightweight near-edge scenarios.
-      -  Standardized OpenTelemetry and Kubernetes operating patterns across telemetry signals, service mesh, reliability testing, and chaos engineering.
-      -  Grew Canonical Observability Stack from zero to ~90% adoption across product engineering teams building charms, making integration with the stack, tailored alerting, and visualization part of the product delivery standard for improved operational readiness.
-      -  Drive cross-functional alignment with field teams, customer-facing teams, internal operations, enterprise customers, and internal VP/C-level stakeholders on observability architecture, adoption strategy, and operational readiness.
-      -  Introduced an organization-wide observability maturity framework to raise the quality bar for telemetry coverage, reliability practices, operational readiness, and adoption planning.
-      - Defined Canonical charm integration governance adopted by product teams building charms, requiring documented interfaces, declared schemas, peer review, and publication in official documentation.
-      - Scaled the organization from 4 to 13 engineers, maintaining engagement scores consistently well above the company average, while also leading end-to-end hiring pipelines for ~10 other teams over time.
+      - "Own Canonical’s observability product portfolio end to end, spanning roadmap, delivery, adoption, and lifecycle. Used across commercial cloud engagements, open-source users, and internal operations. Lead a 13-person product engineering organization across 3 teams, with engineering managers as direct reports, delivering enterprise-scale observability for cloud-native environments."
+      - "Defined and delivered Canonical Observability Stack from start to generally available: a supported open-source observability product for public and private cloud-native environments, built for both enterprise-scale centralized deployments and lightweight near-edge scenarios."
+      - "Standardized OpenTelemetry and Kubernetes operating patterns across telemetry signals, service mesh, reliability testing, and chaos engineering."
+      - "Grew Canonical Observability Stack from zero to ~90% adoption across product engineering teams building charms, making integration with the stack, tailored alerting, and visualization part of the product delivery standard for improved operational readiness."
+      - "Drive cross-functional alignment with field teams, customer-facing teams, internal operations, enterprise customers, and internal VP/C-level stakeholders on observability architecture, adoption strategy, and operational readiness."
+      -  "Introduced an organization-wide observability maturity framework to raise the quality bar for telemetry coverage, reliability practices, operational readiness, and adoption planning."
+      - "Defined Canonical charm integration governance adopted by product teams building charms, requiring documented interfaces, declared schemas, peer review, and publication in official documentation."
+      - "Scaled the organization from 4 to 13 engineers, maintaining engagement scores consistently well above the company average, while also leading end-to-end hiring pipelines for ~10 other teams over time."
     - role: "Head of Developer Relations"
       org: "Grafana k6"
       loc: "Remote, Global"
