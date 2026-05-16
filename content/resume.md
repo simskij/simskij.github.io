@@ -2,30 +2,25 @@
 title: Resume
 layout: resume
 params:
-  jobtitle: "Senior Engineering Manager"
+  jobtitle: "Engineering Leader"
   location: "Norrköping, Sweden"
   updated: "Apr 2026"
   phone: "+46 707 20 03 51"
   summary: "Engineering leader with experience building and scaling high-performing, globally distributed teams in cloud and observability domains. Accountable for multi-team product areas, managing managers and driving strategy, delivery excellence, and cross-functional alignment across product, SRE, and field engineering. Proven track record improving roadmap execution, standardizing platforms for enterprise delivery, and building high-retention engineering organizations with strong engagement. Combines deep technical expertise with pragmatic business alignment."
   experience:
-    - role: "Senior Engineering Manager"
+    - role: "Head of Observability"
       org: "Canonical Ltd"
       loc: "Remote, Global"
-      dates: "Nov 2022 — Present"
+      dates: "Oct 2021 — Present"
       bullets:
-        - "Accountable for Canonical's global Observability offering — leading strategy and execution across product design, implementation, and delivery."
-        - "Built and scaled three teams totaling 12 engineers across two engineering managers, developing modern, low-operations open-source observability and cloud networking software."
-        - "Led global cross-functional initiatives spanning field engineering, product engineering, and SRE."
-        - "Standardized the observability platform across all commercial cloud engagements, strengthening the enterprise offering and reducing customer integration overhead."
-        - "Built a high-retention engineering organization with engagement scores 30% above company average."
-    - role: "Engineering Manager"
-      org: "Canonical Ltd"
-      loc: "Remote, Global"
-      dates: "Oct 2021 — Nov 2022"
-      bullets:
-        - "Led and delivered product engineering of the company's next-generation observability offering with a team of five engineers."
-        - "Reduced time-to-market significantly and ensured timely delivery on agreed roadmaps and targets."
-        - "Took the team from delivering on 50% of their roadmap goals to consistently hitting 90%."
+      - Own Canonical’s observability product portfolio end to end, spanning roadmap, delivery, adoption, and lifecycle. Used across commercial cloud engagements, open-source users, and internal operations. Lead a 13-person product engineering organization across 3 teams, with engineering managers as direct reports, delivering enterprise-scale observability for cloud-native environments.
+      - Defined and delivered Canonical Observability Stack from start to generally available: a supported open-source observability product for public and private cloud-native environments, built for both enterprise-scale centralized deployments and lightweight near-edge scenarios.
+      -  Standardized OpenTelemetry and Kubernetes operating patterns across telemetry signals, service mesh, reliability testing, and chaos engineering.
+      -  Grew Canonical Observability Stack from zero to ~90% adoption across product engineering teams building charms, making integration with the stack, tailored alerting, and visualization part of the product delivery standard for improved operational readiness.
+      -  Drive cross-functional alignment with field teams, customer-facing teams, internal operations, enterprise customers, and internal VP/C-level stakeholders on observability architecture, adoption strategy, and operational readiness.
+      -  Introduced an organization-wide observability maturity framework to raise the quality bar for telemetry coverage, reliability practices, operational readiness, and adoption planning.
+      - Defined Canonical charm integration governance adopted by product teams building charms, requiring documented interfaces, declared schemas, peer review, and publication in official documentation.
+      - Scaled the organization from 4 to 13 engineers, maintaining engagement scores consistently well above the company average, while also leading end-to-end hiring pipelines for ~10 other teams over time.
     - role: "Head of Developer Relations"
       org: "Grafana k6"
       loc: "Remote, Global"
