@@ -1,0 +1,25 @@
+{
+  "name": "simskij.github.io",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "hugo --minify && npm run build:resume-pdf",
+    "build:resume-pdf": "node scripts/generate-resume-pdf.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simskij/simskij.github.io.git"
+  },
+  "keywords": [],
+  "author": "Simon Aronsson",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/simskij/simskij.github.io/issues"
+  },
+  "homepage": "https://github.com/simskij/simskij.github.io#readme",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

@@ -921,6 +921,31 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent);
 }
 
+.resume-print-contact { display: none; }
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  padding: 11px 12px;
+  transition: background 120ms, border-color 120ms, color 120ms;
+}
+
+.resume-download:hover,
+.resume-download:focus-visible {
+  border-color: var(--accent);
+  background: var(--paper-tint);
+  color: var(--accent);
+}
+
 /* ── Canonical / disclaimer notices ─────────────────────────── */
 
 .canonical-notice {

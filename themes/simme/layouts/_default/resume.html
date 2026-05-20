@@ -1,29 +1,52 @@
 {{ define "main" }}
 {{ $r := .Params }}
+{{ $pdf := $r.pdf | default ("/resume.pdf" | relURL) }}
 <style>
 @media print {
-  @page { margin: 14mm; size: A4; }
-  html, body { background: #fff !important; color: #000 !important; }
+  @page { margin: 12mm 14mm; size: A4; }
+  :root { --paper: #fff; --paper-tint: #fff; --ink: #000; --dim: #555; --rule: #ddd; --accent: #000; }
+  html, body { background: #fff !important; color: #000 !important; font-size: 9.5pt; line-height: 1.35; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .site-header, .site-footer, .page-margin, .post-footer { display: none !important; }
   .page-layout { display: block !important; padding: 0 !important; max-width: none !important; }
   .page-main { max-width: none !important; }
-  .resume-role { break-inside: avoid; }
+  .meta-row, .accent-divider { display: none !important; }
+  .page-title { font-size: 25pt !important; line-height: 1 !important; letter-spacing: -0.6pt !important; font-weight: 600 !important; }
+  .page-lede { margin: 3mm 0 0 !important; font-family: var(--sans) !important; font-size: 11pt !important; line-height: 1.25 !important; color: #333 !important; }
+  .resume-print-contact { display: flex !important; flex-wrap: wrap; gap: 2mm 5mm; margin: 4mm 0 7mm; padding-bottom: 4mm; border-bottom: 1px solid #bbb; font-family: var(--mono); font-size: 8pt; color: #333; }
+  .page-main section { margin-bottom: 6mm !important; }
+  .resume-section-header { margin: 0 0 2.5mm !important; padding-bottom: 1.5mm !important; border-bottom-color: #bbb !important; font-size: 8pt !important; letter-spacing: 0.8pt !important; color: #000 !important; }
+  #summary p { font-family: var(--sans) !important; font-size: 9.5pt !important; line-height: 1.38 !important; }
+  .resume-role { break-inside: avoid; padding: 3mm 0 !important; border-bottom: 0 !important; }
+  .resume-role > div:first-child { gap: 5mm !important; margin-bottom: 0.5mm !important; }
+  .resume-role > div:first-child > div:first-child { font-size: 10.5pt !important; letter-spacing: 0 !important; }
+  .resume-role > div:first-child > div:last-child,
+  .resume-role > div:nth-child(2) { font-size: 7.5pt !important; letter-spacing: 0.2pt !important; color: #555 !important; }
+  .resume-role > div:nth-child(2) { margin-bottom: 1.8mm !important; }
+  .resume-role ul { font-size: 8.8pt !important; line-height: 1.32 !important; padding-left: 4mm !important; }
+  .resume-role li { margin-bottom: 1mm !important; }
+  #skills > div { grid-template-columns: repeat(3, 1fr) !important; gap: 5mm !important; }
+  #skills ul { font-size: 8.8pt !important; line-height: 1.35 !important; }
+  #education > div,
+  #honors > div,
+  #publications > div { padding: 1.8mm 0 !important; font-size: 8.8pt !important; line-height: 1.3 !important; border-bottom-color: #ddd !important; }
+  #education > div > div:last-child,
+  #honors > div > div:last-child,
+  #publications > div > div:last-child { font-size: 7.5pt !important; color: #555 !important; }
 }
 </style>
 <div class="page-layout">
   <aside class="page-margin">
     <div class="page-margin-sticky">
+      <div style="margin-bottom:28px;">
+        <a class="resume-download" href="{{ $pdf }}" download>Download PDF ↓</a>
+      </div>
       <p class="margin-eyebrow">Contact</p>
       <div class="margin-body" style="font-family:var(--mono);line-height:1.7;">
         <div style="color:var(--ink);"><span class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span></div>
         {{ with $r.phone }}<div><span class="js-phone" data-p="{{ . | base64Encode }}">·····</span></div>{{ end }}
         {{ with $r.location }}<div>{{ . }}</div>{{ end }}
       </div>
-      {{ with $r.pdf }}
-      <div style="margin-top:24px;">
-        <a href="{{ . }}" style="font-family:var(--mono);font-size:12px;letter-spacing:0.4px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:1px;">Download PDF ↓</a>
-      </div>
-      {{ end }}
       <p class="margin-eyebrow" style="margin-top:28px;">On this page</p>
       <ul class="margin-toc-list">
         <li><a href="#summary">Summary</a></li>
@@ -44,6 +67,12 @@
     </div>
     <h1 class="page-title">{{ .Site.Params.author }}</h1>
     {{ with $r.jobtitle }}<p class="page-lede">{{ . }}</p>{{ end }}
+    <div class="resume-print-contact" aria-label="Contact information">
+      <span><span class="js-email-addr" data-e="{{ .Site.Params.email | base64Encode }}">·····</span></span>
+      {{ with $r.phone }}<span><span class="js-phone" data-p="{{ . | base64Encode }}">·····</span></span>{{ end }}
+      {{ with $r.location }}<span>{{ . }}</span>{{ end }}
+      {{ with .Site.Params.linkedin }}<span>{{ replaceRE "^https?://(www\\.)?" "" . }}</span>{{ end }}
+    </div>
 
     <div class="accent-divider"></div>
 
@@ -123,7 +152,10 @@
       <h2 class="resume-section-header">Publications</h2>
       {{ range . }}
       <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.55;">
-        <div><b style="font-weight:600;">{{ .title }}</b> · <span style="color:var(--dim);">{{ .publisher }}</span></div>
+        <div>
+          <div><b style="font-weight:600;">{{ .title }}</b> · <span style="color:var(--dim);">{{ .publisher }}</span></div>
+          {{ with .description }}<div style="color:var(--dim);font-size:14px;margin-top:2px;">{{ . }}</div>{{ end }}
+        </div>
         <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.4px;white-space:nowrap;">{{ .year }}</div>
       </div>
       {{ end }}
