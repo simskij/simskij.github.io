@@ -1,20 +1,20 @@
 ---
 title: What I'm doing now.
 layout: now
-date: 2026-04-29
+date: 2026-05-20
 presently:
-  reading: "JPod by Coupland"
-  building: "No - Writing"
+  reading: "Våran pojke by Yvesand"
+  building: "a chat-first telemetry visualization tool"
 ---
 
 ## Building
 
-This week I've decided to focus on writing, so there are no exciting project updates to report.
+[OMG!](https://github.com/simskij/omg), or Oh my graphs!, chat-first telemetry visualization.
 
 ## Reading
 
-A [paper](https://cmustrudel.github.io/papers/msr2026he.pdf) by the good folks at STRUDEL on how the speed of agentic development might come at the cost of quality.
+Mainly fiction this time around.
 
 ## Thinking about
 
-Documentation as a way of creating durable organizational knowledge.
+Automation of recurring administrative tasks using a mix of agents and procedural code.
