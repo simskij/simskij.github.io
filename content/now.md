@@ -1,20 +1,20 @@
 ---
 title: What I'm doing now.
 layout: now
-date: 2026-05-20
+date: 2026-05-31
 presently:
   reading: "Våran pojke by Yvesand"
-  building: "a chat-first telemetry visualization tool"
+  building: "Loop, my personal Operating System"
 ---
 
 ## Building
 
-[OMG!](https://github.com/simskij/omg), or Oh my graphs!, chat-first telemetry visualization.
+A personal operating system called Loop, helping me be more present, focus on high-leverage work, without dropping anything unintentionally.
 
 ## Reading
 
-Mainly fiction this time around.
+Mostly technical and organizational material around engineering leadership, cloud-native systems, observability, and practical AI. I’m trying to bias toward things that change how I work, not just things that are interesting.
 
 ## Thinking about
 
-Automation of recurring administrative tasks using a mix of agents and procedural code.
+How to make engineering organizations clearer and more effective: better decisions, less coordination drag, stronger technical leadership, and AI used as leverage for real work rather than for the novelty factor.
