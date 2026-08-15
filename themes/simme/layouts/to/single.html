@@ -1,0 +1,25 @@
+{{- $target := .Params.redirect_to -}}
+{{- if not $target -}}
+  {{- errorf "Shortlink %q is missing redirect_to in front matter" .File.Path -}}
+{{- end -}}
+{{- $url := urls.Parse $target -}}
+{{- if not (in (slice "http" "https") $url.Scheme) -}}
+  {{- errorf "Shortlink %q has invalid redirect_to %q; expected an absolute http(s) URL" .File.Path $target -}}
+{{- end -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="refresh" content="0;url={{ $target | safeURL }}">
+  <link rel="canonical" href="{{ $target | safeURL }}">
+  <title>{{ .Title }} - redirecting</title>
+  <script>
+    window.location.replace({{ $target | jsonify | safeJS }});
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ $target | safeURL }}">{{ $target }}</a>.</p>
+</body>
+</html>
