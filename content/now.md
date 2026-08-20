@@ -1,19 +1,19 @@
 ---
 title: What I'm doing now.
 layout: now
-date: 2026-05-31
+date: 2026-08-20
 presently:
-  reading: "Våran pojke by Yvesand"
-  building: "Loop, my personal Operating System"
+  reading: "\"Gödel, Escher, Bach\" by Douglas Hofstadter"
+  building: "Prototypes, prototypes, prototypes"
 ---
 
 ## Building
 
-A personal operating system called Loop, helping me be more present, focus on high-leverage work, without dropping anything unintentionally.
+Nothing to share currently.
 
 ## Reading
 
-Mostly technical and organizational material around engineering leadership, cloud-native systems, observability, and practical AI. I’m trying to bias toward things that change how I work, not just things that are interesting.
+I'm currently revisiting Gödel, Escher, Bach, which I've not picked up in quite a few years.
 
 ## Thinking about
 

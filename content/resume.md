@@ -8,10 +8,14 @@ params:
   phone: "+46 707 20 03 51"
   summary: "Engineering leader with experience building and scaling high-performing, globally distributed teams in cloud and observability domains. Accountable for multi-team product areas, managing managers and driving strategy, delivery excellence, and cross-functional alignment across product, SRE, and field engineering. Proven track record improving roadmap execution, standardizing platforms for enterprise delivery, and building high-retention engineering organizations with strong engagement. Combines deep technical expertise with pragmatic business alignment."
   experience:
+    - role: "Principal Consultant, AI Transformation and Engineering Excellence"
+      org: "HiQ"
+      loc: "Norrköping, Sweden"
+      dates: Sept 2026 -"
     - role: "Head of Observability"
       org: "Canonical Ltd"
       loc: "Remote, Global"
-      dates: "Oct 2021 — Present"
+      dates: "Oct 2021 — Aug 2026"
       bullets:
         - "Own Canonical’s observability product portfolio end to end, spanning roadmap, delivery, adoption, and lifecycle. Used across commercial cloud engagements, open-source users, and internal operations. Lead a 13-person product engineering organization across 3 teams, with engineering managers as direct reports, delivering enterprise-scale observability for cloud-native environments."
         - "Defined and delivered Canonical Observability Stack from start to generally available: a supported open-source observability product for public and private cloud-native environments, built for both enterprise-scale centralized deployments and lightweight near-edge scenarios."

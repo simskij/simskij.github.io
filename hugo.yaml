@@ -17,15 +17,19 @@ params:
   location: eu-north-1
   tagline: Field notes on software, observability, and running teams.
   description: |
-    Engineering leader at Canonical, focused on making observability accessible 
-    and valuable to teams of any size. Based in eu-north-1.
+    Engineering leader at HiQ, where I help clients level up their engineering organizations through efficient ways of working, AI-empowered workflows, and cloud-native infrastructure. Based in eu-north-1.
   intro: |
-    Engineering leader at Canonical, focused on making observability accessible 
-    and valuable to teams of any size. Over the years I've worked across software 
-    engineering, open source, developer tooling, and technical leadership, with 
-    a particular interest in helping teams build systems that are understandable, 
-    reliable, and worth operating. This site is where I publish essays, talks, 
-    and notes on software, observability, and running teams.
+    Engineering leader at HiQ, where I help clients level up their 
+    engineering organizations through efficient ways of working, 
+    AI-empowered workflows, and cloud-native infrastructure.
+    
+    Over the years I've worked across software engineering, 
+    open source, developer tooling, and technical leadership, with 
+    a particular interest in helping teams build systems that are 
+    understandable, reliable, and worth operating.
+    
+    This site is where I publish essays, talks, and notes on 
+    software, observability, and running teams.
   linkedin: https://linkedin.com/in/simonaronsson
   mastodon: https://hachyderm.io/@simskij
   bluesky: https://bsky.app/profile/simme.dev
